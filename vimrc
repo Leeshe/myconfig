@@ -1,11 +1,12 @@
-" PATHOGEN
+" PATHOGEN {{{
 "
 set nocompatible
 call pathogen#infect()
 call pathogen#helptags()
+"}}}
 
 
-" VIM SETTINGS
+" VIM SETTINGS {{{
 "
 
 "Show line numbers on the sidebar
@@ -47,22 +48,6 @@ set noshowmode
 
 "Set mapleader key
 let mapleader = ","
-
-"Type <Space>w to save a file
-nnoremap <Leader>w :w<CR>
-
-"Tyoe <Space>q to quit
-nnoremap <Leader>q :q<CR>
-
-"Switch to previous or right tab by pressing CTRL-LEFT or CTRL-RIGHT
-nnoremap <C-Left> :tabprevious<CR>
-nnoremap <C-Right> :tabnext<CR>
-
-"Press CTRL-B to switch to next buffer
-map <C-b> :bNext<CR>
-
-"Press CTRL-A to switch to from .hpp to .cpp (and vice-versa)
-map <C-a> :A<CR>
 
 "Completion
 set omnifunc=syntaxcomplete#Complete
@@ -114,22 +99,69 @@ set title
 
 "Disable swap to prevent annoying messages.
 set noswapfile
+"}}}
+
+
+"Mapping {{{
+"
+
+"Type <Space>w to save a file
+nnoremap <Leader>w :w<CR>
+
+"Tyoe <Space>q to quit
+nnoremap <Leader>q :q<CR>
+
+"Switch to previous or right tab by pressing CTRL-LEFT or CTRL-RIGHT
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
+
+"Press CTRL-B to switch to next buffer
+nnoremap <C-b> :bNext<CR>
+
+"Press CTRL-A to switch to from .hpp to .cpp (and vice-versa)
+nnoremap <C-a> :A<CR>
+
+"Type CTRL+D to delete current line
+nnoremap <c-d> dd
+
+"Type <Leader>ev to edit .myvimrc
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+
+"Type <Leader>sv to source .myvimrc
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+"Type <Leader>ta to toggle Airline
+nnoremap <leader>ta :AirlineToggle<cr> :AirlineToggle<cr>
+
+"Type <Leader>" to put " between the selected word
+nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
+
+"Type <Leader>' to put ' between the selected word
+nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
+
+"Type 1 to get the beginning of the line
+nnoremap 1 0
+
+"Press $$ to get in normal mode
+inoremap $$ <esc>
 
 "Enable executing python scripts by pressing F5
 nnoremap <silent> <F5> :!clear;python3 %<CR>
 
 "Enable compiling and executing C by pressing F8
 nnoremap <silent> <F8> :!clear;gcc % -o %:r && ./%:r<CR>
+"}}}
 
 
-
-" YCM
+" YCM {{{
 "
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_python_binary_path = '/usr/bin/python3'
+"}}}
 
-"Syntastic
+
+"Syntastic {{{
 "
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -141,18 +173,19 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_cpp_compiler_options = '-std=c++11'
 
-
 "let g:syntastic_python_python_exec = '/usr/lib/python3.4'
 map <C-o> :lopen<CR>
+"}}}
 
 
-"Tagbar
+"Tagbar {{{
 "
 map <C-f> :TagbarToggle<CR>
 let g:tagbar_autoclose = 1
+"}}}
 
 
-"NERDTree Macro
+"NERDTree {{{
 
 "Enable CTRL-N to open NERDTree
 map <C-n> :NERDTreeToggle<CR>
@@ -165,47 +198,39 @@ endfunction
 
 ".h file  will be set to green color  
 call NERDTreeHighlightFile('h', 'green', 'none', 'green', '#151515')
+"}}}
 
 
-
-"Clang
-"
-"let g:clang_complete_auto = 0
-"let g:clang_user_options='|| exit 0'
-"let g:clang_complete_copen = 1
-"let g:clang_use_library=1
-"let g:clang_complete_copen=1
-"let g:clang_complete_macros=1
-"let g:clang_complete_patterns=0
-"let g:clang_memory_percent=70
-"let g:clang_user_options=' -std=c99 || exit 0'
-"let g:clang_auto_select=1
-"let g:clang_snippets_engine='clang_complete'
-
-
-
-
-"Eclim
+"Eclim, Java -- Not used {{{
 "
 let g:EclimCompletionMethod = 'omnifunc'
+"Javacompleteme2
+"autocmd Filetype java setlocal omnifunc=javacomplete#Complete
+"setlocal completefunc=javacomplete#CompleteParamsInfo
+"nnoremap <F4> <Plug>(JavaComplete-Imports-Add)
+"inoremap <F4> <Plug>(JavaComplete-Imports-Add)
+"}}}
 
 
-"Solarized
+"Solarized {{{
 "
 let g:solarized_termcolors=256
+"}}}
 
 
-"EasyMotion
+"EasyMotion {{{
 "
 let g:EasyMotion_do_mapping=1
+"}}}
 
 
-"IndentLine
+"IndentLine {{{
 "
 set list lcs=tab:\┊\ 
+"}}}
 
 
-"Airline
+"Airline {{{
 "
 let g:airline_powerline_fonts = 0
 let g:airline_theme = 'cool'
@@ -259,15 +284,10 @@ let g:airline#extensions#branch#enabled = 0
 
 let g:airline_section_x ='' 
 let g:airline_section_y ='' 
+"}}}
 
 
-"C highlighting
-"
-hi cCustomFunc  gui=bold guifg=yellowgreen
-hi cCustomClass gui=reverse guifg=#00FF00
-
-
-"CtrlP
+"CtrlP {{{
 "
 let g:ctrlp_prompt_mappings = {
   \ 'AcceptSelection("e")': [],
@@ -278,13 +298,15 @@ let g:ctrlp_prompt_mappings = {
 let g:ctrlp_working_path_mode = 'ra'
 "Looking recursively file for from home directory
 let g:ctrlp_cmd='CtrlP ~'
+"}}}
 
 
-"Gundo. Enable triggering  Gundo tree by pressing F3
+"Gundo {{{
 nnoremap <F3> :GundoToggle<CR>
+"}}}
 
 
-"Rainbow_parethenses
+"Rainbow_parethenses {{{
 "
 let g:rbpt_colorpairs = [
     \ ['brown',       'RoyalBlue3'],
@@ -316,21 +338,39 @@ set guicursor=n-v-c:block-Cursor
 set guicursor+=i:ver100-iCursor
 set guicursor+=n-v-c:blinkon0
 set guicursor+=i:blinkwait10
+"}}}
 
 
-"GitGutter
+"GitGutter {{{
 "
 let g:gitgutter_enabled = 1
 let g:gitgutter_signs = 1
 let g:gitgutter_highlight_lines = 0
 let g:gitgutter_override_sign_column_highlight = 1
+"}}}
 
 
-"Fugitive
+"Fugitive {{{
 "
 noremap <C-R> :Gblame<CR>
+"}}}
 
-"EXPERIMENTAL. C highlighting
+
+" Headerguard function {{{
+function! g:HeaderguardName()
+	return toupper(expand('%:t:gs/[^0-9a-zA-Z_]/_/g')) . "_INCLUDED"
+endfunction
+"}}}
+
+
+"C highlighting {{{
+"
+hi cCustomFunc  gui=bold guifg=yellowgreen
+hi cCustomClass gui=reverse guifg=#00FF00
+"}}}
+
+
+"EXPERIMENTAL. C highlighting {{{
 hi def cCustomFunc  gui=bold ctermfg=80 guifg=yellowgreen
 hi def cCustomClass gui=reverse guifg=#00FF00
 
@@ -338,55 +378,17 @@ hi def cCustomClass gui=reverse guifg=#00FF00
 "C syntax coloring
 hi cCustomFunc  gui=bold guifg=yellowgreen ctermfg=80
 hi cCustomClass gui=reverse guifg=#00FF00
+"}}}
 
 
-"Javacompleteme2
-"autocmd Filetype java setlocal omnifunc=javacomplete#Complete
-"setlocal completefunc=javacomplete#CompleteParamsInfo
-"nnoremap <F4> <Plug>(JavaComplete-Imports-Add)
-"inoremap <F4> <Plug>(JavaComplete-Imports-Add)
-
-
-"Write automatically header by calling Headerguard function.
-function! g:HeaderguardName()
-	return toupper(expand('%:t:gs/[^0-9a-zA-Z_]/_/g')) . "_INCLUDED"
-endfunction
-
-"EXPERIMENTAL. C++ Highlighting
+"EXPERIMENTAL. C++ Highlighting {{{
 let g:cpp_class_scope_highlight = 1
 let g:cpp_experimental_simple_template_highlight = 1
 let g:cpp_concepts_highlight = 1
+"}}}
 
-"Type CTRL+D to delete current line
-nnoremap <c-d> dd
 
-"Type <Leader>ev to edit .myvimrc
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-
-"Type <Leader>sv to source .myvimrc
-nnoremap <leader>sv :source $MYVIMRC<cr>
-
-"Type <Leader>ta to toggle Airline
-nnoremap <leader>ta :AirlineToggle<cr> :AirlineToggle<cr>
-
-"Type <Leader>" to put " between the selected word
-nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
-
-"Type <Leader>' to put ' between the selected word
-nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
-
-"Type 1 to get the beginning of the line
-nnoremap 1 0
-
-"Press $$ to get in normal mode
-inoremap $$ <esc>
-
-"zqsd to move
-nnoremap z k
-nnoremap s j
-nnoremap d l
-nnoremap q h
-
+" C file setting {{{
 augroup filetype_c
 	autocmd!
 	"Indent .c file on reading and before writing
@@ -396,3 +398,12 @@ augroup filetype_c
 	"rr abreviation: return
 	:autocmd FileType c :iabbrev <buffer> rr return
 augroup END
+"}}}
+
+
+" Vimscript file settings {{{
+augroup filetype_vim
+	autocmd!
+	autocmd FileType vim setlocal foldmethod=marker
+augroup END
+" }}}
