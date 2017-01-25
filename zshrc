@@ -1,10 +1,15 @@
 fortune | cowsay -f $(ls /usr/share/cowsay/cows/ | shuf -n1) | lolcat
+fortune -a /home/rhynes/.oh-my-zsh/plugins/chucknorris/fortunes | cowsay
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+
+
+#POWERLEVEL9K_MODE='awesome-fontconfig'
+POWERLEVEL9K_MODE='awesome-fontconfig'
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -31,20 +36,20 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+#ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
+# HIST_STAMPS="dd.mm.yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -53,7 +58,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump chucknorris command-not-found rand-quote web-search fancy-ctrl-z)
+plugins=(git autojump chucknorris command-not-found rand-quote web-search fancy-ctrl-z catimg extract)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -83,25 +88,44 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-alias cco='chuck_cow'
+alias zshconfig="vim ~/.zshrc"
+alias vimconfig="vim ~/.vimrc"
+alias cco=chuck_cow
 alias ll='ls -lArth --color=auto'
 alias vb='vimbundle'
 
 
-
-
-# POWERLEVEL9K SETTINGS
-#POWERLEVEL9K_DISABLE_RPROMPT=true
+### POWERLEVEL9K SETTINGS
 POWERLEVEL9K_COLOR_SCHEME='dark'
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status)
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(time dir vcs)
-POWERLEVEL9K_DIR_HOME_FOREGROUND="white"
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="white"
-POWERLEVEL9K_DIR_HOME_DEFAULT_FOREGROUND="white"
 
-# HOSTNAME DISPLAYING
+### POWERLEVEL9K PROMPT
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_vim_icon time dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status os_icon)
+
+### POWERLEVEL9k FOREGROUND
+POWERLEVEL9K_DIR_HOME_FOREGROUND='white'
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND='226'
+#POWERLEVEL9K_DIR_HOME_DEFAULT_FOREGROUND="white"
+POWERLEVEL9K_OS_ICON_BACKGROUND='white'
+POWERLEVEL9K_OS_ICON_FOREGROUND='black'
+POWERLEVEL9K_DIR_DEFAULT_FOREGROUND='082'
+
+# POWERLEVEL9K ICON
+POWERLEVEL9K_OK_ICON='\uf00c'
+POWERLEVEL9K_FOLDER_ICON=$'\ue70e'
+POWERLEVEL9K_HOME_ICON=$'\UF015 '
+POWERLEVEL9K_HOME_SUB_ICON=$'\uf07c'
+
+# POWERLEVEL9K CUSTOM ICON
+POWERLEVEL9K_CUSTOM_VIM_ICON="zsh_vim_icon"
+POWERLEVEL9K_CUSTOM_VIM_ICON_FOREGROUND="white"
+POWERLEVEL9K_CUSTOM_VIM_ICON_BACKGROUND="022"
+
+zsh_vim_icon() {
+	echo '\ue7c5'
+}
+
+# DISPLAY HOSTNAME: empty
 DEFAULT_USER=$USER
 
 
@@ -132,3 +156,4 @@ zstyle ':completion:*' matcher-list '' \
 	'm:{a-z\-}={A-Z\_}' \
 	'r:[^[:alpha:]]||[[:alpha:]]=** r:|=* m:{a-z\-}={A-Z\_}' \
 	'r:|?=** m:{a-z\-}={A-Z\_}'
+
