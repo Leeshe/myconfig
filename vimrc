@@ -73,11 +73,11 @@ set wildmode=longest:full,full
 "The cursor will briefly jump to the matching brace when you insert one.
 set showmatch
 
-"Enable highlighted case-insensitive incremential search.
-set incsearch
-
 "Enable search highlighting.
 set hlsearch
+
+"Enable highlighted case-insensitive incremential search.
+set incsearch
 
 "Disable preview
 set completeopt-=preview
@@ -150,6 +150,8 @@ nnoremap <silent> <F5> :!clear;python3 %<CR>
 
 "Enable compiling and executing C by pressing F8
 nnoremap <silent> <F8> :!clear;gcc % -o %:r && ./%:r<CR>
+
+nnoremap <c-o> :vsplit 
 "}}}
 
 
@@ -158,6 +160,7 @@ nnoremap <silent> <F8> :!clear;gcc % -o %:r && ./%:r<CR>
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_python_binary_path = '/usr/bin/python3'
+"let g:ycm_autoclose_preview_window_after_completion = 1
 "}}}
 
 
@@ -174,7 +177,21 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_cpp_compiler_options = '-std=c++11'
 
 "let g:syntastic_python_python_exec = '/usr/lib/python3.4'
-map <C-o> :lopen<CR>
+
+let g:is_syntastic_open = 0
+
+function! g:Open_closeSyntastic()
+	if g:is_syntastic_open
+		:lclose
+		let g:is_syntastic_open = 0
+	else
+		:lopen
+		let g:is_syntastic_open = 1
+	endif
+endfunction
+
+"Press CTRL-L to open/close Syntastic list.
+nnoremap <c-l> :call Open_closeSyntastic()<cr>
 "}}}
 
 
@@ -306,7 +323,7 @@ nnoremap <F3> :GundoToggle<CR>
 "}}}
 
 
-"Rainbow_parethenses {{{
+"Rainbow_parenthenses {{{
 "
 let g:rbpt_colorpairs = [
     \ ['brown',       'RoyalBlue3'],
@@ -358,8 +375,11 @@ noremap <C-R> :Gblame<CR>
 
 " Headerguard function {{{
 function! g:HeaderguardName()
-	return toupper(expand('%:t:gs/[^0-9a-zA-Z_]/_/g')) . "_INCLUDED"
+	return "_" . toupper(expand('%:t:gs/[^0-9a-zA-Z_]/_/g'))
 endfunction
+
+"Press <Leader>h to write the headerguard
+nnoremap <leader>h :call HeaderguardAdd()<CR>jjji
 "}}}
 
 
@@ -394,9 +414,9 @@ augroup filetype_c
 	"Indent .c file on reading and before writing
 	:autocmd BufRead,BufWritePre *.c :normal gg=G
 	"iff abbrevation: if () {}
-	:autocmd FileType c :iabbrev <buffer> iff if () {<ENTER><ENTER>}<esc>kklll
+	:autocmd FileType c :iabbrev <silent> <buffer> iff if () {<ENTER><ENTER>}<esc>kklll
 	"rr abreviation: return
-	:autocmd FileType c :iabbrev <buffer> rr return
+	:autocmd FileType c :iabbrev <silent> <buffer> rr return
 augroup END
 "}}}
 
