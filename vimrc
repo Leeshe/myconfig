@@ -1,1 +1,1 @@
-.vimrc
+/home/rhynes/.vimrc
