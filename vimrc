@@ -34,7 +34,8 @@ set background=dark
 set cursorline
 
 "Runtime
-runtime! config/**/*.vim
+"runtime! config/**/*.vim
+runtime! ~/.vim/bundle/**
 
 "Use more readable color scheme by default. It works well with :set colorline
 "option
@@ -80,7 +81,7 @@ set hlsearch
 set incsearch
 
 "Disable preview
-set completeopt-=preview
+"set completeopt-=preview
 
 "Autoindent when starting new line, or using o or O
 set autoindent
@@ -160,6 +161,7 @@ nnoremap <c-o> :vsplit
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_python_binary_path = '/usr/bin/python3'
+let g:ycm_autoclose_preview_window_after_insertion = 1
 "let g:ycm_autoclose_preview_window_after_completion = 1
 "}}}
 
@@ -267,6 +269,7 @@ let g:airline#extensions#tabline#show_splits = 1
 let g:airline#extensions#whitespace#trailing_format = 'T[%s]'
 let g:airline#extensions#whitespace#mixed_indent_file_format = 'MI[%s]'
 let g:airline_detect_whitespace=0
+let g:airline_exclude_preview = 1
 
 "Set time.
 set laststatus=2
@@ -383,13 +386,6 @@ nnoremap <leader>h :call HeaderguardAdd()<CR>jjji
 "}}}
 
 
-"C highlighting {{{
-"
-hi cCustomFunc  gui=bold guifg=yellowgreen
-hi cCustomClass gui=reverse guifg=#00FF00
-"}}}
-
-
 "EXPERIMENTAL. C highlighting {{{
 hi def cCustomFunc  gui=bold ctermfg=80 guifg=yellowgreen
 hi def cCustomClass gui=reverse guifg=#00FF00
@@ -427,5 +423,3 @@ augroup filetype_vim
 	autocmd FileType vim setlocal foldmethod=marker
 augroup END
 " }}}
-
-"Content
