@@ -1,3 +1,10 @@
+# __  __       _____    _              
+# |  \/  |_   _|__  /___| |__  _ __ ___ 
+# | |\/| | | | | / // __| '_ \| '__/ __|
+# | |  | | |_| |/ /_\__ \ | | | | | (__ 
+# |_|  |_|\__, /____|___/_| |_|_|  \___|
+#         |___/ 
+
 fortune | cowsay -f $(ls /usr/share/cowsay/cows/ | shuf -n1) | lolcat
 fortune -a /home/rhynes/.oh-my-zsh/plugins/chucknorris/fortunes | cowsay
 
@@ -91,6 +98,7 @@ source $ZSH/oh-my-zsh.sh
 alias zshconfig="vim ~/.zshrc"
 alias vimconfig="vim ~/.vimrc"
 alias cco=chuck_cow
+alias ccx="fortune -a /home/rhynes/.oh-my-zsh/plugins/chucknorris/fortunes | xcowsay"
 alias ll='ls -lArth --color=auto'
 alias vb='vimbundle'
 
@@ -116,13 +124,22 @@ POWERLEVEL9K_FOLDER_ICON=$'\ue70e'
 POWERLEVEL9K_HOME_ICON=$'\UF015 '
 POWERLEVEL9K_HOME_SUB_ICON=$'\uf07c'
 
-# POWERLEVEL9K CUSTOM ICON
+# POWERLEVEL9K CUSTOM ICON VIM
 POWERLEVEL9K_CUSTOM_VIM_ICON="zsh_vim_icon"
 POWERLEVEL9K_CUSTOM_VIM_ICON_FOREGROUND="white"
 POWERLEVEL9K_CUSTOM_VIM_ICON_BACKGROUND="022"
 
 zsh_vim_icon() {
 	echo '\ue7c5'
+}
+
+# POWERLEVEL9K CUSTOM ICON UBUNTU
+POWERLEVEL9K_CUSTOM_UBUNTU_ICON="zsh_ubuntu_icon"
+POWERLEVEL9K_CUSTOM_UBUNTU_ICON_FOREGROUND="white"
+POWERLEVEL9K_CUSTOM_UBUNTU_ICON_BACKGROUND="black"
+
+zsh_ubuntu_icon() {
+	echo '\ue73a'
 }
 
 # DISPLAY HOSTNAME: empty

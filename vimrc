@@ -1,3 +1,10 @@
+"" __  __     __     ___                    
+"" |  \/  |_   \ \   / (_)_ __ ___  _ __ ___ 
+"" | |\/| | | | \ \ / /| | '_ ` _ \| '__/ __|
+"" | |  | | |_| |\ V / | | | | | | | | | (__ 
+"" |_|  |_|\__, | \_/  |_|_| |_| |_|_|  \___|
+""         |___/   
+
 " PATHOGEN {{{
 "
 set nocompatible
@@ -378,7 +385,7 @@ noremap <C-R> :Gblame<CR>
 
 " Headerguard function {{{
 function! g:HeaderguardName()
-	return "_" . toupper(expand('%:t:gs/[^0-9a-zA-Z_]/_/g'))
+	return toupper(expand('%:t:gs/[^0-9a-zA-Z_]/_/g'))
 endfunction
 
 "Press <Leader>h to write the headerguard
