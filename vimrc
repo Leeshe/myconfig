@@ -7,7 +7,7 @@
 
 " PATHOGEN {{{
 "
-set nocompatible
+"set nocompatible
 call pathogen#infect()
 call pathogen#helptags()
 "}}}
@@ -214,7 +214,7 @@ let g:tagbar_autoclose = 1
 "NERDTree {{{
 
 "Enable CTRL-N to open NERDTree
-map <C-n> :NERDTreeToggle<CR>
+"map <C-n> :NERDTreeToggle<CR>
 
 "Enable highlighting of a certain type of file
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
@@ -416,8 +416,6 @@ augroup filetype_c
 	autocmd!
 	"Indent .c file on reading and before writing
 	:autocmd BufRead,BufWritePre *.c :normal gg=G
-	"iff abbrevation: if () {}
-	:autocmd FileType c :iabbrev <silent> <buffer> iff if () {<ENTER><ENTER>}<esc>kklll
 	"rr abreviation: return
 	:autocmd FileType c :iabbrev <silent> <buffer> rr return
 augroup END
@@ -430,3 +428,9 @@ augroup filetype_vim
 	autocmd FileType vim setlocal foldmethod=marker
 augroup END
 " }}}
+
+
+"UltiSnip {{{
+let g:UltiSnipsExpandTrigger="ù"
+let g:UltiSnipsJumpForwardTrigger="ù"
+"}}}
