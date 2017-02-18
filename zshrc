@@ -6,7 +6,7 @@
 #         |___/ 
 
 fortune | cowsay -f $(ls /usr/share/cowsay/cows/ | shuf -n1) | lolcat
-fortune -a /home/rhynes/.oh-my-zsh/plugins/chucknorris/fortunes | cowsay
+fortune -a /home/rhynes/.oh-my-zsh/plugins/chucknorris/fortunes | cowthink -p
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -65,7 +65,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump chucknorris command-not-found rand-quote web-search fancy-ctrl-z catimg extract)
+plugins=(git autojump chucknorris command-not-found rand-quote web-search fancy-ctrl-z catimg extract colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -99,9 +99,14 @@ alias zshconfig="vim ~/.zshrc"
 alias vimconfig="vim ~/.vimrc"
 alias cco=chuck_cow
 alias ccx="fortune -a /home/rhynes/.oh-my-zsh/plugins/chucknorris/fortunes | xcowsay"
+alias cca="fortune | cowsay"
 alias ll='ls -lArth --color=auto'
 alias vb='vimbundle'
 
+# Functions
+dn() {
+	dict -d wn $1
+}
 
 ### POWERLEVEL9K SETTINGS
 POWERLEVEL9K_COLOR_SCHEME='dark'
@@ -174,3 +179,4 @@ zstyle ':completion:*' matcher-list '' \
 	'r:[^[:alpha:]]||[[:alpha:]]=** r:|=* m:{a-z\-}={A-Z\_}' \
 	'r:|?=** m:{a-z\-}={A-Z\_}'
 
+stty -ixon

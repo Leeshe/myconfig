@@ -110,7 +110,7 @@ set noswapfile
 "}}}
 
 
-"Mapping {{{
+"Vim Mapping {{{
 "
 
 "Type <Space>w to save a file
@@ -126,8 +126,6 @@ nnoremap <C-Right> :tabnext<CR>
 "Press CTRL-B to switch to next buffer
 nnoremap <C-b> :bNext<CR>
 
-"Press CTRL-A to switch to from .hpp to .cpp (and vice-versa)
-nnoremap <C-a> :A<CR>
 
 "Type CTRL+D to delete current line
 nnoremap <c-d> dd
@@ -137,9 +135,6 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 
 "Type <Leader>sv to source .myvimrc
 nnoremap <leader>sv :source $MYVIMRC<cr>
-
-"Type <Leader>ta to toggle Airline
-nnoremap <leader>ta :AirlineToggle<cr> :AirlineToggle<cr>
 
 "Type <Leader>" to put " between the selected word
 nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
@@ -159,7 +154,15 @@ nnoremap <silent> <F5> :!clear;python3 %<CR>
 "Enable compiling and executing C by pressing F8
 nnoremap <silent> <F8> :!clear;gcc % -o %:r && ./%:r<CR>
 
+"Press CTRL-O to open a file in split mode
 nnoremap <c-o> :vsplit 
+"}}}
+
+
+" a.vim {{{
+"Press CTRL-A to switch to from .h/hpp to .c/cpp (and vice-versa), requires
+"a.vim
+nnoremap <C-a> :A<CR>
 "}}}
 
 
@@ -184,7 +187,10 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_cpp_compiler_options = '-std=c++11'
+let g:syntastic_c_check_header = 1
+let g:syntastic_cpp_check_header = 1
 
+let g:syntastic_c_include_dirs = [ '../include', 'include', '/usr/include' ]
 "let g:syntastic_python_python_exec = '/usr/lib/python3.4'
 
 let g:is_syntastic_open = 0
@@ -206,7 +212,7 @@ nnoremap <c-l> :call Open_closeSyntastic()<cr>
 
 "Tagbar {{{
 "
-map <C-f> :TagbarToggle<CR>
+nnoremap <C-f> :TagbarToggle<CR>
 let g:tagbar_autoclose = 1
 "}}}
 
@@ -240,7 +246,7 @@ let g:EclimCompletionMethod = 'omnifunc'
 
 "Solarized {{{
 "
-let g:solarized_termcolors=256
+"let g:solarized_termcolors=256
 "}}}
 
 
@@ -258,8 +264,11 @@ set list lcs=tab:\┊\
 
 "Airline {{{
 "
-let g:airline_powerline_fonts = 0
+let g:airline_powerline_fonts = 1
 let g:airline_theme = 'cool'
+
+"Type <Leader>ta to toggle Airline
+nnoremap <leader>ta :AirlineToggle<cr> :AirlineToggle<cr>
 
 "airline extensions
 let g:airline#extensions#tabline#enabled = 1
@@ -413,11 +422,22 @@ let g:cpp_concepts_highlight = 1
 
 " C file setting {{{
 augroup filetype_c
+	"<Leader>std Write standard include libraries
+	nnoremap <leader>std i#include <stdio.h><esc>o#include <stdlib.h><enter>
+
 	autocmd!
 	"Indent .c file on reading and before writing
 	:autocmd BufRead,BufWritePre *.c :normal gg=G
+
+	"Write the header when a .h file is created (call HeaderGuard)
+	:autocmd BufNewFile *.h :normal ,h
+
+	"Write standard include libraries when .c file is created
+	:autocmd BufNewFile *.c :normal ,std
+
 	"rr abreviation: return
 	:autocmd FileType c :iabbrev <silent> <buffer> rr return
+
 	"return abreviation: rickrolled
 	:autocmd FileType c :iabbrev <silent> <buffer> return rickrolled
 augroup END
@@ -435,52 +455,13 @@ augroup END
 "UltiSnip {{{
 let g:UltiSnipsExpandTrigger="ù"
 let g:UltiSnipsJumpForwardTrigger="ù"
+"za}}}
+
+
+"Open-Browser {{{
+" Search word under cursor
+nmap <c-s> <Plug>(openbrowser-search)
+
+" Press CTRL-E to open browser
+nnoremap <c-e> :OpenBrowserSearch 
 "}}}
-
-function! s:onCompleteDone()
-	let abbr = v:completed_item.abbr
-	let startIdx = stridx(abbr,"(")
-	let endIdx = strridx(abbr,")")
-	if endIdx - startIdx > 1
-		let argsStr = strpart(abbr, startIdx+1, endIdx - startIdx -1)
-
-		let argsList = []
-		let arg = ''
-		let countParen = 0
-		for i in range(strlen(argsStr))
-			if argsStr[i] == ',' && countParen == 0
-				call add(argsList, arg)
-				let arg = ''
-			elseif argsStr[i] == '('
-				let countParen += 1
-				let arg = arg . argsStr[i]
-			elseif argsStr[i] == ')'
-				let countParen -= 1
-				let arg = arg . argsStr[i]
-			else
-				let arg = arg . argsStr[i]
-			endif
-		endfor
-		if arg != '' && countParen == 0
-			call add(argsList, arg)
-		endif
-	else
-		let argsList = []
-	endif
-	let snippet = '('
-	let c = 1
-	for i in argsList
-		if c > 1
-			let snippet = snippet . ", "
-		endif
-		let arg = substitute(i, '^\s*\(.\{-}\)\s*$', '\1', '')
-		let snippet = snippet . '${' . c . ":" . arg . '}'
-		let c += 1
-	endfor
-	let snippet = snippet . ')' . "$0"
-	return UltiSnips#Anon(snippet)
-endfunction
-autocmd VimEnter * imap <expr> (
-			\ pumvisible() && exists('v:completed_item') && !empty(v:completed_item) &&
-			\ v:completed_item.word != '' && v:completed_item.kind == 'f' ?
-			\ "\<C-R>=\<SID>onCompleteDone()\<CR>" : "<Plug>delimitMate("
