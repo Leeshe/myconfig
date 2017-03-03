@@ -1,9 +1,9 @@
-# __  __       _____    _              
-# |  \/  |_   _|__  /___| |__  _ __ ___ 
+# __  __       _____    _
+# |  \/  |_   _|__  /___| |__  _ __ ___
 # | |\/| | | | | / // __| '_ \| '__/ __|
-# | |  | | |_| |/ /_\__ \ | | | | | (__ 
+# | |  | | |_| |/ /_\__ \ | | | | | (__
 # |_|  |_|\__, /____|___/_| |_|_|  \___|
-#         |___/ 
+#         |___/
 
 fortune | cowsay -f $(ls /usr/share/cowsay/cows/ | shuf -n1) | lolcat
 fortune -a /home/rhynes/.oh-my-zsh/plugins/chucknorris/fortunes | cowthink -p
@@ -13,7 +13,6 @@ fortune -a /home/rhynes/.oh-my-zsh/plugins/chucknorris/fortunes | cowthink -p
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-
 
 #POWERLEVEL9K_MODE='awesome-fontconfig'
 POWERLEVEL9K_MODE='awesome-fontconfig'
@@ -95,14 +94,21 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="vim ~/.zshrc"
+
+# Configuration
+alias zshconfig="nvim ~/.zshrc"
 alias vimconfig="vim ~/.vimrc"
+alias nvimconfig="nvim ~/.config/nvim/init.vim"
+# Chuck
 alias cco=chuck_cow
 alias ccx="fortune -a /home/rhynes/.oh-my-zsh/plugins/chucknorris/fortunes | xcowsay"
 alias cca="fortune | cowsay"
+# Update vim's bundle repo
 alias vb='vimbundle'
+# Miscealleanous
 alias ls='ls --color=auto'
 alias ll='ls -lArth --color=auto'
+alias pdf='evince'
 
 # Functions
 dn() {
@@ -155,7 +161,6 @@ zsh_ubuntu_icon() {
 # DISPLAY HOSTNAME: empty
 DEFAULT_USER=$USER
 
-
 # LS COLOR DISPLAY
 LS_COLORS=$LS_COLORS:'di=1;33:' ; export LS_COLORS
 LS_COLORS=$LS_COLORS:'ex=1;96:' ; export LS_COLORS
@@ -167,7 +172,6 @@ LS_COLORS=$LS_COLORS:"*.java=;37"
 LS_COLORS=$LS_COLORS:"*.hpp=;92:"
 LS_COLORS=$LS_COLORS:"*.cpp=;93"
 
-
 # CTRL P
 ctlrp() {
 	</dev/tty vim -c CtrlP
@@ -177,7 +181,6 @@ bindkey "^p" ctlrp
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-
 # LITTLE FUZZY FINDER
 zstyle ':completion:*' matcher-list '' \
 	'm:{a-z\-}={A-Z\_}' \
@@ -186,3 +189,6 @@ zstyle ':completion:*' matcher-list '' \
 
 # For Vim, to not stop the flow when pressing CTRL-S
 stty -ixon
+
+export GOPATH=$HOME/golang
+export PATH=$PATH:$GOPATH/bin
