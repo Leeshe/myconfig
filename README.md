@@ -1,3 +1,2 @@
 # myconfig
-myconfig
-Test
+yes
