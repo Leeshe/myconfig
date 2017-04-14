@@ -1,2 +1,3 @@
 # myconfig
 yes
+no
