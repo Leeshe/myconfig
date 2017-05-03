@@ -98,7 +98,8 @@ source $ZSH/oh-my-zsh.sh
 # Configuration
 alias zshconfig="nvim ~/.zshrc"
 alias vimconfig="vim ~/.vimrc"
-alias nvimconfig="nvim ~/.config/nvim/init.vim"
+alias neoconfig="nvim ~/.config/nvim/init.vim"
+alias snip="nvim ~/.config/nvim/bundle/vim-snippets/snippets/"
 # Chuck
 alias cco=chuck_cow
 alias ccx="fortune -a /home/rhynes/.oh-my-zsh/plugins/chucknorris/fortunes | xcowsay"
@@ -192,3 +193,6 @@ stty -ixon
 
 export GOPATH=$HOME/golang
 export PATH=$PATH:$GOPATH/bin
+
+export RUSTPATH=$HOME/.cargo/
+export PATH=$PATH:$RUSTPATH/bin
