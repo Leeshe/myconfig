@@ -6,7 +6,7 @@
 #         |___/
 
 fortune | cowsay -f $(ls /usr/share/cowsay/cows/ | shuf -n1) | lolcat
-fortune -a /home/rhynes/.oh-my-zsh/plugins/chucknorris/fortunes | cowthink -p
+fortune -a /home/vim/.oh-my-zsh/plugins/chucknorris/fortunes | cowthink -p
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -191,8 +191,12 @@ zstyle ':completion:*' matcher-list '' \
 # For Vim, to not stop the flow when pressing CTRL-S
 stty -ixon
 
-export GOPATH=$HOME/golang
-export PATH=$PATH:$GOPATH/bin
+#export GOPATH=$HOME/golang
+#export PATH=$PATH:$GOPATH/bin
 
 export RUSTPATH=$HOME/.cargo/
 export PATH=$PATH:$RUSTPATH/bin
+
+function cd {
+	builtin cd "$@" && ll
+}

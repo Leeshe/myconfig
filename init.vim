@@ -50,18 +50,13 @@ NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'gregsexton/gitv'
 NeoBundle 'yggdroot/indentLine'
-NeoBundle 'tyru/open-browser.vim'
-NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'sheerun/vim-polyglot'
-NeoBundle 'vim-scripts/dbext.vim'
 NeoBundle 'drmikehenry/vim-headerguard'
 NeoBundle 'Valloric/vim-operator-highlight'
-NeoBundle 'timeyyy/orchestra.nvim'
-"NeoBundle 'exu/pgsql.vim'
-NeoBundle 'timeyyy/bubbletrouble.symphony'
-NeoBundle 'MaxSt/FlatColor'
-NeoBundle 'fatih/vim-go'
-NeoBundle 'fatih/molokai'
+NeoBundle 'Valloric/YouCompleteMe'
+NeoBundle 'rust-lang/rust.vim'
+NeoBundle 'idanarye/vim-smile'
+NeoBundle 'kh3phr3n/python-syntax'
 
 call neobundle#end()
 NeoBundleCheck
@@ -266,8 +261,6 @@ hi def cCustomClass gui=reverse guifg=#00FF00
 augroup filetype_go
 	:autocmd BufRead,BufNewFile *.go :colorscheme molokai | :AirlineRefresh
 	:autocmd BufRead,BufNewFile *.go :highlight Pmenu ctermfg=80 ctermbg=0 guifg=#ffffff guibg=#3F88C5
-	"rr abreviation: return
-	:autocmd FileType c :iabbrev <silent> <buffer> rr return
 augroup END
 "}}}
 
@@ -428,8 +421,10 @@ let g:syntastic_cpp_compiler_options = '-std=c++11'
 let g:syntastic_c_check_header = 1
 let g:syntastic_cpp_check_header = 1
 
-"let g:syntastic_c_include_dirs = [ '../include', 'include', '/usr/include' ]
-"let g:syntastic_python_python_exec = '/usr/lib/python3.4'
+let g:syntastic_c_include_dirs = [ '../include', 'include', '/usr/include' ]
+let g:syntastic_python_python_exec = '/usr/lib/python3.4'
+
+"let g:syntastic_rust_checkers = ['rustc']
 
 let g:is_syntastic_open = 0
 
@@ -447,9 +442,9 @@ endfunction
 nnoremap <c-l> :call Open_closeSyntastic()<cr>
 
 "For Golang
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
-let g:go_list_type = "quickfix"
+"let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+"let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+"let g:go_list_type = "quickfix"
 "}}}
 
 "Tagbar {{{
@@ -545,8 +540,8 @@ let g:sql_type_default = 'pgsql'
 "}}}
 
 "Orchestra {{{
-call orchestra#prelude()
-call orchestra#set_tune('bubbletrouble')
+"call orchestra#prelude()
+"call orchestra#set_tune('bubbletrouble')
 "}}}
 
 "Vim-Go {{{
@@ -573,4 +568,25 @@ let g:go_fmt_command = "goimports"
 
 "Disable updating dependencies when installing/updating binaries:
 "let g:go_get_update = 0
+"}}}
+
+" RUST {{{
+let g:ycm_rust_src_path = '~/GitHub/rust/src/'
+
+augroup filetype_rust
+	autocmd!
+	"Indent .c file on reading and before writing
+	:autocmd BufRead,BufWritePre *.rs :normal gg=G''
+augroup END
+
+" }}}
+
+" Split line {{{
+nnoremap S :keeppatterns substitute/\s*\%#\s*/\r/e <bar> normal! ==<CR>
+" }}}
+
+" Python highlight {{{
+let python_highlight_all = 1
+"let python_no_parameter_highlight = 0
+"let python_no_operator_highlight = 0
 "}}}
