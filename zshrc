@@ -64,7 +64,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump chucknorris web-search fancy-ctrl-z catimg extract colored-man-pages cp screen dircycle)
+plugins=(git autojump chucknorris web-search fancy-ctrl-z catimg extract colored-man-pages cp screen dircycle command-time)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -102,7 +102,7 @@ alias neoconfig="nvim ~/.config/nvim/init.vim"
 alias snip="nvim ~/.config/nvim/bundle/vim-snippets/snippets/"
 # Chuck
 alias cco=chuck_cow
-alias ccx="fortune -a /home/rhynes/.oh-my-zsh/plugins/chucknorris/fortunes | xcowsay"
+alias ccx="fortune -a /home/vim/.oh-my-zsh/plugins/chucknorris/fortunes | xcowsay&"
 alias cca="fortune | cowsay"
 # Update vim's bundle repo
 alias vb='vimbundle'
@@ -120,12 +120,16 @@ cat() {
 	pygmentize -g $1
 }
 
+nv() {
+	nvim $1
+}
+
 ### POWERLEVEL9K SETTINGS
 POWERLEVEL9K_COLOR_SCHEME='dark'
 
 ### POWERLEVEL9K PROMPT
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_vim_icon time dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status os_icon)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs custom_command_time os_icon)
 
 ### POWERLEVEL9k FOREGROUND
 POWERLEVEL9K_DIR_HOME_FOREGROUND='white'
@@ -180,7 +184,6 @@ ctlrp() {
 zle -N ctlrp
 bindkey "^p" ctlrp
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # LITTLE FUZZY FINDER
 zstyle ':completion:*' matcher-list '' \
@@ -200,3 +203,10 @@ export PATH=$PATH:$RUSTPATH/bin
 function cd {
 	builtin cd "$@" && ll
 }
+
+POWERLEVEL9K_CUSTOM_COMMAND_TIME="zsh_command_time"
+POWERLEVEL9K_CUSTOM_COMMAND_TIME_BACKGROUND="084" # white
+POWERLEVEL9K_CUSTOM_COMMAND_TIME_FOREGROUND="000" # black
+# If command execution time above min. time, plugins will not output time.
+ZSH_COMMAND_TIME_MIN_SECONDS=0
+
