@@ -1,3 +1,2 @@
 # myconfig
-yes
-no
+Things...

@@ -41,7 +41,7 @@ NeoBundle 'honza/vim-snippets'
 NeoBundle 'sirver/ultisnips'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'kien/rainbow_parentheses.vim'
-NeoBundle 'vim-syntastic/syntastic'
+"NeoBundle 'vim-syntastic/syntastic'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'KuoE0/vim-janitor'
@@ -57,6 +57,13 @@ NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'rust-lang/rust.vim'
 NeoBundle 'idanarye/vim-smile'
 NeoBundle 'kh3phr3n/python-syntax'
+NeoBundle 'rdnetto/YCM-Generator'
+NeoBundle 'j16180339887/Global.vim'
+NeoBundle 'metakirby5/codi.vim'
+NeoBundle 'j16180339887/MonoKombat.vim'
+NeoBundle 'w0rp/ale'
+NeoBundle 'junegunn/fzf'
+NeoBundle 'junegunn/fzf.vim'
 
 call neobundle#end()
 NeoBundleCheck
@@ -81,7 +88,7 @@ if has('syntax')
 endif
 
 "Enable mouse for scrolling and window resizing
-set mouse=a
+"set mouse=a
 
 "Set background
 set background=dark
@@ -95,7 +102,7 @@ set cursorline
 
 "Use more readable color scheme by default. It works well with :set colorline
 "option
-colorscheme Benokai
+colorscheme MonoKambat
 
 "Enable highlighting of completion menu
 highlight Pmenu ctermfg=80 ctermbg=0 guifg=#ffffff guibg=#3F88C5
@@ -227,6 +234,9 @@ augroup filetype_c
 	"Indent .c file on reading and before writing
 	:autocmd BufRead,BufWritePre *.c :normal gg=G''
 
+	:autocmd BufRead,BufWritePre *.c :CleanUp
+	:autocmd BufRead,BufWritePre *.c :CleanUpMultipleBlankLines
+
 	"Write the header when a .h file is created (call HeaderGuard)
 	:autocmd BufNewFile *.h :normal ,h
 
@@ -276,7 +286,7 @@ nnoremap <leader>ta :AirlineToggle<cr> :AirlineToggle<cr>
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#csv#enabled = 1
 let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#syntastic#enabled = 1
+"let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline#extensions#hunks#enabled = 1
 let g:airline#extensions#wordcount#enabled = 1
@@ -409,37 +419,37 @@ set guicursor+=i:blinkwait10
 
 "Syntastic {{{
 "
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_cpp_compiler_options = '-std=c++11'
-let g:syntastic_c_check_header = 1
-let g:syntastic_cpp_check_header = 1
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 0
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+"let g:syntastic_cpp_compiler_options = '-std=c++11'
+"let g:syntastic_c_check_header = 1
+"let g:syntastic_cpp_check_header = 1
 
-let g:syntastic_c_include_dirs = [ '../include', 'include', '/usr/include' ]
-let g:syntastic_python_python_exec = '/usr/lib/python3.4'
+"let g:syntastic_c_include_dirs = [ '../include', 'include', '/usr/include' ]
+"let g:syntastic_python_python_exec = '/usr/lib/python3.4'
 
-"let g:syntastic_rust_checkers = ['rustc']
+""let g:syntastic_rust_checkers = ['rustc']
 
-let g:is_syntastic_open = 0
+"let g:is_syntastic_open = 0
 
-function! g:Open_closeSyntastic()
-	if g:is_syntastic_open
-		:lclose
-		let g:is_syntastic_open = 0
-	else
-		:lopen
-		let g:is_syntastic_open = 1
-	endif
-endfunction
+"function! g:Open_closeSyntastic()
+	"if g:is_syntastic_open
+		":lclose
+		"let g:is_syntastic_open = 0
+	"else
+		":lopen
+		"let g:is_syntastic_open = 1
+	"endif
+"endfunction
 
 "Press CTRL-L to open/close Syntastic list.
-nnoremap <c-l> :call Open_closeSyntastic()<cr>
+"nnoremap <c-l> :call Open_closeSyntastic()<cr>
 
 "For Golang
 "let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
@@ -589,4 +599,34 @@ nnoremap S :keeppatterns substitute/\s*\%#\s*/\r/e <bar> normal! ==<CR>
 let python_highlight_all = 1
 "let python_no_parameter_highlight = 0
 "let python_no_operator_highlight = 0
+"}}}
+
+" Ale {{{
+
+" Set this setting in vimrc if you want to fix files automatically on save.
+" This is off by default.
+let g:ale_fix_on_save = 1
+
+" Enable completion where available.
+let g:ale_completion_enabled = 1
+
+"You can keep the sign gutter open at all times by setting the g:ale_sign_column_always to 1
+let g:ale_sign_column_always = 1
+
+" Set this. Airline will handle the rest.
+let g:airline#extensions#ale#enabled = 1
+
+"The quickfix list can be enabled by turning the g:ale_set_quickfix option on.
+"If you wish to also disable the loclist, you can disable the g:ale_set_loclist option.
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+
+"If you wish to show Vim windows for the loclist or quickfix items when a file contains warnings or errors,
+"g:ale_open_list can be set to 1. g:ale_keep_list_window_open can be set to 1 if you wish
+"to keep the window open even after errors disappear.
+let g:ale_open_list = 1
+" Set this if you want to.
+" This can be useful if you are combining ALE with
+" some other plugin which sets quickfix errors, etc.
+"let g:ale_keep_list_window_open = 1
 "}}}
