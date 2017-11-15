@@ -22,6 +22,7 @@ POWERLEVEL9K_MODE='awesome-fontconfig'
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
+# SETTINGS {{{
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -59,7 +60,9 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
+# }}}
 
+# PLUGINS {{{
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -67,8 +70,9 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 plugins=(git autojump chucknorris web-search fancy-ctrl-z catimg extract colored-man-pages cp screen dircycle command-time)
 
 source $ZSH/oh-my-zsh.sh
+# }}}
 
-# User configuration
+# USER CONFIGURATION {{{
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -87,12 +91,14 @@ source $ZSH/oh-my-zsh.sh
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
+# }}}
 
+# ALIASES {{{
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
+# 
 # Example aliases
 
 # Configuration
@@ -104,14 +110,13 @@ alias snip="nvim ~/.config/nvim/bundle/vim-snippets/snippets/"
 alias cco=chuck_cow
 alias ccx="fortune -a /home/vim/.oh-my-zsh/plugins/chucknorris/fortunes | xcowsay&"
 alias cca="fortune | cowsay"
-# Update vim's bundle repo
-alias vb='vimbundle'
 # Miscealleanous
 alias ls='ls --color=auto'
 alias ll='ls -lArth --color=auto'
 alias pdf='evince'
+# }}}
 
-# Functions
+# FUNCTIONS {{{
 dn() {
 	dict -d wn $1
 }
@@ -124,7 +129,12 @@ nv() {
 	nvim $1
 }
 
-### POWERLEVEL9K SETTINGS
+function cd {
+	builtin cd "$@" && ll
+}
+# }}}
+
+### POWERLEVEL9K SETTINGS {{{
 POWERLEVEL9K_COLOR_SCHEME='dark'
 
 ### POWERLEVEL9K PROMPT
@@ -162,51 +172,45 @@ POWERLEVEL9K_CUSTOM_UBUNTU_ICON_BACKGROUND="black"
 zsh_ubuntu_icon() {
 	echo '\ue73a'
 }
+# }}}
 
-# DISPLAY HOSTNAME: empty
+# DISPLAY HOSTNAME: empty {{{
 DEFAULT_USER=$USER
+# }}}
 
-# LS COLOR DISPLAY
+# LS COLOR DISPLAY {{{
 LS_COLORS=$LS_COLORS:'di=1;33:' ; export LS_COLORS
 LS_COLORS=$LS_COLORS:'ex=1;96:' ; export LS_COLORS
 LS_COLORS=$LS_COLORS:"*.h=;92:"
 LS_COLORS=$LS_COLORS:"*.c=;96:"
 LS_COLORS=$LS_COLORS:"*.py=;95:"
 LS_COLORS=$LS_COLORS:"*.txt=;33"
-LS_COLORS=$LS_COLORS:"*.java=;37"
+LS_COLORS=$LS_COLORS:"*.java=;95"
 LS_COLORS=$LS_COLORS:"*.hpp=;92:"
 LS_COLORS=$LS_COLORS:"*.cpp=;93"
+# }}}
 
-# CTRL P
-ctlrp() {
-	</dev/tty vim -c CtrlP
-}
-zle -N ctlrp
-bindkey "^p" ctlrp
-
-
-# LITTLE FUZZY FINDER
+# LITTLE FUZZY FINDER {{{
 zstyle ':completion:*' matcher-list '' \
 	'm:{a-z\-}={A-Z\_}' \
 	'r:[^[:alpha:]]||[[:alpha:]]=** r:|=* m:{a-z\-}={A-Z\_}' \
 	'r:|?=** m:{a-z\-}={A-Z\_}'
+# }}}
 
-# For Vim, to not stop the flow when pressing CTRL-S
+# For Vim, to not stop the flow when pressing CTRL-S {{{
 stty -ixon
+# }}}
 
+# GO SETTINGS {{{
 #export GOPATH=$HOME/golang
 #export PATH=$PATH:$GOPATH/bin
 
 export RUSTPATH=$HOME/.cargo/
 export PATH=$PATH:$RUSTPATH/bin
-
-function cd {
-	builtin cd "$@" && ll
-}
+# }}}
 
 POWERLEVEL9K_CUSTOM_COMMAND_TIME="zsh_command_time"
 POWERLEVEL9K_CUSTOM_COMMAND_TIME_BACKGROUND="084" # white
 POWERLEVEL9K_CUSTOM_COMMAND_TIME_FOREGROUND="000" # black
 # If command execution time above min. time, plugins will not output time.
 ZSH_COMMAND_TIME_MIN_SECONDS=0
-
