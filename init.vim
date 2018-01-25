@@ -1,4 +1,3 @@
-"" __  __     __     ___
 "" |  \/  |_   \ \   / (_)_ __ ___  _ __ ___
 "" | |\/| | | | \ \ / /| | '_ ` _ \| '__/ __|
 "" | |  | | |_| |\ V / | | | | | | | | | (__
@@ -64,6 +63,14 @@ NeoBundle 'j16180339887/MonoKombat.vim'
 NeoBundle 'w0rp/ale'
 NeoBundle 'junegunn/fzf'
 NeoBundle 'junegunn/fzf.vim'
+NeoBundle 'jnurmine/Zenburn'
+NeoBundle 'archSeer/colibri.vim'
+NeoBundle 'Badacadabra/vim-archery'
+NeoBundle 'arakashic/chromatica.nvim'
+NeoBundle 'joshdick/onedark.vim'
+NeoBundle 'ajmwagar/vim-deus'
+NeoBundle 'tenfyzhong/CompleteParameter.vim'
+NeoBundle 'joereynolds/place.vim'
 
 call neobundle#end()
 NeoBundleCheck
@@ -165,7 +172,25 @@ set title
 set noswapfile
 
 set modifiable
+
+" show existing tab with 4 spaces width
+set tabstop=4
+
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+
+" On pressing tab, insert 4 spaces
+set expandtab
+
+" Bracket highlighting
+"hi MatchParen cterm=none ctermbg=green ctermfg=blue
+hi MatchParen cterm=bold ctermbg=none ctermfg=magenta
 "}}}
+
+" Python path setting {{{
+let g:python_host_prog = "/usr/bin/python2"
+let g:python3_host_prog = "/usr/bin/python3"
+" }}}
 
 "Vim Mapping {{{
 "
@@ -175,6 +200,7 @@ nnoremap <C-a> :A<CR>
 
 "Type <Space>w to save a file
 nnoremap <Leader>w :w<CR>
+nnoremap ww :w<CR>
 
 "Tyoe <Space>q to quit
 nnoremap <Leader>q :q<CR>
@@ -247,7 +273,8 @@ augroup filetype_c
 	:autocmd FileType c :iabbrev <silent> <buffer> rr return
 
 	"return abreviation: rickrolled
-	:autocmd FileType c :iabbrev <silent> <buffer> return rickrolled
+	"":autocmd FileType c :iabbrev <silent> <buffer> return rickrolled
+    autocmd FileType c :iabbrev <silent> <buffer> return <esc>:Smile<enter>
 augroup END
 
 let g:cpp_class_scope_highlight = 1
@@ -509,7 +536,6 @@ nnoremap <F3> :GundoToggle<CR>
 "}}}
 
 "IndentLine {{{
-"
 "set list lcs=tab:\┊\
 "let g:indentLine_enabled = 1
 "let g:indentLine_char="┆"
@@ -629,4 +655,72 @@ let g:ale_open_list = 1
 " This can be useful if you are combining ALE with
 " some other plugin which sets quickfix errors, etc.
 "let g:ale_keep_list_window_open = 1
+
+"Disable ale for types of a certain type of files
+let g:ale_pattern_options = {
+\   '.*\.py$': {'ale_enabled': 0},
+\   '.*\.c$': {'ale_enabled': 0},
+\   '.*\.java$': {'ale_enabled': 0},
+\}
 "}}}
+
+"NERDTree Highlight syntax {{{
+let s:brown = "905532"
+let s:aqua =  "3AFFDB"
+let s:blue = "689FB6"
+let s:darkBlue = "44788E"
+let s:purple = "834F79"
+let s:lightPurple = "834F79"
+let s:red = "AE403F"
+let s:beige = "F5C06F"
+let s:yellow = "F09F17"
+let s:orange = "D4843E"
+let s:darkOrange = "F16529"
+let s:pink = "CB6F6F"
+let s:salmon = "EE6E73"
+let s:green = "8FAA54"
+let s:lightGreen = "31B53E"
+let s:white = "FFFFFF"
+let s:rspec_red = 'FE405F'
+let s:git_orange = 'F54D27'
+
+let g:NERDTreeExtensionHighlightColor = {} " this line is needed to avoid error
+let g:NERDTreeExtensionHighlightColor['css'] = s:blue " sets the color of css files to blue
+
+let g:NERDTreeExactMatchHighlightColor = {} " this line is needed to avoid error
+let g:NERDTreeExactMatchHighlightColor['.gitignore'] = s:git_orange " sets the color for .gitignore files
+
+let g:NERDTreePatternMatchHighlightColor = {} " this line is needed to avoid error
+let g:NERDTreePatternMatchHighlightColor['.*_spec\.rb$'] = s:rspec_red " sets the color for files ending with _spec.rb
+"}}}
+
+" FZF {{{
+function! s:fzf_statusline()
+  " Override statusline as you like
+  highlight fzf1 ctermfg=161 ctermbg=251
+  highlight fzf2 ctermfg=23 ctermbg=251
+  highlight fzf3 ctermfg=237 ctermbg=251
+  setlocal statusline=%#fzf1#\ >\ %#fzf2#fz%#fzf3#f
+endfunction
+
+autocmd! User FzfStatusLine call <SID>fzf_statusline()
+"}}}
+
+" Zshrc file settings {{{
+augroup filetype_zshrc
+	autocmd!
+	autocmd FileType zshrc set foldmethod=marker
+augroup END
+" }}}
+
+" Chromatica {{{
+let g:chromatica#libclang_path = '/usr/lib/x86_64-linux-gnu/libclang.so.1'
+let g:chromatica#highlight_feature_level = 1
+" }}}
+
+" CompleteParameters {{{
+inoremap <silent><expr> ( complete_parameter#pre_complete("()")
+"}}}
+
+nmap ga <Plug>(place-insert)
+nmap gb <Plug>(place-insert-multiple)

@@ -67,7 +67,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump chucknorris web-search fancy-ctrl-z catimg extract colored-man-pages cp screen dircycle command-time)
+plugins=(git autojump chucknorris web-search fancy-ctrl-z catimg extract colored-man-pages cp screen dircycle command-time globalias thefuck)
 
 source $ZSH/oh-my-zsh.sh
 # }}}
@@ -134,7 +134,7 @@ function cd {
 }
 # }}}
 
-### POWERLEVEL9K SETTINGS {{{
+# POWERLEVEL9K SETTINGS {{{
 POWERLEVEL9K_COLOR_SCHEME='dark'
 
 ### POWERLEVEL9K PROMPT
@@ -172,6 +172,11 @@ POWERLEVEL9K_CUSTOM_UBUNTU_ICON_BACKGROUND="black"
 zsh_ubuntu_icon() {
 	echo '\ue73a'
 }
+POWERLEVEL9K_CUSTOM_COMMAND_TIME="zsh_command_time"
+POWERLEVEL9K_CUSTOM_COMMAND_TIME_BACKGROUND="084" # white
+POWERLEVEL9K_CUSTOM_COMMAND_TIME_FOREGROUND="000" # black
+# If command execution time above min. time, plugins will not output time.
+ZSH_COMMAND_TIME_MIN_SECONDS=0
 # }}}
 
 # DISPLAY HOSTNAME: empty {{{
@@ -209,8 +214,7 @@ export RUSTPATH=$HOME/.cargo/
 export PATH=$PATH:$RUSTPATH/bin
 # }}}
 
-POWERLEVEL9K_CUSTOM_COMMAND_TIME="zsh_command_time"
-POWERLEVEL9K_CUSTOM_COMMAND_TIME_BACKGROUND="084" # white
-POWERLEVEL9K_CUSTOM_COMMAND_TIME_FOREGROUND="000" # black
-# If command execution time above min. time, plugins will not output time.
-ZSH_COMMAND_TIME_MIN_SECONDS=0
+# Pragmadev {{{
+export RTDS_HOME=/opt/pragmadev/pragmastudio
+export PATH=$PATH:$RTDS_HOME/bin
+# }}}
