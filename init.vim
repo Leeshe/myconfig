@@ -1,4 +1,5 @@
 "" |  \/  |_   \ \   / (_)_ __ ___  _ __ ___
+"" __  __     __     ___
 "" | |\/| | | | \ \ / /| | '_ ` _ \| '__/ __|
 "" | |  | | |_| |\ V / | | | | | | | | | (__
 "" |_|  |_|\__, | \_/  |_|_| |_| |_|_|  \___|
@@ -71,6 +72,10 @@ NeoBundle 'joshdick/onedark.vim'
 NeoBundle 'ajmwagar/vim-deus'
 NeoBundle 'tenfyzhong/CompleteParameter.vim'
 NeoBundle 'joereynolds/place.vim'
+NeoBundle 'morhetz/gruvbox'
+NeoBundle 'sbdchd/neoformat'
+NeoBundle 'thiagoalessio/rainbow_levels.vim'
+NeoBundle 'dominikduda/vim_current_word'
 
 call neobundle#end()
 NeoBundleCheck
@@ -185,6 +190,12 @@ set expandtab
 " Bracket highlighting
 "hi MatchParen cterm=none ctermbg=green ctermfg=blue
 hi MatchParen cterm=bold ctermbg=none ctermfg=magenta
+
+" True color
+if (has("nvim"))
+    "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
 "}}}
 
 " Python path setting {{{
@@ -709,7 +720,7 @@ autocmd! User FzfStatusLine call <SID>fzf_statusline()
 " Zshrc file settings {{{
 augroup filetype_zshrc
 	autocmd!
-	autocmd FileType zshrc set foldmethod=marker
+    :autocmd BufRead,BufWritePre .zshrc :set foldmethod=marker
 augroup END
 " }}}
 
@@ -722,5 +733,9 @@ let g:chromatica#highlight_feature_level = 1
 inoremap <silent><expr> ( complete_parameter#pre_complete("()")
 "}}}
 
+" Place {{{
 nmap ga <Plug>(place-insert)
 nmap gb <Plug>(place-insert-multiple)
+" }}}
+
+

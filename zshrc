@@ -5,22 +5,27 @@
 # |_|  |_|\__, /____|___/_| |_|_|  \___|
 #         |___/
 
+# CUSTOM LOADING {{{
 fortune | cowsay -f $(ls /usr/share/cowsay/cows/ | shuf -n1) | lolcat
 fortune -a /home/vim/.oh-my-zsh/plugins/chucknorris/fortunes | cowthink -p
+# }}}
 
+# PATH {{{
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+# }}}
 
-#POWERLEVEL9K_MODE='awesome-fontconfig'
+# THEME {{{
 POWERLEVEL9K_MODE='awesome-fontconfig'
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="powerlevel9k/powerlevel9k"
+# }}}
 
 # SETTINGS {{{
 # Uncomment the following line to use case-sensitive completion.
@@ -137,25 +142,28 @@ function cd {
 # POWERLEVEL9K SETTINGS {{{
 POWERLEVEL9K_COLOR_SCHEME='dark'
 
-### POWERLEVEL9K PROMPT
+# POWERLEVEL9K PROMPT {{{{
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_vim_icon time dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs custom_command_time os_icon)
+# }}}}
 
-### POWERLEVEL9k FOREGROUND
+# POWERLEVEL9k FOREGROUND {{{{
 POWERLEVEL9K_DIR_HOME_FOREGROUND='white'
 POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND='226'
 #POWERLEVEL9K_DIR_HOME_DEFAULT_FOREGROUND="white"
 POWERLEVEL9K_OS_ICON_BACKGROUND='white'
 POWERLEVEL9K_OS_ICON_FOREGROUND='black'
 POWERLEVEL9K_DIR_DEFAULT_FOREGROUND='082'
+# }}}}
 
-# POWERLEVEL9K ICON
+# POWERLEVEL9K ICON {{{{
 POWERLEVEL9K_OK_ICON='\uf00c'
 POWERLEVEL9K_FOLDER_ICON=$'\ue70e'
 POWERLEVEL9K_HOME_ICON=$'\UF015 '
 POWERLEVEL9K_HOME_SUB_ICON=$'\uf07c'
+# }}}}
 
-# POWERLEVEL9K CUSTOM ICON VIM
+# POWERLEVEL9K CUSTOM ICON VIM {{{{
 POWERLEVEL9K_CUSTOM_VIM_ICON="zsh_vim_icon"
 POWERLEVEL9K_CUSTOM_VIM_ICON_FOREGROUND="white"
 POWERLEVEL9K_CUSTOM_VIM_ICON_BACKGROUND="022"
@@ -163,8 +171,9 @@ POWERLEVEL9K_CUSTOM_VIM_ICON_BACKGROUND="022"
 zsh_vim_icon() {
 	echo '\ue7c5'
 }
+# }}}}
 
-# POWERLEVEL9K CUSTOM ICON UBUNTU
+# POWERLEVEL9K CUSTOM ICON UBUNTU {{{{
 POWERLEVEL9K_CUSTOM_UBUNTU_ICON="zsh_ubuntu_icon"
 POWERLEVEL9K_CUSTOM_UBUNTU_ICON_FOREGROUND="white"
 POWERLEVEL9K_CUSTOM_UBUNTU_ICON_BACKGROUND="black"
@@ -172,11 +181,16 @@ POWERLEVEL9K_CUSTOM_UBUNTU_ICON_BACKGROUND="black"
 zsh_ubuntu_icon() {
 	echo '\ue73a'
 }
+# }}}}
+
+# POWERLEVEL9k CUSTOM COMMAND TIME {{{{
 POWERLEVEL9K_CUSTOM_COMMAND_TIME="zsh_command_time"
 POWERLEVEL9K_CUSTOM_COMMAND_TIME_BACKGROUND="084" # white
 POWERLEVEL9K_CUSTOM_COMMAND_TIME_FOREGROUND="000" # black
 # If command execution time above min. time, plugins will not output time.
 ZSH_COMMAND_TIME_MIN_SECONDS=0
+# }}}}
+
 # }}}
 
 # DISPLAY HOSTNAME: empty {{{
@@ -209,12 +223,9 @@ stty -ixon
 # GO SETTINGS {{{
 #export GOPATH=$HOME/golang
 #export PATH=$PATH:$GOPATH/bin
-
-export RUSTPATH=$HOME/.cargo/
-export PATH=$PATH:$RUSTPATH/bin
 # }}}
 
-# Pragmadev {{{
-export RTDS_HOME=/opt/pragmadev/pragmastudio
-export PATH=$PATH:$RTDS_HOME/bin
+# RUST SETTINGS {{{
+export RUSTPATH=$HOME/.cargo/
+export PATH=$PATH:$RUSTPATH/bin
 # }}}
