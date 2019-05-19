@@ -1,4 +1,2 @@
 # myconfig
-Things...
 Yiss
-Test
