@@ -236,13 +236,10 @@ endfunction
 " Tagbar {{{
 nmap <F8> :TagbarToggle<CR>
 " }}}
-" }}}
 
-let g:gitgutter_enabled = 1
-let g:gitgutter_signs = 1
-let g:gitgutter_highlight_lines = 0
-let g:gitgutter_override_sign_column_highlight = 1
-
+" GitGutter {{{
 highlight GitGutterAdd    guifg=#009900 guibg=<X> ctermfg=2
 highlight GitGutterChange guifg=#bbbb00 guibg=<X> ctermfg=3
 highlight GitGutterDelete guifg=#ff2222 guibg=<X> ctermfg=1
+" }}}
+" }}}
