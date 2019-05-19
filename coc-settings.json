@@ -1,0 +1,7 @@
+{
+    "suggest.triggerAfterInsertEnter": true,
+    "suggest.noselect": false,
+    "suggest.acceptSuggestionOnCommitCharacter": true,
+    "python.jediEnabled": false,
+    "java.errors.incompleteClasspath.severity": "ignore"
+}
