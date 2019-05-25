@@ -176,25 +176,25 @@ Plug 'flazz/vim-colorschemes'
 Plug 'easymotion/vim-easymotion'
 Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
 Plug 'majutsushi/tagbar'
-Plug 'airblade/vim-gitgutter'
+Plug 'alvan/vim-closetag'
+Plug 'tpope/vim-fugitive'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
-
-
 " Lightline {{{
-    let g:lightline = {
+let g:lightline = {
       \ 'colorscheme': 'landscape',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'cocstatus', 'currentfunction', 'readonly', 'filename', 'modified' ] ]
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
       \ },
       \ 'component_function': {
-      \   'cocstatus': 'coc#status',
-      \   'currentfunction': 'CocCurrentFunction'
+      \   'gitbranch': 'fugitive#head',
       \ },
       \ }
+
+set laststatus=2
 " }}}
 
 " Colorscheme {{{
@@ -224,22 +224,18 @@ vmap ù <Plug>(coc-snippets-select)
 
 " Use ù for jump to next placeholder, it's default of coc.nvim
 let g:coc_snippet_next = 'ù'
-
-set statusline^=%{coc#status()}
-set statusline^=%{get(g:,'coc_git_status','')}%{get(b:,'coc_git_status','')}
-
-function! CocCurrentFunction()
-    return get(b:, 'coc_current_function', '')
-endfunction
 " }}}
 
 " Tagbar {{{
 nmap <F8> :TagbarToggle<CR>
 " }}}
 
-" GitGutter {{{
-highlight GitGutterAdd    guifg=#009900 guibg=<X> ctermfg=2
-highlight GitGutterChange guifg=#bbbb00 guibg=<X> ctermfg=3
-highlight GitGutterDelete guifg=#ff2222 guibg=<X> ctermfg=1
+" Closetag {{{
+
+" These are the file extensions where this plugin is enabled.
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml, *.xml'
+
+" Shortcut for closing tags, default is '>'
+let g:closetag_shortcut = '>'
 " }}}
 " }}}

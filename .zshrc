@@ -57,7 +57,7 @@ alias ls='ls --color=auto'
 alias ll='ls -lArth --color=auto'
 alias pdf='evince'
 alias zshconfig="nvim ~/.zshrc"
-alias neoconfig="nvim ~/.config/nvim/init.vim"
+alias neoconfig="nvim ~/GitHub/myconfig/init.vim"
 # }}}
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
