@@ -25,13 +25,6 @@ set background=dark
 "Highlight line under cursor. It helps with navigation.
 set cursorline
 
-"Runtime
-"runtime! config/**/*.vim
-"runtime! ~/.vim/bundle/**
-
-"Enable highlighting of completion menu
-highlight Pmenu ctermfg=80 ctermbg=0 guifg=#ffffff guibg=#3F88C5
-
 "Show mode in statusbar, not separately.
 set noshowmode
 
@@ -202,6 +195,10 @@ colorscheme Benokai
 
 " Transparent background
 hi Normal guibg=NONE ctermbg=NONE
+
+" Enable highlight for completion menu
+highlight Pmenu ctermbg=DarkCyan ctermfg=black
+highlight PmenuSel ctermbg=green ctermfg=black
 " }}}
 
 " COC {{{
