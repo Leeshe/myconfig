@@ -170,6 +170,11 @@ augroup filetype_java
     highlight link javaScopeDecl Statement
     highlight link javaType Type
     highlight link javaDocTags PreProc
+
+    " Template Java class when creating new file
+    autocmd BufNewFile *.java
+                \ exe "normal O " . "\npublic class " . expand('%:t:r') .
+                \ " {\n " . "\n}"
 augroup END
 "}}}
 
