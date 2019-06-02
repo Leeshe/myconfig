@@ -252,4 +252,8 @@ let g:closetag_filenames = '*.html,*.xhtml,*.phtml, *.xml'
 " Shortcut for closing tags, default is '>'
 let g:closetag_shortcut = '>'
 " }}}
+
+" FZF {{{
+nnoremap <C-n> :Files<CR>
+" }}}
 " }}}
