@@ -186,6 +186,8 @@ Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
 Plug 'majutsushi/tagbar'
 Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-fugitive'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+Plug 'junegunn/fzf.vim'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
