@@ -175,6 +175,15 @@ augroup filetype_java
     autocmd BufNewFile *.java
                 \ exe "normal O " . "\npublic class " . expand('%:t:r') .
                 \ " {\n " . "\n}"
+
+    " Java: 'this', 'super'
+    highlight Typedef ctermfg=5
+    " Java: 'void', 'int', 'double'
+    highlight Type ctermfg=4
+    " literal numbers
+    highlight Number term=bold ctermfg=41
+    " methods
+    highlight Function ctermfg=227              
 augroup END
 "}}}
 
@@ -200,15 +209,15 @@ call plug#end()
 
 " Lightline {{{
 let g:lightline = {
-      \ 'colorscheme': 'landscape',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'fugitive#head',
-      \ },
-      \ }
+            \ 'colorscheme': 'landscape',
+            \ 'active': {
+            \   'left': [ [ 'mode', 'paste' ],
+            \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+            \ },
+            \ 'component_function': {
+            \   'gitbranch': 'fugitive#head',
+            \ },
+            \ }
 
 set laststatus=2
 " }}}
