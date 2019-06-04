@@ -274,6 +274,11 @@ nnoremap <C-n> :Files<CR>
 
 " NerdTree {{{
 let g:NERDTreeIgnore=['^target$']
-:nnoremap <F9> :NERDTree<cr>:normal P<cr>:normal O<cr>
+
+" Open NERDTree and expand all directories recursively
+nnoremap <F9> :NERDTree<cr>:normal P<cr>:normal O<cr>
+
+" Close Vim if NERDTree is the last window
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " }}}
 " }}}
