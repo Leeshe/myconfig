@@ -105,59 +105,6 @@ endif
 
 "}}}
 
-"Vim Mapping {{{
-"
-
-"Type <Leader>w to save a file
-nnoremap <Leader>w :w<CR>
-nnoremap ww :w<CR>
-
-"Tyoe <Leader>q to quit
-nnoremap <Leader>q :q<CR>
-
-"Switch to previous or right tab by pressing CTRL-LEFT or CTRL-RIGHT
-nnoremap <C-Left> :tabprevious<CR>
-nnoremap <C-Right> :tabnext<CR>
-
-"Press CTRL-B to switch to next buffer
-nnoremap <C-b> :bNext<CR>
-
-"Type CTRL+D to delete current line
-nnoremap <c-d> dd
-
-"Type <Leader>ev to edit .myvimrc
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-
-"Type <Leader>sv to source .myvimrc
-nnoremap <leader>sv :source $MYVIMRC<cr>
-
-"Type <Leader>" to put " between the selected word
-nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
-
-"Type <Leader>' to put ' between the selected word
-nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
-
-"Type 1 to get the beginning of the line
-nnoremap 1 0
-
-"Press $$ to get in normal mode
-inoremap $$ <esc>
-"}}}
-
-" Vimscript file settings {{{
-augroup filetype_vim
-	autocmd!
-	autocmd FileType vim setlocal foldmethod=marker
-augroup END
-" }}}
-
-" Zshrc file settings {{{
-augroup filetype_zshrc
-	autocmd!
-    :autocmd BufRead,BufWritePre .zshrc :set foldmethod=marker
-augroup END
-" }}}
-
 " Plugins {{{
 
 " Plugins will be downloaded under the specified directory
@@ -252,6 +199,59 @@ nnoremap <F9> :NERDTree<cr>:normal P<cr>:normal O<cr>
 " Close Vim if NERDTree is the last window
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " }}}
+" }}}
+
+"Vim Mapping {{{
+"
+
+"Type <Leader>w to save a file
+nnoremap <Leader>w :w<CR>
+nnoremap ww :w<CR>
+
+"Tyoe <Leader>q to quit
+nnoremap <Leader>q :q<CR>
+
+"Switch to previous or right tab by pressing CTRL-LEFT or CTRL-RIGHT
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
+
+"Press CTRL-B to switch to next buffer
+nnoremap <C-b> :bNext<CR>
+
+"Type CTRL+D to delete current line
+nnoremap <c-d> dd
+
+"Type <Leader>ev to edit .myvimrc
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+
+"Type <Leader>sv to source .myvimrc
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+"Type <Leader>" to put " between the selected word
+nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
+
+"Type <Leader>' to put ' between the selected word
+nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
+
+"Type 1 to get the beginning of the line
+nnoremap 1 0
+
+"Press $$ to get in normal mode
+inoremap $$ <esc>
+"}}}
+
+" Vimscript file settings {{{
+augroup filetype_vim
+	autocmd!
+	autocmd FileType vim setlocal foldmethod=marker
+augroup END
+" }}}
+
+" Zshrc file settings {{{
+augroup filetype_zshrc
+	autocmd!
+    :autocmd BufRead,BufWritePre .zshrc :set foldmethod=marker
+augroup END
 " }}}
 
 " Java file settings {{{
