@@ -262,4 +262,9 @@ let g:closetag_shortcut = '>'
 " FZF {{{
 nnoremap <C-n> :Files<CR>
 " }}}
+
+" NerdTree {{{
+let g:NERDTreeIgnore=['^target$']
+:nnoremap <F9> :NERDTree<cr>:normal P<cr>:normal O<cr>
+" }}}
 " }}}
