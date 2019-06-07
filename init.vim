@@ -121,6 +121,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'skielbasa/vim-material-monokai'
+Plug 'janko/vim-test'
+Plug 'ap/vim-buftabline'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -141,7 +144,7 @@ set laststatus=2
 " }}}
 
 " Colorscheme {{{
-colorscheme Benokai
+colorscheme material-monokai
 
 " Transparent background
 hi Normal guibg=NONE ctermbg=NONE
@@ -198,6 +201,10 @@ nnoremap <F9> :NERDTree<cr>:normal P<cr>:normal O<cr>
 
 " Close Vim if NERDTree is the last window
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" }}}
+
+" Vim-Test {{{
+nnoremap <silent> tn :TestNearest<CR> 
 " }}}
 " }}}
 
