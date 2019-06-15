@@ -110,20 +110,30 @@ endif
 " Plugins will be downloaded under the specified directory
 call plug#begin('~/.local/share/nvim/plugged')
 
-" Declare the list of plugins.
+" Status line
 Plug 'itchyny/lightline.vim'
-Plug 'flazz/vim-colorschemes'
-Plug 'easymotion/vim-easymotion'
+Plug 'ap/vim-buftabline'
+
+" Completion
 Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
-Plug 'majutsushi/tagbar'
 Plug 'alvan/vim-closetag'
-Plug 'tpope/vim-fugitive'
+
+" Colorscheme
+Plug 'flazz/vim-colorschemes'
+Plug 'skielbasa/vim-material-monokai'
+
+" Listing
+Plug 'majutsushi/tagbar'
+Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'skielbasa/vim-material-monokai'
+
+" Moving
+Plug 'easymotion/vim-easymotion'
+
+" Others
+Plug 'tpope/vim-fugitive'
 Plug 'janko/vim-test'
-Plug 'ap/vim-buftabline'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -171,6 +181,15 @@ imap <C-l> <Plug>(coc-snippets-expand)
 
 " Use ù for select text for visual placeholder of snippet.
 vmap ù <Plug>(coc-snippets-select)
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Remap for rename current word
+nmap <leader>rn <Plug>(coc-rename)
 
 " Use ù for jump to next placeholder, it's default of coc.nvim
 let g:coc_snippet_next = 'ù'
