@@ -113,6 +113,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 " Status line
 Plug 'itchyny/lightline.vim'
 Plug 'ap/vim-buftabline'
+Plug 'iamcco/sran.nvim', { 'do': { -> sran#util#install() } }
+Plug 'iamcco/clock.nvim'
 
 " Completion
 Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
@@ -137,6 +139,18 @@ Plug 'janko/vim-test'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
+
+" Clock {{{
+" auto enable when neovim start
+let g:clockn_enable = 1
+
+" config the clock's color
+"let g:clockn_color = '#0066ff'
+
+" position distance to top and right
+let g:clockn_to_top = 33
+let g:clockn_to_right = 1
+" }}}
 
 " Lightline {{{
 let g:lightline = {
