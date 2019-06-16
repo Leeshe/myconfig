@@ -209,7 +209,7 @@ nmap <leader>rn <Plug>(coc-rename)
 let g:coc_snippet_next = 'ù'
 
 " Fix autofix problem of current line
-nmap <leader>qf <Plug>(coc-fix-current)
+"nmap <leader>qf <Plug>(coc-fix-current)
 
 " Remap for do codeAction of current line
 nmap <leader>ac <Plug>(coc-codeaction)
