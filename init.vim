@@ -207,6 +207,12 @@ nmap <leader>rn <Plug>(coc-rename)
 
 " Use ù for jump to next placeholder, it's default of coc.nvim
 let g:coc_snippet_next = 'ù'
+
+" Fix autofix problem of current line
+nmap <leader>qf <Plug>(coc-fix-current)
+
+" Remap for do codeAction of current line
+nmap <leader>ac <Plug>(coc-codeaction)
 " }}}
 
 " Tagbar {{{

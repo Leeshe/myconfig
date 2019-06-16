@@ -1,13 +1,22 @@
 {
-    "suggest.triggerAfterInsertEnter": true,
-    "suggest.noselect": false,
-    "suggest.acceptSuggestionOnCommitCharacter": true,
-    "python.jediEnabled": false,
-    "java.errors.incompleteClasspath.severity": "ignore",
+    "coc.preferences.useQuickfixForLocations": false,
+    "codeLens.enable": true,
+
+    "diagnostic.virtualText": true,
+
     "git.enableGutters": true,
+
+    "java.errors.incompleteClasspath.severity": "ignore",
     "java.referencesCodeLens.enabled": true,
     "java.implementationsCodeLens.enabled": true,
     "java.signatureHelp.enabled": true,
     "java.completion.overwrite": true,
-    "java.codeGeneration.generateComments": true
+    "java.codeGeneration.generateComments": true,
+
+    "python.jediEnabled": false,
+
+    "suggest.triggerAfterInsertEnter": true,
+    "suggest.noselect": false,
+    "suggest.acceptSuggestionOnCommitCharacter": true,
+    "suggest.enablePreview": true
 }
