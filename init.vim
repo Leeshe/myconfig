@@ -140,16 +140,15 @@ Plug 'janko/vim-test'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
-" Clock {{{
-" auto enable when neovim start
-let g:clockn_enable = 1
+" Colorscheme {{{
+colorscheme material-monokai
 
-" config the clock's color
-"let g:clockn_color = '#0066ff'
+" Transparent background
+hi Normal guibg=NONE ctermbg=NONE
 
-" position distance to top and right
-let g:clockn_to_top = 33
-let g:clockn_to_right = 1
+" Enable highlight for completion menu
+highlight Pmenu ctermbg=DarkCyan ctermfg=black
+highlight PmenuSel ctermbg=green ctermfg=black
 " }}}
 
 " Lightline {{{
@@ -167,15 +166,16 @@ let g:lightline = {
 set laststatus=2
 " }}}
 
-" Colorscheme {{{
-colorscheme material-monokai
+" Clock {{{
+" auto enable when neovim start
+let g:clockn_enable = 1
 
-" Transparent background
-hi Normal guibg=NONE ctermbg=NONE
+" config the clock's color
+let g:clockn_color = '#0066ff'
 
-" Enable highlight for completion menu
-highlight Pmenu ctermbg=DarkCyan ctermfg=black
-highlight PmenuSel ctermbg=green ctermfg=black
+" position distance to top and right
+let g:clockn_to_top = 33
+let g:clockn_to_right = 1
 " }}}
 
 " COC {{{
@@ -303,21 +303,20 @@ augroup filetype_java
                 \ exe "normal O" . "\npublic class " . expand('%:t:r') .
                 \ " {\n" . "\n}"
 
+    " Some more highlights, in addition to those suggested by cmcginty
+    highlight link javaScopeDecl Statement
+    highlight link javaType Type
+    highlight link javaDocTags PreProc
+    " Java: 'this', 'super'
+    highlight Typedef ctermfg=5
+    " Java: 'void', 'int', 'double'
+    highlight Type ctermfg=4
+    " literal numbers
+    highlight Number term=bold ctermfg=41
+    " methods
+    highlight Function ctermfg=227              
+
+    let java_highlight_functions = 1
+    let java_highlight_all = 1
 augroup END
-
-let java_highlight_functions = 1
-let java_highlight_all = 1
-
-" Some more highlights, in addition to those suggested by cmcginty
-highlight link javaScopeDecl Statement
-highlight link javaType Type
-highlight link javaDocTags PreProc
-" Java: 'this', 'super'
-highlight Typedef ctermfg=5
-" Java: 'void', 'int', 'double'
-highlight Type ctermfg=4
-" literal numbers
-highlight Number term=bold ctermfg=41
-" methods
-highlight Function ctermfg=227              
 "}}}
