@@ -103,6 +103,7 @@ if (has("nvim"))
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 endif
 
+set termguicolors
 "}}}
 
 " Plugins {{{
@@ -171,7 +172,7 @@ set laststatus=2
 let g:clockn_enable = 1
 
 " config the clock's color
-let g:clockn_color = '#0066ff'
+let g:clockn_color = '#4286f4'
 
 " position distance to top and right
 let g:clockn_to_top = 33
