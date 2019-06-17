@@ -113,9 +113,11 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " Status line
 Plug 'itchyny/lightline.vim'
-Plug 'ap/vim-buftabline'
 Plug 'iamcco/sran.nvim', { 'do': { -> sran#util#install() } }
 Plug 'iamcco/clock.nvim'
+
+" Buffers
+Plug 'ap/vim-buftabline'
 
 " Completion
 Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
@@ -253,7 +255,6 @@ nnoremap <silent> tn :TestNearest<CR>
 
 "Type <Leader>w to save a file
 nnoremap <Leader>w :w<CR>
-nnoremap ww :w<CR>
 
 "Tyoe <Leader>q to quit
 nnoremap <Leader>q :q<CR>
