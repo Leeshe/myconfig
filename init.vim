@@ -235,10 +235,6 @@ nnoremap <Leader>w :w<CR>
 "Tyoe <Leader>q to quit
 nnoremap <Leader>q :q<CR>
 
-"Switch to previous or right tab by pressing CTRL-LEFT or CTRL-RIGHT
-nnoremap <C-Left> :tabprevious<CR>
-nnoremap <C-Right> :tabnext<CR>
-
 "Press CTRL-B to switch to next buffer
 nnoremap <C-b> :bNext<CR>
 
