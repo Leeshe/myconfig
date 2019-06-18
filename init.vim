@@ -209,6 +209,7 @@ let g:closetag_shortcut = '>'
 
 " FZF {{{
 nnoremap <C-n> :GFiles<CR>
+nnoremap <C-f> :Ag<CR>
 " }}}
 
 " NerdTree {{{
