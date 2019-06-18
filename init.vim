@@ -131,6 +131,7 @@ Plug 'skielbasa/vim-material-monokai'
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
+Plug 'liuchengxu/vista.vim'
 
 " Moving
 Plug 'easymotion/vim-easymotion'
