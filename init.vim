@@ -128,7 +128,6 @@ Plug 'flazz/vim-colorschemes'
 Plug 'skielbasa/vim-material-monokai'
 
 " Listing
-Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
@@ -216,10 +215,6 @@ let g:coc_snippet_next = 'ù'
 
 " Remap for do codeAction of current line
 nmap <leader>ac <Plug>(coc-codeaction)
-" }}}
-
-" Tagbar {{{
-nmap <F8> :TagbarToggle<CR>
 " }}}
 
 " Closetag {{{
