@@ -58,9 +58,6 @@ set hlsearch
 "Enable highlighted case-insensitive incremential search.
 set incsearch
 
-"Disable preview
-"set completeopt-=preview
-
 "Autoindent when starting new line, or using o or O
 set autoindent
 
