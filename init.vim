@@ -208,7 +208,7 @@ let g:closetag_shortcut = '>'
 " }}}
 
 " FZF {{{
-nnoremap <C-n> :Files<CR>
+nnoremap <C-n> :GFiles<CR>
 " }}}
 
 " NerdTree {{{
