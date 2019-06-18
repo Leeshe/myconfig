@@ -127,10 +127,6 @@ colorscheme material-monokai
 
 " Transparent background
 hi Normal guibg=NONE ctermbg=NONE
-
-" Enable highlight for completion menu
-highlight Pmenu ctermbg=DarkCyan ctermfg=black
-highlight PmenuSel ctermbg=green ctermfg=black
 " }}}
 
 " Lightline {{{
