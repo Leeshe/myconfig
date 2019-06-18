@@ -64,9 +64,6 @@ set autoindent
 "Show hte line and column number of the cursor position.
 set ruler
 
-"Reload unchanged files automatically
-set autoread
-
 "Don't parse modelines (google vim modeline vulnerability).
 set nomodeline
 
