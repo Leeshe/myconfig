@@ -16,9 +16,6 @@ if has('syntax')
 	syntax enable
 endif
 
-"Enable mouse for scrolling and window resizing
-"set mouse=a
-
 "Set background
 set background=dark
 
@@ -93,16 +90,7 @@ set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
 
-" Bracket highlighting
-"hi MatchParen cterm=none ctermbg=green ctermfg=blue
-"hi MatchParen cterm=bold ctermbg=none ctermfg=magenta
-
 " True color
-if (has("nvim"))
-    "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
-    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-endif
-
 set termguicolors
 "}}}
 
