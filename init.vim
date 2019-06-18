@@ -104,7 +104,6 @@ Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
 Plug 'alvan/vim-closetag'
 
 " Colorscheme
-Plug 'flazz/vim-colorschemes'
 Plug 'skielbasa/vim-material-monokai'
 
 " Listing
