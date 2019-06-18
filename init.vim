@@ -67,12 +67,10 @@ set ruler
 "Don't parse modelines (google vim modeline vulnerability).
 set nomodeline
 
-"Set window title by default
-set title
-
 "Disable swap to prevent annoying messages.
 set noswapfile
 
+"Make buffer modifiable
 set modifiable
 
 " show existing tab with 4 spaces width
