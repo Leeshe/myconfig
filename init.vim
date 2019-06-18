@@ -177,8 +177,8 @@ let g:clockn_enable = 1
 let g:clockn_color = '#4286f4'
 
 " position distance to top and right
-let g:clockn_to_top = 33
-let g:clockn_to_right = 1
+let g:clockn_to_top = 2
+let g:clockn_to_right = 2
 " }}}
 
 " COC {{{
