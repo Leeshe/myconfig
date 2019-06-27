@@ -98,9 +98,11 @@ Plug 'iamcco/clock.nvim'
 
 " Buffers
 Plug 'ap/vim-buftabline'
+Plug 'TaDaa/vimade'
 
 " Completion
-Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
+"Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'alvan/vim-closetag'
 
 " Colorscheme
