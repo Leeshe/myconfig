@@ -97,8 +97,8 @@ Plug 'iamcco/sran.nvim', { 'do': { -> sran#util#install() } }
 Plug 'iamcco/clock.nvim'
 
 " Buffers
-Plug 'ap/vim-buftabline'
 Plug 'TaDaa/vimade'
+Plug 'bagrat/vim-buffet'
 
 " Completion
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
@@ -139,6 +139,9 @@ let g:lightline = {
             \ },
             \ 'component_function': {
             \   'gitbranch': 'fugitive#head',
+            \ },
+            \ 'enable': {
+            \   'tabline': 0
             \ },
             \ }
 
@@ -221,6 +224,13 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " Vim-Test {{{
 nnoremap <silent> tn :TestNearest<CR> 
 " }}}
+
+" Vim-Buffet {{{
+let g:buffet_powerline_separators = 0
+let g:buffet_tab_icon = "\uf00a"
+let g:buffet_left_trunc_icon = "\uf0a8"
+let g:buffet_right_trunc_icon = "\uf0a9"
+let g:buffet_separator = ""
 " }}}
 
 "Vim Mapping {{{
