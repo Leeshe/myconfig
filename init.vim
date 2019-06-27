@@ -232,6 +232,7 @@ let g:buffet_left_trunc_icon = "\uf0a8"
 let g:buffet_right_trunc_icon = "\uf0a9"
 let g:buffet_separator = ""
 " }}}
+" }}}
 
 "Vim Mapping {{{
 "
