@@ -120,6 +120,7 @@ Plug 'easymotion/vim-easymotion'
 " Others
 Plug 'tpope/vim-fugitive'
 Plug 'janko/vim-test'
+Plug 'RRethy/vim-illuminate'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
