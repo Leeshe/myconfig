@@ -253,9 +253,6 @@ nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
 
 "Type 1 to get the beginning of the line
 nnoremap 1 0
-
-"Press $$ to get in normal mode
-inoremap $$ <esc>
 "}}}
 
 " Vimscript file settings {{{
