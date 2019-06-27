@@ -101,7 +101,6 @@ Plug 'ap/vim-buftabline'
 Plug 'TaDaa/vimade'
 
 " Completion
-"Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'alvan/vim-closetag'
 
@@ -109,7 +108,6 @@ Plug 'alvan/vim-closetag'
 Plug 'skielbasa/vim-material-monokai'
 
 " Listing
-Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'liuchengxu/vista.vim'
@@ -121,6 +119,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-fugitive'
 Plug 'janko/vim-test'
 Plug 'RRethy/vim-illuminate'
+
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
