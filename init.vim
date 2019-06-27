@@ -36,7 +36,6 @@ set encoding=utf-8
 
 "Allow for mappings including Esc, while preserving zero timeout after
 "pressing it manually
-set ttimeout
 set ttimeoutlen=50
 
 "Show the size of block one selected in visual mode
@@ -153,7 +152,7 @@ set laststatus=2
 let g:clockn_enable = 1
 
 " config the clock's color
-let g:clockn_color = '#4286f4'
+let g:clockn_color = '#FFFF33'
 
 " position distance to top and right
 let g:clockn_to_top = 2
