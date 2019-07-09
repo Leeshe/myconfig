@@ -1,7 +1,3 @@
-source $HOME/.config/nvim/java.vim
-source $HOME/.config/nvim/zsh.vim
-source $HOME/.config/nvim/mapping.vim
-
 " VIM SETTINGS {{{
 "
 
@@ -234,3 +230,7 @@ augroup filetype_vim
 	autocmd FileType vim setlocal foldmethod=marker
 augroup END
 " }}}
+
+source $HOME/.config/nvim/java.vim
+source $HOME/.config/nvim/zsh.vim
+source $HOME/.config/nvim/mapping.vim
