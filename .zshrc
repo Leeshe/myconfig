@@ -57,7 +57,7 @@ alias ls='ls --color=auto'
 alias ll='ls -lArth --color=auto'
 alias pdf='evince'
 alias zshconfig="nvim ~/GitHub/myconfig/.zshrc"
-alias neoconfig="nvim ~/GitHub/myconfig/init.vim"
+alias neoconfig="nvim ~/GitHub/myconfig/nvim/init.vim"
 alias :q=exit
 # }}}
 
