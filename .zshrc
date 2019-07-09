@@ -53,8 +53,8 @@ USER=``
 # }}}
 
 # ALIAS {{{
-alias ls='ls --color=auto'
-alias ll='ls -lArth --color=auto'
+alias ls='~/GitHub/coreutils/bin/ls --color=auto'
+alias ll='~/GitHub/coreutils/bin/ls -lArth --color=auto'
 alias pdf='evince'
 alias zshconfig="nvim ~/GitHub/myconfig/.zshrc"
 alias neoconfig="nvim ~/GitHub/myconfig/nvim/init.vim"
