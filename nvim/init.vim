@@ -1,4 +1,5 @@
 source $HOME/.config/nvim/java.vim
+source $HOME/.config/nvim/zsh.vim
 
 " VIM SETTINGS {{{
 "
@@ -261,12 +262,5 @@ nnoremap 1 0
 augroup filetype_vim
 	autocmd!
 	autocmd FileType vim setlocal foldmethod=marker
-augroup END
-" }}}
-
-" Zshrc file settings {{{
-augroup filetype_zshrc
-	autocmd!
-    :autocmd BufRead,BufWritePre .zshrc :set foldmethod=marker
 augroup END
 " }}}
