@@ -234,3 +234,5 @@ augroup END
 source $HOME/.config/nvim/java.vim
 source $HOME/.config/nvim/zsh.vim
 source $HOME/.config/nvim/mapping.vim
+
+" BAD COMMIT
