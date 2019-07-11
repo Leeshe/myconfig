@@ -1,5 +1,3 @@
-ls --color=auto
-
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -41,7 +39,7 @@ USER=``
 # }}}
 
 # ALIAS {{{
-alias ls='~/GitHub/coreutils/bin/ls --color=auto'
+alias ls='~/GitHub/coreutils/bin/ls -lX --color=auto'
 alias ll='~/GitHub/coreutils/bin/ls -lArth --color=auto'
 alias pdf='evince'
 alias zshconfig="nvim ~/GitHub/myconfig/.zshrc"
@@ -62,3 +60,5 @@ nv() {
 # }}}
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+ls
