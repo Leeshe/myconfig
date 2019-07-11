@@ -34,18 +34,6 @@ plugins=(git autojump fancy-ctrl-z extract)
 source $ZSH/oh-my-zsh.sh
 # }}}
 
-# CUSTOM COMMANDS {{{
-
-# ls after cd
-function cd {
-	builtin cd "$@" && ll
-}
-
-nv() {
-	nvim $1
-}
-# }}}
-
 # PROMPT {{{
 
 # Hide username
@@ -59,6 +47,18 @@ alias pdf='evince'
 alias zshconfig="nvim ~/GitHub/myconfig/.zshrc"
 alias neoconfig="nvim ~/GitHub/myconfig/nvim/init.vim"
 alias :q=exit
+# }}}
+
+# CUSTOM COMMANDS {{{
+
+# ls after cd
+function cd {
+	builtin cd "$@" && ll
+}
+
+nv() {
+	nvim $1
+}
 # }}}
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
