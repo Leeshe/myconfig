@@ -114,6 +114,10 @@ Plug 'liuchengxu/vista.vim'
 " Moving
 Plug 'easymotion/vim-easymotion'
 
+
+" Edition
+Plug 'Yggdroot/indentLine'
+
 " Others
 Plug 'tpope/vim-fugitive'
 Plug 'janko/vim-test'
@@ -222,6 +226,9 @@ let g:buffet_right_trunc_icon = "\uf0a9"
 let g:buffet_separator = ""
 " }}}
 
+" indentLine {{{
+let g:indentLine_char = '┊'
+" }}}
 " End of Plugins configs }}}
 
 " Vimscript file settings {{{
