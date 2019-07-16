@@ -93,7 +93,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 " Status line
 Plug 'itchyny/lightline.vim'
 Plug 'iamcco/sran.nvim', { 'do': { -> sran#util#install() } }
-Plug 'iamcco/clock.nvim'
 
 " Buffers
 Plug 'TaDaa/vimade'
@@ -162,18 +161,6 @@ endfunction
 set laststatus=2
 " }}}
 
-" Clock {{{
-" auto enable when neovim start
-let g:clockn_enable = 1
-
-" config the clock's color
-let g:clockn_color = '#FFFF33'
-
-" position distance to top and right
-let g:clockn_to_top = 2
-let g:clockn_to_right = 2
-" }}}
-
 " COC {{{
 
 " use <c-space>for trigger completion
@@ -202,7 +189,7 @@ nmap <silent> gr <Plug>(coc-references)
 nmap <leader>rn <Plug>(coc-rename)
 
 " Use ù for jump to next placeholder, it's default of coc.nvim
-let g:coc_snippet_next = 'ù'
+let g:coc_snippet_next = '<tab>'
 
 " Fix autofix problem of current line
 "nmap <leader>qf <Plug>(coc-fix-current)
