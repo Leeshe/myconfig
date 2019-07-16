@@ -46,6 +46,7 @@ alias zshconfig="nvim ~/GitHub/myconfig/.zshrc"
 alias neoconfig="nvim ~/GitHub/myconfig/nvim/init.vim"
 alias :q=exit
 alias gcf="git clean -f"
+alias gscf="gco . && gcf" # git super clean
 # }}}
 
 # CUSTOM COMMANDS {{{
