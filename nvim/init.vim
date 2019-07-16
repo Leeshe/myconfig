@@ -110,6 +110,7 @@ Plug 'skielbasa/vim-material-monokai'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'liuchengxu/vista.vim'
+Plug 'mhinz/vim-startify'
 
 " Moving
 Plug 'easymotion/vim-easymotion'
