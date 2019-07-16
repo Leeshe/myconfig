@@ -1,6 +1,11 @@
 {
     "codeLens.enable": true,
 
+    "clock.enable": true,
+    "clock.top": 2,
+    "clock.right": 2,
+    "clock.winblend": 0,
+
     "diagnostic.virtualText": true,
 
     "git.enableGutters": true,
