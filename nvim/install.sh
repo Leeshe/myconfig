@@ -12,7 +12,6 @@ configs=(
     java.vim
     zsh.vim
     mapping.vim
-    coc-settings.json
 )
 
 echo "Creating symlinks"
