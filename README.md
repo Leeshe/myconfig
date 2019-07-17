@@ -18,6 +18,7 @@
 [UBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin)
 
 ## :link: Useful links
+[Github ls-icons](https://github.com/sebastiencs/ls-icons)  
 [Github Neovim](https://github.com/neovim/neovim)  
 [Github Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh)  
 [Reddit Vim](https://www.reddit.com/r/vim/)  
