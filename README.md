@@ -1,7 +1,5 @@
 # :open_file_folder: Dotfiles
 
-### Requirements
-
 **autojump**
 
 ```sh
