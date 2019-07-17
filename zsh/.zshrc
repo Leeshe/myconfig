@@ -42,10 +42,10 @@ USER=``
 alias ls='~/GitHub/coreutils/bin/ls -lX --color=auto'
 alias ll='~/GitHub/coreutils/bin/ls -lArth --color=auto'
 alias pdf='evince'
-alias zshconfig="nvim ~/GitHub/myconfig/.zshrc"
+alias zshconfig="nvim ~/GitHub/myconfig/zsh/.zshrc"
 alias neoconfig="nvim ~/GitHub/myconfig/nvim/init.vim"
 alias :q=exit
-alias gcf="git clean -f"
+alias gsf="git clean -f"
 alias gscf="gco . && gcf" # git super clean
 # }}}
 
