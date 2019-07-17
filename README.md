@@ -54,8 +54,8 @@ sudo apt install nodejs npm
 [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh)
 
 ## :link: Reddit
-[Reddit Vim](https://www.reddit.com/r/vim/)  
-[Reddit Neovim](https://www.reddit.com/r/neovim)
+[Vim](https://www.reddit.com/r/vim/)  
+[Neovim](https://www.reddit.com/r/neovim)
 
 ## :link: Eclipse
 [Rainbow Theme](http://www.eclipsecolorthemes.org/?view=theme&id=24587)
