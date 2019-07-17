@@ -114,7 +114,6 @@ Plug 'mhinz/vim-startify'
 " Moving
 Plug 'easymotion/vim-easymotion'
 
-
 " Edition
 Plug 'Yggdroot/indentLine'
 
