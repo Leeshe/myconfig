@@ -11,6 +11,7 @@
 sudo apt install autojump
 ```
 
+**git**
 ```sh
 sudo apt install git
 ```
