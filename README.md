@@ -1,4 +1,4 @@
-# Dotfiles
+# Dotfiles :heavy_exclamation_work:
 
 ```sh
 ./install.sh
@@ -8,7 +8,7 @@
 
 [Hack Regular Nerd Font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete.ttf)
 
-## Firefox Plugins
+## Firefox Plugins :link:
 [Flagfox](https://addons.mozilla.org/en-US/firefox/addon/flagfox)  
 [Ghostery](https://addons.mozilla.org/en-US/firefox/addon/ghostery)  
 [Grammarly](https://addons.mozilla.org/en-US/firefox/addon/grammarly-1)  
@@ -17,7 +17,7 @@
 [Tree Style Tabs](https://addons.mozilla.org/en-US/firefox/addon/tree-style-tab)  
 [UBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin)
 
-## Useful links
+## Useful links :link:
 [Github Neovim](https://github.com/neovim/neovim)  
 [Github Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh)  
 [Reddit Vim](https://www.reddit.com/r/vim/)  
