@@ -1,4 +1,4 @@
-# :heavy_check_mark: Dotfiles
+# :open_file_folder: Dotfiles
 
 ```sh
 ./install.sh
