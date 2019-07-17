@@ -4,7 +4,7 @@
 ./install.sh
 ```
 
-## :floppy_disk: Dependancies
+## :arrow_right_hook: Dependancies
 **autojump**
 
 ```sh
