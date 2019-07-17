@@ -1,3 +1,11 @@
+- [:open_file_folder: Dotfiles](#-open-file-folder--dotfiles)
+  * [:arrow_right_hook: Dependancies](#-arrow-right-hook--dependancies)
+  * [:ab: Fonts](#-ab--fonts)
+  * [:link: Firefox Plugins](#-link--firefox-plugins)
+  * [:link: GitHub](#-link--github)
+  * [:link: Reddit](#-link--reddit)
+  * [:link: Eclipse](#-link--eclipse)
+
 # :open_file_folder: Dotfiles
 
 ```sh
