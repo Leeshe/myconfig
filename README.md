@@ -1,2 +1,5 @@
-# myconfig
-Yiss
+# Dotfiles
+
+```sh
+./install.sh
+```
