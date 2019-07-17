@@ -7,7 +7,7 @@
 ## :arrow_right_hook: Dependancies
 **autojump**
 
-```sh
+```bash
 sudo apt install autojump
 ```
 
