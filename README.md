@@ -1,5 +1,6 @@
 # :open_file_folder: Dotfiles
 
+## :floppy_disk: Dependancies
 **autojump**
 
 ```sh
