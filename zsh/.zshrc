@@ -45,8 +45,8 @@ alias pdf='evince'
 alias zshconfig="nvim ~/GitHub/myconfig/zsh/.zshrc"
 alias neoconfig="nvim ~/GitHub/myconfig/nvim/init.vim"
 alias :q=exit
-alias gsf="git clean -f"
-alias gscf="gco . && gcf" # git super clean
+alias gcf="git clean -f"
+alias gsf="gco . && gcf" # git super clean
 # }}}
 
 # CUSTOM COMMANDS {{{
