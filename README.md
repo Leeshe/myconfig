@@ -6,6 +6,18 @@
 sudo apt install autojump
 ```
 
+**python3**
+
+```sh
+sudo apt install python3
+```
+
+**pip3**
+
+```sh
+sudo apt install python3-pip
+```
+
 **nodejs npm**
 
 ```sh
