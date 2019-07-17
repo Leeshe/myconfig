@@ -1,7 +1,17 @@
 # :open_file_folder: Dotfiles
 
+### Requirements
+
+**autojump**
+
 ```sh
-./install.sh
+sudo apt install autojump
+```
+
+**nodejs npm**
+
+```sh
+sudo apt install nodejs npm
 ```
 
 ## :ab: Fonts
