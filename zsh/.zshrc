@@ -64,3 +64,5 @@ nv() {
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 ls
+
+PROMPT='%{$fg[yellow]%}[%D{%L:%M:%S}] '$PROMPT
