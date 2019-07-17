@@ -48,10 +48,12 @@ sudo apt install nodejs npm
 [Tree Style Tabs](https://addons.mozilla.org/en-US/firefox/addon/tree-style-tab)  
 [UBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin)
 
-## :link: Useful Links
-[Github ls-icons](https://github.com/sebastiencs/ls-icons)  
-[Github Neovim](https://github.com/neovim/neovim)  
-[Github Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh)  
+## :link: GitHub
+[ls-icons](https://github.com/sebastiencs/ls-icons)  
+[Neovim](https://github.com/neovim/neovim)  
+[Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh)
+
+## :link: Reddit
 [Reddit Vim](https://www.reddit.com/r/vim/)  
 [Reddit Neovim](https://www.reddit.com/r/neovim)
 
