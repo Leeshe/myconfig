@@ -11,6 +11,10 @@
 sudo apt install autojump
 ```
 
+```sh
+sudo apt install git
+```
+
 **python3**
 
 ```sh
