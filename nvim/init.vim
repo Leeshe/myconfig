@@ -92,7 +92,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " Status line
 Plug 'itchyny/lightline.vim'
-Plug 'iamcco/sran.nvim', { 'do': { -> sran#util#install() } }
 
 " Buffers
 Plug 'TaDaa/vimade'
