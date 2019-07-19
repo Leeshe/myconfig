@@ -44,11 +44,30 @@ for i in "${configs[@]}"; do
 done
 
 # NVIM DOWNLOAD
+spinner() {
+    local pid=$!
+    local delay=0.75
+    local spinstr='|/-\'
+    while [ "$(ps a | awk '{print $1}' | grep $pid)" ]; do
+        local temp=${spinstr#?}
+        printf " [%c]  " "$spinstr"
+        local spinstr=$temp${spinstr%"$temp"}
+        sleep $delay
+        printf "\b\b\b\b\b\b"
+    done
+    printf "    \b\b\b\b"
+}
+
 echo ""
-echo -e "${YELLOW}Installing Neovim (nightly build):${NC}"
-echo -e "${LIGHT_CYAN}+wget --quiet https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage --output-document nvim${NC}"
-wget --quiet https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage --output-document nvim
-if [ $? -eq 0 ]; then
+echo -e "${YELLOW}Downloading Neovim (nightly build):${NC}"
+NIGHTLY_NVIM="https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage"
+echo -e "${LIGHT_CYAN}+wget --quiet $NIGHTLY_NVIM --output-document nvim${NC}"
+wget --quiet $NIGHTLY_NVIM --output-document nvim&
+WGET_PID=$!
+spinner
+wait $WGET_PID
+NVIM_DOWNLOAD_SUCCESS=$?
+if [ $NVIM_DOWNLOAD_SUCCESS -eq 0 ]; then
     echo -e "... ${LIGHT_GREEN}OK${NC}"
 else
     echo -e "... ${LIGHT_RED}FAIL${NC}"
