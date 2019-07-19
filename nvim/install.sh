@@ -95,15 +95,11 @@ PLUGINS_DIR="$HOME/.local/share/nvim/plugged"
 
 echo ""
 echo -e "${YELLOW}Creating plugins directory${NC}"
-mkdir -p $PLUGINS_DIR
-if [ $? -eq 0 ]; then
-    echo -e "... ${LIGHT_GREEN}OK${NC}"
-else
-    echo -e "... ${LIGHT_RED}FAIL${NC}"
-fi
+echo -e "${LIGHT_CYAN}+mkdir -p $PLUGINS_DIR "
+mkdir -p $PLUGINS_DIR > /dev/null 2>&1
 
 # Move to plugins directory
-echo ""
+printf "\n"
 echo -e "${YELLOW}Moving to plugins directory"
 echo -e "${LIGHT_CYAN}+cd $PLUGINS_DIR${NC}"
 cd $PLUGINS_DIR > /dev/null 2>&1
