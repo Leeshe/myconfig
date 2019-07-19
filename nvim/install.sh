@@ -124,6 +124,8 @@ tpope/vim-fugitive
 janko/vim-test
 Rrethy/vim-illuminate
 )
+
+# Git clone plugin
 echo ""
 echo -e "${YELLOW}Installing nvim's plugins to $PLUGINS_DIR${NC}"
 for i in "${plugins[@]}"; do
