@@ -131,22 +131,18 @@ echo -e "${LIGHT_CYAN}+cd $PLUGINS_DIR${NC}"
 cd $PLUGINS_DIR > /dev/null 2>&1
 # Git clone plugin
 plugins=(
-    itchyny/lightline.vim
-    TaDaa/vimade
-    bagrat/vim-buffet
-    neoclide/coc.nvim
-    alvan/vim-closetag
-    skielbasa/vim-material-monokai
-    junegunn/fzf.vim
-    liuchengxu/vista.vim
-    mhinz/vim-startify
-    easymotion/vim-easymotion
-    Yggdroot/indentLine
-    tpope/vim-fugitive
-    janko/vim-test
-    Rrethy/vim-illuminate
 )
-echo ""
+# Adding plugins in plugins array
+PLUG="Plug"
+PLUG_FILE="$CURRENT_DIR/plugins.vim"
+while IFS= read -r line
+do
+    stringarray=($line)
+    if [[ ${stringarray[0]} == "$PLUG" ]]; then
+        output=$( echo ${stringarray[1]} | tr -d \' )
+        plugins+=($output)
+    fi
+done < "$PLUG_FILE"
 echo -e "${YELLOW}Installing nvim's plugins to $PLUGINS_DIR${NC}"
 for i in "${plugins[@]}"; do
     printf "${LIGHT_CYAN}+git clone --recursive https://github.com/$i.git${NC}"
