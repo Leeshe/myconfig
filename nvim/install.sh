@@ -2,8 +2,8 @@
 
 # DIRS
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-NVIM_DIRECTORY=$HOME/.config/nvim
 LOCAL_BIN="/usr/local/bin"
+
 
 # COLORS
 LIGHT_RED='\033[1;31m'
@@ -14,6 +14,9 @@ LIGHT_PURPLE='\033[1;35m'
 NC='\033[0m'
 MSG_AREADY_EXIST='ALREADY EXISTS'
 
+
+# NVIM DIRECTORY
+NVIM_DIRECTORY=$HOME/.config/nvim
 echo -e "${YELLOW}Creating nvim's config directory if does not exist.${NC}"
 mkdir -p $NVIM_DIRECTORY
 if [ $? -eq 0 ]; then
@@ -23,16 +26,15 @@ else
 fi
 
 
-configs=(
-init.vim
-java.vim
-zsh.vim
-mapping.vim
-plugins.vim
-plugins_mappings.vim
-)
-
 # NVIM CONFIGS SYMLINK
+configs=(
+    init.vim
+    java.vim
+    zsh.vim
+    mapping.vim
+    plugins.vim
+    plugins_mappings.vim
+)
 echo ""
 echo -e "${YELLOW}Creating symlinks for nvim configuration's files${NC}"
 for i in "${configs[@]}"; do
@@ -45,7 +47,9 @@ for i in "${configs[@]}"; do
     fi
 done
 
+
 # NVIM DOWNLOAD
+NIGHTLY_NVIM="https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage"
 spinner() {
     local pid=$!
     local delay=0.75
@@ -59,10 +63,8 @@ spinner() {
     done
     printf "    \b\b\b\b"
 }
-
 echo ""
 echo -e "${YELLOW}Downloading Neovim (nightly build):${NC}"
-NIGHTLY_NVIM="https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage"
 echo -e "${LIGHT_CYAN}+wget --quiet $NIGHTLY_NVIM --output-document nvim${NC}"
 wget --quiet $NIGHTLY_NVIM --output-document nvim&
 WGET_PID=$!
@@ -75,6 +77,8 @@ else
     echo -e "... ${LIGHT_RED}FAIL${NC}"
 fi
 
+
+# NVIM EXECUTABLE
 echo ""
 echo -e "${YELLOW}Making nvim executable${NC}"
 echo -e "${LIGHT_CYAN}+chmod +x nvim${NC}"
@@ -84,6 +88,7 @@ if [ $? -eq 0 ]; then
 else
     echo -e "... ${LIGHT_RED}FAIL${NC}"
 fi
+
 
 # NVIM SYMLINK
 echo ""
@@ -97,6 +102,7 @@ elif [ $? -eq 100 ]; then
 else
     echo -e "... ${LIGHT_RED}${MSG_AREADY_EXIST}${NC}"
 fi
+
 
 # INSTALLING VIM-PLUG
 echo ""
@@ -118,7 +124,6 @@ echo ""
 echo -e "${YELLOW}Creating plugins directory${NC}"
 echo -e "${LIGHT_CYAN}+mkdir -p $PLUGINS_DIR "
 mkdir -p $PLUGINS_DIR > /dev/null 2>&1
-
 # Move to plugins directory
 printf "\n"
 echo -e "${YELLOW}Moving to plugins directory"
@@ -126,23 +131,24 @@ echo -e "${LIGHT_CYAN}+cd $PLUGINS_DIR${NC}"
 cd $PLUGINS_DIR > /dev/null 2>&1
 
 plugins=(
-itchyny/lightline.vim
-TaDaa/vimade
-bagrat/vim-buffet
-neoclide/coc.nvim
-alvan/vim-closetag
-skielbasa/vim-material-monokai
-junegunn/fzf.vim
-liuchengxu/vista.vim
-mhinz/vim-startify
-easymotion/vim-easymotion
-Yggdroot/indentLine
-tpope/vim-fugitive
-janko/vim-test
-Rrethy/vim-illuminate
+    itchyny/lightline.vim
+    TaDaa/vimade
+    bagrat/vim-buffet
+    neoclide/coc.nvim
+    alvan/vim-closetag
+    skielbasa/vim-material-monokai
+    junegunn/fzf.vim
+    liuchengxu/vista.vim
+    mhinz/vim-startify
+    easymotion/vim-easymotion
+    Yggdroot/indentLine
+    tpope/vim-fugitive
+    janko/vim-test
+    Rrethy/vim-illuminate
 )
 
-# Git clone plugin
+
+# GIT CLONE PLUGIN
 echo ""
 echo -e "${YELLOW}Installing nvim's plugins to $PLUGINS_DIR${NC}"
 for i in "${plugins[@]}"; do
