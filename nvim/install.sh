@@ -117,9 +117,9 @@ echo -e "${LIGHT_CYAN}+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --cr
                 echo -e "... ${LIGHT_RED}FAIL${NC}"
             fi
 
+
 # INSTALLING PLUGINS
 PLUGINS_DIR="$HOME/.local/share/nvim/plugged"
-
 echo ""
 echo -e "${YELLOW}Creating plugins directory${NC}"
 echo -e "${LIGHT_CYAN}+mkdir -p $PLUGINS_DIR "
@@ -129,7 +129,7 @@ printf "\n"
 echo -e "${YELLOW}Moving to plugins directory"
 echo -e "${LIGHT_CYAN}+cd $PLUGINS_DIR${NC}"
 cd $PLUGINS_DIR > /dev/null 2>&1
-
+# Git clone plugin
 plugins=(
     itchyny/lightline.vim
     TaDaa/vimade
@@ -146,9 +146,6 @@ plugins=(
     janko/vim-test
     Rrethy/vim-illuminate
 )
-
-
-# GIT CLONE PLUGIN
 echo ""
 echo -e "${YELLOW}Installing nvim's plugins to $PLUGINS_DIR${NC}"
 for i in "${plugins[@]}"; do
