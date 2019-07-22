@@ -28,6 +28,8 @@ init.vim
 java.vim
 zsh.vim
 mapping.vim
+plugins.vim
+plugins_mappings.vim
 )
 
 # NVIM CONFIGS SYMLINK
