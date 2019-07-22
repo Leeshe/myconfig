@@ -143,6 +143,7 @@ do
         plugins+=($output)
     fi
 done < "$PLUG_FILE"
+echo ""
 echo -e "${YELLOW}Installing nvim's plugins to $PLUGINS_DIR${NC}"
 for i in "${plugins[@]}"; do
     printf "${LIGHT_CYAN}+git clone --recursive https://github.com/$i.git${NC}"
