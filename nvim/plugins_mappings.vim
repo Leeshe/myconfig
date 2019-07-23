@@ -1,10 +1,4 @@
 " Plugins mapping {{{
-" Colorscheme {{{
-colorscheme material-monokai
-
-" Transparent background
-hi Normal guibg=NONE ctermbg=NONE
-" }}}
 
 " Lightline {{{
 let g:lightline = {

@@ -83,6 +83,10 @@ set expandtab
 
 " True color
 set termguicolors
+
+" Highlight trailing space
+highlight Trail ctermbg=red guibg=red
+call matchadd('Trail', '\s\+$', 100)
 "}}}
 
 " Vimscript file settings {{{
@@ -98,5 +102,9 @@ source $HOME/.config/nvim/java.vim
 source $HOME/.config/nvim/zsh.vim
 source $HOME/.config/nvim/mapping.vim
 
-highlight Trail ctermbg=red guibg=red
-call matchadd('Trail', '\s\+$', 100)
+" Colorscheme {{{
+colorscheme material-monokai
+
+" Transparent background
+hi Normal guibg=NONE ctermbg=NONE
+" }}}
