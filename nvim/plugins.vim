@@ -10,7 +10,7 @@ Plug 'TaDaa/vimade'
 Plug 'bagrat/vim-buffet'
 
 " Completion
-Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'alvan/vim-closetag'
 
 " Colorscheme
