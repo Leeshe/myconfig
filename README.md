@@ -33,6 +33,7 @@ pip3 install neovim
 
 ```sh
 sudo apt install nodejs npm
+npm install -g npm
 ```
 
 ## :ab: Fonts
