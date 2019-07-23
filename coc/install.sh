@@ -28,4 +28,17 @@ then
   echo '{"dependencies":{}}'> package.json
 fi
 # Change extension names to the extensions you need
-npm install coc-snippets coc-java coc-json coc-lists coc-marketplace coc-pairs coc-git coc-clock --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
+extensions=(
+    coc-clock
+    coc-git
+    coc-java
+    coc-json
+    coc-lists
+    coc-marketplace
+    coc-pairs
+    coc-snippets
+)
+for i in "${extensions[@]}"
+do
+    npm install $i --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
+done
