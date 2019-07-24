@@ -37,7 +37,7 @@ sudo apt install nodejs npm
 npm install -g npm
 ```
 
-## :cd: (Neo)Vim Plugins
+## :bookmark_tabs: (Neo)Vim Plugins
 
 | Category  	| Plugins  	| Description |
 |:-:	|:-	| :- |
