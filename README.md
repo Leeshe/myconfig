@@ -41,12 +41,12 @@ npm install -g npm
 
 | Category  	| Plugins  	| Description |
 |:-:	|:-	| :- |
-| Statusline  	| [lightline.vim](https://github.com/itchyny/lightline.vim)  	| A light and configurable statusline/tabline plugin for Vim |
+| Statusline  	| <ul><li>[lightline.vim](https://github.com/itchyny/lightline.vim)</ul></li>  	| <ul><li>A light and configurable statusline/tabline plugin for Vim</ul></li> |
 | Buffers  	| <ul><li>[vimade](https://github.com/TaDaa/vimade)</li><li>[vim-buffet](https://github.com/bagrat/vim-buffet)</li></ul>  | <ul><li>Fade your inactive buffers</li><li>Bring the IDE-like tabs into Vim</li></ul>
-| Completion  	| [Coc.nvim](https://github.com/neoclide/coc.nvim)  	| Coc is an intellisense engine for vim8 & neovim
-| Colorscheme  	| [vim-material-monokai](https://github.com/skielbasa/vim-material-monokai)  	| Inspired by brendanblackwood's material-monokai-syntax theme
+| Completion  	| <ul><li>[Coc.nvim](https://github.com/neoclide/coc.nvim)  	| <ul><li>Coc is an intellisense engine for vim8 & neovim
+| Colorscheme  	| <ul><li>[vim-material-monokai](https://github.com/skielbasa/vim-material-monokai)</ul></li>  	| <ul><li>Inspired by brendanblackwood's material-monokai-syntax theme</ul></li>
 | Lists 	| <ul><li>[fzf.vim](https://github.com/junegunn/fzf.vim)</li><li>[vista.vim](https://github.com/liuchengxu/vista.vim)</li><li>[vim-startify](https://github.com/mhinz/vim-startify)</li></ul>	| <ul><li>fzf is a general-purpose command-line fuzzy finder</li><li>View and search LSP symbols, tags in Vim/NeoVim</li><li>Provide a start screen for Vim and Neovim</li></ul>
-| Moving  	| [vim-easymotion](https://github.com/easymotion/vim-easymotion)  	| Provide a much simpler way to use some motions in vim
+| Moving  	| <ul><li>[vim-easymotion](https://github.com/easymotion/vim-easymotion)</ul></li>  	| <ul><li>Provide a much simpler way to use some motions in vim</ul></li>
 | Edition  	| <ul><li>[indentLine](https://github.com/Yggdroot/indentLine)</li><li>[vim-illuminate](https://github.com/RRethy/vim-illuminate)</li></ul>  	| <ul><li>Display thin vertical lines at each indentation level</li><li>Highlight other uses of the current word under the cursor</li></ul>
 | Others  	| <ul><li>[fugitive.vim](https://github.com/tpope/vim-fugitive)</li><li>[vim-test](https://github.com/janko/vim-test)</li></ul>  	| <ul><li>Git wrapper</li><li>Run your tests at the speed of thought</li></ul>
 
