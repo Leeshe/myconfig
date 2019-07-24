@@ -84,9 +84,6 @@ set expandtab
 " True color
 set termguicolors
 
-" Highlight trailing space
-highlight Trail ctermbg=red guibg=red
-call matchadd('Trail', '\s\+$', 100)
 "}}}
 
 " Vimscript file settings {{{
@@ -108,3 +105,8 @@ colorscheme material-monokai
 " Transparent background
 hi Normal guibg=NONE ctermbg=NONE
 " }}}
+
+" Highlight trailing space
+highlight Trail ctermbg=red guibg=red
+call matchadd('Trail', '\s\+$', 100)
+
