@@ -16,13 +16,31 @@ LIGHT_GREEN='\033[1;32m'
 LIGHT_PURPLE='\033[1;35m'
 NC='\033[0m'
 
+INSTALL_SH="install.sh"
+CHMOD_X_INSTALL="chmod +x $INSTALL_SH"
+
+echoMessage() {
+    echo -e "${YELLOW}$1${NC}"
+}
+
+echoCommand() {
+    echo -e "${LIGHT_CYAN}+$1${NC}"
+}
+
 installBashScripts() {
     CD_BASH_SCRIPT="cd $BASH_SCRIPT_FOLDER"
-    echo -e "Moving to '$BASH_SCRIPT_FOLDER'"
+
+    echoMessage "Moving to $BASH_SCRIPT_FOLDER"
     echo -e "${LIGHT_CYAN}+$CD_BASH_SCRIPT${NC}"
     eval $CD_BASH_SCRIPT
-    echo "Executing .install.sh..."
+
     echo ""
+    echoMessage "Making '$INSTALL_SH' executable"
+    echoCommand "$CHMOD_X_INSTALL"
+    eval $CHMOD_X_INSTALL
+
+    echo ""
+    echoMessage "Executing '$INSTALL_SH' ..."
     ./install.sh
 }
 
