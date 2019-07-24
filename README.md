@@ -43,12 +43,12 @@ npm install -g npm
 |:-:	|:-	|
 | Statusline  	| [lightline.vim](https://github.com/itchyny/lightline.vim)  	|
 | Buffers  	| [vimade](https://github.com/TaDaa/vimade) <br /> [vim-buffet](https://github.com/bagrat/vim-buffet)  	|
-| Completion  	|   	|
-| Colorscheme  	|   	|
-| Listing  	|   	|
-| Moving  	|   	|
-| Edition  	|   	|
-| Others  	|   	|
+| Completion  	| [Coc.nvim](https://github.com/neoclide/coc.nvim)  	|
+| Colorscheme  	| [vim-material-monokai](https://github.com/skielbasa/vim-material-monokai)  	|
+| Listing  	| [fzf.vim](https://github.com/junegunn/fzf.vim) <br /> [vista.vim](https://github.com/liuchengxu/vista.vim) <br /> [vim-startify](https://github.com/mhinz/vim-startify)	|
+| Moving  	| [vim-easymotion](https://github.com/easymotion/vim-easymotion)  	|
+| Edition  	| [indentLine](https://github.com/Yggdroot/indentLine) <br /> [vim-illuminate](https://github.com/RRethy/vim-illuminate) 	|
+| Others  	| [fugitive.vim](https://github.com/tpope/vim-fugitive) <br /> [vim-test](https://github.com/janko/vim-test)  	|
 
 
 ## :ab: Fonts
