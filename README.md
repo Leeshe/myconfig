@@ -41,13 +41,15 @@ npm install -g npm
 
 | Category  	| Plugins  	|
 |:-:	|:-:	|
-| Test  	| Link here  	|
-|   	|   	|
-|   	|   	|
-|   	|   	|
-|   	|   	|
-|   	|   	|
-|   	|   	|
+| Statusline  	| [https://github.com/itchyny/lightline.vim](lightline.vim)  	|
+| Buffers  	| [https://github.com/TaDaa/vimade](vimade) <br /> [https://github.com/bagrat/vim-buffet](vim-buffet)  	|
+| Completion  	|   	|
+| Colorscheme  	|   	|
+| Listing  	|   	|
+| Moving  	|   	|
+| Edition  	|   	|
+| Others  	|   	|
+
 
 ## :ab: Fonts
 
