@@ -1,6 +1,6 @@
 # :open_file_folder: Dotfiles
 
-Ubuntu 16.04 & 18.04.  
+:computer: Ubuntu 16.04 & 18.04.  
 Development setup using **Oh-My-Zsh** and **Neovim**.
 
 ## :arrow_right_hook: Dependancies
