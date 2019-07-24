@@ -42,7 +42,7 @@ npm install -g npm
 | Category  	| Plugins  	| Description |
 |:-:	|:-	| :- |
 | Statusline  	| [lightline.vim](https://github.com/itchyny/lightline.vim)  	| A light and configurable statusline/tabline plugin for Vim |
-| Buffers  	| [vimade](https://github.com/TaDaa/vimade) <br /> [vim-buffet](https://github.com/bagrat/vim-buffet)  	| \*Fade your inactive buffers <br /> \*Bring the IDE-like tabs into Vim
+| Buffers  	| - [vimade](https://github.com/TaDaa/vimade) - [vim-buffet](https://github.com/bagrat/vim-buffet)  	| - Fade your inactive buffers - Bring the IDE-like tabs into Vim
 | Completion  	| [Coc.nvim](https://github.com/neoclide/coc.nvim)  	| Coc is an intellisense engine for vim8 & neovim
 | Colorscheme  	| [vim-material-monokai](https://github.com/skielbasa/vim-material-monokai)  	| Inspired by brendanblackwood's material-monokai-syntax theme
 | Lists 	| [fzf.vim](https://github.com/junegunn/fzf.vim) <br /> [vista.vim](https://github.com/liuchengxu/vista.vim) <br /> [vim-startify](https://github.com/mhinz/vim-startify)	| \*fzf is a general-purpose command-line fuzzy finder <br /> \*View and search LSP symbols, tags in Vim/NeoVim <br /> \*Provide a start screen for Vim and Neovim
