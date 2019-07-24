@@ -13,3 +13,5 @@ echo "Creating symlinks"
 for i in "${configs[@]}"; do
     sudo ln -s $CURRENT_DIR/$i.sh $LOCAL_BIN_DIR/$i
 done
+
+exit 0

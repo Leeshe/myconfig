@@ -19,6 +19,7 @@ NC='\033[0m'
 INSTALL_SH="install.sh"
 CHMOD_X_INSTALL="chmod +x $INSTALL_SH"
 
+# FUNCTIONS
 echoMessage() {
     echo -e "${YELLOW}$1${NC}"
 }
@@ -27,12 +28,20 @@ echoCommand() {
     echo -e "${LIGHT_CYAN}+$1${NC}"
 }
 
-installBashScripts() {
-    CD_BASH_SCRIPT="cd $BASH_SCRIPT_FOLDER"
+echoSuccessFail() {
+    if [ $? -eq 0 ]; then
+        echo -e "... ${LIGHT_GREEN}OK${NC}"
+    else
+        echo -e "... ${LIGHT_RED}FAIL${NC}"
+    fi
+}
 
-    echoMessage "Moving to $BASH_SCRIPT_FOLDER"
-    echo -e "${LIGHT_CYAN}+$CD_BASH_SCRIPT${NC}"
-    eval $CD_BASH_SCRIPT
+executeInstallScript() {
+    CD_TO_INSTALL_FOLDER="cd $1"
+
+    echoMessage "Moving to $1"
+    echoCommand $CD_TO_INSTALL_FOLDER
+    eval $CD_TO_INSTALL_FOLDER
 
     echo ""
     echoMessage "Making '$INSTALL_SH' executable"
@@ -44,4 +53,6 @@ installBashScripts() {
     ./install.sh
 }
 
-installBashScripts
+# Serious business
+executeInstallScript $BASH_SCRIPT_FOLDER
+echoSuccessFail
