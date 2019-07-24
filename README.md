@@ -1,8 +1,6 @@
 # :open_file_folder: Dotfiles
 
-```sh
-./install.sh
-```
+Ubuntu 16.04 & 18.04.  
 
 ## :arrow_right_hook: Dependancies
 **autojump**
