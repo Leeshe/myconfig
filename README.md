@@ -40,7 +40,7 @@ npm install -g npm
 ## :cd: (Neo)Vim Plugins
 
 | Category  	| Plugins  	|
-|:-:	|:-:	|
+|:-:	|:-	|
 | Statusline  	| [https://github.com/itchyny/lightline.vim](lightline.vim)  	|
 | Buffers  	| [https://github.com/TaDaa/vimade](vimade) <br /> [https://github.com/bagrat/vim-buffet](vim-buffet)  	|
 | Completion  	|   	|
