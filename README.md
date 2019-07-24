@@ -41,8 +41,8 @@ npm install -g npm
 
 | Category  	| Plugins  	|
 |:-:	|:-	|
-| Statusline  	| [https://github.com/itchyny/lightline.vim](lightline.vim)  	|
-| Buffers  	| [https://github.com/TaDaa/vimade](vimade) <br /> [https://github.com/bagrat/vim-buffet](vim-buffet)  	|
+| Statusline  	| [lightline.vim](https://github.com/itchyny/lightline.vim)  	|
+| Buffers  	| [vimade](https://github.com/TaDaa/vimade) <br /> [vim-buffet](https://github.com/bagrat/vim-buffet)  	|
 | Completion  	|   	|
 | Colorscheme  	|   	|
 | Listing  	|   	|
