@@ -22,5 +22,7 @@
     "suggest.triggerAfterInsertEnter": true,
     "suggest.noselect": false,
     "suggest.acceptSuggestionOnCommitCharacter": true,
-    "suggest.enablePreview": true
+    "suggest.enablePreview": true,
+
+    "xml.java.home": "/usr/lib/jvm/java-8-openjdk-amd64"
 }
