@@ -37,6 +37,18 @@ sudo apt install nodejs npm
 npm install -g npm
 ```
 
+## :cd: (Neo)Vim Plugins
+
+| Category  	| Plugins  	|
+|:-:	|:-:	|
+| Test  	| Link here  	|
+|   	|   	|
+|   	|   	|
+|   	|   	|
+|   	|   	|
+|   	|   	|
+|   	|   	|
+
 ## :ab: Fonts
 
 [Hack Regular Nerd Font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete.ttf)
