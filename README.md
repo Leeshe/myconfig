@@ -47,7 +47,7 @@ npm install -g npm
 | Colorscheme  	| [vim-material-monokai](https://github.com/skielbasa/vim-material-monokai)  	| Inspired by brendanblackwood's material-monokai-syntax theme
 | Lists 	| <ul><li>[fzf.vim](https://github.com/junegunn/fzf.vim)</li><li>[vista.vim](https://github.com/liuchengxu/vista.vim)</li><li>[vim-startify](https://github.com/mhinz/vim-startify)</li></ul>	| <ul><li>fzf is a general-purpose command-line fuzzy finder</li><li>View and search LSP symbols, tags in Vim/NeoVim</li><li>Provide a start screen for Vim and Neovim</li></ul>
 | Moving  	| [vim-easymotion](https://github.com/easymotion/vim-easymotion)  	| Provide a much simpler way to use some motions in vim
-| Edition  	| <ul><li>[indentLine](https://github.com/Yggdroot/indentLine)</li><li>[vim-illuminate](https://github.com/RRethy/vim-illuminate)</li></ul>  	| <ul><li>Display thin vertical lines at each indentation level</li><li>Automatically highlight other uses of the current word under the cursor</li></ul>
+| Edition  	| <ul><li>[indentLine](https://github.com/Yggdroot/indentLine)</li><li>[vim-illuminate](https://github.com/RRethy/vim-illuminate)</li></ul>  	| <ul><li>Display thin vertical lines at each indentation level</li><li>Highlight other uses of the current word under the cursor</li></ul>
 | Others  	| <ul><li>[fugitive.vim](https://github.com/tpope/vim-fugitive)</li><li>[vim-test](https://github.com/janko/vim-test)</li></ul>  	| <ul><li>Git wrapper</li><li>Run your tests at the speed of thought</li></ul>
 
 ## :ab: Fonts
