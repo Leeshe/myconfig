@@ -26,11 +26,11 @@ Plug 'easymotion/vim-easymotion'
 
 " Edition
 Plug 'Yggdroot/indentLine'
+Plug 'RRethy/vim-illuminate'
 
 " Others
 Plug 'tpope/vim-fugitive'
 Plug 'janko/vim-test'
-Plug 'RRethy/vim-illuminate'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
