@@ -39,9 +39,9 @@ npm install -g npm
 
 ## :cd: (Neo)Vim Plugins
 
-| Category  	| Plugins  	|
-|:-:	|:-	|
-| Statusline  	| [lightline.vim](https://github.com/itchyny/lightline.vim)  	|
+| Category  	| Plugins  	| Description |
+|:-:	|:-	| :- |
+| Statusline  	| [lightline.vim](https://github.com/itchyny/lightline.vim)  	| A light and configurable statusline/tabline plugin for Vim |
 | Buffers  	| [vimade](https://github.com/TaDaa/vimade) <br /> [vim-buffet](https://github.com/bagrat/vim-buffet)  	|
 | Completion  	| [Coc.nvim](https://github.com/neoclide/coc.nvim)  	|
 | Colorscheme  	| [vim-material-monokai](https://github.com/skielbasa/vim-material-monokai)  	|
@@ -49,7 +49,6 @@ npm install -g npm
 | Moving  	| [vim-easymotion](https://github.com/easymotion/vim-easymotion)  	|
 | Edition  	| [indentLine](https://github.com/Yggdroot/indentLine) <br /> [vim-illuminate](https://github.com/RRethy/vim-illuminate) 	|
 | Others  	| [fugitive.vim](https://github.com/tpope/vim-fugitive) <br /> [vim-test](https://github.com/janko/vim-test)  	|
-
 
 ## :ab: Fonts
 
