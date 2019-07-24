@@ -11,7 +11,6 @@ Plug 'bagrat/vim-buffet'
 
 " Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'alvan/vim-closetag'
 
 " Colorscheme
 Plug 'skielbasa/vim-material-monokai'
