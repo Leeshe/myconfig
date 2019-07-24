@@ -37,6 +37,7 @@ extensions=(
     coc-marketplace
     coc-pairs
     coc-snippets
+    coc-xml
 )
 for i in "${extensions[@]}"
 do
