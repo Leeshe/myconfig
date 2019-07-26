@@ -1,5 +1,7 @@
 #!/bin/bash
 
+figlet "OH-MY-ZSH"
+
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 # COLORS
@@ -40,3 +42,5 @@ if [ $? -eq 0 ]; then
 else
     echo -e "... ${LIGHT_RED}FAIL${NC}"
 fi
+
+exit 0
