@@ -4,7 +4,7 @@
 Development setup using **Oh-My-Zsh** and **Neovim**.  
 I aim to have something in-between a light and not too heavy development setup.
 
-### :wrench: Installation
+## :wrench: Installation
 
 Make `install.sh` executable and run it:
 
