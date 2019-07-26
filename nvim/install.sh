@@ -131,8 +131,6 @@ installVimPlug() {
 installPlugins() {
     PLUGINS_DIR="$HOME/.local/share/nvim/plugged"
 
-    # Commands
-
     # Create plugins directory
     MESSAGE_CREATE_PLUGINS_DIRECTORY="Creating plugins directory"
     CREATE_PLUGINS_DIRECTORY_COMMAND="mkdir -p $PLUGINS_DIR"
