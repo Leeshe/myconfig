@@ -8,8 +8,8 @@ I aim to have something in-between a light and not too heavy development setup.
 
 Make `install.sh` executable and run it:
 
-```sh
-sudo chmod +x install.something
+```bash
+sudo chmod +x install.sh
 ./install.sh
 ```
 
