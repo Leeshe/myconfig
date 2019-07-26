@@ -67,3 +67,5 @@ ls
 
 PROMPT='%{$fg[yellow]%}[%D{%L:%M:%S}] '$PROMPT
 bindkey '^ ' autosuggest-accept
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=cyan'

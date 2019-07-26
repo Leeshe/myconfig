@@ -1,12 +1,12 @@
 #!/bin/bash
 
-CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+ROOT_DIRECTORY="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 # FOLDERS
-BASH_SCRIPT_FOLDER="$CURRENT_DIR/bash_script"
-COC_FOLDER="$CURRENT_DIR/coc"
-NVIM_FOLDER="$CURRENT_DIR/nvim"
-ZSH_FOLER="$CURRENT_DIR/zsh"
+BASH="$ROOT_DIRECTORY/bash_script"
+COC="$ROOT_DIRECTORY/coc"
+NVIM="$ROOT_DIRECTORY/nvim"
+ZSH="$ROOT_DIRECTORY/zsh"
 
 # COLORS
 LIGHT_RED='\033[1;31m'
@@ -75,6 +75,23 @@ executeInstallScript() {
 }
 
 installAll() {
+    INSTALLATION_FOLDERS=(
+        $BASH
+    )
+
+    # Install packages first
     installPackages
     echoSuccessFail
+
+    for folder in "${INSTALLATION_FOLDERS[@]}"
+    do
+        echo ""
+        cd $folder
+        executeInstallScript $folder
+        echoSuccessFail
+        cd $ROOT_DIRECTORY
+    done
 }
+
+installAll
+exit 0
