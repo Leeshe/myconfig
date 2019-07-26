@@ -77,7 +77,9 @@ executeInstallScript() {
 installAll() {
     INSTALLATION_FOLDERS=(
         $BASH
+        $ZSH
         $NVIM
+        $COC
     )
 
     # Install packages first
