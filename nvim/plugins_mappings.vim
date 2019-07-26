@@ -1,5 +1,3 @@
-" Plugins mapping {{{
-
 " Lightline {{{
 let g:lightline = {
             \ 'colorscheme': 'landscape',
@@ -94,4 +92,3 @@ let g:buffet_separator = ""
 " indentLine {{{
 let g:indentLine_char = '┊'
 " }}}
-" End of Plugins configs }}}
