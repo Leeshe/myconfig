@@ -77,6 +77,7 @@ executeInstallScript() {
 installAll() {
     INSTALLATION_FOLDERS=(
         $BASH
+        $NVIM
     )
 
     # Install packages first

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+figlet "NVIM"
+
 # DIRS
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 LOCAL_BIN="/usr/local/bin"
@@ -14,42 +16,75 @@ LIGHT_PURPLE='\033[1;35m'
 NC='\033[0m'
 MSG_AREADY_EXIST='ALREADY EXISTS'
 
+# FUNCTIONS
+echoMessage() {
+    echo -e "${YELLOW}$1${NC}"
+}
 
-# NVIM DIRECTORY
-NVIM_DIRECTORY=$HOME/.config/nvim
-echo -e "${YELLOW}Creating nvim's config directory if does not exist.${NC}"
-mkdir -p $NVIM_DIRECTORY
-if [ $? -eq 0 ]; then
-    echo -e "... ${LIGHT_GREEN}OK${NC}"
-else
-    echo -e "... ${LIGHT_RED}FAIL${NC}"
-fi
+echoCommand() {
+    commands=()
+    for var in "$@"
+    do
+        commands+=$var" "
+    done
+    echo -e "${LIGHT_CYAN}+$commands${NC}"
+}
 
-
-# NVIM CONFIGS SYMLINK
-configs=(
-    init.vim
-    java.vim
-    zsh.vim
-    mapping.vim
-    plugins.vim
-    plugins_mappings.vim
-)
-echo ""
-echo -e "${YELLOW}Creating symlinks for nvim configuration's files${NC}"
-for i in "${configs[@]}"; do
-    echo -e "${LIGHT_CYAN}+ln -s $CURRENT_DIR/$i $NVIM_DIRECTORY${NC}"
-    ln -s $CURRENT_DIR/$i $NVIM_DIRECTORY > /dev/null 2>&1
+echoSuccessFail() {
     if [ $? -eq 0 ]; then
         echo -e "... ${LIGHT_GREEN}OK${NC}"
     else
-        echo -e "... ${LIGHT_RED}${MSG_AREADY_EXIST}${NC}"
+        echo -e "... ${LIGHT_RED}FAIL${NC}"
     fi
-done
+}
+
+echoSuccessFailGitClone() {
+    if [ $1 -eq 0 ]; then
+        echo -e "${LIGHT_GREEN}OK${NC}"
+    elif [ $1 -eq 128 ]; then
+        echo -e "${LIGHT_GREEN}ALREADY PRESENT${NC}"
+    else
+        echo -e "${LIGHT_RED}FAIL${NC}"
+    fi
+
+}
+
+# NVIM DIRECTORY
+createNvimDirectory() {
+    NVIM_DIRECTORY=$HOME/.config/nvim
+
+    echoMessage "Creating nvim's config directory if does not exist."
+    mkdir -p $NVIM_DIRECTORY
+    if [ $? -eq 0 ]; then
+        echo -e "... ${LIGHT_GREEN}OK${NC}"
+    else
+        echo -e "... ${LIGHT_RED}FAIL${NC}"
+    fi
+}
+
+
+# NVIM CONFIGS SYMLINK
+createConfigsSymlinks() {
+    CONFIGS=(
+        init.vim
+        java.vim
+        zsh.vim
+        mapping.vim
+        plugins.vim
+        plugins_mappings.vim
+    )
+    echo ""
+    echoMessage "Creating symlinks for nvim configuration's files"
+    for i in "${CONFIGS[@]}"; do
+        COMMAND="ln -s $CURRENT_DIR/$i $NVIM_DIRECTORY"
+        echoCommand $COMMAND
+        eval $COMMAND > /dev/null
+        echoSuccessFail
+    done
+}
 
 
 # NVIM DOWNLOAD
-NIGHTLY_NVIM="https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage"
 spinner() {
     local pid=$!
     local delay=0.75
@@ -63,99 +98,112 @@ spinner() {
     done
     printf "    \b\b\b\b"
 }
-echo ""
-echo -e "${YELLOW}Downloading Neovim (nightly build):${NC}"
-echo -e "${LIGHT_CYAN}+wget --quiet $NIGHTLY_NVIM --output-document nvim${NC}"
-wget --quiet $NIGHTLY_NVIM --output-document nvim&
-WGET_PID=$!
-spinner
-wait $WGET_PID
-NVIM_DOWNLOAD_SUCCESS=$?
-if [ $NVIM_DOWNLOAD_SUCCESS -eq 0 ]; then
-    echo -e "... ${LIGHT_GREEN}OK${NC}"
-else
-    echo -e "... ${LIGHT_RED}FAIL${NC}"
-fi
+
+downloadNvim() {
+    NIGHTLY_NVIM_URL="https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage"
+    DOWNLOAD_NVIM_COMMAND="wget --quiet $NIGHTLY_NVIM_URL --output-document nvim"
+
+    echoMessage "Downloading Neovim (nightly build):"
+    echoCommand $DOWNLOAD_NVIM_COMMAND
+    eval $DOWNLOAD_NVIM_COMMAND
+    WGET_PID=$!
+    spinner
+
+    wait $WGET_PID
+    NVIM_DOWNLOAD_SUCCESS=$?
+    echoSuccessFail
+}
 
 
 # NVIM EXECUTABLE
-echo ""
-echo -e "${YELLOW}Making nvim executable${NC}"
-echo -e "${LIGHT_CYAN}+chmod +x nvim${NC}"
-chmod +x nvim
-if [ $? -eq 0 ]; then
-    echo -e "... ${LIGHT_GREEN}OK${NC}"
-else
-    echo -e "... ${LIGHT_RED}FAIL${NC}"
-fi
+makeNvimExecutale() {
+    CHMOD_NVIM_COMMAND="chmod +x nvim"
+
+    echoMessage "Making nvim executable"
+    echoCommand "CHMOD_NVIM_COMMAND"
+    eval $CHMOD_NVIM_COMMAND
+    echoSuccessFail
+}
 
 
 # NVIM SYMLINK
-echo ""
-echo -e "${YELLOW}Creating symlink for nvim in '$LOCAL_BIN'${NC}"
-echo -e "${LIGHT_CYAN}+ln -s $CURRENT_DIR/nvim $LOCAL_BIN${NC}"
-ln -s $CURRENT_DIR/nvim $LOCAL_BIN > /dev/null 2>&1
-if [ $? -eq 0 ]; then
-    echo -e "... ${LIGHT_GREEN}OK${NC}"
-elif [ $? -eq 100 ]; then
-    echo -e "... ${LIGHT_RED}PERMISSION REQUIRED${NC}"
-else
-    echo -e "... ${LIGHT_RED}${MSG_AREADY_EXIST}${NC}"
-fi
+createNvimSylink() {
+    SYMLINK_NVIM_COMMAND="ln -s $CURRENT_DIR/nvim $LOCAL_BIN"
+
+    echoMessage "Creating symlink for nvim in '$LOCAL_BIN'"
+    echoCommand $SYMLINK_NVIM_COMMAND
+    eval $SYMLINK_NVIM_COMMAND
+    echoSuccessFail
+}
 
 
 # INSTALLING VIM-PLUG
-echo ""
-echo -e "${YELLOW}Installng Vim-Plug${NC}"
-echo -e "${LIGHT_CYAN}+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim${NC}"
-    curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-            if [ $? -eq 0 ]; then
-                echo -e "... ${LIGHT_GREEN}OK${NC}"
-            else
-                echo -e "... ${LIGHT_RED}FAIL${NC}"
-            fi
+installVimPlug() {
+    INSTALL_VIM_PLUG_COMMAND="curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+                https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+
+    echoMessage "Installng Vim-Plug"
+    echoCommand "$INSTALL_VIM_PLUG_COMMAND"
+    eval $INSTALL_VIM_PLUG_COMMAND
+    echoSuccessFail
+}
 
 
 # INSTALLING PLUGINS
-PLUGINS_DIR="$HOME/.local/share/nvim/plugged"
-echo ""
-echo -e "${YELLOW}Creating plugins directory${NC}"
-echo -e "${LIGHT_CYAN}+mkdir -p $PLUGINS_DIR "
-mkdir -p $PLUGINS_DIR > /dev/null 2>&1
-# Move to plugins directory
-printf "\n"
-echo -e "${YELLOW}Moving to plugins directory"
-echo -e "${LIGHT_CYAN}+cd $PLUGINS_DIR${NC}"
-cd $PLUGINS_DIR > /dev/null 2>&1
-# Git clone plugin
-plugins=(
-)
-# Adding plugins in plugins array
-PLUG="Plug"
-PLUG_FILE="$CURRENT_DIR/plugins.vim"
-while IFS= read -r line
-do
-    stringarray=($line)
-    if [[ ${stringarray[0]} == "$PLUG" ]]; then
-        output=$( echo ${stringarray[1]} | tr -d \' )
-        plugins+=($output)
-    fi
-done < "$PLUG_FILE"
-echo ""
-echo -e "${YELLOW}Installing nvim's plugins to $PLUGINS_DIR${NC}"
-for i in "${plugins[@]}"; do
-    printf "${LIGHT_CYAN}+git clone --recursive https://github.com/$i.git${NC}"
-    printf "\n$i: "
-    eval "git clone --recursive https://github.com/$i.git" > /dev/null 2>&1
-    if [ $? -eq 0 ]; then
-        printf "${LIGHT_GREEN}OK${NC}"
-    else
-        printf "${LIGHT_PURPLE}ALREADY EXISTS${NC}"
-    fi
-    printf "\n\n"
-done
+installPlugins() {
+    PLUGINS_DIR="$HOME/.local/share/nvim/plugged"
 
-echo ""
+    # Commands
+    CREATE_PLUGINS_DIRECTORY="mkdir -p $PLUGINS_DIR"
+    CD_PLUGINS_DIRECTORY="cd $PLUGINS_DIR"
+
+    # Create plugins directory
+    echoMessage "Creating plugins directory"
+    echoCommand $CREATE_PLUGINS_DIRECTORY
+    eval $CREATE_PLUGINS_DIRECTORY > /dev/null 2>&1
+
+    # Move to plugins directory
+    printf "\n"
+    echoMessage "Moving to plugins directory"
+    echoCommand $CD_PLUGINS_DIRECTORY
+    eval $CD_PLUGINS_DIRECTORY > /dev/null 2>&1
+
+    # Git clone plugin
+    plugins=(
+    )
+
+    PLUG="Plug"
+    PLUG_FILE="$CURRENT_DIR/plugins.vim"
+    while IFS= read -r line
+    do
+        stringarray=($line)
+        if [[ ${stringarray[0]} == "$PLUG" ]]; then
+            output=$( echo ${stringarray[1]} | tr -d \' )
+            plugins+=($output)
+        fi
+    done < "$PLUG_FILE"
+
+    echo ""
+    echoMessage "Installing nvim's plugins to $PLUGINS_DIR"
+
+    for i in "${plugins[@]}"; do
+        GIT_CLONE_PLUGIN_COMMAND="git clone --recursive https://github.com/$i.git"
+        printf "${LIGHT_CYAN}+$GIT_CLONE_PLUGIN_COMMAND${NC}"
+        printf "\n$i: "
+        eval "git clone --recursive https://github.com/$i.git" > /dev/null 2>&1
+        eval $GIT_CLONE_PLUGIN_COMMAND > /dev/null 2>&1
+        echoSuccessFailGitClone $?
+        printf "\n"
+    done
+}
+
+
+createNvimDirectory
+createConfigsSymlinks
+downloadNvim
+makeNvimExecutale
+createNvimSylink
+installVimPlug
+installPlugins
+
 echo -e "${LIGHT_GREEN}Run nvim then update plugins :PlugUpdate${NC}"
