@@ -53,7 +53,7 @@ nmap <silent> gr <Plug>(coc-references)
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
 
-" Use ù for jump to next placeholder, it's default of coc.nvim
+" Use tab for jump to next placeholder, it's default of coc.nvim
 let g:coc_snippet_next = '<tab>'
 
 " Fix autofix problem of current line
@@ -61,6 +61,9 @@ let g:coc_snippet_next = '<tab>'
 
 " Remap for do codeAction of current line
 nmap <leader>ac <Plug>(coc-codeaction)
+
+" Fold unchanged lines
+nmap <silent> <space>f :CocCommand git.foldUnchanged<CR>
 " }}}
 
 " Closetag {{{
