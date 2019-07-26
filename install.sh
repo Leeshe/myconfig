@@ -25,7 +25,12 @@ echoMessage() {
 }
 
 echoCommand() {
-    echo -e "${LIGHT_CYAN}+$1${NC}"
+    commands=()
+    for var in "$@"
+    do
+        commands+=$var" "
+    done
+    echo -e "${LIGHT_CYAN}+$commands${NC}"
 }
 
 echoSuccessFail() {
@@ -34,6 +39,22 @@ echoSuccessFail() {
     else
         echo -e "... ${LIGHT_RED}FAIL${NC}"
     fi
+}
+
+installPackages() {
+    PACKAGES_FILE="packages"
+    packages=()
+
+    while IFS= read -r package
+    do
+        packages+=$package" "
+    done < "$PACKAGES_FILE"
+
+    APT_INSTALL_COMMAND="sudo apt install $packages"
+
+    echoMessage "Installing following packages: $packages"
+    echoCommand $APT_INSTALL_COMMAND
+    eval $APT_INSTALL_COMMAND
 }
 
 executeInstallScript() {
@@ -53,6 +74,7 @@ executeInstallScript() {
     ./install.sh
 }
 
-# Serious business
-executeInstallScript $BASH_SCRIPT_FOLDER
-echoSuccessFail
+installAll() {
+    installPackages
+    echoSuccessFail
+}
