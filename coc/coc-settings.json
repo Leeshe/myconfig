@@ -10,12 +10,18 @@
 
     "git.enableGutters": true,
 
-    "java.errors.incompleteClasspath.severity": "ignore",
-    "java.referencesCodeLens.enabled": true,
-    "java.implementationsCodeLens.enabled": true,
-    "java.signatureHelp.enabled": true,
-    "java.completion.overwrite": true,
+    "java.autobuild.enabled": true,
     "java.codeGeneration.generateComments": true,
+    "java.completion.guessMethodArguments": true,
+    "java.completion.overwrite": true,
+    "java.configuration.maven.userSettings": "~/.m2/settings.xml",
+    "java.errors.incompleteClasspath.severity": "ignore",
+    "java.implementationsCodeLens.enabled": true,
+    "java.import.gradle.enabled": true,
+    "java.import.maven.enabled": true,
+    "java.maven.downloadSources": true,
+    "java.referencesCodeLens.enabled": true,
+    "java.signatureHelp.enabled": true,
 
     "python.jediEnabled": false,
 
