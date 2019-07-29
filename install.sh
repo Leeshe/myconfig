@@ -6,6 +6,7 @@ ROOT_DIRECTORY="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd 
 BASH="$ROOT_DIRECTORY/bash_script"
 COC="$ROOT_DIRECTORY/coc"
 NVIM="$ROOT_DIRECTORY/nvim"
+PACKAGES="$ROOT_DIRECTORY/packages"
 ZSH="$ROOT_DIRECTORY/zsh"
 
 # COLORS
@@ -41,22 +42,6 @@ echoSuccessFail() {
     fi
 }
 
-installPackages() {
-    PACKAGES_FILE="packages"
-    packages=()
-
-    while IFS= read -r package
-    do
-        packages+=$package" "
-    done < "$PACKAGES_FILE"
-
-    APT_INSTALL_COMMAND="sudo apt install $packages"
-
-    echoMessage "Installing following packages: $packages"
-    echoCommand $APT_INSTALL_COMMAND
-    eval $APT_INSTALL_COMMAND
-}
-
 executeInstallScript() {
     CD_TO_INSTALL_FOLDER="cd $1"
 
@@ -76,15 +61,12 @@ executeInstallScript() {
 
 installAll() {
     INSTALLATION_FOLDERS=(
+        $PACKAGES
         $BASH
         $ZSH
         $NVIM
         $COC
     )
-
-    # Install packages first
-    installPackages
-    echoSuccessFail
 
     for folder in "${INSTALLATION_FOLDERS[@]}"
     do
