@@ -14,7 +14,6 @@
     "java.codeGeneration.generateComments": true,
     "java.completion.guessMethodArguments": true,
     "java.completion.overwrite": true,
-    "java.configuration.maven.userSettings": "~/.m2/settings.xml",
     "java.errors.incompleteClasspath.severity": "ignore",
     "java.implementationsCodeLens.enabled": true,
     "java.import.gradle.enabled": true,
