@@ -1,4 +1,3 @@
-" Plugins {{{
 " Plugins will be downloaded under the specified directory
 call plug#begin('~/.local/share/nvim/plugged')
 
@@ -14,6 +13,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Colorscheme
 Plug 'skielbasa/vim-material-monokai'
+Plug 'srcery-colors/srcery-vim'
+Plug 'nightsense/cosmic_latte'
+Plug 'sainnhe/vim-color-vanilla-cake'
 
 " Listing
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
@@ -34,4 +36,3 @@ Plug 'janko/vim-test'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
-" }}}

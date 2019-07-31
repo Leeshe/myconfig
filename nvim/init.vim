@@ -101,6 +101,7 @@ source $HOME/.config/nvim/mapping.vim
 
 " Colorscheme {{{
 colorscheme material-monokai
+"colorscheme srcery
 
 " Transparent background
 hi Normal guibg=NONE ctermbg=NONE
@@ -110,3 +111,4 @@ hi Normal guibg=NONE ctermbg=NONE
 highlight Trail ctermbg=red guibg=red
 call matchadd('Trail', '\s\+$', 100)
 
+let g:startify_session_persistence = 1

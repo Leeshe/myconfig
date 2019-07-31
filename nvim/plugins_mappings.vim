@@ -95,3 +95,19 @@ let g:buffet_separator = ""
 " indentLine {{{
 let g:indentLine_char = '┊'
 " }}}
+
+" Fugitive {{{
+nmap <silent> <Leader>gs :Gstatus<CR>
+" }}}
+
+" Startify {{{
+let g:startify_session_persistence = 1
+" }}}
+
+" Vista {{{
+let g:vista#renderer#enable_icon = 1
+let g:vista#renderer#icons = {
+\   "function": "\uf794",
+\   "variable": "\uf71b",
+\  }
+" }}}"
