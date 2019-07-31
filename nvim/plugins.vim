@@ -13,9 +13,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Colorscheme
 Plug 'skielbasa/vim-material-monokai'
-Plug 'srcery-colors/srcery-vim'
-Plug 'nightsense/cosmic_latte'
-Plug 'sainnhe/vim-color-vanilla-cake'
 
 " Listing
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
