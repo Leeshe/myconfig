@@ -110,5 +110,3 @@ hi Normal guibg=NONE ctermbg=NONE
 " Highlight trailing space
 highlight Trail ctermbg=red guibg=red
 call matchadd('Trail', '\s\+$', 100)
-
-let g:startify_session_persistence = 1
