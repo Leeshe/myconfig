@@ -33,6 +33,16 @@ echoSuccessFail() {
     fi
 }
 
+echoSuccessFailGitClone() {
+    if [ $1 -eq 0 ]; then
+        echo -e "${LIGHT_GREEN}OK${NC}"
+    elif [ $1 -eq 128 ]; then
+        echo -e "${LIGHT_GREEN}ALREADY PRESENT${NC}"
+    else
+        echo -e "${LIGHT_RED}FAIL${NC}"
+    fi
+}
+
 << "PARAMETERS"
     $1: string message
     $2: command to evaluate
@@ -51,7 +61,6 @@ installOhMyZsh() {
     evaluateCommand "$MESSAGE" "$COMMAND"
 }
 
-
 createSymlink() {
     MESSAGE_REMOVE_SYMLINK="Removing current .zshrc"
     COMMAND_REMOVE_SYMLINK="rm -rf $HOME/.zshrc"
@@ -63,7 +72,29 @@ createSymlink() {
     evaluateCommand "$MESSAGE_CREATE_SYMLINK" "$COMMAND_CREATE_SYMLINK"
 }
 
+installZshSyntaxHighlighting() {
+    MESSAGE="Installing zsh-syntax-highlighting..."
+    COMMAND="git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
+
+    echoMessage "$MESSAGE"
+    echoCommand "$COMMAND"
+    eval "$COMMAND" > /dev/null 2>&1
+    echoSuccessFailGitClone $?
+}
+
+installZshAutosuggestions() {
+    MESSAGE="Installing zsh-autosuggestions..."
+    COMMAND="git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
+
+    echoMessage "$MESSAGE"
+    echoCommand "$COMMAND"
+    eval "$COMMAND" > /dev/null 2>&1
+    echoSuccessFailGitClone $?
+}
+
 installOhMyZsh
 createSymlink
+installZshSyntaxHighlighting
+installZshAutosuggestions
 
 exit 0
