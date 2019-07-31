@@ -15,7 +15,10 @@ sudo chmod +x install.sh
 
 ## Screenshots
 
-![image](https://user-images.githubusercontent.com/16366403/62221241-a0363080-b3b1-11e9-8750-7c7d4bac2d3c.png)  
+### Neovim
+![image](https://user-images.githubusercontent.com/16366403/62221241-a0363080-b3b1-11e9-8750-7c7d4bac2d3c.png)
+
+### Gnome-Terminal (Oh-My-Zsh)
 ![image](https://user-images.githubusercontent.com/16366403/62221570-2488b380-b3b2-11e9-9c34-3bbb4007643f.png)
 
 ## :scroll: Package Dependencies
