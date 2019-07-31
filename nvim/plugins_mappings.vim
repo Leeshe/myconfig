@@ -85,11 +85,30 @@ nnoremap <silent> tn :TestNearest<CR>
 " }}}
 
 " Vim-Buffet {{{
-let g:buffet_powerline_separators = 0
+
+" if set to 1, use powerline separators in between buffers and tabs in the tabline
+let g:buffet_powerline_separators = 1
+
+" the character to be used as an icon for the tab items in the tabline.
 let g:buffet_tab_icon = "\uf00a"
+
+" the character to be shown by the count of truncated buffers on the left.
 let g:buffet_left_trunc_icon = "\uf0a8"
+
+" the character to be shown by the count of truncated buffers on the right.
 let g:buffet_right_trunc_icon = "\uf0a9"
+
+"the character to be used for separating items in the tabline.
 let g:buffet_separator = ""
+
+" if set to 0, the tabline will only be shown if there is more than one buffer or tab open.
+let g:buffet_always_show_tabline = 0
+
+hi BuffetCurrentBuffer cterm=NONE ctermbg=6 ctermfg=8 guibg=#0066FF guifg=#0066FF
+hi BuffetActiveBuffer cterm=NONE ctermbg=6 ctermfg=8 guibg=#0066FF guifg=#0066FF
+hi BuffetTrunc cterm=NONE ctermbg=6 ctermfg=8 guibg=#0066FF guifg=#0066FF
+
+
 " }}}
 
 " indentLine {{{
