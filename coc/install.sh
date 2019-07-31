@@ -2,8 +2,6 @@
 
 set -o nounset    # error when referencing undefined variable
 
-figlet "COC"
-
 # COLORS
 LIGHT_RED='\033[1;31m'
 YELLOW='\033[1;33m'

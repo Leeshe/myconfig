@@ -1,7 +1,5 @@
 #!/bin/bash
 
-figlet "NVIM"
-
 # DIRS
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 LOCAL_BIN="/usr/local/bin"
