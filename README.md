@@ -13,6 +13,10 @@ sudo chmod +x install.sh
 ./install.sh
 ```
 
+## Screenshots
+
+![image](https://user-images.githubusercontent.com/16366403/62221241-a0363080-b3b1-11e9-8750-7c7d4bac2d3c.png)
+
 ## :scroll: Package Dependencies
 
 **autojump**
