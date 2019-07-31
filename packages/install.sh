@@ -47,3 +47,5 @@ installPackages() {
 }
 
 installPackages
+
+exit 0
