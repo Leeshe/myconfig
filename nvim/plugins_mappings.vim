@@ -104,11 +104,8 @@ let g:buffet_separator = ""
 " if set to 0, the tabline will only be shown if there is more than one buffer or tab open.
 let g:buffet_always_show_tabline = 0
 
-hi BuffetCurrentBuffer cterm=NONE ctermbg=6 ctermfg=8 guibg=#0066FF guifg=#0066FF
-hi BuffetActiveBuffer cterm=NONE ctermbg=6 ctermfg=8 guibg=#0066FF guifg=#0066FF
-hi BuffetTrunc cterm=NONE ctermbg=6 ctermfg=8 guibg=#0066FF guifg=#0066FF
-
-
+" if set to 1, show index before each buffer name. Index is useful for switching between buffers quickly.
+let g:buffet_show_index = 1
 " }}}
 
 " indentLine {{{
