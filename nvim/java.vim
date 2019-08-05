@@ -1,4 +1,3 @@
-" Java file settings {{{
 augroup filetype_java
     autocmd!
     
@@ -23,4 +22,3 @@ augroup filetype_java
     let java_highlight_functions = 1
     let java_highlight_all = 1
 augroup END
-"}}}
