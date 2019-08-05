@@ -1,6 +1,3 @@
-"Vim Mapping {{{
-"
-
 "Type <Leader>w to save a file
 nnoremap <Leader>w :w<CR>
 
@@ -27,4 +24,3 @@ nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
 
 "Type 1 to get the beginning of the line
 nnoremap 1 0
-"}}}
