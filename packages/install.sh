@@ -46,6 +46,16 @@ installPackages() {
     eval $APT_INSTALL_COMMAND
 }
 
+updateNpm() {
+    npm install -g npm
+}
+
+installPythonForNeovim() {
+    pip3 install neovim
+}
+
 installPackages
+updateNpm
+installPythonForNeovim
 
 exit 0
