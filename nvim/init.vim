@@ -104,11 +104,11 @@ colorscheme material-monokai
 "colorscheme srcery
 
 " Transparent background
+hi Visual guifg=Black guibg=#00FA9A gui=none
 hi Normal guibg=NONE ctermbg=NONE
+hi Comment guifg=#FF1493 guibg=#FFFFFF
 " }}}
 
 " Highlight trailing space
 highlight Trail ctermbg=red guibg=red
 call matchadd('Trail', '\s\+$', 100)
-
-hi Visual guifg=Black guibg=#00FA9A gui=none
