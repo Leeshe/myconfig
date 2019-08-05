@@ -176,7 +176,6 @@ downloadNvim
 makeNvimExecutale
 createNvimSylink
 installVimPlug
-installPlugins
 
 echo ""
 echo -e "${LIGHT_GREEN}Run nvim then update plugins :PlugUpdate${NC}"
