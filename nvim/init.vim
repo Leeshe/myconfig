@@ -110,3 +110,5 @@ hi Normal guibg=NONE ctermbg=NONE
 " Highlight trailing space
 highlight Trail ctermbg=red guibg=red
 call matchadd('Trail', '\s\+$', 100)
+
+hi Visual guifg=Black guibg=#00FA9A gui=none
