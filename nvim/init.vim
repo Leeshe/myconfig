@@ -106,7 +106,7 @@ colorscheme material-monokai
 " Transparent background
 hi Visual guifg=Black guibg=#00FA9A gui=none
 hi Normal guibg=NONE ctermbg=NONE
-hi Comment guifg=#FF1493 guibg=#FFFFFF
+hi Comment guifg=#FFFFFF
 " }}}
 
 " Highlight trailing space
