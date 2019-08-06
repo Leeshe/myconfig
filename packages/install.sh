@@ -10,7 +10,7 @@ NC='\033[0m'
 
 # FUNCTIONS
 echoMessage() {
-    echo -e "${YELLOW}$1${NC}"
+    echo -e "${YELLOW}$1${NC}..."
 }
 
 echoCommand() {
@@ -30,6 +30,17 @@ echoSuccessFail() {
     fi
 }
 
+<< "PARAMETERS"
+    $1: string message
+    $2: command to evaluate
+PARAMETERS
+evaluateCommand() {
+    echoMessage "$1"
+    echoCommand "$2"
+    eval "$2" > /dev/null
+    echoSuccessFail
+}
+
 installPackages() {
     PACKAGES_FILE="list_packages"
     packages=()
@@ -47,11 +58,17 @@ installPackages() {
 }
 
 updateNpm() {
-    npm install -g npm
+    MESSAGE="Updating npm"
+    COMMAND="npm install -g npm"
+
+    evaluateCommand "$MESSAGE" "$COMMAND"
 }
 
 installPythonForNeovim() {
-    pip3 install neovim
+    MESSAGE="Installing Python3 for Neovim"
+    COMMAND="pip3 install neovim"
+
+    evaluateCommand "$MESSAGE" "$COMMAND"
 }
 
 installPackages
