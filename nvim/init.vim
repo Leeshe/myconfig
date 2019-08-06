@@ -112,4 +112,6 @@ hi Comment guifg=#FFFFFF
 " Highlight trailing space
 highlight Trail ctermbg=red guibg=red
 call matchadd('Trail', '\s\+$', 100)
+
+" Highlight word under cursor
 hi illuminatedWord cterm=underline gui=none guifg=White guibg=#0066FF
