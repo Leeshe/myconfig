@@ -50,11 +50,10 @@ installPackages() {
         packages+=$package" "
     done < "$PACKAGES_FILE"
 
-    APT_INSTALL_COMMAND="sudo apt install $packages"
+    MESSAGE="Installing following packages: $packages"
+    COMMAND="sudo apt install $packages"
 
-    echoMessage "Installing following packages: $packages"
-    echoCommand $APT_INSTALL_COMMAND
-    eval $APT_INSTALL_COMMAND
+    evaluateCommand "$MESSAGE" "$COMMAND"
 }
 
 updateNpm() {
