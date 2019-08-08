@@ -67,6 +67,11 @@ npm install -g npm
 | Interface  	| <ul><li>[indentLine](https://github.com/Yggdroot/indentLine)</li><li>[vim-illuminate](https://github.com/RRethy/vim-illuminate)</li></ul>  	| <ul><li>Display thin vertical lines at each indentation level</li><li>Highlight other uses of the current word under the cursor</li></ul>
 | Integrations   | <ul><li>[fugitive.vim](https://github.com/tpope/vim-fugitive)</li><li>[vim-test](https://github.com/janko/vim-test)</ul>   | <ul><li>Git wrapper</li><li>Run your tests at the speed of thought</li></ul>
 
+## :bookmark_tabs: ZSH Plugins
+
+[zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)  
+[zsh-sytax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+
 ## :ab: Fonts
 
 [Hack Regular Nerd Font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete.ttf)
