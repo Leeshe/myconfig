@@ -61,7 +61,7 @@ npm install -g npm
 | Statusline  	| <ul><li>[lightline.vim](https://github.com/itchyny/lightline.vim)</ul></li>  	| <ul><li>A light and configurable statusline/tabline</ul></li> |
 | Buffers  	| <ul><li>[vimade](https://github.com/TaDaa/vimade)</li><li>[vim-buffet](https://github.com/bagrat/vim-buffet)</li></ul>  | <ul><li>Fade your inactive buffers</li><li>Bring the IDE-like tabs</li></ul>
 | Completion  	| <ul><li>[Coc.nvim](https://github.com/neoclide/coc.nvim)  	| <ul><li>Coc is an intellisense engine
-| Colorscheme  	| <ul><li>[vim-material-monokai](https://github.com/skielbasa/vim-material-monokai)</ul></li>  	| <ul><li>Inspired by brendanblackwood's material-monokai-syntax theme</ul></li>
+| Colorscheme  	| <ul><li>[vim-sublime-monokai](https://github.com/ErichDonGubler/vim-sublime-monokai)</ul></li>  	| <ul><li>vim-sublime-monokai is a refined Monokai color scheme for vim tries to look like Sublime's default color scheme</ul></li>
 | Lists 	| <ul><li>[fzf.vim](https://github.com/junegunn/fzf.vim)</li><li>[vista.vim](https://github.com/liuchengxu/vista.vim)</li><li>[vim-startify](https://github.com/mhinz/vim-startify)</li></ul>	| <ul><li>fzf is a general-purpose command-line fuzzy finder</li><li>View and search LSP symbols, tags</li><li>Provide a start screen</li></ul>
 | Moving  	| <ul><li>[vim-easymotion](https://github.com/easymotion/vim-easymotion)</ul></li>  	| <ul><li>Provide a much simpler way to use some motions</ul></li>
 | Interface  	| <ul><li>[indentLine](https://github.com/Yggdroot/indentLine)</li><li>[vim-illuminate](https://github.com/RRethy/vim-illuminate)</li></ul>  	| <ul><li>Display thin vertical lines at each indentation level</li><li>Highlight other uses of the current word under the cursor</li></ul>
