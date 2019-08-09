@@ -114,4 +114,4 @@ call matchadd('Trail', '\s\+$', 100)
 hi illuminatedWord cterm=underline gui=none guifg=White guibg=#0066FF
 
 " Comments color
-hi Comment guifg=#FF69B4
+hi Comment guifg=#7CFC00
