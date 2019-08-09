@@ -84,6 +84,8 @@ set expandtab
 " True color
 set termguicolors
 
+" Update time in ms
+set updatetime=200
 "}}}
 
 " Vimscript file settings {{{
@@ -115,3 +117,6 @@ hi illuminatedWord cterm=underline gui=none guifg=White guibg=#0066FF
 
 " Comments color
 hi Comment guifg=#7CFC00
+
+" Change highlighted word color
+hi CursorColumn guibg=#0066FF guifg=White
