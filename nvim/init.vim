@@ -95,19 +95,16 @@ augroup END
 
 source $HOME/.config/nvim/plugins.vim
 source $HOME/.config/nvim/plugins_mappings.vim
-source $HOME/.config/nvim/java.vim
+"source $HOME/.config/nvim/java.vim
 source $HOME/.config/nvim/zsh.vim
 source $HOME/.config/nvim/mapping.vim
 
-" Colorscheme {{{
-colorscheme material-monokai
-"colorscheme srcery
+"colorscheme material-monokai
+colorscheme sublimemonokai
 
 " Transparent background
 hi Visual guifg=Black guibg=#00FA9A gui=none
 hi Normal guibg=NONE ctermbg=NONE
-hi Comment guifg=#FFFFFF
-" }}}
 
 " Highlight trailing space
 highlight Trail ctermbg=red guibg=red
@@ -115,3 +112,6 @@ call matchadd('Trail', '\s\+$', 100)
 
 " Highlight word under cursor
 hi illuminatedWord cterm=underline gui=none guifg=White guibg=#0066FF
+
+" Comments color
+hi Comment guifg=#FF69B4

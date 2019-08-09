@@ -143,3 +143,9 @@ let g:vista#renderer#icons = {
 " Vim-Illuminate {{{
 hi illuminatedWord cterm=underline gui=none guifg=White guibg=#0066FF
 " }}}
+
+" sublime-monokai {{{
+let java_comment_strings=1
+let java_highlight_functions=1
+let java_highlight_java_lang_ids=1
+" }}}

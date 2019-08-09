@@ -13,6 +13,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Colorscheme
 Plug 'skielbasa/vim-material-monokai'
+Plug 'ErichDonGubler/vim-sublime-monokai'
 
 " Listing
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
@@ -26,6 +27,9 @@ Plug 'easymotion/vim-easymotion'
 " Edition
 Plug 'Yggdroot/indentLine'
 Plug 'RRethy/vim-illuminate'
+
+" Syntax
+Plug 'rudes/vim-java'
 
 " Others
 Plug 'tpope/vim-fugitive'
