@@ -65,7 +65,7 @@ npm install -g npm
 | Syntax        | <ul><li>[vim-java](https://github.com/rudes/vim-java)</li></ul>   | <ul><li>Syntax update for Java in Vim</li></ul>
 | Lists 	| <ul><li>[fzf.vim](https://github.com/junegunn/fzf.vim)</li><li>[vista.vim](https://github.com/liuchengxu/vista.vim)</li><li>[vim-startify](https://github.com/mhinz/vim-startify)</li></ul>	| <ul><li>fzf is a general-purpose command-line fuzzy finder</li><li>View and search LSP symbols, tags</li><li>Provide a start screen</li></ul>
 | Moving  	| <ul><li>[vim-easymotion](https://github.com/easymotion/vim-easymotion)</ul></li>  	| <ul><li>Provide a much simpler way to use some motions</ul></li>
-| Interface  	| <ul><li>[indentLine](https://github.com/Yggdroot/indentLine)</li><li>[vim-illuminate](https://github.com/RRethy/vim-illuminate)</li></ul>  	| <ul><li>Display thin vertical lines at each indentation level</li><li>Highlight other uses of the current word under the cursor</li></ul>
+| Interface  	| <ul><li>[indentLine](https://github.com/Yggdroot/indentLine)</li></ul>  	| <ul><li>Display thin vertical lines at each indentation level</li></ul>
 | Integrations   | <ul><li>[fugitive.vim](https://github.com/tpope/vim-fugitive)</li><li>[vim-test](https://github.com/janko/vim-test)</ul>   | <ul><li>Git wrapper</li><li>Run your tests at the speed of thought</li></ul>
 
 ## :bookmark_tabs: ZSH Plugins
