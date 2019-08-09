@@ -65,7 +65,14 @@ nmap <leader>ac <Plug>(coc-codeaction)
 " Fold unchanged lines
 nmap <silent> <space>f :CocCommand git.foldUnchanged<CR>
 
+" CocErrorSign color
 hi CocErrorSign ctermfg=Red guifg=#FF0000
+
+" Highlight word under cursor
+autocmd CursorHold * call CocActionAsync('highlight')
+
+" Change highlighted word color
+hi CursorColumn guibg=#0066FF guifg=White
 " }}}
 
 " Closetag {{{
