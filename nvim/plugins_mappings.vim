@@ -64,6 +64,8 @@ nmap <leader>ac <Plug>(coc-codeaction)
 
 " Fold unchanged lines
 nmap <silent> <space>f :CocCommand git.foldUnchanged<CR>
+
+hi CocErrorSign ctermfg=Red guifg=#FF0000
 " }}}
 
 " Closetag {{{
