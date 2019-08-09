@@ -26,7 +26,7 @@ Plug 'easymotion/vim-easymotion'
 
 " Edition
 Plug 'Yggdroot/indentLine'
-Plug 'RRethy/vim-illuminate'
+"Plug 'RRethy/vim-illuminate'
 
 " Syntax
 Plug 'rudes/vim-java'
