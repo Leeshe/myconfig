@@ -1,4 +1,5 @@
 {
+    "coc.preferences.colorSupport": true,
     "codeLens.enable": true,
 
     "clock.enable": true,
