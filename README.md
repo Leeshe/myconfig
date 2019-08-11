@@ -1,3 +1,21 @@
+# :book: Table of contents
+
+- [Dotfiles](#open_file_folder-dotfiles)
+	- [Ubuntu 16.04 & 18.04](#computer-ubuntu-1604--1804)
+- [Installation](#wrench-installation)
+- [Screenshots](#art-screenshots)
+	- [Neovim](#neovim)
+	- [Gnome-Terminal (Oh-My-Zsh)](#gnome-terminal-oh-my-zsh)
+- [Package Dependencies](#scroll-package-dependencies)
+- [(Neo)Vim Plugins](#bookmark_tabs-neovim-plugins)
+- [ZSH Plugins](#bookmark_tabs-zsh-plugins)
+- [Fonts](#ab-fonts)
+- [Firefox Plugins](#link-firefox-plugins)
+- [GitHub](#link-github)
+- [Reddit](#link-reddit)
+- [Eclipse](#link-eclipse)
+
+
 # :open_file_folder: Dotfiles
 
 ### :computer: Ubuntu 16.04 & 18.04
