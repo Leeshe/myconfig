@@ -8,7 +8,7 @@
 	- [Gnome-Terminal (Oh-My-Zsh)](#gnome-terminal-oh-my-zsh)
 - [Package Dependencies](#scroll-package-dependencies)
 - [(Neo)Vim Plugins](#neovim-plugins)
-- [COC extensions](#bookmark-tabs--coc-extensions)
+- [COC extensions](#bookmark-tabs-coc-extensions)
 - [ZSH Plugins](#bookmark_tabs-zsh-plugins)
 - [Fonts](#ab-fonts)
 - [Firefox Plugins](#link-firefox-plugins)
