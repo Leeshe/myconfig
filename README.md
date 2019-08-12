@@ -90,7 +90,10 @@ npm install -g npm
 
 |  Extension    |  Description  |
 |  :-:   | :-: |
-|  coc-java     | Fork of vscode-java to works with coc.nvim.  |
+|  [coc-clock](https://github.com/iamcco/coc-clock)     | coc extensions of clock.nvim  |
+|  [coc-git](https://github.com/neoclide/coc-git)       | Git integration of coc.nvim.  |
+|  [coc-java](https://github.com/neoclide/coc-java)     | Fork of vscode-java to works with coc.nvim.  |
+|  [coc-json](https://github.com/neoclide/coc-json)     | Json language server extension for coc.nvim.  |
 
 ## :bookmark_tabs: ZSH Plugins
 
