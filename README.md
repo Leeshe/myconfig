@@ -100,7 +100,7 @@ npm install -g npm
 |  [coc-marketplace](https://github.com/fannheyward/coc-marketplace)    | coc.nvim extensions marketplace.  |
 |  [coc-pairs](https://github.com/neoclide/coc-pairs)   | Auto pair extension for coc.nvim.  |
 |  [coc-snippets](https://github.com/neoclide/coc-snippets) | Snippets solution for coc.nvim  |
-|  [coc-xml](https://github.com/fannheyward/coc-xml)    | ork of vscode-xml, provides support for creating and editing XML documents, based on the LSP4XML Language Server, running with Java.  |
+|  [coc-xml](https://github.com/fannheyward/coc-xml)    | fork of vscode-xml, provides support for creating and editing XML documents, based on the LSP4XML Language Server, running with Java.  |
 
 ## :bookmark_tabs: ZSH Plugins
 
