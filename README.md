@@ -7,8 +7,8 @@
 	- [Neovim](#neovim)
 	- [Gnome-Terminal (Oh-My-Zsh)](#gnome-terminal-oh-my-zsh)
 - [Package Dependencies](#scroll-package-dependencies)
-- [(Neo)Vim Plugins](#neovim-plugins)
-- [COC extensions](#bookmark-tabs-coc-extensions)
+- [(Neo)Vim Plugins](#bookmark_tabs-neovim-plugins)
+- [COC extensions](#bookmark_tabs-coc-extensions)
 - [ZSH Plugins](#bookmark_tabs-zsh-plugins)
 - [Fonts](#ab-fonts)
 - [Firefox Plugins](#link-firefox-plugins)
@@ -90,7 +90,7 @@ npm install -g npm
 ## :bookmark_tabs: COC extensions
 
 |  Extension    |  Description  |
-|  :-:   | :-: |
+|  :-:   | :- |
 |  [coc-clock](https://github.com/iamcco/coc-clock)     | coc extensions of clock.nvim  |
 |  [coc-git](https://github.com/neoclide/coc-git)       | Git integration of coc.nvim.  |
 |  [coc-java](https://github.com/neoclide/coc-java)     | Fork of vscode-java to works with coc.nvim.  |
