@@ -28,7 +28,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'Yggdroot/indentLine'
 
 " Syntax
-Plug 'rudes/vim-java'
+Plug 'uiiaoo/java-syntax.vim'
 
 " Others
 Plug 'tpope/vim-fugitive'
