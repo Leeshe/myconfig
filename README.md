@@ -93,8 +93,14 @@ npm install -g npm
 |  :-:   | :- |
 |  [coc-clock](https://github.com/iamcco/coc-clock)     | coc extensions of clock.nvim  |
 |  [coc-git](https://github.com/neoclide/coc-git)       | Git integration of coc.nvim.  |
+|  [coc-highlight](https://github.com/neoclide/coc-highlight)   | Provide default highlight for coc.nvim, including document highlight (highlight of current document symbol) and colors highlight.  |
 |  [coc-java](https://github.com/neoclide/coc-java)     | Fork of vscode-java to works with coc.nvim.  |
 |  [coc-json](https://github.com/neoclide/coc-json)     | Json language server extension for coc.nvim.  |
+|  [coc-lists](https://github.com/neoclide/coc-lists)   | Some basic list sources for coc.nvim  |
+|  [coc-marketplace](https://github.com/fannheyward/coc-marketplace)    | coc.nvim extensions marketplace.  |
+|  [coc-pairs](https://github.com/neoclide/coc-pairs)   | Auto pair extension for coc.nvim.  |
+|  [coc-snippets](https://github.com/neoclide/coc-snippets) | Snippets solution for coc.nvim  |
+|  [coc-xml](https://github.com/fannheyward/coc-xml)    | ork of vscode-xml, provides support for creating and editing XML documents, based on the LSP4XML Language Server, running with Java.  |
 
 ## :bookmark_tabs: ZSH Plugins
 
