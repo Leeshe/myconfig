@@ -85,7 +85,7 @@ set expandtab
 set termguicolors
 
 " Update time in ms
-set updatetime=200
+set updatetime=100
 "}}}
 
 " Vimscript file settings {{{
