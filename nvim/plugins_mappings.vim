@@ -139,11 +139,17 @@ let g:startify_session_persistence = 1
 " }}}
 
 " Vista {{{
+
+" Ensure you have installed some decent font to show these pretty symbols, then you can enable icon for the kind.
 let g:vista#renderer#enable_icon = 1
 let g:vista#renderer#icons = {
 \   "function": "\uf794",
 \   "variable": "\uf71b",
 \  }
+
+" Position to open the vista sidebar. On the right by default.
+" Change to `vertical topleft` to open on the left.
+let g:vista_sidebar_position = 'vertical topleft'
 " }}}"
 
 " Vim-Illuminate {{{
