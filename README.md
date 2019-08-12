@@ -86,6 +86,12 @@ npm install -g npm
 | Interface  	| <ul><li>[indentLine](https://github.com/Yggdroot/indentLine)</li></ul>  	| <ul><li>Display thin vertical lines at each indentation level</li></ul>
 | Integrations   | <ul><li>[fugitive.vim](https://github.com/tpope/vim-fugitive)</li><li>[vim-test](https://github.com/janko/vim-test)</ul>   | <ul><li>Git wrapper</li><li>Run your tests at the speed of thought</li></ul>
 
+## :bookmark_tabs: COC extensions
+
+|  Extension    |  Description  |
+|  :-:   | :-: |
+|  coc-java     | Fork of vscode-java to works with coc.nvim.  |
+
 ## :bookmark_tabs: ZSH Plugins
 
 [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)  
