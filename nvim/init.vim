@@ -99,7 +99,6 @@ augroup END
 " }}}
 
 source $HOME/.config/nvim/plugins.vim
-source $HOME/.config/nvim/plugins_mappings.vim
 source $HOME/.config/nvim/zsh.vim
 source $HOME/.config/nvim/mapping.vim
 
@@ -114,11 +113,7 @@ hi Normal guibg=NONE ctermbg=NONE
 highlight Trail ctermbg=red guibg=red
 call matchadd('Trail', '\s\+$', 100)
 
-" Highlight word under cursor
-hi illuminatedWord cterm=underline gui=none guifg=White guibg=#0066FF
-
 " Comments color
 hi Comment guifg=#7CFC00
 
-" Change highlighted word color
-hi CursorColumn guibg=#0066FF guifg=White
+source $HOME/.config/nvim/plugins_mappings.vim
