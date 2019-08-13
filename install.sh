@@ -39,8 +39,8 @@ echoMessage() {
 }
 
 ###################################################################
-# @description          Prints given message in cyan
-# @args                 $1: command to print
+# @description      Prints given message in cyan
+# @args             $1: command to print
 ###################################################################
 echoCommand() {
     commands=()
