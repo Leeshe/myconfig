@@ -2,7 +2,7 @@
 
 ###################################################################
 # @constant
-# @description:     directories: current and local binaries
+# @description      directories: current and local binaries
 ###################################################################
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 LOCAL_BIN="/usr/local/bin"
