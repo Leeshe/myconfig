@@ -71,7 +71,6 @@ createNvimDirectory() {
 createConfigsSymlinks() {
     CONFIGS=(
         init.vim
-        java.vim
         zsh.vim
         mapping.vim
         plugins.vim
