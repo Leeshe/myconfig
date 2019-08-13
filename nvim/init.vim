@@ -97,7 +97,6 @@ augroup END
 
 source $HOME/.config/nvim/plugins.vim
 source $HOME/.config/nvim/plugins_mappings.vim
-"source $HOME/.config/nvim/java.vim
 source $HOME/.config/nvim/zsh.vim
 source $HOME/.config/nvim/mapping.vim
 
