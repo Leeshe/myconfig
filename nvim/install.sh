@@ -1,11 +1,16 @@
 #!/bin/bash
 
-# DIRS
+###################################################################
+# @constant
+# @description:     directories: current and local binaries
+###################################################################
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 LOCAL_BIN="/usr/local/bin"
 
-
-# COLORS
+###################################################################
+# @constans
+# @description:     color constant
+###################################################################
 LIGHT_RED='\033[1;31m'
 YELLOW='\033[1;33m'
 LIGHT_CYAN='\033[1;36m'
@@ -14,11 +19,18 @@ LIGHT_PURPLE='\033[1;35m'
 NC='\033[0m'
 MSG_AREADY_EXIST='ALREADY EXISTS'
 
-# FUNCTIONS
+###################################################################
+# @description      Prints given message in yellow
+# @args             $1: message to print
+###################################################################
 echoMessage() {
     echo -e "${YELLOW}$1${NC}"
 }
 
+###################################################################
+# @description      Prints given message in cyan
+# @args             $1: command to print
+###################################################################
 echoCommand() {
     commands=()
     for var in "$@"
@@ -28,6 +40,10 @@ echoCommand() {
     echo -e "${LIGHT_CYAN}+$commands${NC}"
 }
 
+###################################################################
+# @description      Echo success of last last executed command
+# @noargs
+###################################################################
 echoSuccessFail() {
     if [ $? -eq 0 ]; then
         echo -e "... ${LIGHT_GREEN}OK${NC}"
@@ -36,20 +52,11 @@ echoSuccessFail() {
     fi
 }
 
-echoSuccessFailGitClone() {
-    if [ $1 -eq 0 ]; then
-        echo -e "${LIGHT_GREEN}OK${NC}"
-    elif [ $1 -eq 128 ]; then
-        echo -e "${LIGHT_GREEN}ALREADY PRESENT${NC}"
-    else
-        echo -e "${LIGHT_RED}FAIL${NC}"
-    fi
-}
-
-<< "PARAMETERS"
-    $1: string message
-    $2: command to evaluate
-PARAMETERS
+###################################################################
+# @description      Print command and evalute it
+# @args             $1: message to print
+#                   $2: command to execute
+###################################################################
 evaluateCommand() {
     echoMessage "$1"
     echoCommand "$2"
@@ -57,7 +64,10 @@ evaluateCommand() {
     echoSuccessFail
 }
 
-# NVIM DIRECTORY
+###################################################################
+# @description      Create nvim directory
+# @noargs
+###################################################################
 createNvimDirectory() {
     NVIM_DIRECTORY=$HOME/.config/nvim
     MESSAGE="Creating nvim's config directory if does not exist."
@@ -66,8 +76,10 @@ createNvimDirectory() {
     evaluateCommand "$MESSAGE" "$COMMAND"
 }
 
-
-# NVIM CONFIGS SYMLINK
+###################################################################
+# @description      Create neovim's config's symlinks
+# @noargs
+###################################################################
 createConfigsSymlinks() {
     CONFIGS=(
         init.vim
@@ -85,8 +97,10 @@ createConfigsSymlinks() {
     done
 }
 
-
-# NVIM DOWNLOAD
+###################################################################
+# @description      Download nighlty build neovim
+# @noargs
+###################################################################
 downloadNvim() {
     NIGHTLY_NVIM_URL="https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage"
     MESSAGE="Downloading Neovim (nightly build):"
@@ -95,8 +109,10 @@ downloadNvim() {
     evaluateCommand "$MESSAGE" "$DOWNLOAD_NVIM_COMMAND"
 }
 
-
-# NVIM EXECUTABLE
+###################################################################
+# @description      Make neovim executable
+# @noargs
+###################################################################
 makeNvimExecutale() {
     MESSAGE="Making nvim executable"
     CHMOD_NVIM_COMMAND="chmod +x nvim"
@@ -104,8 +120,10 @@ makeNvimExecutale() {
     evaluateCommand "$MESSAGE" "$CHMOD_NVIM_COMMAND"
 }
 
-
-# NVIM SYMLINK
+###################################################################
+# @description      Create neovim symlink in local binaries
+# @noargs
+###################################################################
 createNvimSylink() {
     MESSAGE="Creating symlink for nvim in '$LOCAL_BIN'"
     SYMLINK_NVIM_COMMAND="ln -s $CURRENT_DIR/nvim $LOCAL_BIN"
@@ -113,8 +131,10 @@ createNvimSylink() {
     evaluateCommand "$MESSAGE" "$SYMLINK_NVIM_COMMAND"
 }
 
-
-# INSTALLING VIM-PLUG
+###################################################################
+# @description      Install vim-plug
+# @noargs
+###################################################################
 installVimPlug() {
     MESSAGE="Installng Vim-Plug"
     INSTALL_VIM_PLUG_COMMAND="curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
@@ -122,52 +142,6 @@ installVimPlug() {
 
     evaluateCommand "$MESSAGE" "$INSTALL_VIM_PLUG_COMMAND"
 }
-
-
-# INSTALLING PLUGINS
-installPlugins() {
-    PLUGINS_DIR="$HOME/.local/share/nvim/plugged"
-
-    # Create plugins directory
-    MESSAGE_CREATE_PLUGINS_DIRECTORY="Creating plugins directory"
-    CREATE_PLUGINS_DIRECTORY_COMMAND="mkdir -p $PLUGINS_DIR"
-    evaluateCommand "$MESSAGE_CREATE_PLUGINS_DIRECTORY" "$CREATE_PLUGINS_DIRECTORY_COMMAND"
-
-    # Move to plugins directory
-    echo ""
-    MESSAGE_CD_PLUGINS_DIRECTORY="Moving to plugins directory"
-    CD_PLUGINS_DIRECTORY_COMMAND="cd $PLUGINS_DIR"
-    evaluateCommand "$MESSAGE_CD_PLUGINS_DIRECTORY" "$CD_PLUGINS_DIRECTORY_COMMAND"
-
-    # Git clone plugin
-    plugins=(
-    )
-
-    PLUG="Plug"
-    PLUG_FILE="$CURRENT_DIR/plugins.vim"
-    while IFS= read -r line
-    do
-        stringarray=($line)
-        if [[ ${stringarray[0]} == "$PLUG" ]]; then
-            output=$( echo ${stringarray[1]} | tr -d \' )
-            plugins+=($output)
-        fi
-    done < "$PLUG_FILE"
-
-    echo ""
-    echoMessage "Installing nvim's plugins to $PLUGINS_DIR"
-
-    for i in "${plugins[@]}"; do
-        GIT_CLONE_PLUGIN_COMMAND="git clone --recursive https://github.com/$i.git"
-        printf "${LIGHT_CYAN}+$GIT_CLONE_PLUGIN_COMMAND${NC}"
-        printf "\n$i: "
-        eval "git clone --recursive https://github.com/$i.git" > /dev/null 2>&1
-        eval $GIT_CLONE_PLUGIN_COMMAND > /dev/null 2>&1
-        echoSuccessFailGitClone $?
-        printf "\n"
-    done
-}
-
 
 createNvimDirectory
 createConfigsSymlinks
