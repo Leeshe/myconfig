@@ -38,7 +38,7 @@ sudo chmod +x install.sh
 ![image](https://user-images.githubusercontent.com/16366403/63007733-80a70980-be81-11e9-946e-16126cecf8ad.png)
 
 ### Gnome-Terminal (Oh-My-Zsh)
-![image](https://user-images.githubusercontent.com/16366403/62221570-2488b380-b3b2-11e9-9c34-3bbb4007643f.png)
+![image](https://user-images.githubusercontent.com/16366403/63007993-fc08bb00-be81-11e9-9a30-26e0a07e8199.png)
 
 ## :scroll: Package Dependencies
 
