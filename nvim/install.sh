@@ -152,3 +152,4 @@ installVimPlug
 
 echo ""
 echo -e "${LIGHT_GREEN}Run nvim then update plugins :PlugUpdate${NC}"
+exit 0
