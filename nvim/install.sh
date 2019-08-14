@@ -1,15 +1,15 @@
 #!/bin/bash
 
 #-------------------------------------------------------------------
-# @constant
 # @description      directories: current and local binaries
+# @constant
 #-------------------------------------------------------------------
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 LOCAL_BIN="/usr/local/bin"
 
 #------------------------------------------------------------------
+# @description     color constant
 # @constans
-# @description:     color constant
 #------------------------------------------------------------------
 LIGHT_RED='\033[1;31m'
 YELLOW='\033[1;33m'
