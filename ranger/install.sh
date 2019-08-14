@@ -75,6 +75,15 @@ cloneRanger() {
 }
 
 #------------------------------------------------------------------
+# @description      Create symlink for ranger
+#------------------------------------------------------------------
+createRangerSymlink() {
+    MESSAGE="Creating symlink for ranger"
+    COMMAND="ln -s $CURRENT_DIR/../ranger/ranger.py $LOCAL_BIN/ranger"
+    evaluateCommand "$MESSAGE" "$COMMAND"
+}
+
+#------------------------------------------------------------------
 # @description      Create ranger's config directory
 #------------------------------------------------------------------
 createRangerDirectory() {
@@ -105,6 +114,7 @@ createConfigSymlink() {
 }
 
 cloneRanger
+createRangerSymlink
 createRangerDirectory
 createConfigSymlink
 
