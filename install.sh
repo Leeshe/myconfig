@@ -1,11 +1,10 @@
 #!/bin/bash
 
-CURRENT_DIRECTORY="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-
 #------------------------------------------------------------------
 # @constant
 # @description:     directories for configuration
 #------------------------------------------------------------------
+CURRENT_DIRECTORY="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 BASH="$CURRENT_DIRECTORY/bash_script"
 COC="$CURRENT_DIRECTORY/coc"
 NVIM="$CURRENT_DIRECTORY/nvim"
@@ -99,6 +98,8 @@ executeInstallScript() {
 # @noargs
 #------------------------------------------------------------------
 installAll() {
+    # Installation will be done following the order of the added directory.
+    # Some nvim's functionalities require python3 to be installed first.
     INSTALLATION_FOLDERS=(
         $PACKAGES
         $BASH
