@@ -21,7 +21,7 @@ MSG_AREADY_EXIST='ALREADY EXISTS'
 
 #------------------------------------------------------------------
 # @description      Prints given message in yellow
-# @args             $1: message to print
+# @arg              $1: message to print
 #------------------------------------------------------------------
 echoMessage() {
     echo -e "${YELLOW}$1${NC}"
@@ -29,7 +29,7 @@ echoMessage() {
 
 #------------------------------------------------------------------
 # @description      Prints given message in cyan
-# @args             $1: command to print
+# @arg              $1: command to print
 #------------------------------------------------------------------
 echoCommand() {
     commands=()
@@ -42,7 +42,6 @@ echoCommand() {
 
 #------------------------------------------------------------------
 # @description      Echo success of last last executed command
-# @noargs
 #------------------------------------------------------------------
 echoSuccessFail() {
     if [ $? -eq 0 ]; then
@@ -53,9 +52,9 @@ echoSuccessFail() {
 }
 
 #------------------------------------------------------------------
-# @description      Print command and evalute it
-# @args             $1: message to print
-#                   $2: command to execute
+# @description      Print command and evaluate it
+# @arg              $1: message to print
+# @arg              $2: command to execute
 #------------------------------------------------------------------
 evaluateCommand() {
     echoMessage "$1"
@@ -66,7 +65,6 @@ evaluateCommand() {
 
 #------------------------------------------------------------------
 # @description      Create nvim directory
-# @noargs
 #------------------------------------------------------------------
 createNvimDirectory() {
     NVIM_DIRECTORY=$HOME/.config/nvim
@@ -78,7 +76,6 @@ createNvimDirectory() {
 
 #------------------------------------------------------------------
 # @description      Create neovim's config's symlinks
-# @noargs
 #------------------------------------------------------------------
 createConfigsSymlinks() {
     CONFIGS=(
@@ -88,18 +85,20 @@ createConfigsSymlinks() {
         plugins.vim
         plugins_mappings.vim
     )
-    echo ""
-    echoMessage "Creating symlinks for nvim configuration's files"
-    for i in "${CONFIGS[@]}"; do
-        COMMAND="ln -s $CURRENT_DIR/$i $NVIM_DIRECTORY"
 
-        evaluateCommand "" "$COMMAND"
+    for CONFIG in "${CONFIGS[@]}"; do
+        MESSAGE_REMOVE="Removing '$CONFIG'"
+        COMMAND_REMOVE="rm -f $NVIM_DIRECTORY/$CONFIG"
+        evaluateCommand "$MESSAGE_REMOVE" "$COMMAND_REMOVE"
+
+        MESSAGE_SYMLINK="Creating symlink for '$CONFIG'"
+        COMMAND_SYMLINK="ln -s $CURRENT_DIR/$CONFIG $NVIM_DIRECTORY"
+        evaluateCommand "$MESSAGE_SYMLINK" "$COMMAND_SYMLINK"
     done
 }
 
 #------------------------------------------------------------------
 # @description      Download nighlty build neovim
-# @noargs
 #------------------------------------------------------------------
 downloadNvim() {
     NIGHTLY_NVIM_URL="https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage"
@@ -111,7 +110,6 @@ downloadNvim() {
 
 #------------------------------------------------------------------
 # @description      Make neovim executable
-# @noargs
 #------------------------------------------------------------------
 makeNvimExecutale() {
     MESSAGE="Making nvim executable"
@@ -122,7 +120,6 @@ makeNvimExecutale() {
 
 #------------------------------------------------------------------
 # @description      Create neovim symlink in local binaries
-# @noargs
 #------------------------------------------------------------------
 createNvimSylink() {
     MESSAGE="Creating symlink for nvim in '$LOCAL_BIN'"
@@ -133,7 +130,6 @@ createNvimSylink() {
 
 #------------------------------------------------------------------
 # @description      Install vim-plug
-# @noargs
 #------------------------------------------------------------------
 installVimPlug() {
     MESSAGE="Installng Vim-Plug"
