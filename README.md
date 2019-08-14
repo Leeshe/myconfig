@@ -127,7 +127,8 @@ npm install -g npm
 ## :link: GitHub
 [ls-icons](https://github.com/sebastiencs/ls-icons)  
 [Neovim](https://github.com/neovim/neovim)  
-[Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh)
+[Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh)  
+[Ranger](https://github.com/ranger/ranger)
 
 ## :link: Reddit
 [Vim](https://www.reddit.com/r/vim/)  
