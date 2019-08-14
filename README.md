@@ -6,6 +6,7 @@
 - [Screenshots](#art-screenshots)
 	- [Neovim](#neovim)
 	- [Gnome-Terminal (Oh-My-Zsh)](#gnome-terminal-oh-my-zsh)
+    - [Ranger](#ranger)
 - [Package Dependencies](#scroll-package-dependencies)
 - [(Neo)Vim Plugins](#bookmark_tabs-neovim-plugins)
 - [COC extensions](#bookmark_tabs-coc-extensions)
@@ -39,6 +40,9 @@ sudo chmod +x install.sh
 
 ### Gnome-Terminal (Oh-My-Zsh)
 ![image](https://user-images.githubusercontent.com/16366403/63007993-fc08bb00-be81-11e9-9a30-26e0a07e8199.png)
+
+### Ranger
+![image](https://user-images.githubusercontent.com/16366403/63037316-288ef800-bebf-11e9-8253-b5b83e7799e1.png)
 
 ## :scroll: Package Dependencies
 
