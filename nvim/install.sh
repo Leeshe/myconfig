@@ -1,16 +1,16 @@
 #!/bin/bash
 
-###################################################################
+#-------------------------------------------------------------------
 # @constant
 # @description      directories: current and local binaries
-###################################################################
+#-------------------------------------------------------------------
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 LOCAL_BIN="/usr/local/bin"
 
-###################################################################
+#------------------------------------------------------------------
 # @constans
 # @description:     color constant
-###################################################################
+#------------------------------------------------------------------
 LIGHT_RED='\033[1;31m'
 YELLOW='\033[1;33m'
 LIGHT_CYAN='\033[1;36m'
@@ -19,18 +19,18 @@ LIGHT_PURPLE='\033[1;35m'
 NC='\033[0m'
 MSG_AREADY_EXIST='ALREADY EXISTS'
 
-###################################################################
+#------------------------------------------------------------------
 # @description      Prints given message in yellow
 # @args             $1: message to print
-###################################################################
+#------------------------------------------------------------------
 echoMessage() {
     echo -e "${YELLOW}$1${NC}"
 }
 
-###################################################################
+#------------------------------------------------------------------
 # @description      Prints given message in cyan
 # @args             $1: command to print
-###################################################################
+#------------------------------------------------------------------
 echoCommand() {
     commands=()
     for var in "$@"
@@ -40,10 +40,10 @@ echoCommand() {
     echo -e "${LIGHT_CYAN}+$commands${NC}"
 }
 
-###################################################################
+#------------------------------------------------------------------
 # @description      Echo success of last last executed command
 # @noargs
-###################################################################
+#------------------------------------------------------------------
 echoSuccessFail() {
     if [ $? -eq 0 ]; then
         echo -e "... ${LIGHT_GREEN}OK${NC}"
@@ -52,11 +52,11 @@ echoSuccessFail() {
     fi
 }
 
-###################################################################
+#------------------------------------------------------------------
 # @description      Print command and evalute it
 # @args             $1: message to print
 #                   $2: command to execute
-###################################################################
+#------------------------------------------------------------------
 evaluateCommand() {
     echoMessage "$1"
     echoCommand "$2"
@@ -64,10 +64,10 @@ evaluateCommand() {
     echoSuccessFail
 }
 
-###################################################################
+#------------------------------------------------------------------
 # @description      Create nvim directory
 # @noargs
-###################################################################
+#------------------------------------------------------------------
 createNvimDirectory() {
     NVIM_DIRECTORY=$HOME/.config/nvim
     MESSAGE="Creating nvim's config directory if does not exist."
@@ -76,10 +76,10 @@ createNvimDirectory() {
     evaluateCommand "$MESSAGE" "$COMMAND"
 }
 
-###################################################################
+#------------------------------------------------------------------
 # @description      Create neovim's config's symlinks
 # @noargs
-###################################################################
+#------------------------------------------------------------------
 createConfigsSymlinks() {
     CONFIGS=(
         init.vim
@@ -97,10 +97,10 @@ createConfigsSymlinks() {
     done
 }
 
-###################################################################
+#------------------------------------------------------------------
 # @description      Download nighlty build neovim
 # @noargs
-###################################################################
+#------------------------------------------------------------------
 downloadNvim() {
     NIGHTLY_NVIM_URL="https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage"
     MESSAGE="Downloading Neovim (nightly build):"
@@ -109,10 +109,10 @@ downloadNvim() {
     evaluateCommand "$MESSAGE" "$DOWNLOAD_NVIM_COMMAND"
 }
 
-###################################################################
+#------------------------------------------------------------------
 # @description      Make neovim executable
 # @noargs
-###################################################################
+#------------------------------------------------------------------
 makeNvimExecutale() {
     MESSAGE="Making nvim executable"
     CHMOD_NVIM_COMMAND="chmod +x nvim"
@@ -120,10 +120,10 @@ makeNvimExecutale() {
     evaluateCommand "$MESSAGE" "$CHMOD_NVIM_COMMAND"
 }
 
-###################################################################
+#------------------------------------------------------------------
 # @description      Create neovim symlink in local binaries
 # @noargs
-###################################################################
+#------------------------------------------------------------------
 createNvimSylink() {
     MESSAGE="Creating symlink for nvim in '$LOCAL_BIN'"
     SYMLINK_NVIM_COMMAND="ln -s $CURRENT_DIR/nvim $LOCAL_BIN"
@@ -131,10 +131,10 @@ createNvimSylink() {
     evaluateCommand "$MESSAGE" "$SYMLINK_NVIM_COMMAND"
 }
 
-###################################################################
+#------------------------------------------------------------------
 # @description      Install vim-plug
 # @noargs
-###################################################################
+#------------------------------------------------------------------
 installVimPlug() {
     MESSAGE="Installng Vim-Plug"
     INSTALL_VIM_PLUG_COMMAND="curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
