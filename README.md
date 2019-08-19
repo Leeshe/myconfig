@@ -108,8 +108,10 @@ npm install -g npm
 
 ## :bookmark_tabs: ZSH Plugins
 
-[zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)  
-[zsh-sytax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+|  Plugin       |  Description  |
+|  :-:          |  :-           |
+|  [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)      |  It suggests commands as you type based on history and completions.  |
+|  [zsh-sytax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)   |  This package provides syntax highlighting for the shell zsh.  |
 
 ## :ab: Fonts
 
