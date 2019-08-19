@@ -133,8 +133,10 @@ npm install -g npm
 |  [Ranger](https://github.com/ranger/ranger)  |  ranger is a console file manager with VI key bindings.  |
 
 ## :link: Reddit
-[Vim](https://www.reddit.com/r/vim/)  
-[Neovim](https://www.reddit.com/r/neovim)
+|  Reddit  |  Description  |
+|  :-:  |  :-  |
+|  [Vim](https://www.reddit.com/r/vim/)  |  For Vim enthusiasts and anyone interested in Vim.  |
+|  [Neovim](https://www.reddit.com/r/neovim)  |  vim out of the box — http://neovim.org/  |
 
 ## :link: Eclipse
 [Rainbow Theme](http://www.eclipsecolorthemes.org/?view=theme&id=24587)
