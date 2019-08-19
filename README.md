@@ -120,7 +120,7 @@ npm install -g npm
 ## :link: Firefox Plugins
 
 | Plugin                                                                              | Description                                                                                        |
-| :-:                                                                                 | :-                                                                                                 |
+| :-                                                                                 | :-                                                                                                 |
 | [Flagfox](https://addons.mozilla.org/en-US/firefox/addon/flagfox)                   | Display a flag icon indicating the current webserver's physical location.                          |
 | [Ghostery](https://addons.mozilla.org/en-US/firefox/addon/ghostery)                 | Block ads, stop trackers and speed up websites.                                                    |
 | [Grammarly](https://addons.mozilla.org/en-US/firefox/addon/grammarly-1)             | Make sure your messages, documents, and social media posts are clear, mistake-free, and impactful. |
