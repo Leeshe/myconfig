@@ -134,9 +134,9 @@ npm install -g npm
 [Vim](https://www.reddit.com/r/vim/)  
 [Neovim](https://www.reddit.com/r/neovim)
 
+## :link: Eclipse
+[Rainbow Theme](http://www.eclipsecolorthemes.org/?view=theme&id=24587)
+
 ## :ab: Fonts
 
 [Hack Regular Nerd Font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete.ttf)
-
-## :link: Eclipse
-[Rainbow Theme](http://www.eclipsecolorthemes.org/?view=theme&id=24587)
