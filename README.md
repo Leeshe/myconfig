@@ -79,17 +79,21 @@ npm install -g npm
 
 ## :bookmark_tabs: (Neo)Vim Plugins
 
-| Category  	| Plugins  	| Description |
+|  Category  |  Plugin  |  Description  |
 |:-:	|:-	| :- |
-| Statusline  	| <ul><li>[lightline.vim](https://github.com/itchyny/lightline.vim)</ul></li>  	| <ul><li>A light and configurable statusline/tabline</ul></li> |
-| Buffers  	| <ul><li>[vimade](https://github.com/TaDaa/vimade)</li><li>[vim-buffet](https://github.com/bagrat/vim-buffet)</li></ul>  | <ul><li>Fade your inactive buffers</li><li>Bring the IDE-like tabs</li></ul>
-| Completion  	| <ul><li>[Coc.nvim](https://github.com/neoclide/coc.nvim)  	| <ul><li>Coc is an intellisense engine
-| Colorscheme  	| <ul><li>[vim-sublime-monokai](https://github.com/ErichDonGubler/vim-sublime-monokai)</ul></li>  	| <ul><li>vim-sublime-monokai is a refined Monokai color scheme for vim tries to look like Sublime's default color scheme</ul></li>
-| Syntax        | <ul><li>[java-syntax](https://github.com/uiiaoo/java-syntax.vim)</li></ul>   | <ul><li>Provides syntax highlighting for Java</li></ul>
-| Lists 	| <ul><li>[fzf.vim](https://github.com/junegunn/fzf.vim)</li><li>[vista.vim](https://github.com/liuchengxu/vista.vim)</li><li>[vim-startify](https://github.com/mhinz/vim-startify)</li></ul>	| <ul><li>fzf is a general-purpose command-line fuzzy finder</li><li>View and search LSP symbols, tags</li><li>Provide a start screen</li></ul>
-| Moving  	| <ul><li>[vim-easymotion](https://github.com/easymotion/vim-easymotion)</ul></li>  	| <ul><li>Provide a much simpler way to use some motions</ul></li>
-| Interface  	| <ul><li>[indentLine](https://github.com/Yggdroot/indentLine)</li></ul>  	| <ul><li>Display thin vertical lines at each indentation level</li></ul>
-| Integrations   | <ul><li>[fugitive.vim](https://github.com/tpope/vim-fugitive)</li><li>[vim-test](https://github.com/janko/vim-test)</ul>   | <ul><li>Git wrapper</li><li>Run your tests at the speed of thought</li></ul>
+|  Statusline  	|  [lightline.vim](https://github.com/itchyny/lightline.vim)  	| A light and configurable statusline/tabline |
+|  Buffers  |  [vim-buffet](https://github.com/bagrat/vim-buffet)  | Bring the IDE-like tabs  |
+|  Fading Buffers  |  [vimade](https://github.com/TaDaa/vimade)  |  Fade your inactive buffers  |
+|  Completion  |  [Coc.nvim](https://github.com/neoclide/coc.nvim)  	| Coc is an intellisense engine  |
+|  Colorscheme  |  [vim-sublime-monokai](https://github.com/ErichDonGubler/vim-sublime-monokai)  	| vim-sublime-monokai is a refined Monokai color scheme for vim tries to look like Sublime's default color scheme  |
+|  Syntax  |  [java-syntax](https://github.com/uiiaoo/java-syntax.vim)   | Provides syntax highlighting for Java  |
+|  Starting  | [vim-startify](https://github.com/mhinz/vim-startify)	| Provide a start screen  |
+|  Moving  |  [vim-easymotion](https://github.com/easymotion/vim-easymotion)  	| Provide a much simpler way to use some motions
+|  Interface  |  [indentLine](https://github.com/Yggdroot/indentLine)  	| Display thin vertical lines at each indentation level
+|  Integration  |  [vim-test](https://github.com/janko/vim-test)  |  Run your tests at the speed of thought  |
+|  Git  |  [fugitive.vim](https://github.com/tpope/vim-fugitive)  |  Git wrapper  |
+|  Fuzzy finder  |  [fzf.vim](https://github.com/junegunn/fzf.vim)  |  fzf is a general-purpose command-line fuzzy finder  |
+|  Viewer  |  [vista.vim](https://github.com/liuchengxu/vista.vim)  |  View and search LSP symbols, tags  |
 
 ## :bookmark_tabs: COC extensions
 
