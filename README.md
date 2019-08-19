@@ -113,10 +113,6 @@ npm install -g npm
 |  [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)      |  It suggests commands as you type based on history and completions.  |
 |  [zsh-sytax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)   |  This package provides syntax highlighting for the shell zsh.  |
 
-## :ab: Fonts
-
-[Hack Regular Nerd Font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete.ttf)
-
 ## :link: Firefox Plugins
 |  Plugin  |  Description  |
 |  :-:  | :-  |
@@ -137,6 +133,10 @@ npm install -g npm
 ## :link: Reddit
 [Vim](https://www.reddit.com/r/vim/)  
 [Neovim](https://www.reddit.com/r/neovim)
+
+## :ab: Fonts
+
+[Hack Regular Nerd Font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete.ttf)
 
 ## :link: Eclipse
 [Rainbow Theme](http://www.eclipsecolorthemes.org/?view=theme&id=24587)
