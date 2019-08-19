@@ -125,10 +125,12 @@ npm install -g npm
 |  [UBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin)  |  An efficient blocker: easy on memory and CPU footprint.  |
 
 ## :link: GitHub
-[ls-icons](https://github.com/sebastiencs/ls-icons)  
-[Neovim](https://github.com/neovim/neovim)  
-[Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh)  
-[Ranger](https://github.com/ranger/ranger)
+|  Project  |  Description  |
+|  :-:  |  :-  |
+|  [ls-icons](https://github.com/sebastiencs/ls-icons)  |  ls command with files icons.  |
+|  [Neovim](https://github.com/neovim/neovim)  |  Vim-fork focused on extensibility and usability.  |
+|  [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh)  |  Oh My Zsh is an open source, community-driven framework for managing your zsh configuration.  |
+|  [Ranger](https://github.com/ranger/ranger)  |  ranger is a console file manager with VI key bindings.  |
 
 ## :link: Reddit
 [Vim](https://www.reddit.com/r/vim/)  
