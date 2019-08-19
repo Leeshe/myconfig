@@ -118,13 +118,15 @@ npm install -g npm
 [Hack Regular Nerd Font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete.ttf)
 
 ## :link: Firefox Plugins
-[Flagfox](https://addons.mozilla.org/en-US/firefox/addon/flagfox)  
-[Ghostery](https://addons.mozilla.org/en-US/firefox/addon/ghostery)  
-[Grammarly](https://addons.mozilla.org/en-US/firefox/addon/grammarly-1)  
-[HTTPS Everywhere](https://addons.mozilla.org/en-US/firefox/addon/https-everywhere)  
-[New Tab Tools](https://addons.mozilla.org/en-US/firefox/addon/new-tab-tools)  
-[Tree Style Tabs](https://addons.mozilla.org/en-US/firefox/addon/tree-style-tab)  
-[UBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin)
+|  Plugin  |  Description  |
+|  :-:  | :-  |
+|  [Flagfox](https://addons.mozilla.org/en-US/firefox/addon/flagfox)  |  Display a flag icon indicating the current webserver's physical location.  |
+|  [Ghostery](https://addons.mozilla.org/en-US/firefox/addon/ghostery)  |  Block ads, stop trackers and speed up websites.  |
+|  [Grammarly](https://addons.mozilla.org/en-US/firefox/addon/grammarly-1)  |  Make sure your messages, documents, and social media posts are clear, mistake-free, and impactful.  |
+|  [HTTPS Everywhere](https://addons.mozilla.org/en-US/firefox/addon/https-everywhere)  |  Protect your communications by enabling HTTPS encryption.  |
+|  [New Tab Tools](https://addons.mozilla.org/en-US/firefox/addon/new-tab-tools)  |  Customizes the new tab page.  |
+|  [Tree Style Tabs](https://addons.mozilla.org/en-US/firefox/addon/tree-style-tab)  |  Show tabs like a tree.  |
+|  [UBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin)  |  An efficient blocker: easy on memory and CPU footprint.  |
 
 ## :link: GitHub
 [ls-icons](https://github.com/sebastiencs/ls-icons)  
