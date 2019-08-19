@@ -88,7 +88,7 @@ set termguicolors
 set updatetime=100
 
 " It will change to the directory containing the file which was opened or selected.
-set autochdir
+"set autochdir
 "}}}
 
 " Vimscript file settings {{{
@@ -117,5 +117,3 @@ call matchadd('Trail', '\s\+$', 100)
 hi Comment guifg=#7CFC00
 
 source $HOME/.config/nvim/plugins_mappings.vim
-
-nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
