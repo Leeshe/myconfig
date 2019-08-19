@@ -98,7 +98,7 @@ npm install -g npm
 ## :bookmark_tabs: COC extensions
 
 | Extension                                                         | Description                                                                                                                           |
-| :-:                                                               | :-                                                                                                                                    |
+| :-                                                               | :-                                                                                                                                    |
 | [coc-clock](https://github.com/iamcco/coc-clock)                  | coc extensions of clock.nvim                                                                                                          |
 | [coc-git](https://github.com/neoclide/coc-git)                    | Git integration of coc.nvim.                                                                                                          |
 | [coc-highlight](https://github.com/neoclide/coc-highlight)        | Provide default highlight for coc.nvim, including document highlight (highlight of current document symbol) and colors highlight.     |
@@ -113,7 +113,7 @@ npm install -g npm
 ## :bookmark_tabs: ZSH Plugins
 
 | Plugin                                                                         | Description                                                        |
-| :-:                                                                            | :-                                                                 |
+| :-                                                                            | :-                                                                 |
 | [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)        | It suggests commands as you type based on history and completions. |
 | [zsh-sytax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) | This package provides syntax highlighting for the shell zsh.       |
 
@@ -132,7 +132,7 @@ npm install -g npm
 ## :link: GitHub
 
 | Project                                                | Description                                                                                  |
-| :-:                                                    | :-                                                                                           |
+| :-                                                    | :-                                                                                           |
 | [ls-icons](https://github.com/sebastiencs/ls-icons)    | ls command with files icons.                                                                 |
 | [Neovim](https://github.com/neovim/neovim)             | Vim-fork focused on extensibility and usability.                                             |
 | [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh) | Oh My Zsh is an open source, community-driven framework for managing your zsh configuration. |
@@ -141,7 +141,7 @@ npm install -g npm
 ## :link: Reddit
 
 | Reddit                                    | Description                                       |
-| :-:                                       | :-                                                |
+| :-                                       | :-                                                |
 | [Vim](https://www.reddit.com/r/vim/)      | For Vim enthusiasts and anyone interested in Vim. |
 | [Neovim](https://www.reddit.com/r/neovim) | vim out of the box — http://neovim.org/           |
 
