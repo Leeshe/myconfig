@@ -1,23 +1,23 @@
 #!/bin/bash
 
 #-------------------------------------------------------------------
-# @description      directories: current and local binaries
-# @constant
+# @description      Directories: current and local binaries
 #-------------------------------------------------------------------
-CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-LOCAL_BIN="/usr/local/bin"
+readonly CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+readonly LOCAL_BIN="/usr/local/bin"
+readonly NVIM_DIRECTORY=$HOME/.config/nvim
+
 
 #------------------------------------------------------------------
-# @description     color constant
-# @constans
+# @description      Colors constants
 #------------------------------------------------------------------
-LIGHT_RED='\033[1;31m'
-YELLOW='\033[1;33m'
-LIGHT_CYAN='\033[1;36m'
-LIGHT_GREEN='\033[1;32m'
-LIGHT_PURPLE='\033[1;35m'
-NC='\033[0m'
-MSG_AREADY_EXIST='ALREADY EXISTS'
+readonly LIGHT_RED='\033[1;31m'
+readonly YELLOW='\033[1;33m'
+readonly LIGHT_CYAN='\033[1;36m'
+readonly LIGHT_GREEN='\033[1;32m'
+readonly LIGHT_PURPLE='\033[1;35m'
+readonly NC='\033[0m'
+readonly MSG_AREADY_EXIST='ALREADY EXISTS'
 
 #------------------------------------------------------------------
 # @description      Prints given message in yellow
@@ -67,18 +67,17 @@ evaluateCommand() {
 # @description      Create nvim directory
 #------------------------------------------------------------------
 createNvimDirectory() {
-    NVIM_DIRECTORY=$HOME/.config/nvim
-    MESSAGE="Creating nvim's config directory if does not exist."
-    COMMAND="mkdir -p $NVIM_DIRECTORY"
+    readonly MESSAGE_CREATE_NVIM_DIRECTORY="Creating nvim's config directory if does not exist."
+    readonly COMMAND_CREATE_NVIM_DIRECTORY="mkdir -p $NVIM_DIRECTORY"
 
-    evaluateCommand "$MESSAGE" "$COMMAND"
+    evaluateCommand "$MESSAGE_CREATE_NVIM_DIRECTORY" "$COMMAND_CREATE_NVIM_DIRECTORY"
 }
 
 #------------------------------------------------------------------
 # @description      Create neovim's config's symlinks
 #------------------------------------------------------------------
 createConfigsSymlinks() {
-    CONFIGS=(
+    readonly SYMLINKS=(
         init.vim
         zsh.vim
         mapping.vim
@@ -86,14 +85,14 @@ createConfigsSymlinks() {
         plugins_mappings.vim
     )
 
-    for CONFIG in "${CONFIGS[@]}"; do
-        MESSAGE_REMOVE="Removing '$CONFIG'"
-        COMMAND_REMOVE="rm -f $NVIM_DIRECTORY/$CONFIG"
-        evaluateCommand "$MESSAGE_REMOVE" "$COMMAND_REMOVE"
+    for symlink in "${SYMLINKS[@]}"; do
+        message_remove_symlink_config="Removing '$symlink'"
+        command_remove_symlink_config="rm -f $NVIM_DIRECTORY/$symlink"
+        evaluateCommand "$message_remove_symlink_config" "$command_remove_symlink_config"
 
-        MESSAGE_SYMLINK="Creating symlink for '$CONFIG'"
-        COMMAND_SYMLINK="ln -s $CURRENT_DIR/$CONFIG $NVIM_DIRECTORY"
-        evaluateCommand "$MESSAGE_SYMLINK" "$COMMAND_SYMLINK"
+        message_create_symlink_config="Creating symlink for '$symlink'"
+        command_create_symlink_config="ln -s $CURRENT_DIR/$symlink $NVIM_DIRECTORY"
+        evaluateCommand "$message_create_symlink_config" "$command_create_symlink_config"
     done
 }
 
@@ -101,42 +100,45 @@ createConfigsSymlinks() {
 # @description      Download nighlty build neovim
 #------------------------------------------------------------------
 downloadNvim() {
-    NIGHTLY_NVIM_URL="https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage"
-    MESSAGE="Downloading Neovim (nightly build):"
-    DOWNLOAD_NVIM_COMMAND="wget --quiet $NIGHTLY_NVIM_URL --output-document nvim"
+    readonly NIGHTLY_NVIM_URL="https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage"
+    readonly MESSAGE_DOWNLOAD_NIGHTLY_BUILD="Downloading Neovim (nightly build):"
+    readonly COMMAND_DOWNLOAD_NIGHTLY_NVIM="wget --quiet $NIGHTLY_NVIM_URL --output-document nvim"
 
-    evaluateCommand "$MESSAGE" "$DOWNLOAD_NVIM_COMMAND"
+    evaluateCommand "$MESSAGE_DOWNLOAD_NIGHTLY_BUILD" "$COMMAND_DOWNLOAD_NIGHTLY_NVIM"
 }
 
 #------------------------------------------------------------------
 # @description      Make neovim executable
 #------------------------------------------------------------------
 makeNvimExecutale() {
-    MESSAGE="Making nvim executable"
-    CHMOD_NVIM_COMMAND="chmod +x nvim"
+    readonly MESSAGE_CHMOD_NVIM="Making nvim executable"
+    readonly COMMAND_CHMOD_NVIM="chmod +x nvim"
 
-    evaluateCommand "$MESSAGE" "$CHMOD_NVIM_COMMAND"
+    evaluateCommand "$MESSAGE_CHMOD_NVIM" "$COMMAND_CHMOD_NVIM"
 }
 
 #------------------------------------------------------------------
 # @description      Create neovim symlink in local binaries
 #------------------------------------------------------------------
 createNvimSylink() {
-    MESSAGE="Creating symlink for nvim in '$LOCAL_BIN'"
-    SYMLINK_NVIM_COMMAND="ln -s $CURRENT_DIR/nvim $LOCAL_BIN"
+    readonly MESSAGE_REMOVE_SYMLINK_NVIM="Removing symlink for 'nvim'"
+    readonly COMMAND_REMOVE_SYMLINK_NVIM="rm -f $LOCAL_BIN/nvim"
+    evaluateCommand "$MESSAGE_REMOVE_SYMLINK_NVIM" "$COMMAND_REMOVE_SYMLINK_NVIM"
 
-    evaluateCommand "$MESSAGE" "$SYMLINK_NVIM_COMMAND"
+    readonly MESSAGE_CREATE_SYMLINK_NVIM="Creating symlink for nvim in '$LOCAL_BIN'"
+    readonly COMMAND_CREATE_SYMLINK_NVIM="ln -s $CURRENT_DIR/nvim $LOCAL_BIN"
+    evaluateCommand "$MESSAGE_CREATE_SYMLINK_NVIM" "$COMMAND_CREATE_SYMLINK_NVIM"
 }
 
 #------------------------------------------------------------------
 # @description      Install vim-plug
 #------------------------------------------------------------------
 installVimPlug() {
-    MESSAGE="Installng Vim-Plug"
-    INSTALL_VIM_PLUG_COMMAND="curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    readonly MESSAGE_INSTALL_VIM_PLUG="Installng Vim-Plug"
+    readonly COMMAND_INSTALL_VIM_PLUG="curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
                 https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
 
-    evaluateCommand "$MESSAGE" "$INSTALL_VIM_PLUG_COMMAND"
+    evaluateCommand "$MESSAGE_INSTALL_VIM_PLUG" "$COMMAND_INSTALL_VIM_PLUG"
 }
 
 createNvimDirectory
