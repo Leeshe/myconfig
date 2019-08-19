@@ -80,7 +80,7 @@ npm install -g npm
 ## :bookmark_tabs: (Neo)Vim Plugins
 
 | Category       | Plugin                                                                       | Description                                                                                                     |
-| :-:            | :-                                                                           | :-                                                                                                              |
+| :-            | :-                                                                           | :-                                                                                                              |
 | Buffers        | [vim-buffet](https://github.com/bagrat/vim-buffet)                           | Bring the IDE-like tabs                                                                                         |
 | Colorscheme    | [vim-sublime-monokai](https://github.com/ErichDonGubler/vim-sublime-monokai) | vim-sublime-monokai is a refined Monokai color scheme for vim tries to look like Sublime's default color scheme |
 | Completion     | [Coc.nvim](https://github.com/neoclide/coc.nvim)                             | Coc is an intellisense engine                                                                                   |
