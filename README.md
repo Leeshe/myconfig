@@ -97,50 +97,53 @@ npm install -g npm
 
 ## :bookmark_tabs: COC extensions
 
-|  Extension    |  Description  |
-|  :-:   | :- |
-|  [coc-clock](https://github.com/iamcco/coc-clock)     | coc extensions of clock.nvim  |
-|  [coc-git](https://github.com/neoclide/coc-git)       | Git integration of coc.nvim.  |
-|  [coc-highlight](https://github.com/neoclide/coc-highlight)   | Provide default highlight for coc.nvim, including document highlight (highlight of current document symbol) and colors highlight.  |
-|  [coc-java](https://github.com/neoclide/coc-java)     | Fork of vscode-java to works with coc.nvim.  |
-|  [coc-json](https://github.com/neoclide/coc-json)     | Json language server extension for coc.nvim.  |
-|  [coc-lists](https://github.com/neoclide/coc-lists)   | Some basic list sources for coc.nvim  |
-|  [coc-marketplace](https://github.com/fannheyward/coc-marketplace)    | coc.nvim extensions marketplace.  |
-|  [coc-pairs](https://github.com/neoclide/coc-pairs)   | Auto pair extension for coc.nvim.  |
-|  [coc-snippets](https://github.com/neoclide/coc-snippets) | Snippets solution for coc.nvim  |
-|  [coc-xml](https://github.com/fannheyward/coc-xml)    | fork of vscode-xml, provides support for creating and editing XML documents, based on the LSP4XML Language Server, running with Java.  |
+| Extension                                                         | Description                                                                                                                           |
+| :-:                                                               | :-                                                                                                                                    |
+| [coc-clock](https://github.com/iamcco/coc-clock)                  | coc extensions of clock.nvim                                                                                                          |
+| [coc-git](https://github.com/neoclide/coc-git)                    | Git integration of coc.nvim.                                                                                                          |
+| [coc-highlight](https://github.com/neoclide/coc-highlight)        | Provide default highlight for coc.nvim, including document highlight (highlight of current document symbol) and colors highlight.     |
+| [coc-java](https://github.com/neoclide/coc-java)                  | Fork of vscode-java to works with coc.nvim.                                                                                           |
+| [coc-json](https://github.com/neoclide/coc-json)                  | Json language server extension for coc.nvim.                                                                                          |
+| [coc-lists](https://github.com/neoclide/coc-lists)                | Some basic list sources for coc.nvim                                                                                                  |
+| [coc-marketplace](https://github.com/fannheyward/coc-marketplace) | coc.nvim extensions marketplace.                                                                                                      |
+| [coc-pairs](https://github.com/neoclide/coc-pairs)                | Auto pair extension for coc.nvim.                                                                                                     |
+| [coc-snippets](https://github.com/neoclide/coc-snippets)          | Snippets solution for coc.nvim                                                                                                        |
+| [coc-xml](https://github.com/fannheyward/coc-xml)                 | fork of vscode-xml, provides support for creating and editing XML documents, based on the LSP4XML Language Server, running with Java. |
 
 ## :bookmark_tabs: ZSH Plugins
 
-|  Plugin       |  Description  |
-|  :-:          |  :-           |
-|  [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)      |  It suggests commands as you type based on history and completions.  |
-|  [zsh-sytax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)   |  This package provides syntax highlighting for the shell zsh.  |
+| Plugin                                                                         | Description                                                        |
+| :-:                                                                            | :-                                                                 |
+| [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)        | It suggests commands as you type based on history and completions. |
+| [zsh-sytax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) | This package provides syntax highlighting for the shell zsh.       |
 
 ## :link: Firefox Plugins
-|  Plugin  |  Description  |
-|  :-:  | :-  |
-|  [Flagfox](https://addons.mozilla.org/en-US/firefox/addon/flagfox)  |  Display a flag icon indicating the current webserver's physical location.  |
-|  [Ghostery](https://addons.mozilla.org/en-US/firefox/addon/ghostery)  |  Block ads, stop trackers and speed up websites.  |
-|  [Grammarly](https://addons.mozilla.org/en-US/firefox/addon/grammarly-1)  |  Make sure your messages, documents, and social media posts are clear, mistake-free, and impactful.  |
-|  [HTTPS Everywhere](https://addons.mozilla.org/en-US/firefox/addon/https-everywhere)  |  Protect your communications by enabling HTTPS encryption.  |
-|  [New Tab Tools](https://addons.mozilla.org/en-US/firefox/addon/new-tab-tools)  |  Customizes the new tab page.  |
-|  [Tree Style Tabs](https://addons.mozilla.org/en-US/firefox/addon/tree-style-tab)  |  Show tabs like a tree.  |
-|  [UBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin)  |  An efficient blocker: easy on memory and CPU footprint.  |
+
+| Plugin                                                                              | Description                                                                                        |
+| :-:                                                                                 | :-                                                                                                 |
+| [Flagfox](https://addons.mozilla.org/en-US/firefox/addon/flagfox)                   | Display a flag icon indicating the current webserver's physical location.                          |
+| [Ghostery](https://addons.mozilla.org/en-US/firefox/addon/ghostery)                 | Block ads, stop trackers and speed up websites.                                                    |
+| [Grammarly](https://addons.mozilla.org/en-US/firefox/addon/grammarly-1)             | Make sure your messages, documents, and social media posts are clear, mistake-free, and impactful. |
+| [HTTPS Everywhere](https://addons.mozilla.org/en-US/firefox/addon/https-everywhere) | Protect your communications by enabling HTTPS encryption.                                          |
+| [New Tab Tools](https://addons.mozilla.org/en-US/firefox/addon/new-tab-tools)       | Customizes the new tab page.                                                                       |
+| [Tree Style Tabs](https://addons.mozilla.org/en-US/firefox/addon/tree-style-tab)    | Show tabs like a tree.                                                                             |
+| [UBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin)       | An efficient blocker: easy on memory and CPU footprint.                                            |
 
 ## :link: GitHub
-|  Project  |  Description  |
-|  :-:  |  :-  |
-|  [ls-icons](https://github.com/sebastiencs/ls-icons)  |  ls command with files icons.  |
-|  [Neovim](https://github.com/neovim/neovim)  |  Vim-fork focused on extensibility and usability.  |
-|  [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh)  |  Oh My Zsh is an open source, community-driven framework for managing your zsh configuration.  |
-|  [Ranger](https://github.com/ranger/ranger)  |  ranger is a console file manager with VI key bindings.  |
+
+| Project                                                | Description                                                                                  |
+| :-:                                                    | :-                                                                                           |
+| [ls-icons](https://github.com/sebastiencs/ls-icons)    | ls command with files icons.                                                                 |
+| [Neovim](https://github.com/neovim/neovim)             | Vim-fork focused on extensibility and usability.                                             |
+| [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh) | Oh My Zsh is an open source, community-driven framework for managing your zsh configuration. |
+| [Ranger](https://github.com/ranger/ranger)             | ranger is a console file manager with VI key bindings.                                       |
 
 ## :link: Reddit
-|  Reddit  |  Description  |
-|  :-:  |  :-  |
-|  [Vim](https://www.reddit.com/r/vim/)  |  For Vim enthusiasts and anyone interested in Vim.  |
-|  [Neovim](https://www.reddit.com/r/neovim)  |  vim out of the box — http://neovim.org/  |
+
+| Reddit                                    | Description                                       |
+| :-:                                       | :-                                                |
+| [Vim](https://www.reddit.com/r/vim/)      | For Vim enthusiasts and anyone interested in Vim. |
+| [Neovim](https://www.reddit.com/r/neovim) | vim out of the box — http://neovim.org/           |
 
 ## :link: Eclipse
 [Rainbow Theme](http://www.eclipsecolorthemes.org/?view=theme&id=24587)
