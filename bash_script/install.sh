@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #------------------------------------------------------------------
-# @constans
-# @description:     color constant
+# @description:     colors constants
+# @constant
 #------------------------------------------------------------------
 LIGHT_RED='\033[1;31m'
 YELLOW='\033[1;33m'
@@ -13,8 +13,8 @@ NC='\033[0m'
 MSG_AREADY_EXIST='ALREADY EXISTS'
 
 #------------------------------------------------------------------
-# @constant
 # @description:     directories: current and local binaries
+# @constant
 #------------------------------------------------------------------
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 LOCAL_BIN="/usr/local/bin"
@@ -29,7 +29,6 @@ echoMessage() {
 
 #------------------------------------------------------------------
 # @description      Create symlinks for bash scripts
-# @noargs
 #------------------------------------------------------------------
 createSymLinks() {
     BASH_SCRIPTS=(
