@@ -3,27 +3,25 @@
 set -o nounset    - error when referencing undefined variable
 
 #------------------------------------------------------------------
-# @constant
-# @description:     directories: current and nvim directories
+# @description:     Directories: current and nvim directories
 #------------------------------------------------------------------
-CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-NVIM_DIRECTORY=$HOME/.config/nvim
+readonly CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+readonly NVIM_DIRECTORY=$HOME/.config/nvim
 
 #------------------------------------------------------------------
-# @constans
-# @description:     color constant
+# @description:     Colors constants
 #------------------------------------------------------------------
-LIGHT_RED='\033[1;31m'
-YELLOW='\033[1;33m'
-LIGHT_CYAN='\033[1;36m'
-LIGHT_GREEN='\033[1;32m'
-LIGHT_PURPLE='\033[1;35m'
-NC='\033[0m'
-MSG_AREADY_EXIST='ALREADY EXISTS'
+readonly LIGHT_RED='\033[1;31m'
+readonly YELLOW='\033[1;33m'
+readonly LIGHT_CYAN='\033[1;36m'
+readonly LIGHT_GREEN='\033[1;32m'
+readonly LIGHT_PURPLE='\033[1;35m'
+readonly NC='\033[0m'
+readonly MSG_AREADY_EXIST='ALREADY EXISTS'
 
 #------------------------------------------------------------------
 # @description      Prints given message in yellow
-# @args             $1: message to print
+# @arg              $1: message to print
 #------------------------------------------------------------------
 echoMessage() {
     echo -e "${YELLOW}$1${NC}"
@@ -31,7 +29,7 @@ echoMessage() {
 
 #------------------------------------------------------------------
 # @description      Prints given message in cyan
-# @args             $1: command to print
+# @arg              $1: command to print
 #------------------------------------------------------------------
 echoCommand() {
     commands=()
@@ -44,7 +42,6 @@ echoCommand() {
 
 #------------------------------------------------------------------
 # @description      Echo success of last last executed command
-# @noargs
 #------------------------------------------------------------------
 echoSuccessFail() {
     if [ $? -eq 0 ]; then
@@ -56,37 +53,40 @@ echoSuccessFail() {
 
 #------------------------------------------------------------------
 # @description      Print command and evalute it
-# @args             $1: message to print
-#                   $2: command to execute
+# @arg              $1: message to print
+# @arg              $2: command to execute
 #------------------------------------------------------------------
 evaluateCommand() {
-    echoMessage "$1"
-    echoCommand "$2"
-    eval "$2" > /dev/null
+    echoMessage   "$1"
+    echoCommand   "$2"
+    eval "$2" >   /dev/null
     echoSuccessFail
 }
 
 #------------------------------------------------------------------
 # @description      Create symlink for coc-settings.json
-# @noargs
 #------------------------------------------------------------------
 createCocSettingsSymlink() {
-    MESSAGE="Creating nvim's config directory if does not exist."
-    CREATE_NVIM_DIRECTORY_COMMAND="mkdir -p $NVIM_DIRECTORY"
-    evaluateCommand "$MESSAGE" "$CREATE_NVIM_DIRECTORY_COMMAND"
+    readonly COC_SETTING_JSON="coc-settings.json"
 
+    MESSAGE_CREATE_NVIM_DIRECTORY="Creating nvim's config directory if does not exist."
+    COMMAND_CREATE_NVIM_DIRECTORY="mkdir -p $NVIM_DIRECTORY"
+    evaluateCommand "$MESSAGE_CREATE_NVIM_DIRECTORY" "$COMMAND_CREATE_NVIM_DIRECTORY"
 
-    MESSAGE_SYMLINK="Creating symlink"
-    CREATE_COC_SETTINGS_SYMLINK_COMMAND="ln -s $CURRENT_DIR/coc-settings.json $NVIM_DIRECTORY"
-    evaluateCommand "$MESSAGE_SYMLINK" "$CREATE_COC_SETTINGS_SYMLINK_COMMAND"
+    MESSAGE_REMOVE_SYMLINK="Removing symlink '$COC_SETTING_JSON'"
+    COMMAND_REMOVE_SYMLINK="rm -f $NVIM_DIRECTORY/$COC_SETTING_JSON"
+    evaluateCommand "$MESSAGE_REMOVE_SYMLINK" "$COMMAND_REMOVE_SYMLINK"
+
+    MESSAGE_SYMLINK="Creating symlink '$COC_SETTING_JSON'"
+    COMMAND_CREATE_COC_SETTINGS_SYMLINK="ln -s $CURRENT_DIR/$COC_SETTING_JSON $NVIM_DIRECTORY"
+    evaluateCommand "$MESSAGE_SYMLINK" "$COMMAND_CREATE_COC_SETTINGS_SYMLINK"
 }
 
 #------------------------------------------------------------------
 # @description      Loop through 'extensions' and install them
-# @noargs
 #------------------------------------------------------------------
 installExtensions() {
-    - Create coc-extensions directory and package.json
+    # Create coc-extensions directory and package.json
     mkdir -p ~/.config/coc/extensions
     cd ~/.config/coc/extensions
     if [ ! -f package.json ]
@@ -94,6 +94,7 @@ installExtensions() {
         echo '{"dependencies":{}}'> package.json
     fi
 
+    # Concatenate extension in 'extensions'
     EXTENSIONS_FILE="${CURRENT_DIR}/extensions"
     extensions=()
     while IFS= read -r extension
@@ -101,13 +102,14 @@ installExtensions() {
         extensions+=$extension" "
     done < "$EXTENSIONS_FILE"
 
-    MESSAGE="Installing COC extensions..."
-    echoMessage "$MESSAGE"
+    # Install extensions
+    MESSAGE_INSTALL_COC_EXTENSIONS="Installing COC extensions..."
+    echoMessage "$MESSAGE_INSTALL_COC_EXTENSIONS"
 
     for i in "${extensions[@]}"
     do
-        INSTALL_EXTENSION_COMMAND="npm install $i --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod"
-        eval $INSTALL_EXTENSION_COMMAND
+        COMMAND_INSTALL_EXTENSION="npm install $i --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod"
+        eval $COMMAND_INSTALL_EXTENSION
     done
 }
 
