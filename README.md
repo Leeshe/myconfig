@@ -80,7 +80,8 @@ npm install -g npm
 ## :bookmark_tabs: (Neo)Vim Plugins
 
 | Category       | Plugin                                                                       | Description                                                                                                     |
-| :-            | :-                                                                           | :-                                                                                                              |
+| :-             | :-                                                                           | :-                                                                                                              |
+| Alignment      | [vim-easy-align](https://github.com/junegunn/vim-easy-align)                 | A simple, easy-to-use Vim alignment plugin.                                                                     |
 | Buffers        | [vim-buffet](https://github.com/bagrat/vim-buffet)                           | Bring the IDE-like tabs                                                                                         |
 | Colorscheme    | [vim-sublime-monokai](https://github.com/ErichDonGubler/vim-sublime-monokai) | vim-sublime-monokai is a refined Monokai color scheme for vim tries to look like Sublime's default color scheme |
 | Completion     | [Coc.nvim](https://github.com/neoclide/coc.nvim)                             | Coc is an intellisense engine                                                                                   |
@@ -98,7 +99,7 @@ npm install -g npm
 ## :bookmark_tabs: COC extensions
 
 | Extension                                                         | Description                                                                                                                           |
-| :-                                                               | :-                                                                                                                                    |
+| :-                                                                | :-                                                                                                                                    |
 | [coc-clock](https://github.com/iamcco/coc-clock)                  | coc extensions of clock.nvim                                                                                                          |
 | [coc-git](https://github.com/neoclide/coc-git)                    | Git integration of coc.nvim.                                                                                                          |
 | [coc-highlight](https://github.com/neoclide/coc-highlight)        | Provide default highlight for coc.nvim, including document highlight (highlight of current document symbol) and colors highlight.     |
@@ -112,15 +113,15 @@ npm install -g npm
 
 ## :bookmark_tabs: ZSH Plugins
 
-| Plugin                                                                         | Description                                                        |
-| :-                                                                            | :-                                                                 |
+| Plugin                                                                         | Description                                                    |
+| :-                                                                             | :-                                                             |
 | [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)        | Suggest commands as you type based on history and completions. |
-| [zsh-sytax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) | Provide syntax highlighting for the shell zsh.       |
+| [zsh-sytax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) | Provide syntax highlighting for the shell zsh.                 |
 
 ## :link: Firefox Plugins
 
 | Plugin                                                                              | Description                                                                                        |
-| :-                                                                                 | :-                                                                                                 |
+| :-                                                                                  | :-                                                                                                 |
 | [Flagfox](https://addons.mozilla.org/en-US/firefox/addon/flagfox)                   | Display a flag icon indicating the current webserver's physical location.                          |
 | [Ghostery](https://addons.mozilla.org/en-US/firefox/addon/ghostery)                 | Block ads, stop trackers and speed up websites.                                                    |
 | [Grammarly](https://addons.mozilla.org/en-US/firefox/addon/grammarly-1)             | Make sure your messages, documents, and social media posts are clear, mistake-free, and impactful. |
@@ -132,7 +133,7 @@ npm install -g npm
 ## :link: GitHub
 
 | Project                                                | Description                                                                                  |
-| :-                                                    | :-                                                                                           |
+| :-                                                     | :-                                                                                           |
 | [ls-icons](https://github.com/sebastiencs/ls-icons)    | ls command with files icons.                                                                 |
 | [Neovim](https://github.com/neovim/neovim)             | Vim-fork focused on extensibility and usability.                                             |
 | [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh) | Oh My Zsh is an open source, community-driven framework for managing your zsh configuration. |
@@ -141,7 +142,7 @@ npm install -g npm
 ## :link: Reddit
 
 | Reddit                                    | Description                                       |
-| :-                                       | :-                                                |
+| :-                                        | :-                                                |
 | [Vim](https://www.reddit.com/r/vim/)      | For Vim enthusiasts and anyone interested in Vim. |
 | [Neovim](https://www.reddit.com/r/neovim) | vim out of the box — http://neovim.org/           |
 
