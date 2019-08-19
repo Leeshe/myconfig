@@ -33,6 +33,7 @@ Plug 'uiiaoo/java-syntax.vim'
 " Others
 Plug 'tpope/vim-fugitive'
 Plug 'janko/vim-test'
+Plug 'junegunn/vim-easy-align'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()

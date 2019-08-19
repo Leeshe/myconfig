@@ -164,3 +164,11 @@ let java_comment_strings=1
 let java_highlight_functions=1
 let java_highlight_java_lang_ids=1
 " }}}
+
+" Easy-align {{{
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+" }}}
