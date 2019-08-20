@@ -1,25 +1,23 @@
 #!/bin/bash
 
 #-------------------------------------------------------------------
-# @description      directories: current, ranger, local binaries
-# @constant
+# @description      Directories: current, ranger, local binaries
 #-------------------------------------------------------------------
-CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-LOCAL_BIN="/usr/local/bin"
-RANGER_CONFIG_DIRECTORY=$HOME/.config/ranger
+readonly CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+readonly LOCAL_BIN="/usr/local/bin"
+readonly RANGER_CONFIG_DIRECTORY=$HOME/.config/ranger
 
 
 #------------------------------------------------------------------
-# @description     color constant
-# @constant
+# @description     Colors constants
 #------------------------------------------------------------------
-LIGHT_RED='\033[1;31m'
-YELLOW='\033[1;33m'
-LIGHT_CYAN='\033[1;36m'
-LIGHT_GREEN='\033[1;32m'
-LIGHT_PURPLE='\033[1;35m'
-NC='\033[0m'
-MSG_AREADY_EXIST='ALREADY EXISTS'
+readonly LIGHT_RED='\033[1;31m'
+readonly YELLOW='\033[1;33m'
+readonly LIGHT_CYAN='\033[1;36m'
+readonly LIGHT_GREEN='\033[1;32m'
+readonly LIGHT_PURPLE='\033[1;35m'
+readonly NC='\033[0m'
+readonly MSG_AREADY_EXIST='ALREADY EXISTS'
 
 #------------------------------------------------------------------
 # @description      Prints given message in yellow
@@ -69,47 +67,50 @@ evaluateCommand() {
 # @description      Clone ranger
 #------------------------------------------------------------------
 cloneRanger() {
-    MESSAGE="Git cloning ranger"
-    COMMAND="git clone --recursive https://github.com/ranger/ranger $CURRENT_DIR/.."
-    evaluateCommand "$MESSAGE" "$COMMAND"
+    readonly MESSAGE_CLONE_RANGER="Git cloning ranger"
+    readonly COMMAND_CLONE_RANGER="git clone --recursive https://github.com/ranger/ranger $CURRENT_DIR/.."
+
+    evaluateCommand "$MESSAGE_CLONE_RANGER" "$COMMAND_CLONE_RANGER"
 }
 
 #------------------------------------------------------------------
 # @description      Create symlink for ranger
 #------------------------------------------------------------------
 createRangerSymlink() {
-    MESSAGE="Creating symlink for ranger"
-    COMMAND="ln -s $CURRENT_DIR/../ranger/ranger.py $LOCAL_BIN/ranger"
-    evaluateCommand "$MESSAGE" "$COMMAND"
+    readonly MESSAGE_CREATE_SYMLINK_RANGER="Creating symlink for ranger"
+    readonly COMMAND_CREATE_SYMLINK_RANGER="ln -s $CURRENT_DIR/../ranger/ranger.py $LOCAL_BIN/ranger"
+
+    evaluateCommand "$COMMAND_CREATE_SYMLINK_RANGER" "$COMMAND_CREATE_SYMLINK_RANGER"
 }
 
 #------------------------------------------------------------------
 # @description      Create ranger's config directory
 #------------------------------------------------------------------
 createRangerDirectory() {
-    MESSAGE="Creating ranger's config directory"
-    COMMAND="mkdir -p $RANGER_CONFIG_DIRECTORY"
-    evaluateCommand "$MESSAGE" "$COMMAND"
+    readonly MESSAGE_CREATE_RANGER_CONFIG_DIRECTORY="Creating ranger's config directory"
+    readonly COMMAND_CREATE_RANGER_CONFIG_DIRECTORY="mkdir -p $RANGER_CONFIG_DIRECTORY"
+
+    evaluateCommand "$MESSAGE_CREATE_RANGER_CONFIG_DIRECTORY" "$COMMAND_CREATE_RANGER_CONFIG_DIRECTORY"
 }
 
 #------------------------------------------------------------------
 # @description      Create ranger's config's symlinks
 #------------------------------------------------------------------
 createConfigSymlink() {
-    CONFIGS=(
+    readonly CONFIGS=(
         scope.sh
         rc.conf
         rifle.conf
     )
 
-    for CONFIG in "${CONFIGS[@]}"; do
-        MESSAGE_REMOVE="Removing '$CONFIG'"
-        COMMAND_REMOVE="rm -f $RANGER_CONFIG_DIRECTORY/$CONFIG"
-        evaluateCommand "$MESSAGE_REMOVE" "$COMMAND_REMOVE"
+    for symlink in "${CONFIGS[@]}"; do
+        messageRemoveSymlinkConfig="Removing '$symlink'"
+        commandRemoveSymlinkConfig="rm -f $RANGER_CONFIG_DIRECTORY/$symlink"
+        evaluateCommand "$messageRemoveSymlinkConfig" "$commandRemoveSymlinkConfig"
 
-        MESSAGE_SYMLINK="Creating symlink for '$CONFIG'"
-        COMMAND_SYMLINK="ln -s $CURRENT_DIR/$CONFIG $RANGER_CONFIG_DIRECTORY"
-        evaluateCommand "$MESSAGE_SYMLINK" "$COMMAND_SYMLINK"
+        messageCreateSymlinkConfig="Creating symlink for '$symlink'"
+        commandCreateSymlinkConfig="ln -s $CURRENT_DIR/$symlink $RANGER_CONFIG_DIRECTORY"
+        evaluateCommand "$messageCreateSymlinkConfig" "$commandCreateSymlinkConfig"
     done
 }
 
