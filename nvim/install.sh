@@ -123,10 +123,12 @@ makeNvimExecutale() {
 createNvimSylink() {
     readonly MESSAGE_REMOVE_SYMLINK_NVIM="Removing symlink for 'nvim'"
     readonly COMMAND_REMOVE_SYMLINK_NVIM="rm -f $LOCAL_BIN/nvim"
+
     evaluateCommand "$MESSAGE_REMOVE_SYMLINK_NVIM" "$COMMAND_REMOVE_SYMLINK_NVIM"
 
     readonly MESSAGE_CREATE_SYMLINK_NVIM="Creating symlink for nvim in '$LOCAL_BIN'"
     readonly COMMAND_CREATE_SYMLINK_NVIM="ln -s $CURRENT_DIR/nvim $LOCAL_BIN"
+
     evaluateCommand "$MESSAGE_CREATE_SYMLINK_NVIM" "$COMMAND_CREATE_SYMLINK_NVIM"
 }
 
