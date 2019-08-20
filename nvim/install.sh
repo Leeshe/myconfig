@@ -86,13 +86,13 @@ createConfigsSymlinks() {
     )
 
     for symlink in "${SYMLINKS[@]}"; do
-        message_remove_symlink_config="Removing '$symlink'"
-        command_remove_symlink_config="rm -f $NVIM_DIRECTORY/$symlink"
-        evaluateCommand "$message_remove_symlink_config" "$command_remove_symlink_config"
+        messageRemoveSymlinkConfig="Removing '$symlink'"
+        commandRemoveSymlinkConfig="rm -f $NVIM_DIRECTORY/$symlink"
+        evaluateCommand "$messageRemoveSymlinkConfig" "$commandRemoveSymlinkConfig"
 
-        message_create_symlink_config="Creating symlink for '$symlink'"
-        command_create_symlink_config="ln -s $CURRENT_DIR/$symlink $NVIM_DIRECTORY"
-        evaluateCommand "$message_create_symlink_config" "$command_create_symlink_config"
+        messageCreateSymlinkConfig="Creating symlink for '$symlink'"
+        commandCreateSymlinkConfig="ln -s $CURRENT_DIR/$symlink $NVIM_DIRECTORY"
+        evaluateCommand "$messageCreateSymlinkConfig" "$commandCreateSymlinkConfig"
     done
 }
 
