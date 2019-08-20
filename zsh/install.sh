@@ -1,26 +1,24 @@
 #!/bin/bash
 
 #------------------------------------------------------------------
-# @constant
-# @description     current directory
+# @description      Current directory
 #------------------------------------------------------------------
-CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+readonly CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 #------------------------------------------------------------------
-# @constans
-# @description:     color constant
+# @description      Colors constants
 #------------------------------------------------------------------
-LIGHT_RED='\033[1;31m'
-YELLOW='\033[1;33m'
-LIGHT_CYAN='\033[1;36m'
-LIGHT_GREEN='\033[1;32m'
-LIGHT_PURPLE='\033[1;35m'
-NC='\033[0m'
-MSG_AREADY_EXIST='ALREADY EXISTS'
+readonly LIGHT_RED='\033[1;31m'
+readonly YELLOW='\033[1;33m'
+readonly LIGHT_CYAN='\033[1;36m'
+readonly LIGHT_GREEN='\033[1;32m'
+readonly LIGHT_PURPLE='\033[1;35m'
+readonly NC='\033[0m'
+readonly MSG_AREADY_EXIST='ALREADY EXISTS'
 
 #------------------------------------------------------------------
 # @description      Prints given message in yellow
-# @args             $1: message to print
+# @arg              $1: message to print
 #------------------------------------------------------------------
 echoMessage() {
     echo -e "${YELLOW}$1${NC}"
@@ -28,7 +26,7 @@ echoMessage() {
 
 #------------------------------------------------------------------
 # @description      Prints given message in cyan
-# @args             $1: command to print
+# @arg              $1: command to print
 #------------------------------------------------------------------
 echoCommand() {
     commands=()
@@ -41,7 +39,6 @@ echoCommand() {
 
 #------------------------------------------------------------------
 # @description      Echo success of last last executed command
-# @noargs
 #------------------------------------------------------------------
 echoSuccessFail() {
     if [ $? -eq 0 ]; then
@@ -53,8 +50,8 @@ echoSuccessFail() {
 
 #------------------------------------------------------------------
 # @description      Print command and evalute it
-# @args             $1: message to print
-#                   $2: command to execute
+# @arg              $1: message to print
+# @arg              $2: command to execute
 #------------------------------------------------------------------
 evaluateCommand() {
     echoMessage "$1"
@@ -65,13 +62,12 @@ evaluateCommand() {
 
 #------------------------------------------------------------------
 # @description      Install oh-my-zsh
-# @noargs
 #------------------------------------------------------------------
 installOhMyZsh() {
-    MESSAGE="Downloading and installing Oh-My-Zsh..."
-    COMMAND='sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"'
+    readonly MESSAGE_INSTALL_OH_MY_ZSH="Downloading and installing Oh-My-Zsh..."
+    readonly COMMAND_INSTALL_OH_MY_ZSH='sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"'
 
-    evaluateCommand "$MESSAGE" "$COMMAND"
+    evaluateCommand "$MESSAGE_INSTALL_OH_MY_ZSH" "$COMMAND_INSTALL_OH_MY_ZSH"
 }
 
 #------------------------------------------------------------------
@@ -79,25 +75,27 @@ installOhMyZsh() {
 # @noargs
 #------------------------------------------------------------------
 createSymlink() {
-    MESSAGE_REMOVE_SYMLINK="Removing current .zshrc"
-    COMMAND_REMOVE_SYMLINK="rm -rf $HOME/.zshrc"
+    # Remove existing '.zshrc'in $HOME
+    readonly MESSAGE_REMOVE_SYMLINK="Removing current .zshrc"
+    readonly COMMAND_REMOVE_SYMLINK="rm -rf $HOME/.zshrc"
+
     evaluateCommand "$MESSAGE_REMOVE_SYMLINK" "$COMMAND_REMOVE_SYMLINK"
 
+    # Create symlink '.zshrc' in $HOME
+    readonly MESSAGE_CREATE_SYMLINK="Creating symlink in $HOME"
+    readonly COMMAND_CREATE_SYMLINK="ln -s $CURRENT_DIR/.zshrc $HOME"
 
-    MESSAGE_CREATE_SYMLINK="Creating symlink in $HOME"
-    COMMAND_CREATE_SYMLINK="ln -s $CURRENT_DIR/.zshrc $HOME"
     evaluateCommand "$MESSAGE_CREATE_SYMLINK" "$COMMAND_CREATE_SYMLINK"
 }
 
 #------------------------------------------------------------------
 # @description      Install zsh-syntax-highlighting
-# @noargs
 #------------------------------------------------------------------
 installZshSyntaxHighlighting() {
-    MESSAGE="Installing zsh-syntax-highlighting..."
-    COMMAND="git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
+    readonly MESSAGE_INSTALL_SYNTAX_HIGHLIGHTING="Installing zsh-syntax-highlighting..."
+    readonly COMMAND_INSTALL_SYNTAX_HIGHLIGHTING="git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
 
-    evaluateCommand "$MESSAGE" "$COMMAND"
+    evaluateCommand "$MESSAGE_INSTALL_SYNTAX_HIGHLIGHTING" "$COMMAND_INSTALL_SYNTAX_HIGHLIGHTING"
 }
 
 #------------------------------------------------------------------
@@ -105,10 +103,10 @@ installZshSyntaxHighlighting() {
 #noargs
 #------------------------------------------------------------------
 installZshAutosuggestions() {
-    MESSAGE="Installing zsh-autosuggestions..."
-    COMMAND="git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
+    readonly MESSAGE_INSTALL_AUTOSUGGESTION="Installing zsh-autosuggestions..."
+    readonly COMMAND_INSTALL_AUTOSUGGESTION="git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
 
-    evaluateCommand "$MESSAGE" "$COMMAND"
+    evaluateCommand "$MESSAGE_INSTALL_AUTOSUGGESTION" "$COMMAND_INSTALL_AUTOSUGGESTION"
 }
 
 installOhMyZsh
