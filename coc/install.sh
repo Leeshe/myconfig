@@ -67,19 +67,26 @@ evaluateCommand() {
 # @description      Create symlink for coc-settings.json
 #------------------------------------------------------------------
 createCocSettingsSymlink() {
+    #Located in $HOME/.confing/nvim
     readonly COC_SETTING_JSON="coc-settings.json"
 
-    MESSAGE_CREATE_NVIM_DIRECTORY="Creating nvim's config directory if does not exist."
-    COMMAND_CREATE_NVIM_DIRECTORY="mkdir -p $NVIM_DIRECTORY"
+    # Create nvim's config directory
+    readonly MESSAGE_CREATE_NVIM_DIRECTORY="Creating nvim's config directory if does not exist."
+    readonly COMMAND_CREATE_NVIM_DIRECTORY="mkdir -p $NVIM_DIRECTORY"
+
     evaluateCommand "$MESSAGE_CREATE_NVIM_DIRECTORY" "$COMMAND_CREATE_NVIM_DIRECTORY"
 
-    MESSAGE_REMOVE_SYMLINK="Removing symlink '$COC_SETTING_JSON'"
-    COMMAND_REMOVE_SYMLINK="rm -f $NVIM_DIRECTORY/$COC_SETTING_JSON"
+    # Remove existing 'coc-settings.json'
+    readonly MESSAGE_REMOVE_SYMLINK="Removing symlink '$COC_SETTING_JSON'"
+    readonly COMMAND_REMOVE_SYMLINK="rm -f $NVIM_DIRECTORY/$COC_SETTING_JSON"
+
     evaluateCommand "$MESSAGE_REMOVE_SYMLINK" "$COMMAND_REMOVE_SYMLINK"
 
-    MESSAGE_SYMLINK="Creating symlink '$COC_SETTING_JSON'"
-    COMMAND_CREATE_COC_SETTINGS_SYMLINK="ln -s $CURRENT_DIR/$COC_SETTING_JSON $NVIM_DIRECTORY"
-    evaluateCommand "$MESSAGE_SYMLINK" "$COMMAND_CREATE_COC_SETTINGS_SYMLINK"
+    # Create 'coc-settings.json' symlink
+    readonly MESSAGE_CREATE_COC_SETTINGS_SYMLINK="Creating symlink '$COC_SETTING_JSON'"
+    readonly COMMAND_CREATE_COC_SETTINGS_SYMLINK="ln -s $CURRENT_DIR/$COC_SETTING_JSON $NVIM_DIRECTORY"
+
+    evaluateCommand "$MESSAGE_CREATE_COC_SETTINGS_SYMLINK" "$COMMAND_CREATE_COC_SETTINGS_SYMLINK"
 }
 
 #------------------------------------------------------------------
