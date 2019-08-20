@@ -9,6 +9,7 @@ readonly COC="$CURRENT_DIRECTORY/coc"
 readonly NVIM="$CURRENT_DIRECTORY/nvim"
 readonly PACKAGES="$CURRENT_DIRECTORY/packages"
 readonly ZSH="$CURRENT_DIRECTORY/zsh"
+readonly RANGER="$CURRENT_DIRECTORY/ranger"
 
 #------------------------------------------------------------------
 # @description      Color constant
@@ -100,6 +101,7 @@ installAll() {
         $ZSH
         $NVIM
         $COC
+        $RANGER
     )
 
     for folder in "${INSTALLATION_FOLDERS[@]}"
