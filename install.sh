@@ -12,7 +12,7 @@ readonly ZSH="$CURRENT_DIRECTORY/zsh"
 readonly RANGER="$CURRENT_DIRECTORY/ranger"
 
 #------------------------------------------------------------------
-# @description      Color constant
+# @description      Colors constants
 #------------------------------------------------------------------
 readonly LIGHT_RED='\033[1;31m'
 readonly YELLOW='\033[1;33m'
@@ -76,23 +76,25 @@ evaluateCommand() {
 # @arg              $1: folder
 #------------------------------------------------------------------
 executeInstallScript() {
+    # Move to given folder
     messageCdToFolder="Moving to $1"
     commandCdToFolder="cd $1"
 
     evaluateCommand "$messageCdToFolder" "$commandCdToFolder"
 
+    # Make install script executable
     messageChmod="Making '$INSTALL_SH' executable"
     commandChmod="$CHMOD_X_INSTALL"
 
     evaluateCommand "$messageChmod" "$commandChmod"
 
+    # Execute install script
     echoMessage "Executing '$INSTALL_SH' ..."
     ./install.sh
 }
 
 #------------------------------------------------------------------
 # @description      Loop through folders and execute install script
-# @noargs
 #------------------------------------------------------------------
 installAll() {
     INSTALLATION_FOLDERS=(
