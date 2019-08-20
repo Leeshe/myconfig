@@ -114,9 +114,31 @@ createConfigSymlink() {
     done
 }
 
+#------------------------------------------------------------------
+# @description      Clone ranger_devicons
+#------------------------------------------------------------------
+cloneRangerDevicons() {
+    readonly MESSAGE_CLONE_RANGER_DEVICONS="Installing 'ranger_devicons'"
+    readonly COMMAND_CLONE_RANGER_DEVICONS="git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons"
+
+    evaluateCommand "$MESSAGE_CLONE_RANGER_DEVICONS" "$COMMAND_CLONE_RANGER_DEVICONS"
+}
+
+#------------------------------------------------------------------
+# @description      Download ranger-autojump
+#------------------------------------------------------------------
+downloadRangerAutojump() {
+    readonly MESSAGE_DOWNLOAD_RANGER_AUTOJUMP="Downloading 'ranger-autojump'"
+    readonly COMMAND_DOWNLOAD_RANGER_AUTOJUMP="wget -O $RANGER_CONFIG_DIRECTORY/plugins/autojump.py https://raw.githubusercontent.com/fdw/ranger-autojump/master/autojump.py"
+
+    evaluateCommand "$MESSAGE_DOWNLOAD_RANGER_AUTOJUMP" "$COMMAND_DOWNLOAD_RANGER_AUTOJUMP"
+}
+
 cloneRanger
 createRangerSymlink
 createRangerDirectory
 createConfigSymlink
+cloneRangerDevicons
+downloadRangerAutojump
 
 exit 0
