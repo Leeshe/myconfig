@@ -125,13 +125,22 @@ cloneRangerDevicons() {
 }
 
 #------------------------------------------------------------------
-# @description      Download ranger-autojump
+# @description      Create autojump.py symlink
 #------------------------------------------------------------------
-downloadRangerAutojump() {
-    readonly MESSAGE_DOWNLOAD_RANGER_AUTOJUMP="Downloading 'ranger-autojump'"
-    readonly COMMAND_DOWNLOAD_RANGER_AUTOJUMP="wget -O $RANGER_CONFIG_DIRECTORY/plugins/autojump.py https://raw.githubusercontent.com/fdw/ranger-autojump/master/autojump.py"
+createAutojumpSymlink() {
+    readonly AUTOJUMP_PY="autojump.py"
 
-    evaluateCommand "$MESSAGE_DOWNLOAD_RANGER_AUTOJUMP" "$COMMAND_DOWNLOAD_RANGER_AUTOJUMP"
+    # Remove existing 'autojump.py'
+    readonly MESSAGE_REMOVE_AUTOJUMP="Removing existing '$AUTOJUMP_PY' in '$RANGER_CONFIG_DIRECTORY/plugins'"
+    readonly COMMAND_REMOVE_AUTOJUMP="rm -f $RANGER_CONFIG_DIRECTORY/plugins/$AUTOJUMP_PY"
+
+    evaluateCommand "$MESSAGE_REMOVE_AUTOJUMP" "$COMMAND_REMOVE_AUTOJUMP"
+
+    # Create 'autojump.py' symlink
+    readonly MESSAGE_CREATE_SYMLINK_AUTOJUMP="Creating symlink '$AUTOJUMP_PY' in '$RANGER_CONFIG_DIRECTORY/plugins'"
+    readonly COMMAND_CREATE_SYMLINK_AUTOJUMP="ln -s $CURRENT_DIR/$AUTOJUMP_PY $RANGER_CONFIG_DIRECTORY/plugins/$AUTOJUMP_PY"
+
+    evaluateCommand "$MESSAGE_CREATE_SYMLINK_AUTOJUMP" "$COMMAND_CREATE_SYMLINK_AUTOJUMP"
 }
 
 cloneRanger
@@ -139,6 +148,6 @@ createRangerSymlink
 createRangerDirectory
 createConfigSymlink
 cloneRangerDevicons
-downloadRangerAutojump
+createAutojumpSymlink
 
 exit 0
