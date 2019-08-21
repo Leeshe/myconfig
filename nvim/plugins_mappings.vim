@@ -79,6 +79,9 @@ nmap <leader>ac <Plug>(coc-codeaction)
 " Fold unchanged lines
 nmap <silent> <space>f :CocCommand git.foldUnchanged<CR>
 
+" Show chunk diff at current position
+nmap gs <Plug>(coc-git-chunkinfo)
+
 " CocErrorSign color
 hi CocErrorSign ctermfg=Red guifg=#FF0000
 
