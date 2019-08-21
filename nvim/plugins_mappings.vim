@@ -6,7 +6,7 @@ let g:lightline = {
             \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
             \ },
             \ 'component_function': {
-            \   'gitbranch': 'fugitive#head',
+            \   'gitbranch': 'CocGitStatus',
             \   'filename': 'LightlineFilename',
             \ },
             \ 'enable': {
@@ -21,6 +21,10 @@ function! LightlineFilename()
     return path[len(root)+1:]
   endif
   return expand('%')
+endfunction
+
+function! CocGitStatus()
+    return get(g:, 'coc_git_status', '')
 endfunction
 
 set laststatus=2
