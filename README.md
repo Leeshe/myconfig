@@ -113,15 +113,15 @@ npm install -g npm
 
 ## :bookmark_tabs: ZSH Plugins
 
-| Plugin                                                                         | Description                                                    |
-| :-                                                                             | :-                                                             |
-| [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)        | Suggest commands as you type based on history and completions. |
+| Plugin                                                                          | Description                                                    |
+| :-                                                                              | :-                                                             |
+| [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)         | Suggest commands as you type based on history and completions. |
 | [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) | Provide syntax highlighting for the shell zsh.                 |
 
 ## :bookmark_tabs: Ranger Plugins
 
-| Plugin                                                            | Description                                                         |
-| :-                                                                | :-                                                                  |
+| Plugin                                                                   | Description                                                         |
+| :-                                                                       | :-                                                                  |
 | [ranger-autojump](https://github.com/fdw/ranger-autojump)                | Add complete support for autojump to ranger.                        |
 | [ranger_devicons](https://github.com/alexanderjeurissen/ranger_devicons) | Introduce a new linemode that prefixes file names with a file icon. |
 
