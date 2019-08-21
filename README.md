@@ -122,7 +122,7 @@ npm install -g npm
 
 | Plugin                                                            | Description                                                         |
 | :-                                                                | :-                                                                  |
-| [Ranger-Autojump](https://github.com/fdw/ranger-autojump)                | Add complete support for autojump to ranger.                        |
+| [ranger-autojump](https://github.com/fdw/ranger-autojump)                | Add complete support for autojump to ranger.                        |
 | [ranger_devicons](https://github.com/alexanderjeurissen/ranger_devicons) | Introduce a new linemode that prefixes file names with a file icon. |
 
 ## :link: Firefox Plugins
