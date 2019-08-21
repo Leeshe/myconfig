@@ -116,7 +116,7 @@ npm install -g npm
 | Plugin                                                                         | Description                                                    |
 | :-                                                                             | :-                                                             |
 | [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)        | Suggest commands as you type based on history and completions. |
-| [zsh-sytax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) | Provide syntax highlighting for the shell zsh.                 |
+| [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) | Provide syntax highlighting for the shell zsh.                 |
 
 ## :bookmark_tabs: Ranger Plugins
 
