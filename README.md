@@ -118,6 +118,13 @@ npm install -g npm
 | [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)        | Suggest commands as you type based on history and completions. |
 | [zsh-sytax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) | Provide syntax highlighting for the shell zsh.                 |
 
+## :bookmark_tabs: Ranger Plugins
+
+| Plugin                                                            | Description                                                         |
+| :-                                                                | :-                                                                  |
+| [Autojump](https://github.com/fdw/ranger-autojump)                | Add complete support for autojump to ranger.                        |
+| [Devicons](https://github.com/alexanderjeurissen/ranger_devicons) | Introduce a new linemode that prefixes file names with a file icon. |
+
 ## :link: Firefox Plugins
 
 | Plugin                                                                              | Description                                                                                        |
