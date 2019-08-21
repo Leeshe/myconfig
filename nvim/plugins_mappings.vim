@@ -3,11 +3,15 @@ let g:lightline = {
             \ 'colorscheme': 'landscape',
             \ 'active': {
             \   'left': [ [ 'mode', 'paste' ],
-            \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+            \             [ 'gitbranch', 'readonly', 'filename', 'modified', 'lineinfo' ] ],
+            \   'right':[
+            \     [ 'blame' ],
+            \   ],
             \ },
             \ 'component_function': {
             \   'gitbranch': 'CocGitStatus',
             \   'filename': 'LightlineFilename',
+            \   'blame': 'LightlineGitBlame',
             \ },
             \ 'enable': {
             \   'tabline': 0
@@ -25,6 +29,12 @@ endfunction
 
 function! CocGitStatus()
     return get(g:, 'coc_git_status', '')
+endfunction
+
+function! LightlineGitBlame() abort
+  let blame = get(b:, 'coc_git_blame', '')
+  " return blame
+  return winwidth(0) > 120 ? blame : ''
 endfunction
 
 set laststatus=2
