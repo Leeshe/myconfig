@@ -1,6 +1,6 @@
 # :book: Table of contents
 
-[Dotfiles](#-open-file-folder--dotfiles)
+* [Dotfiles](#-open-file-folder--dotfiles)
   + [Ubuntu 16.04 & 18.04](#-computer--ubuntu-1604---1804)
 * [Installation](#-wrench--installation)
 * [Screenshots](#-art--screenshots)
