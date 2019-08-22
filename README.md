@@ -5,7 +5,7 @@
 * [Installation](#-wrench--installation)
 * [Screenshots](#-art--screenshots)
   + [Neovim](#neovim)
-  + [Gnome-Terminal (Oh-My-Zsh)](#gnome-terminal--oh-my-zsh-)
+  + [Gnome-Terminal (Oh-My-Zsh)](#gnome-terminal--oh-my-zsh)
   + [Ranger](#ranger)
 * [Package Dependencies](#-scroll--package-dependencies)
 * [(Neo)Vim Plugins](#-bookmark-tabs---neo-vim-plugins)
