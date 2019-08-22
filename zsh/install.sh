@@ -92,8 +92,9 @@ createSymlink() {
 # @description      Install zsh-syntax-highlighting
 #------------------------------------------------------------------
 installZshSyntaxHighlighting() {
+    readonly GITHUB_ZSH_SYNTAX_HIGHLIGHTING="https://github.com/zsh-users/zsh-syntax-highlighting.git"
     readonly MESSAGE_INSTALL_SYNTAX_HIGHLIGHTING="Installing zsh-syntax-highlighting..."
-    readonly COMMAND_INSTALL_SYNTAX_HIGHLIGHTING="git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
+    readonly COMMAND_INSTALL_SYNTAX_HIGHLIGHTING="git clone $GITHUB_ZSH_SYNTAX_HIGHLIGHTING  ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
 
     evaluateCommand "$MESSAGE_INSTALL_SYNTAX_HIGHLIGHTING" "$COMMAND_INSTALL_SYNTAX_HIGHLIGHTING"
 }
@@ -103,8 +104,9 @@ installZshSyntaxHighlighting() {
 #noargs
 #------------------------------------------------------------------
 installZshAutosuggestions() {
+    readonly GITHUB_ZSH_AUTOSUGGESTIONS="https://github.com/zsh-users/zsh-autosuggestions"
     readonly MESSAGE_INSTALL_AUTOSUGGESTION="Installing zsh-autosuggestions..."
-    readonly COMMAND_INSTALL_AUTOSUGGESTION="git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
+    readonly COMMAND_INSTALL_AUTOSUGGESTION="git clone $GITHUB_ZSH_AUTOSUGGESTIONS ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
 
     evaluateCommand "$MESSAGE_INSTALL_AUTOSUGGESTION" "$COMMAND_INSTALL_AUTOSUGGESTION"
 }
