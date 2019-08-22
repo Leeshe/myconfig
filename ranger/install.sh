@@ -6,6 +6,7 @@
 readonly CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 readonly LOCAL_BIN="/usr/local/bin"
 readonly RANGER_CONFIG_DIRECTORY=$HOME/.config/ranger
+readonly RANGER_PLUGINS_DIRECTORY=$RANGER_CONFIG_DIRECTORY/plugins
 
 
 #------------------------------------------------------------------
@@ -118,8 +119,9 @@ createConfigSymlink() {
 # @description      Clone ranger_devicons
 #------------------------------------------------------------------
 cloneRangerDevicons() {
+    readonly GITHUB_RANGER_DEVICONS="https://github.com/alexanderjeurissen/ranger_devicons"
     readonly MESSAGE_CLONE_RANGER_DEVICONS="Installing 'ranger_devicons'"
-    readonly COMMAND_CLONE_RANGER_DEVICONS="git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons"
+    readonly COMMAND_CLONE_RANGER_DEVICONS="git clone $GITHUB_RANGER_DEVICONS $RANGER_PLUGINS_DIRECTORY/ranger_devicons"
 
     evaluateCommand "$MESSAGE_CLONE_RANGER_DEVICONS" "$COMMAND_CLONE_RANGER_DEVICONS"
 }
@@ -131,14 +133,14 @@ createAutojumpSymlink() {
     readonly AUTOJUMP_PY="autojump.py"
 
     # Remove existing 'autojump.py'
-    readonly MESSAGE_REMOVE_AUTOJUMP="Removing existing '$AUTOJUMP_PY' in '$RANGER_CONFIG_DIRECTORY/plugins'"
-    readonly COMMAND_REMOVE_AUTOJUMP="rm -f $RANGER_CONFIG_DIRECTORY/plugins/$AUTOJUMP_PY"
+    readonly MESSAGE_REMOVE_AUTOJUMP="Removing existing '$AUTOJUMP_PY' in '$RANGER_PLUGINS_DIRECTORY'"
+    readonly COMMAND_REMOVE_AUTOJUMP="rm -f $RANGER_PLUGINS_DIRECTORY/$AUTOJUMP_PY"
 
     evaluateCommand "$MESSAGE_REMOVE_AUTOJUMP" "$COMMAND_REMOVE_AUTOJUMP"
 
     # Create 'autojump.py' symlink
-    readonly MESSAGE_CREATE_SYMLINK_AUTOJUMP="Creating symlink '$AUTOJUMP_PY' in '$RANGER_CONFIG_DIRECTORY/plugins'"
-    readonly COMMAND_CREATE_SYMLINK_AUTOJUMP="ln -s $CURRENT_DIR/$AUTOJUMP_PY $RANGER_CONFIG_DIRECTORY/plugins/$AUTOJUMP_PY"
+    readonly MESSAGE_CREATE_SYMLINK_AUTOJUMP="Creating symlink '$AUTOJUMP_PY' in '$RANGER_PLUGINS_DIRECTORY'"
+    readonly COMMAND_CREATE_SYMLINK_AUTOJUMP="ln -s $CURRENT_DIR/$AUTOJUMP_PY $RANGER_PLUGINS_DIRECTORY/$AUTOJUMP_PY"
 
     evaluateCommand "$MESSAGE_CREATE_SYMLINK_AUTOJUMP" "$COMMAND_CREATE_SYMLINK_AUTOJUMP"
 }
