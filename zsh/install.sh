@@ -64,7 +64,7 @@ evaluateCommand() {
 # @description      Install oh-my-zsh
 #------------------------------------------------------------------
 installOhMyZsh() {
-    readonly MESSAGE_INSTALL_OH_MY_ZSH="Downloading and installing Oh-My-Zsh..."
+    readonly MESSAGE_INSTALL_OH_MY_ZSH="Downloading and installing Oh-My-Zsh"
     readonly COMMAND_INSTALL_OH_MY_ZSH='sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"'
 
     evaluateCommand "$MESSAGE_INSTALL_OH_MY_ZSH" "$COMMAND_INSTALL_OH_MY_ZSH"
@@ -72,7 +72,6 @@ installOhMyZsh() {
 
 #------------------------------------------------------------------
 # @description      Remove current .zshrc and create symlink
-# @noargs
 #------------------------------------------------------------------
 createSymlink() {
     # Remove existing '.zshrc'in $HOME
@@ -93,7 +92,7 @@ createSymlink() {
 #------------------------------------------------------------------
 installZshSyntaxHighlighting() {
     readonly GITHUB_ZSH_SYNTAX_HIGHLIGHTING="https://github.com/zsh-users/zsh-syntax-highlighting.git"
-    readonly MESSAGE_INSTALL_SYNTAX_HIGHLIGHTING="Installing zsh-syntax-highlighting..."
+    readonly MESSAGE_INSTALL_SYNTAX_HIGHLIGHTING="Installing zsh-syntax-highlighting"
     readonly COMMAND_INSTALL_SYNTAX_HIGHLIGHTING="git clone $GITHUB_ZSH_SYNTAX_HIGHLIGHTING  ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
 
     evaluateCommand "$MESSAGE_INSTALL_SYNTAX_HIGHLIGHTING" "$COMMAND_INSTALL_SYNTAX_HIGHLIGHTING"
@@ -101,11 +100,10 @@ installZshSyntaxHighlighting() {
 
 #------------------------------------------------------------------
 # @description      Install zsh-autosuggestions
-#noargs
 #------------------------------------------------------------------
 installZshAutosuggestions() {
     readonly GITHUB_ZSH_AUTOSUGGESTIONS="https://github.com/zsh-users/zsh-autosuggestions"
-    readonly MESSAGE_INSTALL_AUTOSUGGESTION="Installing zsh-autosuggestions..."
+    readonly MESSAGE_INSTALL_AUTOSUGGESTION="Installing zsh-autosuggestions"
     readonly COMMAND_INSTALL_AUTOSUGGESTION="git clone $GITHUB_ZSH_AUTOSUGGESTIONS ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
 
     evaluateCommand "$MESSAGE_INSTALL_AUTOSUGGESTION" "$COMMAND_INSTALL_AUTOSUGGESTION"
