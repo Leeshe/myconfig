@@ -79,7 +79,7 @@ are not installed by these scripts.
 * Remove existing ranger's configuration files: `rc.conf`, `rifle.conf` and `rifle.conf` in `$HOME/.config/ranger`.
 * Create symlinks to ranger's configuration files: [rc.conf](ranger/rc.conf), [scope.sh](ranger/scope.sh) and [rifle.conf](ranger/rifle.conf) in `$HOME/.config/ranger`.
 * Install [ranger_devicons](https://github.com/alexanderjeurissen/ranger_devicons) plugin.
-* Create symlink to [ranger/autojump.py](autojump.py) in `$HOME/.config/ranger/plugins`.
+* Create symlink to [autojump.py](autojump.py) in `$HOME/.config/ranger/plugins`.
 
 ### :open_file_folder: zsh/`install.sh`
 
