@@ -26,10 +26,13 @@
 
     "python.jediEnabled": false,
 
-    "suggest.triggerAfterInsertEnter": true,
-    "suggest.noselect": false,
+    "signature.enable": true,
+    "signature.preferShownAbove": true,
     "suggest.acceptSuggestionOnCommitCharacter": true,
+    "suggest.echodocSupport": true,
     "suggest.enablePreview": true,
+    "suggest.noselect": false,
+    "suggest.triggerAfterInsertEnter": true,
 
     "xml.java.home": "/usr/lib/jvm/java-8-openjdk-amd64"
 }
