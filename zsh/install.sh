@@ -34,7 +34,7 @@ echoCommand() {
     do
         commands+=$var" "
     done
-    echo -e "${LIGHT_CYAN}+$commands${NC}"
+    printf "${LIGHT_CYAN}+${commands}${NC}"
 }
 
 #------------------------------------------------------------------
@@ -42,9 +42,9 @@ echoCommand() {
 #------------------------------------------------------------------
 echoSuccessFail() {
     if [ $? -eq 0 ]; then
-        echo -e "... ${LIGHT_GREEN}OK${NC}"
+        echo -e "${LIGHT_GREEN}√${NC}"
     else
-        echo -e "... ${LIGHT_RED}FAIL${NC}"
+        echo -e "${LIGHT_RED}✘${NC}"
     fi
 }
 
@@ -110,8 +110,11 @@ installZshAutosuggestions() {
 }
 
 installOhMyZsh
+echo
 createSymlink
+echo
 installZshSyntaxHighlighting
+echo
 installZshAutosuggestions
 
 exit 0
