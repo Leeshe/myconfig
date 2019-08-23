@@ -60,9 +60,9 @@ are not installed by these scripts.
 * Create nvim directory: `$HOME/.config/nvim`.
 * Remove existing vim configuration files: `init.vim`,  `mapping.vim`, `plugins.vim`, `plugins_mappings.vim` and `zsh.vim` in `$HOME/.config/nvim`.
 * Create symlinks vim configuration files: [init.vim](nvim/init.vim), [mapping.vim](nvim/mapping.vim), [plugins.vim](nvim/plugins.vim), [plugins_mappings.vim](nvim/plugins_mappings.vim) and [zsh.vim](nvim/zsh.vim) in `$HOME/.config/nvim`.
-* Download [nvim.appimage](https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage) to [nvim](nvim/) folder and rename it `nvim`.
-* Make `nvim` executable.
-* Create symlink to `nvim` in `/usr/local/bin`.
+* Download [nvim.appimage](https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage).
+* Make `nvim.appimage` executable.
+* Create symlink to `nvim.appimage` in `/usr/local/bin`.
 * Install [vim-plug](https://github.com/junegunn/vim-plug).
 
 ### :open_file_folder: packages/`install.sh`
