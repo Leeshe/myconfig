@@ -58,8 +58,8 @@ are not installed by these scripts.
 ### :open_file_folder: nvim/`install.sh`
 
 * Create nvim directory: `$HOME/.config/nvim`.
-* Remove existing vim configuration files in `$HOME/.config/nvim`.
-* Create symlinks to [vim configuration files](nvim/) in `$HOME/.config/nvim`.
+* Remove existing vim configuration files: `init.vim`,  `mapping.vim`, `plugins.vim`, `plugins_mappings.vim` and `zsh.vim` in `$HOME/.config/nvim`.
+* Create symlinks vim configuration files: [init.vim](nvim/init.vim), [mapping.vim](nvim/mapping.vim), [plugins.vim](nvim/plugins.vim), [plugins_mappings.vim](nvim/plugins_mappings.vim) and [zsh.vim](nvim/zsh.vim) in `$HOME/.config/nvim`.
 * Download [nvim.appimage](https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage) to [nvim](nvim/) folder and rename it `nvim`.
 * Make `nvim` executable.
 * Create symlink to `nvim` in `/usr/local/bin`.
@@ -76,10 +76,10 @@ are not installed by these scripts.
 * Clone [ranger](https://github.com/ranger/ranger) in parent folder.
 * Create symlink to `../ranger/ranger.py` in `/usr/local/bin`.
 * Create ranger's configuration directory: `$HOME/.config/ranger`
-* Remove existing ranger's configuration files in `$HOME/.config/ranger`.
-* Create symlinks to [ranger's configuration files](ranger/) in `$HOME/.config/ranger`.
+* Remove existing ranger's configuration files: `rc.conf`, `rifle.conf` and `rifle.conf` in `$HOME/.config/ranger`.
+* Create symlinks to ranger's configuration files: [rc.conf](ranger/rc.conf), [scope.sh](ranger/scope.sh) and [rifle.conf](ranger/rifle.conf) in `$HOME/.config/ranger`.
 * Install [ranger_devicons](https://github.com/alexanderjeurissen/ranger_devicons) plugin.
-* Create symlink to [autojump.py](ranger/autojump.py) in `$HOME/.config/ranger/plugins`.
+* Create symlink to [ranger/autojump.py](autojump.py) in `$HOME/.config/ranger/plugins`.
 
 ### :open_file_folder: zsh/`install.sh`
 
