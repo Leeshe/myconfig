@@ -144,10 +144,15 @@ installVimPlug() {
 }
 
 createNvimDirectory
+echo
 createConfigsSymlinks
+echo
 downloadNvim
+echo
 makeNvimExecutale
+echo
 createNvimSylink
+echo
 installVimPlug
 
 echo ""
