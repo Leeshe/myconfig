@@ -33,6 +33,11 @@ sudo chmod +x install.sh
 ./install.sh
 ```
 
+This script will iterate over these directories: `bash_scripts`, `coc`, `nvim` `packages`, `ranger` and `zsh`
+and execute an install script.  
+  
+*Note*: `[ls-icons](https://github.com/sebastiencs/ls-icons)` and `[Hack Regular Nerd Font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete.ttf)` are not installed by these scripts.
+
 ## :art: Screenshots
 
 ### Neovim
