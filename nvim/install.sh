@@ -8,6 +8,11 @@ readonly LOCAL_BIN="/usr/local/bin"
 readonly NVIM_DIRECTORY=$HOME/.config/nvim
 
 
+#-------------------------------------------------------------------
+# @description      nvim
+#-------------------------------------------------------------------
+readonly NVIM_APPIMAGE="nvim.appimage"
+
 #------------------------------------------------------------------
 # @description      Colors constants
 #------------------------------------------------------------------
@@ -102,7 +107,7 @@ createConfigsSymlinks() {
 downloadNvim() {
     readonly NIGHTLY_NVIM_URL="https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage"
     readonly MESSAGE_DOWNLOAD_NIGHTLY_BUILD="Downloading Neovim (nightly build):"
-    readonly COMMAND_DOWNLOAD_NIGHTLY_NVIM="wget --quiet $NIGHTLY_NVIM_URL --output-document nvim"
+    readonly COMMAND_DOWNLOAD_NIGHTLY_NVIM="wget --quiet $NIGHTLY_NVIM_URL --output-document $NVIM_APPIMAGE"
 
     evaluateCommand "$MESSAGE_DOWNLOAD_NIGHTLY_BUILD" "$COMMAND_DOWNLOAD_NIGHTLY_NVIM"
 }
@@ -111,8 +116,8 @@ downloadNvim() {
 # @description      Make neovim executable
 #------------------------------------------------------------------
 makeNvimExecutale() {
-    readonly MESSAGE_CHMOD_NVIM="Making nvim executable"
-    readonly COMMAND_CHMOD_NVIM="chmod +x nvim"
+    readonly MESSAGE_CHMOD_NVIM="Making $NVIM_APPIMAGE executable"
+    readonly COMMAND_CHMOD_NVIM="chmod +x $NVIM_APPIMAGE"
 
     evaluateCommand "$MESSAGE_CHMOD_NVIM" "$COMMAND_CHMOD_NVIM"
 }
@@ -121,13 +126,14 @@ makeNvimExecutale() {
 # @description      Create neovim symlink in local binaries
 #------------------------------------------------------------------
 createNvimSylink() {
-    readonly MESSAGE_REMOVE_SYMLINK_NVIM="Removing symlink for 'nvim'"
-    readonly COMMAND_REMOVE_SYMLINK_NVIM="rm -f $LOCAL_BIN/nvim"
+    readonly SYMLINK_NVIM="nvim"
+    readonly MESSAGE_REMOVE_SYMLINK_NVIM="Removing existing symlink '$SYMLINK_NVIM' in '$LOCAL_BIN'"
+    readonly COMMAND_REMOVE_SYMLINK_NVIM="rm -f $LOCAL_BIN/$SYMLINK_NVIM"
 
     evaluateCommand "$MESSAGE_REMOVE_SYMLINK_NVIM" "$COMMAND_REMOVE_SYMLINK_NVIM"
 
-    readonly MESSAGE_CREATE_SYMLINK_NVIM="Creating symlink for nvim in '$LOCAL_BIN'"
-    readonly COMMAND_CREATE_SYMLINK_NVIM="ln -s $CURRENT_DIR/nvim $LOCAL_BIN"
+    readonly MESSAGE_CREATE_SYMLINK_NVIM="Creating symlink for '$NVIM_APPIMAGE' in '$LOCAL_BIN'"
+    readonly COMMAND_CREATE_SYMLINK_NVIM="ln -s $CURRENT_DIR/$NVIM_APPIMAGE $LOCAL_BIN/$SYMLINK_NVIM"
 
     evaluateCommand "$MESSAGE_CREATE_SYMLINK_NVIM" "$COMMAND_CREATE_SYMLINK_NVIM"
 }
