@@ -1,5 +1,9 @@
 {
     "coc.preferences.colorSupport": true,
+    "coc.preferences.enableFloatHighlight": true,
+    "coc.preferences.hoverTarget": "float",
+    "coc.preferences.previewAutoClose": false,
+
     "codeLens.enable": true,
 
     "clock.enable": true,
@@ -27,7 +31,9 @@
     "python.jediEnabled": false,
 
     "signature.enable": true,
+    "signature.target": "float",
     "signature.preferShownAbove": true,
+
     "suggest.acceptSuggestionOnCommitCharacter": true,
     "suggest.echodocSupport": true,
     "suggest.enablePreview": true,
