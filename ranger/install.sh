@@ -147,10 +147,15 @@ createAutojumpSymlink() {
 }
 
 cloneRanger
+echo
 createRangerSymlink
+echo
 createRangerDirectory
+echo
 createConfigSymlink
+echo
 cloneRangerDevicons
+echo
 createAutojumpSymlink
 
 exit 0
