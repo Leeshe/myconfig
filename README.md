@@ -3,6 +3,12 @@
 - [Dotfiles](#open_file_folder-dotfiles)
 	- [Ubuntu 16.04 & 18.04](#computer-ubuntu-1604--1804)
 - [Installation](#wrench-installation)
+    - [bash_scripts](#open_file_folder-bash_scripts)
+	- [coc](#open_file_folder-coc)
+	- [nvim](#open_file_folder-nvim)
+	- [packages](#open_file_folder-packages)
+	- [ranger](#open_file_folder-ranger)
+	- [zsh](#open_file_folder-zsh)
 - [Screenshots](#art-screenshots)
 	- [Neovim](#neovim)
 	- [Gnome-Terminal (Oh-My-Zsh)](#gnome-terminal-oh-my-zsh)
@@ -18,7 +24,7 @@
 - [Eclipse](#link-eclipse)
 - [Fonts](#ab-fonts)
 
-# :open_file_folder: Dotfiles
+# :file_folder: Dotfiles
 
 ### :computer: Ubuntu 16.04 & 18.04
 Development setup using **Oh-My-Zsh** and **Neovim**.  
@@ -34,9 +40,54 @@ sudo chmod +x install.sh
 ```
 
 This script will iterate over these directories: `bash_scripts`, `coc`, `nvim` `packages`, `ranger` and `zsh`
-and execute an install script.  
+and execute an install script. Those scripts are detailed below.  
   
-*Note*: `[ls-icons](https://github.com/sebastiencs/ls-icons)` and `[Hack Regular Nerd Font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete.ttf)` are not installed by these scripts.
+*Note*: [ls-icons](https://github.com/sebastiencs/ls-icons) and [Hack Regular Nerd Font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete.ttf)
+are not installed by these scripts.
+
+### :open_file_folder: bash_scripts/`install.sh`
+
+* Create symlinks to [small bash scripts](bash_script/) in `/usr/local/bin`.
+
+### :open_file_folder: coc
+
+* Remove existing `coc-settings.json` in `$HOME/.config/nvim`.
+* Create a symlink to [coc-settings.json](coc/coc-settings.json) in `$HOME/.config/nvim`.
+* Install [coc extensions](coc/extensions) with `npm`.
+
+### :open_file_folder: nvim
+
+* Create nvim directory: `$HOME/.config/nvim`.
+* Remove existing vim configuration files in `$HOME/.config/nvim`.
+* Create symlinks to [vim configuration files](nvim/) in `$HOME/.config/nvim`.
+* Download [nvim.appimage](https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage) to [nvim](nvim/) folder and rename it `nvim`.
+* Make `nvim` executable.
+* Create symlink to `nvim` in `/usr/local/bin`.
+* Install [vim-plug](https://github.com/junegunn/vim-plug).
+
+### :open_file_folder: packages
+
+* Install packages present in [list_packages](packages/list_packages).
+* Update `npm`.
+* Install `python3` for `nvim`.
+
+### :open_file_folder: ranger
+
+* Clone [ranger](https://github.com/ranger/ranger) in parent folder.
+* Create symlink to `../ranger/ranger.py` in `/usr/local/bin`.
+* Create ranger's configuration directory: `$HOME/.config/ranger`
+* Remove existing ranger's configuration files in `$HOME/.config/ranger`.
+* Create symlinks to [ranger's configuration files](ranger/) in `$HOME/.config/ranger`.
+* Install [ranger_devicons](https://github.com/alexanderjeurissen/ranger_devicons) plugin.
+* Create symlink to [autojump.py](ranger/autojump.py) in `$HOME/.config/ranger/plugins`.
+
+### :open_file_folder: zsh
+
+* Install [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh).
+* Remove existing `.zshrc` in `$HOME`.
+* Create symlink to [.zshrc](zsh/.zshrc) in `$HOME`.
+* Install [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting).
+* Install [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions).
 
 ## :art: Screenshots
 
@@ -89,7 +140,7 @@ npm install -g npm
 | Alignment      | [vim-easy-align](https://github.com/junegunn/vim-easy-align)                 | A simple, easy-to-use Vim alignment plugin.                                                                     |
 | Buffers        | [vim-buffet](https://github.com/bagrat/vim-buffet)                           | Bring the IDE-like tabs                                                                                         |
 | Colorscheme    | [vim-sublime-monokai](https://github.com/ErichDonGubler/vim-sublime-monokai) | vim-sublime-monokai is a refined Monokai color scheme for vim tries to look like Sublime's default color scheme |
-| Completion     | [Coc.nvim](https://github.com/neoclide/coc.nvim)                             | Coc is an intellisense engine                                                                                   |
+| Completion     | [coc.nvim](https://github.com/neoclide/coc.nvim)                             | Coc is an intellisense engine                                                                                   |
 | Fading Buffers | [vimade](https://github.com/TaDaa/vimade)                                    | Fade your inactive buffers                                                                                      |
 | Fuzzy finder   | [fzf.vim](https://github.com/junegunn/fzf.vim)                               | fzf is a general-purpose command-line fuzzy finder                                                              |
 | Git            | [fugitive.vim](https://github.com/tpope/vim-fugitive)                        | Git wrapper                                                                                                     |
