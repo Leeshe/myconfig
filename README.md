@@ -49,13 +49,13 @@ are not installed by these scripts.
 
 * Create symlinks to [small bash scripts](bash_script/) in `/usr/local/bin`.
 
-### :open_file_folder: coc
+### :open_file_folder: coc/`install.sh`
 
 * Remove existing `coc-settings.json` in `$HOME/.config/nvim`.
 * Create a symlink to [coc-settings.json](coc/coc-settings.json) in `$HOME/.config/nvim`.
 * Install [coc extensions](coc/extensions) with `npm`.
 
-### :open_file_folder: nvim
+### :open_file_folder: nvim/`install.sh`
 
 * Create nvim directory: `$HOME/.config/nvim`.
 * Remove existing vim configuration files in `$HOME/.config/nvim`.
@@ -65,13 +65,13 @@ are not installed by these scripts.
 * Create symlink to `nvim` in `/usr/local/bin`.
 * Install [vim-plug](https://github.com/junegunn/vim-plug).
 
-### :open_file_folder: packages
+### :open_file_folder: packages/`install.sh`
 
 * Install packages present in [list_packages](packages/list_packages).
 * Update `npm`.
 * Install `python3` for `nvim`.
 
-### :open_file_folder: ranger
+### :open_file_folder: ranger/`install.sh`
 
 * Clone [ranger](https://github.com/ranger/ranger) in parent folder.
 * Create symlink to `../ranger/ranger.py` in `/usr/local/bin`.
@@ -81,7 +81,7 @@ are not installed by these scripts.
 * Install [ranger_devicons](https://github.com/alexanderjeurissen/ranger_devicons) plugin.
 * Create symlink to [autojump.py](ranger/autojump.py) in `$HOME/.config/ranger/plugins`.
 
-### :open_file_folder: zsh
+### :open_file_folder: zsh/`install.sh`
 
 * Install [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh).
 * Remove existing `.zshrc` in `$HOME`.
