@@ -3,7 +3,7 @@ let g:lightline = {
             \ 'colorscheme': 'landscape',
             \ 'active': {
             \   'left': [ [ 'mode', 'paste' ],
-            \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
+            \             [ 'gitbranch', 'readonly', 'filename', 'modified', 'nearest_function' ] ],
             \   'right':[
             \     [ 'blame' ],
             \   ],
@@ -12,6 +12,7 @@ let g:lightline = {
             \   'gitbranch': 'CocGitStatus',
             \   'filename': 'LightlineFilename',
             \   'blame': 'LightlineGitBlame',
+            \   'nearest_function': 'NearestMethodOrFunction',
             \ },
             \ 'enable': {
             \   'tabline': 0
@@ -35,6 +36,10 @@ function! LightlineGitBlame() abort
   let blame = get(b:, 'coc_git_blame', '')
   " return blame
   return winwidth(0) > 120 ? blame : ''
+endfunction
+
+function! NearestMethodOrFunction() abort
+  return get(b:, 'vista_nearest_method_or_function', '')
 endfunction
 
 set laststatus=2
@@ -93,6 +98,9 @@ hi CursorColumn guibg=#0066FF guifg=White
 
 " Update signature help on jump placeholder
 autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+
+" Highlight floating view
+hi CocFloating guibg=#323232 gui=none
 " }}}
 
 " Closetag {{{
