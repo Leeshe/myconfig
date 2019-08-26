@@ -90,6 +90,9 @@ autocmd CursorHold * call CocActionAsync('highlight')
 
 " Change highlighted word color
 hi CursorColumn guibg=#0066FF guifg=White
+
+" Update signature help on jump placeholder
+autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 " }}}
 
 " Closetag {{{
