@@ -65,6 +65,14 @@ are not installed by these scripts.
 * Create symlink to `nvim.appimage` in `/usr/local/bin`.
 * Install [vim-plug](https://github.com/junegunn/vim-plug).
 
+### :open_file_folder: oh-my-zsh/`install.sh`
+
+* Install [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh).
+* Remove existing `.zshrc` in `$HOME`.
+* Create symlink to [.zshrc](zsh/.zshrc) in `$HOME`.
+* Install [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting).
+* Install [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions).
+
 ### :open_file_folder: packages/`install.sh`
 
 * Install packages present in [list_packages](packages/list_packages).
@@ -80,14 +88,6 @@ are not installed by these scripts.
 * Create symlinks to ranger's configuration files: [rc.conf](ranger/rc.conf), [scope.sh](ranger/scope.sh) and [rifle.conf](ranger/rifle.conf) in `$HOME/.config/ranger`.
 * Install [ranger_devicons](https://github.com/alexanderjeurissen/ranger_devicons) plugin.
 * Create symlink to [autojump.py](autojump.py) in `$HOME/.config/ranger/plugins`.
-
-### :open_file_folder: zsh/`install.sh`
-
-* Install [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh).
-* Remove existing `.zshrc` in `$HOME`.
-* Create symlink to [.zshrc](zsh/.zshrc) in `$HOME`.
-* Install [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting).
-* Install [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions).
 
 ## :art: Screenshots
 
