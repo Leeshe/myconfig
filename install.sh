@@ -8,7 +8,7 @@ readonly BASH="$CURRENT_DIRECTORY/bash_script"
 readonly COC="$CURRENT_DIRECTORY/coc"
 readonly NVIM="$CURRENT_DIRECTORY/nvim"
 readonly PACKAGES="$CURRENT_DIRECTORY/packages"
-readonly ZSH="$CURRENT_DIRECTORY/zsh"
+readonly OH_MY_ZSH="$CURRENT_DIRECTORY/oh-my-zsh"
 readonly RANGER="$CURRENT_DIRECTORY/ranger"
 
 #------------------------------------------------------------------
@@ -45,7 +45,7 @@ echoCommand() {
     do
         commands+=$var" "
     done
-    echo -e "${LIGHT_CYAN}+$commands${NC}"
+    printf "${LIGHT_CYAN}+${commands}${NC}"
 }
 
 #------------------------------------------------------------------
@@ -53,9 +53,9 @@ echoCommand() {
 #------------------------------------------------------------------
 echoSuccessFail() {
     if [ $? -eq 0 ]; then
-        echo -e "... ${LIGHT_GREEN}OK${NC}"
+        echo -e "${LIGHT_GREEN}√${NC}"
     else
-        echo -e "... ${LIGHT_RED}FAIL${NC}"
+        echo -e "${LIGHT_RED}✘${NC}"
     fi
 }
 
@@ -94,13 +94,48 @@ executeInstallScript() {
 }
 
 #------------------------------------------------------------------
+# @description      Create path variables in .profile
+#------------------------------------------------------------------
+createCurrentPathVariable() {
+    readonly INIT_VIM="init.vim"
+    readonly ZSHRC=".zshrc"
+    readonly PROFILE=".zprofile"
+    readonly NVIM_INIT_PATH="$NVIM/$INIT_VIM"
+    readonly ZSHRC_PATH="$OH_MY_ZSH/$ZSHRC"
+
+    # Remove existing line 'NVIM_INIT=...' in ~/.profile
+    readonly MESSAGE_REMOVE_NVIM_INIT_PATH="Removing existing path for '$INIT_VIM' in '$HOME/$PROFILE'"
+    readonly COMMAND_REMOVE_NVIM_INIT_PATH="sed -i \"/NVIM_INIT*/d\" $HOME/$PROFILE"
+
+    evaluateCommand "$MESSAGE_REMOVE_NVIM_INIT_PATH" "$COMMAND_REMOVE_NVIM_INIT_PATH"
+
+    # Remove existing line 'ZSHRC_CONFIG=...' in ~/.profile
+    readonly MESSAGE_REMOVE_ZSHRC="Removing existing path for '$ZSHRC' in '$HOME/$PROFILE'"
+    readonly COMMAND_REMOVE_ZSHRC="sed -i \"/ZSHRC_CONFIG*/d\" $HOME/$PROFILE"
+
+    evaluateCommand "$MESSAGE_REMOVE_ZSHRC" "$COMMAND_REMOVE_ZSHRC"
+
+    # Create path for 'init.vim' in ~/.profile
+    readonly MESSAGE_CREATE_NVIM_INIT_PATH="Creating path for '$INIT_VIM' in '$HOME/$PROFILE'"
+    readonly COMMAND_CREATE_NVIM_INIT_PATH="echo \"NVIM_INIT=$NVIM_INIT_PATH\" >> $HOME/$PROFILE"
+
+    evaluateCommand "$MESSAGE_CREATE_NVIM_INIT_PATH" "$COMMAND_CREATE_NVIM_INIT_PATH"
+
+    # Create path for '.zshrc' in ~/.profile
+    readonly MESSAGE_CREATE_ZSHRC_PATH="Creating path for '$ZSHRC' in '$HOME/$PROFILE'"
+    readonly COMMAND_CREATE_ZSHRC_PATH="echo \"ZSHRC_CONFIG=$ZSHRC_PATH\" >> $HOME/$PROFILE"
+
+    evaluateCommand "$MESSAGE_CREATE_ZSHRC_PATH" "$COMMAND_CREATE_ZSHRC_PATH"
+}
+
+#------------------------------------------------------------------
 # @description      Loop through folders and execute install script
 #------------------------------------------------------------------
 installAll() {
     INSTALLATION_FOLDERS=(
         $PACKAGES
         $BASH
-        $ZSH
+        $OH_MY_ZSH
         $NVIM
         $COC
         $RANGER
@@ -117,5 +152,6 @@ installAll() {
 }
 
 installAll
+createCurrentPathVariable
 
 exit 0
