@@ -55,6 +55,9 @@ ln -s *.sh /usr/local/bin
 ### :open_file_folder: coc/[install.sh](coc/install.sh)
 
 ```sh
+# Create nvim configuration directory
+mkdir -p ~/.config/nvim
+
 # Remove existing coc.settings.json in ~/.config/nvim
 rm -f ~/.config/nvim/coc-settings.json
 
@@ -68,7 +71,7 @@ npm install extension --global-style --ignore-scripts --no-bin-links --no-packag
 ### :open_file_folder: nvim/[install.sh](nvim/install.sh)
 
 ```sh
-# Create nvim directory
+# Create nvim configuration directory
 mkdir -p ~/.config/nvim
 
 # Remove existing configuration files
