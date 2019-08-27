@@ -3,12 +3,12 @@
 - [Dotfiles](#open_file_folder-dotfiles)
 	- [Ubuntu 16.04 & 18.04](#computer-ubuntu-1604--1804)
 - [Installation](#wrench-installation)
-    - [bash_scripts](#open_file_folder-bash_scripts)
-	- [coc](#open_file_folder-coc)
-	- [nvim](#open_file_folder-nvim)
-	- [packages](#open_file_folder-packages)
-	- [ranger](#open_file_folder-ranger)
-	- [zsh](#open_file_folder-zsh)
+	- [bash_script](#open_file_folder-bash_scriptinstallsh)
+	- [coc](#open_file_folder-cocinstallsh)
+	- [nvim](#open_file_folder-nviminstallsh)
+	- [oh-my-zsh](#open_file_folder-oh-my-zshinstallsh)
+	- [packages](#open_file_folder-packagesinstallsh)
+	- [ranger](#open_file_folder-rangerinstallsh)
 - [Screenshots](#art-screenshots)
 	- [Neovim](#neovim)
 	- [Gnome-Terminal (Oh-My-Zsh)](#gnome-terminal-oh-my-zsh)
@@ -42,52 +42,112 @@ sudo chmod +x install.sh
 This script will iterate over these directories: `bash_scripts`, `coc`, `nvim` `packages`, `ranger` and `zsh`
 and execute an install script. Those scripts are detailed below.  
   
-*Note*: [ls-icons](https://github.com/sebastiencs/ls-icons) and [Hack Regular Nerd Font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete.ttf)
+Note: [ls-icons](https://github.com/sebastiencs/ls-icons) and [Hack Regular Nerd Font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete.ttf)
 are not installed by these scripts.
 
-### :open_file_folder: bash_scripts/`install.sh`
+### :open_file_folder: bash_script/[install.sh](bash_script/install.sh)
 
-* Create symlinks to [small bash scripts](bash_script/) in `/usr/local/bin`.
+```sh
+# Create symlinks shell scripts in /usr/local/bin.
+ln -s *.sh /usr/local/bin
+```
 
-### :open_file_folder: coc/`install.sh`
+### :open_file_folder: coc/[install.sh](coc/install.sh)
 
-* Remove existing `coc-settings.json` in `$HOME/.config/nvim`.
-* Create a symlink to [coc-settings.json](coc/coc-settings.json) in `$HOME/.config/nvim`.
-* Install [coc extensions](coc/extensions) with `npm`.
+```sh
+# Remove existing coc.settings.json in ~/.config/nvim
+rm -f ~/.config/nvim/coc-settings.json
 
-### :open_file_folder: nvim/`install.sh`
+# Create symlink to coc-settings.json in ~/.config/nvim
+ln -s coc-settings.json ~/.config/nvim
 
-* Create nvim directory: `$HOME/.config/nvim`.
-* Remove existing vim configuration files: `init.vim`,  `mapping.vim`, `plugins.vim`, `plugins_mappings.vim` and `zsh.vim` in `$HOME/.config/nvim`.
-* Create symlinks to vim configuration files: [init.vim](nvim/init.vim), [mapping.vim](nvim/mapping.vim), [plugins.vim](nvim/plugins.vim), [plugins_mappings.vim](nvim/plugins_mappings.vim) and [zsh.vim](nvim/zsh.vim) in `$HOME/.config/nvim`.
-* Download [nvim.appimage](https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage).
-* Make `nvim.appimage` executable.
-* Create symlink to `nvim.appimage` in `/usr/local/bin`.
-* Install [vim-plug](https://github.com/junegunn/vim-plug).
+# Install coc extension
+npm install extension --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
+```
 
-### :open_file_folder: oh-my-zsh/`install.sh`
+### :open_file_folder: nvim/[install.sh](nvim/install.sh)
 
-* Install [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh).
-* Remove existing `.zshrc` in `$HOME`.
-* Create symlink to [.zshrc](zsh/.zshrc) in `$HOME`.
-* Install [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting).
-* Install [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions).
+```sh
+# Create nvim directory
+mkdir -p ~/.config/nvim
 
-### :open_file_folder: packages/`install.sh`
+# Remove existing configuration files
+rm -f ~/.config/nvim/{init, mapping, plugins, plugins_mappings, zsh}.vim
 
-* Install packages present in [list_packages](packages/list_packages).
-* Update `npm`.
-* Install `python3` for `nvim`.
+# Create symlinks to vim configuration files
+ln -s ~/nvim/*.vim ~/.config/nvim
 
-### :open_file_folder: ranger/`install.sh`
+# Download nvim.appimage
+wget --quiet https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage --output-document nvim.appiamge
 
-* Clone [ranger](https://github.com/ranger/ranger) in parent folder.
-* Create symlink to `../ranger/ranger.py` in `/usr/local/bin`.
-* Create ranger's configuration directory: `$HOME/.config/ranger`
-* Remove existing ranger's configuration files: `rc.conf`, `rifle.conf` and `rifle.conf` in `$HOME/.config/ranger`.
-* Create symlinks to ranger's configuration files: [rc.conf](ranger/rc.conf), [scope.sh](ranger/scope.sh) and [rifle.conf](ranger/rifle.conf) in `$HOME/.config/ranger`.
-* Install [ranger_devicons](https://github.com/alexanderjeurissen/ranger_devicons) plugin.
-* Create symlink to [autojump.py](autojump.py) in `$HOME/.config/ranger/plugins`.
+# Make nvim.appimage executable
+chmod +x nvim.appimage
+
+# Create symlink to nvim.appimage in '/usr/local/bin'
+ln -s nvim.appimage /usr/local/bin
+
+# Install vim-plug
+url -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+                https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
+### :open_file_folder: oh-my-zsh/[install.sh](oh-my-zsh/install.sh)
+
+```sh
+# Install Oh My Zsh
+sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# Remove existing .zshrc in ~
+rm -f ~/.zshrc
+
+# Create symlink to .zshrc in ~
+ln -s .zshrc ~
+
+# Install zsh-syntax-highlighting
+git clone $GITHUB_ZSH_SYNTAX_HIGHLIGHTING  ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+# Install zsh-autosuggestions
+git clone $GITHUB_ZSH_AUTOSUGGESTIONS ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+```
+
+### :open_file_folder: packages/[install.sh](packages/install.sh)
+
+
+```sh
+# Install packages present in 'list_packages'
+sudo apt install package
+
+# Update npm
+npm install -g npm
+
+# Install python3 for nvim
+pip3 install neovim
+```
+
+### :open_file_folder: ranger/[install.sh](ranger/install.sh)
+
+```sh
+# Clone in parent folder.
+git clone --recursive https://github.com/ranger/ranger ../
+
+# Create symlink to ../ranger/ranger.py in /usr/local/bin.
+ln -s ../ranger/ranger.py /usr/local/bin/ranger
+
+# Create ranger's configuration directory: ~/.config/ranger.
+mkdir -p ~/.config/ranger
+
+# Remove existing ranger's configuration files: rc.conf, rifle.conf and scope.sh in ~/.config/ranger.
+rm -f ~/.config/{rc.conf, rifle.conf, scope.sh}
+
+# Create symlinks to ranger's configuration files: rc.conf, scope.sh and rifle.conf in ~/.config/ranger.
+ln -s {rc.conf, rifle.conf, scope.sh} ~/.config/ranger
+
+# Install ranger_devicons plugin.
+git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
+
+# Create symlink to autojump.py in ~/.config/ranger/plugins.
+ln -s autojump.py ~/.config/ranger/plugins
+```
 
 ## :art: Screenshots
 

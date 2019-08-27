@@ -62,7 +62,12 @@ function cd {
 nv() {
 	nvim $1
 }
-# }}}
+
+jira() {
+    URL="https://jira.france.openpricer/browse/"
+    TAG=$(echo $1 | grep -oP "[^(fix|feat)(_)][a-zA-Z0-9\-]*[^(.vim)]")
+    firefox $URL$TAG
+}
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
