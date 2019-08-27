@@ -75,7 +75,7 @@ mkdir -p ~/.config/nvim
 rm -f ~/.config/nvim/{init, mapping, plugins, plugins_mappings, zsh}.vim
 
 # Create symlinks to vim configuration files
-ln -s ~/nvim/*.vim ~/.config/nvim
+ln -s *.vim ~/.config/nvim
 
 # Download nvim.appimage
 wget --quiet https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage --output-document nvim.appiamge
