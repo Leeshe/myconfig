@@ -16,15 +16,12 @@
     "git.enableGutters": true,
     "git.addGlameToBufferVar": true,
 
-    "java.autobuild.enabled": true,
+    "java.autobuild.enabled": false,
     "java.codeGeneration.generateComments": true,
     "java.completion.guessMethodArguments": true,
     "java.completion.overwrite": true,
     "java.errors.incompleteClasspath.severity": "ignore",
     "java.implementationsCodeLens.enabled": true,
-    "java.import.gradle.enabled": true,
-    "java.import.maven.enabled": true,
-    "java.maven.downloadSources": true,
     "java.referencesCodeLens.enabled": true,
     "java.signatureHelp.enabled": true,
 
