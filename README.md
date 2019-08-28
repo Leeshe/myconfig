@@ -81,7 +81,8 @@ rm -f ~/.config/nvim/{init, mapping, plugins, plugins_mappings, zsh}.vim
 ln -s *.vim ~/.config/nvim
 
 # Download nvim.appimage
-wget --quiet https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage --output-document nvim.appiamge
+wget --quiet https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage \
+--output-document nvim.appimage
 
 # Make nvim.appimage executable
 chmod +x nvim.appimage
