@@ -32,15 +32,15 @@ I aim to have something in-between a light and not too heavy development setup.
 
 ## :wrench: Installation
 
-Make `install.sh` executable and run it:
+Make [install.sh](install.sh) executable and run it:
 
 ```bash
 sudo chmod +x install.sh
 ./install.sh
 ```
 
-This script will iterate over these directories: `bash_scripts`, `coc`, `nvim` `packages`, `ranger` and `zsh`
-and execute an install script. Those scripts are detailed below.  
+This script will iterate over these directories: [bash_script](bash_script), [coc](coc), [nvim](nvim), [packages](packages), [ranger](ranger) and [oh-my-zsh](oh-my-zsh);  
+and execute below detailed scripts.
   
 Note: [ls-icons](https://github.com/sebastiencs/ls-icons) and [Hack Regular Nerd Font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete.ttf)
 are not installed by these scripts.
@@ -131,7 +131,7 @@ pip3 install neovim
 ### :open_file_folder: ranger/[install.sh](ranger/install.sh)
 
 ```sh
-# Clone in parent folder.
+# Clone ranger in parent folder.
 git clone --recursive https://github.com/ranger/ranger ../
 
 # Create symlink to ../ranger/ranger.py in /usr/local/bin.
