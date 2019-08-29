@@ -1,5 +1,11 @@
 #!/bin/bash
 
+set -o nounset    # error when referencing undefined variable
+
+source ../install.sh
+
+echo -e "${BACKGROUND_GREEN}Executing install script in '${PWD##*/}'${NC}"
+
 #-------------------------------------------------------------------
 # @description      Directories: current and local binaries
 #-------------------------------------------------------------------
@@ -7,66 +13,10 @@ readonly CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 &
 readonly LOCAL_BIN="/usr/local/bin"
 readonly NVIM_DIRECTORY=$HOME/.config/nvim
 
-
 #-------------------------------------------------------------------
 # @description      nvim
 #-------------------------------------------------------------------
 readonly NVIM_APPIMAGE="nvim.appimage"
-
-#------------------------------------------------------------------
-# @description      Colors constants
-#------------------------------------------------------------------
-readonly LIGHT_RED='\033[1;31m'
-readonly YELLOW='\033[1;33m'
-readonly LIGHT_CYAN='\033[1;36m'
-readonly LIGHT_GREEN='\033[1;32m'
-readonly LIGHT_PURPLE='\033[1;35m'
-readonly NC='\033[0m'
-readonly MSG_AREADY_EXIST='ALREADY EXISTS'
-
-#------------------------------------------------------------------
-# @description      Prints given message in yellow
-# @arg              $1: message to print
-#------------------------------------------------------------------
-echoMessage() {
-    echo -e "${YELLOW}$1${NC}"
-}
-
-#------------------------------------------------------------------
-# @description      Prints given message in cyan
-# @arg              $1: command to print
-#------------------------------------------------------------------
-echoCommand() {
-    commands=()
-    for var in "$@"
-    do
-        commands+=$var" "
-    done
-    printf "${LIGHT_CYAN}+${commands}${NC}"
-}
-
-#------------------------------------------------------------------
-# @description      Echo success of last last executed command
-#------------------------------------------------------------------
-echoSuccessFail() {
-    if [ $? -eq 0 ]; then
-        echo -e "${LIGHT_GREEN}√${NC}"
-    else
-        echo -e "${LIGHT_RED}✘${NC}"
-    fi
-}
-
-#------------------------------------------------------------------
-# @description      Print command and evaluate it
-# @arg              $1: message to print
-# @arg              $2: command to execute
-#------------------------------------------------------------------
-evaluateCommand() {
-    echoMessage "$1"
-    echoCommand "$2"
-    eval "$2" > /dev/null
-    echoSuccessFail
-}
 
 #------------------------------------------------------------------
 # @description      Create nvim directory
@@ -97,7 +47,7 @@ createConfigsSymlinks() {
 
         messageCreateSymlinkConfig="Creating symlink for '$symlink'"
         commandCreateSymlinkConfig="ln -s $CURRENT_DIR/$symlink $NVIM_DIRECTORY"
-        evaluateCommand "$messageCreateSymlinkConfig" "$commandCreateSymlinkConfig"
+        evaluteCreateSymlink "$messageCreateSymlinkConfig" "$commandCreateSymlinkConfig"
     done
 }
 
@@ -117,7 +67,7 @@ downloadNvim() {
 #------------------------------------------------------------------
 makeNvimExecutale() {
     readonly MESSAGE_CHMOD_NVIM="Making $NVIM_APPIMAGE executable"
-    readonly COMMAND_CHMOD_NVIM="chmod +x $NVIM_APPIMAGE"
+    readonly COMMAND_CHMOD_NVIM="chmod +x '$NVIM_APPIMAGE'"
 
     evaluateCommand "$MESSAGE_CHMOD_NVIM" "$COMMAND_CHMOD_NVIM"
 }
@@ -149,18 +99,23 @@ installVimPlug() {
     evaluateCommand "$MESSAGE_INSTALL_VIM_PLUG" "$COMMAND_INSTALL_VIM_PLUG"
 }
 
-createNvimDirectory
-echo
-createConfigsSymlinks
-echo
-downloadNvim
-echo
-makeNvimExecutale
-echo
-createNvimSylink
-echo
-installVimPlug
 
-echo ""
-echo -e "${LIGHT_GREEN}Run nvim then update plugins :PlugUpdate${NC}"
+if [ "${PWD##*/}" == "nvim" ]
+then
+    createNvimDirectory
+    echo
+    createConfigsSymlinks
+    echo
+    downloadNvim
+    echo
+    makeNvimExecutale
+    echo
+    createNvimSylink
+    echo
+    installVimPlug
+    echo -e "${LIGHT_GREEN}Run nvim then update plugins :PlugUpdate${NC}"
+    echo ""
+    printf "${BACKGROUND_GREEN}END OF 'nvim'${NC}"
+fi
+
 exit 0

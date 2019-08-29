@@ -1,58 +1,10 @@
 #!/bin/bash
 
-#------------------------------------------------------------------
-# @description      Colors constants
-#------------------------------------------------------------------
-readonly LIGHT_RED='\033[1;31m'
-readonly YELLOW='\033[1;33m'
-readonly LIGHT_CYAN='\033[1;36m'
-readonly LIGHT_GREEN='\033[1;32m'
-readonly LIGHT_PURPLE='\033[1;35m'
-readonly NC='\033[0m'
+set -o nounset    # error when referencing undefined variable
 
-#------------------------------------------------------------------
-# @description      Prints given message in yellow
-# @arg              $1: message to print
-#------------------------------------------------------------------
-echoMessage() {
-    echo -e "${YELLOW}$1${NC}"
-}
+source ../install.sh
 
-#------------------------------------------------------------------
-# @description      Prints given message in cyan
-# @arg              $1: command to print
-#------------------------------------------------------------------
-echoCommand() {
-    commands=()
-    for var in "$@"
-    do
-        commands+=$var" "
-    done
-    echo -e "${LIGHT_CYAN}+$commands${NC}"
-}
-
-#------------------------------------------------------------------
-# @description      Echo success of last last executed command
-#------------------------------------------------------------------
-echoSuccessFail() {
-    if [ $? -eq 0 ]; then
-        echo -e "... ${LIGHT_GREEN}OK${NC}"
-    else
-        echo -e "... ${LIGHT_RED}FAIL${NC}"
-    fi
-}
-
-#------------------------------------------------------------------
-# @description      Print command and evalute it
-# @arg              $1: message to print
-# @arg              $2: command to execute
-#------------------------------------------------------------------
-evaluateCommand() {
-    echoMessage "$1"
-    echoCommand "$2"
-    eval "$2" > /dev/null
-    echoSuccessFail
-}
+echo -e "${BACKGROUND_GREEN}Executing install script in '${PWD##*/}'${NC}"
 
 #------------------------------------------------------------------
 # @description      Look for package in 'list_packages' and install them
@@ -92,8 +44,12 @@ installPythonForNeovim() {
     evaluateCommand "$MESSAGE_INSTALL_PYTHON3_NVIM" "$COMMAND_INSTALL_PYTHON3_NVIM"
 }
 
-installPackages
-updateNpm
-installPythonForNeovim
+if [ "${PWD##*/}" == "packages" ]
+then
+    installPackages
+    updateNpm
+    installPythonForNeovim
+    printf "${BACKGROUND_GREEN}END OF 'packages'${NC}"
+fi
 
 exit 0

@@ -1,64 +1,15 @@
 #!/bin/bash
 
+set -o nounset    # error when referencing undefined variable
+
+source ../install.sh
+
+echo -e "${BACKGROUND_GREEN}Executing install script in '${PWD##*/}'${NC}"
+
 #------------------------------------------------------------------
 # @description      Current directory
 #------------------------------------------------------------------
 readonly CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-
-#------------------------------------------------------------------
-# @description      Colors constants
-#------------------------------------------------------------------
-readonly LIGHT_RED='\033[1;31m'
-readonly YELLOW='\033[1;33m'
-readonly LIGHT_CYAN='\033[1;36m'
-readonly LIGHT_GREEN='\033[1;32m'
-readonly LIGHT_PURPLE='\033[1;35m'
-readonly NC='\033[0m'
-readonly MSG_AREADY_EXIST='ALREADY EXISTS'
-
-#------------------------------------------------------------------
-# @description      Prints given message in yellow
-# @arg              $1: message to print
-#------------------------------------------------------------------
-echoMessage() {
-    echo -e "${YELLOW}$1${NC}"
-}
-
-#------------------------------------------------------------------
-# @description      Prints given message in cyan
-# @arg              $1: command to print
-#------------------------------------------------------------------
-echoCommand() {
-    commands=()
-    for var in "$@"
-    do
-        commands+=$var" "
-    done
-    printf "${LIGHT_CYAN}+${commands}${NC}"
-}
-
-#------------------------------------------------------------------
-# @description      Echo success of last last executed command
-#------------------------------------------------------------------
-echoSuccessFail() {
-    if [ $? -eq 0 ]; then
-        echo -e "${LIGHT_GREEN}√${NC}"
-    else
-        echo -e "${LIGHT_RED}✘${NC}"
-    fi
-}
-
-#------------------------------------------------------------------
-# @description      Print command and evalute it
-# @arg              $1: message to print
-# @arg              $2: command to execute
-#------------------------------------------------------------------
-evaluateCommand() {
-    echoMessage "$1"
-    echoCommand "$2"
-    eval "$2" > /dev/null
-    echoSuccessFail
-}
 
 #------------------------------------------------------------------
 # @description      Install oh-my-zsh
@@ -109,12 +60,16 @@ installZshAutosuggestions() {
     evaluateCommand "$MESSAGE_INSTALL_AUTOSUGGESTION" "$COMMAND_INSTALL_AUTOSUGGESTION"
 }
 
-installOhMyZsh
-echo
-createSymlink
-echo
-installZshSyntaxHighlighting
-echo
-installZshAutosuggestions
+if [ "${PWD##*/}" == "oh-my-zsh" ]
+then
+    installOhMyZsh
+    echo
+    createSymlink
+    echo
+    installZshSyntaxHighlighting
+    echo
+    installZshAutosuggestions
+    printf "${BACKGROUND_GREEN}END OF 'oh-my-zsh'${NC}"
+fi
 
 exit 0
