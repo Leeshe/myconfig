@@ -35,7 +35,7 @@ createCocSettingsSymlink() {
     readonly MESSAGE_CREATE_COC_SETTINGS_SYMLINK="Creating symlink '$COC_SETTING_JSON'"
     readonly COMMAND_CREATE_COC_SETTINGS_SYMLINK="ln -s $CURRENT_DIR/$COC_SETTING_JSON $NVIM_DIRECTORY"
 
-    evaluteCreateSymlink "$MESSAGE_CREATE_COC_SETTINGS_SYMLINK" "$COMMAND_CREATE_COC_SETTINGS_SYMLINK"
+    evaluateCreateSymlink "$MESSAGE_CREATE_COC_SETTINGS_SYMLINK" "$COMMAND_CREATE_COC_SETTINGS_SYMLINK"
 }
 
 #------------------------------------------------------------------

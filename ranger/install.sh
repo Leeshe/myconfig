@@ -21,7 +21,7 @@ cloneRanger() {
     readonly MESSAGE_CLONE_RANGER="Git cloning ranger"
     readonly COMMAND_CLONE_RANGER="git clone --recursive https://github.com/ranger/ranger $CURRENT_DIR/.."
 
-    evaluateCommand "$MESSAGE_CLONE_RANGER" "$COMMAND_CLONE_RANGER"
+    evaluateGitClone "$MESSAGE_CLONE_RANGER" "$COMMAND_CLONE_RANGER"
 }
 
 #------------------------------------------------------------------
@@ -31,7 +31,7 @@ createRangerSymlink() {
     readonly MESSAGE_CREATE_SYMLINK_RANGER="Creating symlink for ranger"
     readonly COMMAND_CREATE_SYMLINK_RANGER="ln -s $CURRENT_DIR/../ranger/ranger.py $LOCAL_BIN/ranger"
 
-    evaluteCreateSymlink "$COMMAND_CREATE_SYMLINK_RANGER" "$COMMAND_CREATE_SYMLINK_RANGER"
+    evaluateCreateSymlink "$MESSAGE_CREATE_SYMLINK_RANGER" "$COMMAND_CREATE_SYMLINK_RANGER"
 }
 
 #------------------------------------------------------------------
@@ -73,7 +73,7 @@ cloneRangerDevicons() {
     readonly MESSAGE_CLONE_RANGER_DEVICONS="Installing 'ranger_devicons'"
     readonly COMMAND_CLONE_RANGER_DEVICONS="git clone $GITHUB_RANGER_DEVICONS $RANGER_PLUGINS_DIRECTORY/ranger_devicons"
 
-    evaluateCommand "$MESSAGE_CLONE_RANGER_DEVICONS" "$COMMAND_CLONE_RANGER_DEVICONS"
+    evaluateGitClone "$MESSAGE_CLONE_RANGER_DEVICONS" "$COMMAND_CLONE_RANGER_DEVICONS"
 }
 
 #------------------------------------------------------------------

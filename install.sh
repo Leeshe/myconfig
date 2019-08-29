@@ -77,15 +77,34 @@ evaluateCommand() {
 # @arg              $1: message to print
 # @arg              $2: command to execute
 #------------------------------------------------------------------
-evaluteCreateSymlink() {
+evaluateCreateSymlink() {
     echoMessage "$1"
-    echoCommand "${2}"
+    echoCommand "$2"
     eval "$2" 2> /dev/null
     if [ $? -eq 0 ]; then
-        echo -e "${LIGHT_GREEN}√${NC}"
+        printf "${LIGHT_GREEN}√${NC}\n"
     else
-        echo -e "${LIGHT_RED}: ✘ link already exists${NC}"
+        echo -e "\n${LIGHT_RED}✘ Link already exists${NC}"
     fi
+}
+
+#------------------------------------------------------------------
+# @description      Print command en evaluate it
+# @arg              $1: message to print
+# @arg              $2: command to execute
+#------------------------------------------------------------------
+evaluateGitClone() {
+    echoMessage "$1"
+    echoCommand "$2"
+    eval "$2" 2> /dev/null
+    case "$?" in
+        "128")
+            echo -e "\n${LIGHT_RED}✘ Already exists${NC}";;
+        "0")
+            printf "${LIGHT_GREEN}√${NC}";;
+        *)
+            echo "Error";;
+    esac
 }
 
 #------------------------------------------------------------------

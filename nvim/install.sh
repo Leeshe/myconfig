@@ -47,7 +47,7 @@ createConfigsSymlinks() {
 
         messageCreateSymlinkConfig="Creating symlink for '$symlink'"
         commandCreateSymlinkConfig="ln -s $CURRENT_DIR/$symlink $NVIM_DIRECTORY"
-        evaluteCreateSymlink "$messageCreateSymlinkConfig" "$commandCreateSymlinkConfig"
+        evaluateCreateSymlink "$messageCreateSymlinkConfig" "$commandCreateSymlinkConfig"
     done
 }
 
