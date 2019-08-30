@@ -56,7 +56,7 @@ alias gsf="gco . && gcf" # git super clean
 
 # ls after cd
 function cd {
-	builtin cd "$@" && ll
+	builtin cd "$@" && ls
 }
 
 nv() {
