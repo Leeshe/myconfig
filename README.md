@@ -74,7 +74,7 @@ npm install extension --global-style --ignore-scripts --no-bin-links --no-packag
 # Create nvim configuration directory
 mkdir -p ~/.config/nvim
 
-# Remove existing configuration files
+# Remove existing vim configuration files
 rm -f ~/.config/nvim/{init, mapping, plugins, plugins_mappings, zsh}.vim
 
 # Create symlinks to vim configuration files
@@ -92,7 +92,7 @@ ln -s nvim.appimage /usr/local/bin
 
 # Install vim-plug
 url -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-                https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
 ### :open_file_folder: oh-my-zsh/[install.sh](oh-my-zsh/install.sh)
@@ -140,10 +140,10 @@ ln -s ../ranger/ranger.py /usr/local/bin/ranger
 # Create ranger's configuration directory: ~/.config/ranger.
 mkdir -p ~/.config/ranger
 
-# Remove existing ranger's configuration files: rc.conf, rifle.conf and scope.sh in ~/.config/ranger.
-rm -f ~/.config/{rc.conf, rifle.conf, scope.sh}
+# Remove existing ranger's configuration files.
+rm -f ~/.config/ranger/{rc.conf, rifle.conf, scope.sh}
 
-# Create symlinks to ranger's configuration files: rc.conf, scope.sh and rifle.conf in ~/.config/ranger.
+# Create symlinks to ranger's configuration files.
 ln -s {rc.conf, rifle.conf, scope.sh} ~/.config/ranger
 
 # Install ranger_devicons plugin.
