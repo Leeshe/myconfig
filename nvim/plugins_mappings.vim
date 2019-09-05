@@ -169,7 +169,9 @@ nmap <leader>0 <Plug>BuffetSwitch(10)
 " }}}
 
 " indentLine {{{
-let g:indentLine_char = '┊'
+let g:indentLine_char = "┊"
+
+let g:indentLine_color_gui = '#A4E57E'
 " }}}
 
 " Fugitive {{{
