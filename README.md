@@ -108,10 +108,12 @@ rm -f ~/.zshrc
 ln -s .zshrc ~
 
 # Install zsh-syntax-highlighting
-git clone $GITHUB_ZSH_SYNTAX_HIGHLIGHTING  ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
+${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 # Install zsh-autosuggestions
-git clone $GITHUB_ZSH_AUTOSUGGESTIONS ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions \
+${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 
 ### :open_file_folder: packages/[install.sh](packages/install.sh)
