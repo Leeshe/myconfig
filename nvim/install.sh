@@ -36,7 +36,7 @@ createConfigsSymlinks() {
     	vim_settings.vim
         init.vim
         zsh.vim
-        mapping.vim
+        default_mappings.vim
         plugins.vim
         plugins_mappings.vim
         custom_commands.vim
@@ -50,6 +50,8 @@ createConfigsSymlinks() {
         messageCreateSymlinkConfig="Creating symlink for '$symlink'"
         commandCreateSymlinkConfig="ln -s $CURRENT_DIR/$symlink $NVIM_DIRECTORY"
         evaluateCreateSymlink "$messageCreateSymlinkConfig" "$commandCreateSymlinkConfig"
+        
+        echo "========================================="
     done
 }
 

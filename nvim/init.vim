@@ -1,7 +1,7 @@
 source $HOME/.config/nvim/vim_settings.vim
 source $HOME/.config/nvim/plugins.vim
 source $HOME/.config/nvim/zsh.vim
-source $HOME/.config/nvim/mapping.vim
+source $HOME/.config/nvim/default_mappings.vim
 
 "colorscheme material-monokai
 colorscheme sublimemonokai
