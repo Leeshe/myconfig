@@ -33,13 +33,13 @@ createNvimDirectory() {
 #------------------------------------------------------------------
 createConfigsSymlinks() {
     readonly SYMLINKS=(
-    	vim_settings.vim
         init.vim
-        zsh.vim
+    	vim_settings.vim
         default_mappings.vim
         plugins.vim
-        plugins_mappings.vim
+        plugins_settings.vim
         custom_commands.vim
+        zsh.vim
     )
 
     for symlink in "${SYMLINKS[@]}"; do
@@ -50,7 +50,7 @@ createConfigsSymlinks() {
         messageCreateSymlinkConfig="Creating symlink for '$symlink'"
         commandCreateSymlinkConfig="ln -s $CURRENT_DIR/$symlink $NVIM_DIRECTORY"
         evaluateCreateSymlink "$messageCreateSymlinkConfig" "$commandCreateSymlinkConfig"
-        
+
         echo "========================================="
     done
 }
