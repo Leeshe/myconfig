@@ -117,3 +117,4 @@ call matchadd('Trail', '\s\+$', 100)
 hi Comment guifg=#7CFC00
 
 source $HOME/.config/nvim/plugins_mappings.vim
+source $HOME/.config/nvim/custom_commands.vim

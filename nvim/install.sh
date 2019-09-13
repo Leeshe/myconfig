@@ -38,6 +38,7 @@ createConfigsSymlinks() {
         mapping.vim
         plugins.vim
         plugins_mappings.vim
+        custom_commands.vim
     )
 
     for symlink in "${SYMLINKS[@]}"; do
