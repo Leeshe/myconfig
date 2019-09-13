@@ -33,6 +33,7 @@ createNvimDirectory() {
 #------------------------------------------------------------------
 createConfigsSymlinks() {
     readonly SYMLINKS=(
+    	vim_settings.vim
         init.vim
         zsh.vim
         mapping.vim
