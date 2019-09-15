@@ -7,24 +7,6 @@ source ../install.sh
 echo -e "${BACKGROUND_GREEN}Executing install script in '${PWD##*/}'${NC}"
 
 #------------------------------------------------------------------
-# @description      Look for package in 'list_packages' and install them
-#------------------------------------------------------------------
-installPackages() {
-    readonly PACKAGES_FILE="list_packages"
-    packages=()
-
-    while IFS= read -r package
-    do
-        packages+=$package" "
-    done < "$PACKAGES_FILE"
-
-    readonly MESSAGE_INSTALL_PACKAGE="Installing following packages: $packages"
-    readonly COMMAND_INSTALL_PACKAGE="sudo apt install $packages"
-
-    evaluateCommand "$MESSAGE_INSTALL_PACKAGE" "$COMMAND_INSTALL_PACKAGE"
-}
-
-#------------------------------------------------------------------
 # @description      Update npm version
 #------------------------------------------------------------------
 updateNpm() {
@@ -46,7 +28,6 @@ installPythonForNeovim() {
 
 if [ "${PWD##*/}" == "packages" ]
 then
-    installPackages
     updateNpm
     installPythonForNeovim
     printf "${BACKGROUND_GREEN}END OF 'packages'${NC}"
