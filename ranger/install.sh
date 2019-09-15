@@ -29,7 +29,7 @@ cloneRanger() {
 #------------------------------------------------------------------
 createRangerSymlink() {
     readonly MESSAGE_CREATE_SYMLINK_RANGER="Creating symlink for ranger"
-    readonly COMMAND_CREATE_SYMLINK_RANGER="ln -s $CURRENT_DIR/../ranger/ranger.py $LOCAL_BIN/ranger"
+    readonly COMMAND_CREATE_SYMLINK_RANGER="ln -s $CURRENT_DIR/../../ranger/ranger.py $LOCAL_BIN/ranger"
 
     evaluateCreateSymlink "$MESSAGE_CREATE_SYMLINK_RANGER" "$COMMAND_CREATE_SYMLINK_RANGER"
 }
