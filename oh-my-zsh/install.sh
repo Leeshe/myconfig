@@ -16,7 +16,7 @@ readonly CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 &
 #------------------------------------------------------------------
 installOhMyZsh() {
     readonly MESSAGE_INSTALL_OH_MY_ZSH="Downloading and installing Oh-My-Zsh"
-    readonly COMMAND_INSTALL_OH_MY_ZSH='sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"'
+    readonly COMMAND_INSTALL_OH_MY_ZSH='sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"'
 
     evaluateCommand "$MESSAGE_INSTALL_OH_MY_ZSH" "$COMMAND_INSTALL_OH_MY_ZSH"
 }
