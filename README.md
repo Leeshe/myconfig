@@ -61,11 +61,8 @@ mkdir -p ~/.config/nvim
 # Remove existing coc.settings.json in ~/.config/nvim
 rm -f ~/.config/nvim/coc-settings.json
 
-# Create symlink to coc-settings.json in ~/.config/nvim
-ln -s coc-settings.json ~/.config/nvim
-
 # Install coc extension
-npm install extension --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
+nvim -c 'CocInstall coc-extension'
 ```
 
 ### :open_file_folder: nvim/[install.sh](nvim/install.sh)
@@ -99,7 +96,7 @@ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 ```sh
 # Install Oh My Zsh
-sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)""
 
 # Remove existing .zshrc in ~
 rm -f ~/.zshrc
@@ -120,9 +117,6 @@ ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 
 ```sh
-# Install packages present in 'list_packages'
-sudo apt install package
-
 # Update npm
 npm install -g npm
 
@@ -134,10 +128,10 @@ pip3 install neovim
 
 ```sh
 # Clone ranger in parent folder.
-git clone --recursive https://github.com/ranger/ranger ../
+git clone --recursive https://github.com/ranger/ranger
 
 # Create symlink to ../ranger/ranger.py in /usr/local/bin.
-ln -s ../ranger/ranger.py /usr/local/bin/ranger
+ln -s ranger/ranger.py /usr/local/bin/ranger
 
 # Create ranger's configuration directory: ~/.config/ranger.
 mkdir -p ~/.config/ranger
