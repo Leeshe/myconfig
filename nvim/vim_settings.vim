@@ -93,3 +93,31 @@ set updatetime=100
 
 " It will change to the directory containing the file which was opened or selected.
 "set autochdir
+
+"colorscheme material-monokai
+colorscheme sublimemonokai
+
+" Transparent background
+hi Visual guifg=Black guibg=#00FA9A gui=none
+hi Normal guibg=NONE ctermbg=NONE
+
+" Highlight trailing space
+highlight Trail ctermbg=red guibg=red
+call matchadd('Trail', '\s\+$', 100)
+
+" Comments color
+hi Comment guifg=#7CFC00
+
+"colorscheme material-monokai
+colorscheme sublimemonokai
+
+" Transparent background
+hi Visual guifg=Black guibg=#00FA9A gui=none
+hi Normal guibg=NONE ctermbg=NONE
+
+" Highlight trailing space
+highlight Trail ctermbg=red guibg=red
+call matchadd('Trail', '\s\+$', 100)
+
+" Comments color
+hi Comment guifg=#7CFC00
