@@ -23,7 +23,7 @@ createSymLinks() {
         messageCreateSymlink="Creating symlink '$symlink'"
         commandCreateSymlink="ln -s $CURRENT_DIR/$symlink.sh $LOCAL_BIN/$symlink"
 
-        evaluteCreateSymlink "$messageCreateSymlink" "$commandCreateSymlink"
+        evaluateCreateSymlink "$messageCreateSymlink" "$commandCreateSymlink"
     done
 }
 
