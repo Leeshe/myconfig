@@ -19,7 +19,7 @@ readonly RANGER_PLUGINS_DIRECTORY=$RANGER_CONFIG_DIRECTORY/plugins
 #------------------------------------------------------------------
 cloneRanger() {
     readonly MESSAGE_CLONE_RANGER="Git cloning ranger"
-    readonly COMMAND_CLONE_RANGER="git clone --recursive https://github.com/ranger/ranger $CURRENT_DIR/.."
+    readonly COMMAND_CLONE_RANGER="git clone --recursive https://github.com/ranger/ranger ../../ranger"
 
     evaluateGitClone "$MESSAGE_CLONE_RANGER" "$COMMAND_CLONE_RANGER"
 }
