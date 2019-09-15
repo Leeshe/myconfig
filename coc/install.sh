@@ -42,14 +42,6 @@ createCocSettingsSymlink() {
 # @description      Loop through 'extensions' and install them
 #------------------------------------------------------------------
 installExtensions() {
-    # Create coc-extensions directory and package.json
-    mkdir -p ~/.config/coc/extensions
-    cd ~/.config/coc/extensions
-    if [ ! -f package.json ]
-    then
-        echo '{"dependencies":{}}'> package.json
-    fi
-
     # Concatenate extension in 'extensions'
     EXTENSIONS_FILE="${CURRENT_DIR}/extensions"
     extensions=()
@@ -62,9 +54,9 @@ installExtensions() {
     MESSAGE_INSTALL_COC_EXTENSIONS="Installing COC extensions..."
     echoMessage "$MESSAGE_INSTALL_COC_EXTENSIONS"
 
-    for i in "${extensions[@]}"
+    for extension in "${extensions[@]}"
     do
-        COMMAND_INSTALL_EXTENSION="npm install $i --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod"
+        COMMAND_INSTALL_EXTENSION="nvim -c 'CocInstall $extension'"
         eval $COMMAND_INSTALL_EXTENSION
     done
 }
