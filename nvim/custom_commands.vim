@@ -1,1 +1,1 @@
-command Load :CocCommand session.load
+command! Load :CocCommand session.load
