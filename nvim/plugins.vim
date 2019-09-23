@@ -12,7 +12,6 @@ Plug 'bagrat/vim-buffet'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Colorscheme
-Plug 'skielbasa/vim-material-monokai'
 Plug 'ErichDonGubler/vim-sublime-monokai'
 
 " Listing
@@ -34,6 +33,7 @@ Plug 'uiiaoo/java-syntax.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'janko/vim-test'
 Plug 'junegunn/vim-easy-align'
+Plug 'jaxbot/semantic-highlight.vim'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()

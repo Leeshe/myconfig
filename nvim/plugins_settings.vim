@@ -213,3 +213,7 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 " }}}
+
+" Semantic-Highlight {{{
+nnoremap  <leader>sh :SemanticHighlightToggle<CR>
+" }}}
