@@ -216,4 +216,9 @@ nmap ga <Plug>(EasyAlign)
 
 " Semantic-Highlight {{{
 nnoremap  <leader>sh :SemanticHighlightToggle<CR>
+
+augroup SemanticHighlight
+    autocmd!
+    autocmd BufEnter * :SemanticHighlight
+augroup END
 " }}}
