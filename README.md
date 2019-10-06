@@ -96,7 +96,7 @@ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 ```sh
 # Install Oh My Zsh
-sh -c "sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Remove existing .zshrc in ~
 rm -f ~/.zshrc
