@@ -124,7 +124,7 @@ let g:closetag_shortcut = '>'
 " }}}
 
 " FZF {{{
-nnoremap <C-n> :GFiles<CR>
+"nnoremap <C-n> :GFiles<CR>
 nnoremap <C-f> :Ag<CR>
 " }}}
 
@@ -221,4 +221,13 @@ augroup SemanticHighlight
     autocmd!
     autocmd BufEnter * :SemanticHighlight
 augroup END
+" }}}
+
+" Vim-Clap {{{
+hi ClapInput cterm=bold ctermfg=white gui=bold guifg=#FFFFFF
+hi ClapDisplay cterm=bold ctermfg=white gui=bold guifg=#FFFFFF guibg=#808080
+hi ClapCurrentSelection cterm=bold gui=bold ctermfg=224 guifg=#FFFFFF guibg=#696969
+hi ClapMatches cterm=bold ctermfg=yellow guifg=#3CB371
+
+nnoremap <C-n> :Clap! gfiles<CR>
 " }}}
