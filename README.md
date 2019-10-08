@@ -203,6 +203,7 @@ npm install -g npm
 | Completion            | [coc.nvim](https://github.com/neoclide/coc.nvim)                             | Coc is an intellisense engine                                                                                   |
 | Fading Buffers        | [vimade](https://github.com/TaDaa/vimade)                                    | Fade your inactive buffers                                                                                      |
 | Fuzzy finder          | [fzf.vim](https://github.com/junegunn/fzf.vim)                               | fzf is a general-purpose command-line fuzzy finder                                                              |
+| Finder and Dispatcher | [vim-clap](https://github.com/liuchengxu/vim-clap)                           | Generic interactive finder and dispatcher                                                                |
 | Git                   | [fugitive.vim](https://github.com/tpope/vim-fugitive)                        | Git wrapper                                                                                                     |
 | Integration           | [vim-test](https://github.com/janko/vim-test)                                | Run your tests at the speed of thought                                                                          |
 | Interface             | [indentLine](https://github.com/Yggdroot/indentLine)                         | Display thin vertical lines at each indentation level                                                           |
