@@ -1,6 +1,9 @@
 " Plugins will be downloaded under the specified directory
 call plug#begin('~/.local/share/nvim/plugged')
 
+" Alignment
+Plug 'junegunn/vim-easy-align'
+
 " Status line
 Plug 'itchyny/lightline.vim'
 
@@ -32,8 +35,11 @@ Plug 'uiiaoo/java-syntax.vim'
 
 " Others
 Plug 'tpope/vim-fugitive'
+
+" Testing
 Plug 'janko/vim-test'
-Plug 'junegunn/vim-easy-align'
+
+" Variable Highlighting
 Plug 'jaxbot/semantic-highlight.vim'
 
 " List ends here. Plugins become visible to Vim after this call.
