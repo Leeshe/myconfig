@@ -231,3 +231,9 @@ hi ClapMatches cterm=bold ctermfg=yellow guifg=#3CB371
 
 nnoremap <C-n> :Clap! gfiles<CR>
 " }}}
+
+" Coc-Git {{{
+hi DiffAdd    guibg = none guifg = lightgreen
+hi DiffDelete guibg = none guifg = red
+hi DiffChange guibg = none guifg = sandybrown
+" }}}
