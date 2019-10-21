@@ -121,3 +121,6 @@ call matchadd('Trail', '\s\+$', 100)
 
 " Comments color
 hi Comment guifg=#7CFC00
+
+" Number column color
+hi LineNr guibg=none guifg=white
