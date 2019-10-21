@@ -28,7 +28,7 @@ Plug 'liuchengxu/vim-clap'
 Plug 'easymotion/vim-easymotion'
 
 " Edition
-Plug 'Yggdroot/indentLine'
+"Plug 'Yggdroot/indentLine'
 
 " Syntax
 Plug 'uiiaoo/java-syntax.vim'
@@ -41,6 +41,8 @@ Plug 'janko/vim-test'
 
 " Variable Highlighting
 Plug 'jaxbot/semantic-highlight.vim'
+
+Plug 'nathanaelkane/vim-indent-guides' 
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
