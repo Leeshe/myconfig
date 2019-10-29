@@ -14,7 +14,7 @@
     "diagnostic.virtualText": true,
 
     "git.enableGutters": true,
-    "git.addGlameToBufferVar": true,
+    "git.addGBlameToBufferVar": true,
 
     "java.autobuild.enabled": false,
     "java.codeGeneration.generateComments": true,
