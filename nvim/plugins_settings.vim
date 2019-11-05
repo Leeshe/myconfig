@@ -3,7 +3,7 @@ let g:lightline = {
             \ 'colorscheme': 'landscape',
             \ 'active': {
             \   'left': [ [ 'mode', 'paste' ],
-            \             [ 'gitbranch', 'readonly', 'filename', 'modified', 'nearest_function' ] ],
+            \             [ 'gitbranch', 'readonly', 'filename', 'modified', 'nearest_function', 'numberError' ] ],
             \   'right':[
             \     [ 'blame' ],
             \   ],
@@ -13,6 +13,7 @@ let g:lightline = {
             \   'filename': 'LightlineFilename',
             \   'blame': 'LightlineGitBlame',
             \   'nearest_function': 'NearestMethodOrFunction',
+            \   'numberError': 'GetError',
             \ },
             \ 'enable': {
             \   'tabline': 0
@@ -23,9 +24,9 @@ function! LightlineFilename()
   let root = fnamemodify(get(b:, 'git_dir'), ':h')
   let path = expand('%:p')
   if path[:len(root)-1] ==# root
-    return path[len(root)+1:]
+    return " " . path[len(root)+1:]
   endif
-  return expand('%')
+  return "" . expand('%')
 endfunction
 
 function! CocGitStatus()
@@ -34,12 +35,23 @@ endfunction
 
 function! LightlineGitBlame() abort
   let blame = get(b:, 'coc_git_blame', '')
-  " return blame
-  return winwidth(0) > 120 ? blame : ''
+  if blame == 'Not Committed Yet'
+      return winwidth(0) > 120 ? " To commit or not to commit" : ''
+  endif
+  return winwidth(0) > 120 ? " " . blame : ''
 endfunction
 
 function! NearestMethodOrFunction() abort
   return get(b:, 'vista_nearest_method_or_function', '')
+endfunction
+
+function! GetError() abort
+  let info  = get(b:, 'coc_diagnostic_info', {})
+  let error = get(info, 'error', 0)
+  if (error != 0)
+      return " " . error
+  endif
+  return ""
 endfunction
 
 set laststatus=2
