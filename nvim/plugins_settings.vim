@@ -3,7 +3,7 @@ let g:lightline = {
             \ 'colorscheme': 'landscape',
             \ 'active': {
             \   'left': [ [ 'mode', 'paste' ],
-            \             [ 'gitbranch', 'readonly', 'filename', 'modified', 'nearest_function', 'numberError', 'numberWarning' ] ],
+            \             [ 'gitbranch', 'readonly', 'filename', 'modified', 'currentFunction', 'numberError', 'numberWarning' ] ],
             \   'right':[
             \     [ 'blame' ],
             \   ],
@@ -15,12 +15,16 @@ let g:lightline = {
             \   'nearest_function' : 'NearestMethodOrFunction',
             \   'numberError'      : 'GetError',
             \   'numberWarning'    : 'GetWarning',
+            \   'currentFunction'  : 'GetCurrentFunction',
             \ },
             \ 'enable': {
             \   'tabline': 0
             \ },
             \ }
 
+""
+" Returns the current open file's name.
+""
 function! LightlineFilename()
   let root = fnamemodify(get(b:, 'git_dir'), ':h')
   let path = expand('%:p')
@@ -34,34 +38,71 @@ function! CocGitStatus()
     return get(g:, 'coc_git_status', '')
 endfunction
 
+""
+" Returns commit message.
+""
 function! LightlineGitBlame() abort
   let blame = get(b:, 'coc_git_blame', '')
+
   if blame == 'Not Committed Yet'
       return winwidth(0) > 120 ? " To commit or not to commit" : ''
   endif
+
   return winwidth(0) > 120 ? " " . blame : ''
 endfunction
 
+""
+" Returns the nearest function symbol provided by Vista.
+""
 function! NearestMethodOrFunction() abort
   return get(b:, 'vista_nearest_method_or_function', '')
 endfunction
 
+""
+" Returns the number of errors provided by COC.
+""
 function! GetError() abort
   let info  = get(b:, 'coc_diagnostic_info', {})
   let error = get(info, 'error', 0)
+
   if (error != 0)
       return " " . error
   endif
+
   return ""
 endfunction
 
+""
+" Returns the number of warnings provided by COC.
+""
 function! GetWarning() abort
-  let info = get(b:, 'coc_diagnostic_info', {})
-  let warning = get(info, 'warning', 0)
-  if (warning != 0)
-      return "  " . warning
-  endif
-  return ""
+    let info    = get(b:, 'coc_diagnostic_info', {})
+    let warning = get(info, 'warning', 0)
+
+    if (warning != 0)
+        return "  " . warning
+    endif
+
+    return ""
+endfunction
+
+""
+" Returns function symbol under cursor provided by COC.
+""
+function! GetCurrentFunction() abort
+    let b:currentFunction  = get(b:, 'currentFunction', '')
+    let cocCurrentFunction = get(b:, 'coc_current_function', '')
+
+    if (cocCurrentFunction != '' && cocCurrentFunction != b:currentFunction)
+        let b:currentFunction = get(b:, 'coc_current_function', '')
+        return " " . b:currentFunction
+    endif
+
+    if (empty(b:currentFunction))
+        return ''
+    endif
+
+    return " " . b:currentFunction
 endfunction
 
 set laststatus=2
