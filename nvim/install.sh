@@ -40,6 +40,7 @@ createConfigsSymlinks() {
         plugins_settings.vim
         custom_commands.vim
         zsh.vim
+        statusline.vim
     )
 
     for symlink in "${SYMLINKS[@]}"; do

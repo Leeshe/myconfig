@@ -5,7 +5,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'junegunn/vim-easy-align'
 
 " Status line
-Plug 'itchyny/lightline.vim'
+"Plug 'itchyny/lightline.vim'
 
 " Buffers
 Plug 'TaDaa/vimade'
