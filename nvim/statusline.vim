@@ -139,7 +139,7 @@ function! GetCommitMessage() abort
       return ''
   endif
 
-  return winwidth(0) < 120 ? " " . blame : blame[0:80] . "(...)"
+  return winwidth(0) > 120 ? " " . blame : " " . blame[0:100] . "..."
 endfunction
 
 
@@ -150,49 +150,75 @@ function! GetModified() abort
         return ''
 endfunction
 
+" Call everytime mode is changed
+set statusline=%{RedrawModeColors(mode())}
 
 " Left side items
 " =======================
-set statusline=%{RedrawModeColors(mode())}
-set statusline+=%#LineNr#
-set statusline+=%#StatuslineGitBranchColor#
+
+
+" Git branch
+set statusline+=%#SeparatorGitBranch#
+set statusline+=%#StatuslineGitBranchColor#
 set statusline+=%{StatuslineGit()}\ 
-set statusline+=%#LineNr#\ 
-set statusline+=%#StatuslineCurrentPathColor#
+set statusline+=%#SeparatorGitBranch#
+
+set statusline+=%#SeparatorInvisible#\ 
+
+" Path
+set statusline+=%#SeparatorCurrentPath#
+set statusline+=%#StatuslineCurrentPathColor#
 set statusline+=\ %{GetCurrentPath()}\ 
-set statusline+=%#LineNr#\ 
-set statusline+=%#StatuslineFileColor#
+set statusline+=%#SeparatorCurrentPath#
+
+set statusline+=%#SeparatorInvisible#\ 
+
+" File name
+set statusline+=%#SeparatorFile#
+set statusline+=%#StatuslineFileColor#
 set statusline+=\ %{GetFileName()}\ 
-set statusline+=%#LineNr#
+set statusline+=%#SeparatorFile#
+
+set statusline+=%#SeparatorInvisible#\ 
+
+" Modified
 set statusline+=%#StatuslineModifiedColor#
 set statusline+=\ %{GetModified()}\ 
-set statusline+=%#LineNr#
-set statusline+=%#StatuslineFunctionColor#
-set statusline+=\ %{GetCurrentFunction()}\ 
-set statusline+=%#LineNr#
+
+set statusline+=%#SeparatorInvisible#\ 
+
+" Error
 set statusline+=%#StatuslineErrorColor#
 set statusline+=\ %{GetError()}\ 
-set statusline+=%#LineNr#
+
+" Warning
 set statusline+=%#StatuslineWarningColor#
 set statusline+=\ %{GetWarning()}\ 
+
 " Right side items
 " =======================
 set statusline+=%=
+
+set statusline+=%#SeparatorCommit#
 set statusline+=%#StatuslineCommitColor#
 set statusline+=\ %{GetCommitMessage()}\ 
-set statusline+=%#LineNr#
-set statusline+=%#StatuslineModeColor#
-set statusline+=\ %{GetModeFullName(mode())}\ 
-set statusline+=%#LineNr#
+set statusline+=%#SeparatorCommit#
 
 
 " Colors in normal mode
 hi StatuslineModeColor        guibg=#0066FF guifg=white gui=bold
-hi StatuslineGitBranchColor   guibg=#FFFFFF guifg=black
-hi StatuslineCurrentPathColor guibg=#FFFFFF guifg=black
-hi StatuslineFileColor        guibg=#FFFFFF guifg=black
+hi StatuslineGitBranchColor   guibg=#0066FF guifg=white
+hi StatuslineCurrentPathColor guibg=#FFFF33 guifg=black
+hi StatuslineFileColor        guibg=#90EE90 guifg=black
 hi StatuslineModifiedColor    guibg=none    guifg=white
-hi StatuslineFunctionColor    guibg=none    guifg=white
-hi StatuslineErrorColor       guibg=none    guifg=#FF69B4
+hi StatuslineFunctionColor    guibg=#FF0000 guifg=white
+hi StatuslineErrorColor       guibg=none    guifg=white
 hi StatuslineWarningColor     guibg=none    guifg=yellow
-hi StatuslineCommitColor      guibg=none    guifg=white
+hi StatuslineCommitColor      guibg=#800080 guifg=white
+
+hi SeparatorInvisible   guibg=none guifg=none
+hi SeparatorGitBranch   guibg=none guifg=#0066FF
+hi SeparatorCurrentPath guibg=none guifg=#FFFF33
+hi SeparatorFile        guibg=none guifg=#90EE90
+hi SeparatorFunction    guibg=none guifg=#FF0000
+hi SeparatorCommit      guibg=none guifg=#800080
