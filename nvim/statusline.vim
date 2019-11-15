@@ -33,9 +33,17 @@ function! GetCurrentPath() abort
     let root = fnamemodify(get(b:, 'git_dir'), ':h')
     let path = expand('%:p')
     let filename = expand('%:t')
+
+    " In this case, not a git repository, display 'path'
+    if root == '.'
+        return ' ' . path[:len(path) - len(filename) - 1]
+    endif
+
     if path[:len(root) - 1] ==# root
+        " Display the path to current file, without filename
         return '  ' . path[len(root)+ 1 : len(path) - len(filename) - 1]
     endif
+
     return expand('%')
 endfunction
 
@@ -67,8 +75,11 @@ function! GitBranch()
 
     if (branch == 'master')
         return " " . branch
+    " Not git repository
     elseif (branch == '')
-        return ''
+        hi SeparatorGitBranch       guibg=none    guifg=#228B22
+        hi StatuslineGitBranchColor guibg=#228B22 guifg=white
+        return ""
     endif
 
   return " " . branch
@@ -131,15 +142,17 @@ endfunction
 " Returns commit message.
 ""
 function! GetCommitMessage() abort
-  let blame = get(b:, 'coc_git_blame', '')
+    let blame = get(b:, 'coc_git_blame', '')
 
-  if blame == 'Not Committed Yet'
-      return winwidth(0) > 120 ? " To commit or not to commit" : ''
-  elseif blame == ''
-      return ''
-  endif
+    if blame == 'Not Committed Yet'
+        return winwidth(0) > 120 ? " To commit or not to commit" : ''
 
-  return winwidth(0) > 120 ? " " . blame : " " . blame[0:100] . "..."
+    " Not a git repository
+    elseif blame == ''
+        return ''
+    endif
+
+    return winwidth(0) > 120 ? " " . blame : " " . blame[0:100] . "..."
 endfunction
 
 
