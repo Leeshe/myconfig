@@ -34,14 +34,22 @@ function! GetCurrentPath() abort
     let path = expand('%:p')
     let filename = expand('%:t')
 
-    " In this case, not a git repository, display 'path'
+    " In this case, not a git repository, display absolute path without
+    " filename
     if root == '.'
         return ' ' . path[:len(path) - len(filename) - 1]
     endif
 
     if path[:len(root) - 1] ==# root
+        let display = path[len(root) + 1 : len(path) - len(filename) - 1]
+
+        " Source directory
+        if display == ''
+            return ""
         " Display the path to current file, without filename
-        return '  ' . path[len(root)+ 1 : len(path) - len(filename) - 1]
+        else
+            return '  ' . display
+        endif
     endif
 
     return expand('%')
