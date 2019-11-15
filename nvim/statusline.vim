@@ -139,7 +139,7 @@ function! GetCommitMessage() abort
       return ''
   endif
 
-  return winwidth(0) > 120 ? " " . blame : " " . blame[0:100] . "..."
+  return winwidth(0) > 120 ? " " . blame : " " . blame[0:100] . "..."
 endfunction
 
 
