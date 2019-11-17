@@ -2,9 +2,15 @@ set laststatus=2
 
 function! RedrawModeColors(mode)
     if a:mode == 'n'
-        hi StatuslineModeColor guibg=#0066FF guifg=white gui=bold
+        hi StatuslineModeColor guibg=none guifg=none
     elseif a:mode == 'i'
-        hi StatuslineModeColor guibg=#FF0000 guifg=white gui=bold
+        hi StatuslineModeColor guibg=none guifg=#FF4C4C
+    elseif a:mode == 'R'
+        hi StatuslineModeColor guibg=none guifg=#FF8000
+    elseif a:mode == 'v' || a:mode == 'V' || a:mode == '^V'
+        hi StatuslineModeColor guibg=none guifg=#AD6AEA
+    elseif a:mode == 'c'
+        hi StatuslineModeColor guibg=none guifg=#32CD32 gui=bold
     endif
     return ''
 endfunction
@@ -14,15 +20,15 @@ endfunction
 "
 " @param mode current mode in a:mode
 ""
-function! GetModeFullName(mode) abort
+function! GetMode(mode) abort
     if a:mode == 'n'
-        return "NORMAL"
+        return ""
     elseif a:mode == 'i'
-        return ""
+        return ""
     elseif a:mode == 'R'
         return ""
     elseif a:mode == 'v' || a:mode == 'V' || a:mode == '^V'
-        return ""
+        return ""
     elseif a:mode == 'c'
         return ""
     endif
@@ -34,7 +40,7 @@ function! GetCurrentPath() abort
     let path = expand('%:p')
     let filename = expand('%:t')
 
-    " In this case, not a git repository, display 'path'
+    " In this case, not a git repository, display full path
     if root == '.'
         return ' ' . path[:len(path) - len(filename) - 1]
     endif
@@ -158,7 +164,7 @@ endfunction
 
 function! GetModified() abort
     if &modified == 1
-        return ""
+        return ""
     else
         return ''
 endfunction
@@ -194,6 +200,12 @@ set statusline+=%#SeparatorFile#
 
 set statusline+=%#SeparatorInvisible#\ 
 
+" Mode
+set statusline+=%#StatuslineModeColor#
+set statusline+=\ %{GetMode(mode())}\ 
+
+set statusline+=%#SeparatorInvisible#\ 
+
 " Modified
 set statusline+=%#StatuslineModifiedColor#
 set statusline+=\ %{GetModified()}\ 
@@ -219,10 +231,10 @@ set statusline+=%#SeparatorCommit#
 
 
 " Colors in normal mode
-hi StatuslineModeColor        guibg=#0066FF guifg=white gui=bold
 hi StatuslineGitBranchColor   guibg=#0066FF guifg=white
 hi StatuslineCurrentPathColor guibg=#FFFF33 guifg=black
 hi StatuslineFileColor        guibg=#90EE90 guifg=black
+hi StatuslineModeColor        guibg=none    guifg=none
 hi StatuslineModifiedColor    guibg=none    guifg=white
 hi StatuslineFunctionColor    guibg=#FF0000 guifg=white
 hi StatuslineErrorColor       guibg=none    guifg=white
