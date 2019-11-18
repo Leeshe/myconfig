@@ -40,9 +40,13 @@ function! GetCurrentPath() abort
     let path = expand('%:p')
     let filename = expand('%:t')
 
+    " Nerd font icons
+    let iconOpenFolder = "\uf115"
+    let iconFAGit      = "\uf1d3"
+
     " In this case, not a git repository, display full path
     if root == '.'
-        return ' ' . path[:len(path) - len(filename) - 1]
+        return iconOpenFolder . " " . path[:len(path) - len(filename) - 1]
     endif
 
     if path[:len(root) - 1] ==# root
@@ -50,27 +54,65 @@ function! GetCurrentPath() abort
 
         " Source directory
         if display == ''
-            return ""
+            return iconFAGit
         " Display the path to current file, without filename
         else
-            return '  ' . display
+            return iconOpenFolder . "  " . display
         endif
     endif
 
     return expand('%')
 endfunction
 
+""
+" Returns icon associated to given filetype
+""
 function! GetFileIcon(filetype) abort
-    let icon = ''
+    let icon = ''
+
+    let default     = "\uf0f6"
+    let java        = "\ue738"
+    let jproperties = "\uf9fc"
+    let markdown    = "\ue609"
+    let sql         = "\ue706"
+    let vim         = "\ue7c5"
+    let xml         = "\ufabf"
 
     if a:filetype == 'java'
-        let icon = ''
+        let icon = java
     elseif a:filetype == 'vim'
-        let icon = ''
+        let icon = vim
     elseif a:filetype == 'md'
-        let icon = ''
+        let icon = markdown
     elseif a:filetype == 'xml'
-        let icon == '謹'
+        let icon = xml
+    elseif a:filetype == 'sql'
+        let icon = sql
+    elseif a:filetype == 'jproperties'
+        let icon = jproperties
+    else
+        let icon = default
+    endif
+
+    return icon
+endfunction
+
+""
+" Returns icon associated to given filename when filetype
+" is unknown.
+""
+function! GetSpecificIcon(filename) abort
+    let icon = ''
+
+    let lowerFilename = tolower(a:filename)
+
+    let default      = "\uf0f6"
+    let balanceScale = "\ufad0"
+
+    if lowerFilename == 'license'
+        let icon = balanceScale
+    else
+        let icon = default
     endif
 
     return icon
@@ -86,9 +128,14 @@ function! GetFileName() abort
         return ''
     endif
 
-    let filetypeIcon =  GetFileIcon(&filetype)
+    let icon =  GetFileIcon(&filetype)
 
-    return filetypeIcon . " " . filename
+    " Check if file has default icon, e.g. 'LICENSE'
+    if icon == "\uf0f6"
+        let icon = GetSpecificIcon(filename)
+    endif
+
+    return icon . " " . filename
 endfunction
 
 ""
@@ -140,9 +187,10 @@ endfunction
 function! GetError() abort
   let info  = get(b:, 'coc_diagnostic_info', {})
   let error = get(info, 'error', 0)
+  let errorIcon = "\uf658"
 
   if (error != 0)
-      return " " . error
+      return errorIcon . " " . error
   endif
 
   return ""
@@ -154,9 +202,10 @@ endfunction
 function! GetWarning() abort
     let info    = get(b:, 'coc_diagnostic_info', {})
     let warning = get(info, 'warning', 0)
+    let warningIcon = "\uf071"
 
     if (warning != 0)
-        return "  " . warning
+        return warningIcon . " ". warning
     endif
 
     return ""
@@ -181,8 +230,10 @@ endfunction
 
 
 function! GetModified() abort
+    let modifiedIcon = "\uf0c7"
+
     if &modified == 1
-        return ""
+        return modifiedIcon
     else
         return ''
 endfunction
