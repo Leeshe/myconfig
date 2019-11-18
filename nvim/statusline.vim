@@ -233,7 +233,7 @@ set statusline+=%=
 
 set statusline+=%#SeparatorCommit#
 set statusline+=%#StatuslineCommitColor#
-set statusline+=\ %{GetCommitMessage()}\ 
+set statusline+=\ %{GetCommitMessage()}
 set statusline+=%#SeparatorCommit#
 
 
