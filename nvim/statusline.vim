@@ -60,22 +60,33 @@ function! GetCurrentPath() abort
     return expand('%')
 endfunction
 
+function! GetFileIcon(filetype) abort
+    let icon = ''
+
+    if a:filetype == 'java'
+        let icon = ''
+    elseif a:filetype == 'vim'
+        let icon = ''
+    elseif a:filetype == 'md'
+        let icon = ''
+    elseif a:filetype == 'xml'
+        let icon == '謹'
+    endif
+
+    return icon
+endfunction
+
 ""
 " Returns the current open file's name.
 ""
 function! GetFileName() abort
     let filename = expand('%:t')
-    let filetypeIcon = ''
 
     if filename == ''
         return ''
-    else
-        if &filetype == 'java'
-            let filetypeIcon = ''
-        elseif &filetype == 'vim'
-            let filetypeIcon = ''
-        endif
     endif
+
+    let filetypeIcon =  GetFileIcon(&filetype)
 
     return filetypeIcon . " " . filename
 endfunction
