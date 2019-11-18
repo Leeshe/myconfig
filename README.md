@@ -152,7 +152,7 @@ ln -s autojump.py ~/.config/ranger/plugins
 ## :art: Screenshots
 
 ### Neovim
-![image](https://user-images.githubusercontent.com/16366403/63007733-80a70980-be81-11e9-946e-16126cecf8ad.png)
+![image](https://user-images.githubusercontent.com/16366403/69056824-07372e00-0a11-11ea-9f16-83867a613521.png)
 
 ### Gnome-Terminal (Oh-My-Zsh)
 ![image](https://user-images.githubusercontent.com/16366403/63007993-fc08bb00-be81-11e9-9a30-26e0a07e8199.png)
@@ -203,13 +203,13 @@ npm install -g npm
 | Completion            | [coc.nvim](https://github.com/neoclide/coc.nvim)                             | Coc is an intellisense engine                                                                                   |
 | Fading Buffers        | [vimade](https://github.com/TaDaa/vimade)                                    | Fade your inactive buffers                                                                                      |
 | Fuzzy finder          | [fzf.vim](https://github.com/junegunn/fzf.vim)                               | fzf is a general-purpose command-line fuzzy finder                                                              |
-| Finder and Dispatcher | [vim-clap](https://github.com/liuchengxu/vim-clap)                           | Generic interactive finder and dispatcher                                                                |
+| Finder and Dispatcher | [vim-clap](https://github.com/liuchengxu/vim-clap)                           | Generic interactive finder and dispatcher                                                                       |
 | Git                   | [fugitive.vim](https://github.com/tpope/vim-fugitive)                        | Git wrapper                                                                                                     |
 | Integration           | [vim-test](https://github.com/janko/vim-test)                                | Run your tests at the speed of thought                                                                          |
 | Interface             | [indentLine](https://github.com/Yggdroot/indentLine)                         | Display thin vertical lines at each indentation level                                                           |
 | Moving                | [vim-easymotion](https://github.com/easymotion/vim-easymotion)               | Provide a much simpler way to use some motions                                                                  |
 | Starting              | [vim-startify](https://github.com/mhinz/vim-startify)                        | Provide a start screen                                                                                          |
-| Statusline            | [lightline.vim](https://github.com/itchyny/lightline.vim)                    | A light and configurable statusline/tabline                                                                     |
+| Statusline            | [statusline.vim](nvim/statusline.vim)                                        | See screenshot                                                                                                  |
 | Syntax                | [java-syntax](https://github.com/uiiaoo/java-syntax.vim)                     | Provides syntax highlighting for Java                                                                           |
 | Variable Highlighting | [Semantic-Highlighting](https://github.com/jaxbot/semantic-highlight.vim)    | Where every variable is a different color, an idea popularized by Evan Brooks' blog post.                       |
 | Viewer                | [vista.vim](https://github.com/liuchengxu/vista.vim)                         | View and search LSP symbols, tags                                                                               |
