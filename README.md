@@ -154,12 +154,6 @@ ln -s autojump.py ~/.config/ranger/plugins
 ### Neovim
 ![image](https://user-images.githubusercontent.com/16366403/69057064-7e6cc200-0a11-11ea-8d71-ef6fd71ea841.png)
 
-### Gnome-Terminal (Oh-My-Zsh)
-![image](https://user-images.githubusercontent.com/16366403/63007993-fc08bb00-be81-11e9-9a30-26e0a07e8199.png)
-
-### Ranger
-![image](https://user-images.githubusercontent.com/16366403/63037316-288ef800-bebf-11e9-8253-b5b83e7799e1.png)
-
 ## :scroll: Package Dependencies
 
 **autojump**
