@@ -7,7 +7,7 @@ function! RedrawModeColors(mode)
         hi StatuslineModeColor guibg=none guifg=#FF4C4C
     elseif a:mode == 'R'
         hi StatuslineModeColor guibg=none guifg=#FF8000
-    elseif a:mode == 'v' || a:mode == 'V' || a:mode == '^V'
+    elseif a:mode == 'v' || a:mode == 'V' || a:mode == '^V' || a:mode == "\<C-v>"
         hi StatuslineModeColor guibg=none guifg=#AD6AEA
     elseif a:mode == 'c'
         hi StatuslineModeColor guibg=none guifg=#32CD32 gui=bold
@@ -27,7 +27,7 @@ function! GetMode(mode) abort
         return ""
     elseif a:mode == 'R'
         return ""
-    elseif a:mode == 'v' || a:mode == 'V' || a:mode == '^V'
+    elseif (a:mode == 'v') || (a:mode == 'V') || (a:mode == '^V') || (a:mode == "\<C-v>")
         return ""
     elseif a:mode == 'c'
         return ""
