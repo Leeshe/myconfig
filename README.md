@@ -203,7 +203,7 @@ npm install -g npm
 | Interface             | [indentLine](https://github.com/Yggdroot/indentLine)                         | Display thin vertical lines at each indentation level                                                           |
 | Moving                | [vim-easymotion](https://github.com/easymotion/vim-easymotion)               | Provide a much simpler way to use some motions                                                                  |
 | Starting              | [vim-startify](https://github.com/mhinz/vim-startify)                        | Provide a start screen                                                                                          |
-| Statusline            | [statusline.vim](nvim/statusline.vim)                                        | See screenshot                                                                                                  |
+| Statusline            | [statusline.vim](nvim/statusline.vim)                                        | Custom statusline, see screenshot                                                                               |
 | Syntax                | [java-syntax](https://github.com/uiiaoo/java-syntax.vim)                     | Provides syntax highlighting for Java                                                                           |
 | Variable Highlighting | [Semantic-Highlighting](https://github.com/jaxbot/semantic-highlight.vim)    | Where every variable is a different color, an idea popularized by Evan Brooks' blog post.                       |
 | Viewer                | [vista.vim](https://github.com/liuchengxu/vista.vim)                         | View and search LSP symbols, tags                                                                               |
