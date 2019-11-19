@@ -116,9 +116,12 @@ function! GetSpecificIcon(filename) abort
 
     let default      = "\uf0f6"
     let balanceScale = "\ufad0"
+    let localCommit  = "\ufc19"
 
     if lowerFilename == 'license'
         let icon = balanceScale
+    elseif lowerFilename == 'commit_editmsg'
+        let icon = localCommit
     else
         let icon = default
     endif
@@ -213,9 +216,9 @@ function! GetCommitMessage() abort
     let blame = get(b:, 'coc_git_blame', '')
 
     let icon = ""
-    let progress = "\uf0c5"
-    let commit = "\ue729"
-    let linux = "\ue712"
+    let progress   = "\uf0c5"
+    let commit     = "\ue729"
+    let linux      = "\ue712"
     let discussion = "\uf442"
 
     if blame == 'Not Committed Yet'
