@@ -93,7 +93,9 @@ function! GetFileIcon(filetype) abort
     let default     = "\uf0f6"
     let java        = "\ue738"
     let jproperties = "\uf9fc"
+    let json        = "\ue60b"
     let markdown    = "\ue609"
+    let shell       = "\ue795"
     let sql         = "\ue706"
     let vim         = "\ue7c5"
     let xml         = "\ufabf"
@@ -110,6 +112,10 @@ function! GetFileIcon(filetype) abort
         let icon = sql
     elseif a:filetype == 'jproperties'
         let icon = jproperties
+    elseif a:filetype == 'sh'
+        let icon = shell
+    elseif a:filetype == 'json'
+        let icon = json
     else
         let icon = default
     endif
@@ -128,14 +134,17 @@ function! GetSpecificIcon(filename) abort
 
     let lowerFilename = tolower(a:filename)
 
-    let default      = "\uf0f6"
     let balanceScale = "\ufad0"
+    let default      = "\uf0f6"
+    let jenkins      = "\ue767"
     let localCommit  = "\ufc19"
 
     if lowerFilename == 'license'
         let icon = balanceScale
     elseif lowerFilename == 'commit_editmsg'
         let icon = localCommit
+    elseif lowerFilename == 'jenkinsfile'
+        let icon = jenkins
     else
         let icon = default
     endif
