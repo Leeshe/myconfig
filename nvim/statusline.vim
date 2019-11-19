@@ -16,23 +16,31 @@ function! RedrawModeColors(mode)
 endfunction
 
 ""
-" Returns a string containing the full name for given mode.
+" Returns a string containing the icon associated to given mode.
 "
 " @param mode current mode in a:mode
 ""
 function! GetMode(mode) abort
+    let icon = ""
+
+    let circle   = "\uf1db"
+    let pen      = "\uf040"
+    let eraser   = "\uf12d"
+    let eye      = "\uf06e"
+    let octTerminal = "\uf489"
+
     if a:mode == 'n'
-        return ""
+        let icon = circle
     elseif a:mode == 'i'
-        return ""
+        let icon = pen
     elseif a:mode == 'R'
-        return ""
+        let icon = eraser
     elseif (a:mode == 'v') || (a:mode == 'V') || (a:mode == '^V') || (a:mode == "\<C-v>")
-        return ""
+        let icon = eye
     elseif a:mode == 'c'
-        return ""
+        let icon = octTerminal
     endif
-    return ""
+    return icon
 endfunction
 
 function! GetCurrentPath() abort
@@ -142,43 +150,30 @@ endfunction
 " Returns current git branch's name.
 ""
 function! GitBranch()
-    let branch = system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+    let currentBranch = system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
 
-    if (branch == 'master')
-        return " " . branch
+    let icon = ""
+    let master  = "\ue0a0"
+    let branch  = "\ue725"
+    let vimIcon = "\ue62b"
+
+    if (currentBranch == 'master')
+        let icon = master
     " Not git repository
-    elseif (branch == '')
+    elseif (currentBranch == '')
         hi SeparatorGitBranch       guibg=none    guifg=#228B22
         hi StatuslineGitBranchColor guibg=#228B22 guifg=white
-        return ""
+
+        let icon = vimIcon
     endif
 
-  return " " . branch
+  return icon . " " . currentBranch
 endfunction
 
 
 function! StatuslineGit()
   let l:branchname = GitBranch()
-  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
-endfunction
-
-""
-" Returns function symbol under cursor provided by COC.
-""
-function! GetCurrentFunction() abort
-    let b:currentFunction  = get(b:, 'currentFunction', '')
-    let cocCurrentFunction = get(b:, 'coc_current_function', '')
-
-    if (cocCurrentFunction != '' && cocCurrentFunction != b:currentFunction)
-        let b:currentFunction = get(b:, 'coc_current_function', '')
-        return " " . b:currentFunction
-    endif
-
-    if (empty(b:currentFunction))
-        return ''
-    endif
-
-    return " " . b:currentFunction
+  return strlen(l:branchname) > 0 ?'  '. l:branchname . ' ' : ''
 endfunction
 
 ""
@@ -217,15 +212,21 @@ endfunction
 function! GetCommitMessage() abort
     let blame = get(b:, 'coc_git_blame', '')
 
-    if blame == 'Not Committed Yet'
-        return winwidth(0) > 120 ? " To commit or not to commit" : ''
+    let icon = ""
+    let progress = "\uf0c5"
+    let commit = "\ue729"
+    let linux = "\ue712"
+    let discussion = "\uf442"
 
+    if blame == 'Not Committed Yet'
+        let icon = progress
+        return winwidth(0) > 120 ?  progress . " " . "To commit or not to commit" : ''
     " Not a git repository
     elseif blame == ''
-        return ''
+        return linux . " "
     endif
 
-    return winwidth(0) > 120 ? " " . blame : " " . blame[0:100] . "..."
+    return winwidth(0) > 120 ? commit . " " . blame : discussion . " " . blame[0:100] . "..."
 endfunction
 
 
