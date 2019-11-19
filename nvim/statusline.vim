@@ -1,5 +1,10 @@
 set laststatus=2
 
+""
+" Change highliht based on given mode.
+"
+" @param mode current mode
+""
 function! RedrawModeColors(mode)
     if a:mode == 'n'
         hi StatuslineModeColor guibg=none guifg=none
@@ -18,7 +23,7 @@ endfunction
 ""
 " Returns a string containing the icon associated to given mode.
 "
-" @param mode current mode in a:mode
+" @param mode current mode
 ""
 function! GetMode(mode) abort
     let icon = ""
@@ -43,6 +48,11 @@ function! GetMode(mode) abort
     return icon
 endfunction
 
+""
+" Returns the current path.
+" If git repository, then returns relative path to source directory,
+" else returns absolute path.
+""
 function! GetCurrentPath() abort
     let root = fnamemodify(get(b:, 'git_dir'), ':h')
     let path = expand('%:p')
@@ -73,7 +83,9 @@ function! GetCurrentPath() abort
 endfunction
 
 ""
-" Returns icon associated to given filetype
+" Returns the icon associated to given filetype.
+"
+" @param filetype Type given by &filetype.
 ""
 function! GetFileIcon(filetype) abort
     let icon = ''
@@ -108,6 +120,8 @@ endfunction
 ""
 " Returns icon associated to given filename when filetype
 " is unknown.
+"
+" @param filename Name of the file, e.g. LICENSE, JENKINSFILE
 ""
 function! GetSpecificIcon(filename) abort
     let icon = ''
@@ -130,7 +144,7 @@ function! GetSpecificIcon(filename) abort
 endfunction
 
 ""
-" Returns the current open file's name.
+" Returns the current file's name.
 ""
 function! GetFileName() abort
     let filename = expand('%:t')
@@ -150,7 +164,7 @@ function! GetFileName() abort
 endfunction
 
 ""
-" Returns current git branch's name.
+" Returns the current git branch's name.
 ""
 function! GitBranch()
     let currentBranch = system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
@@ -174,9 +188,12 @@ function! GitBranch()
 endfunction
 
 
+""
+" Returns git branch's name.
+""
 function! StatuslineGit()
   let l:branchname = GitBranch()
-  return strlen(l:branchname) > 0 ?'  '. l:branchname . ' ' : ''
+  return strlen(l:branchname) > 0 ? '  ' . l:branchname . ' ' : ''
 endfunction
 
 ""
@@ -232,7 +249,9 @@ function! GetCommitMessage() abort
     return winwidth(0) > 120 ? commit . " " . blame : discussion . " " . blame[0:100] . "..."
 endfunction
 
-
+""
+" Returns icon if file is modified, else empty string.
+""
 function! GetModified() abort
     let modifiedIcon = "\uf0c7"
 
