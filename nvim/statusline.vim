@@ -92,13 +92,13 @@ function! GetFileIcon(filetype) abort
 
     let default     = "\uf0f6"
     let java        = "\ue738"
-    let jproperties = "\uf9fc"
+    let jproperties = "\uf02c"
     let json        = "\ue60b"
     let markdown    = "\ue609"
     let shell       = "\ue795"
     let sql         = "\ue706"
     let vim         = "\ue7c5"
-    let xml         = "\ufabf"
+    let xml         = "\uf673"
 
     if a:filetype == 'java'
         let icon = java
