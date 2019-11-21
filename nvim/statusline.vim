@@ -116,6 +116,8 @@ function! GetFileIcon(filetype) abort
         let icon = shell
     elseif a:filetype == 'json'
         let icon = json
+    elseif a:filetype == 'jsp'
+        let icon = java
     else
         let icon = default
     endif
@@ -214,7 +216,10 @@ function! GetError() abort
   let errorIcon = "\uf658"
 
   if (error != 0)
+      hi StatuslineErrorColor guibg=none guifg=#FF7F7F
       return errorIcon . " " . error
+  else
+      hi StatuslineErrorColor guibg=none guifg=none
   endif
 
   return ""
@@ -242,7 +247,7 @@ function! GetCommitMessage() abort
     let blame = get(b:, 'coc_git_blame', '')
 
     let icon = ""
-    let progress   = "\uf0c5"
+    let progress   = "\ue206"
     let commit     = "\ue729"
     let linux      = "\ue712"
     let discussion = "\uf442"
@@ -256,18 +261,6 @@ function! GetCommitMessage() abort
     endif
 
     return winwidth(0) > 120 ? commit . " " . blame : discussion . " " . blame[0:100] . "..."
-endfunction
-
-""
-" Returns icon if file is modified, else empty string.
-""
-function! GetModified() abort
-    let modifiedIcon = "\uf0c7"
-
-    if &modified == 1
-        return modifiedIcon
-    else
-        return ''
 endfunction
 
 " Call everytime mode is changed
@@ -307,12 +300,6 @@ set statusline+=\ %{GetMode(mode())}\
 
 set statusline+=%#SeparatorInvisible#\ 
 
-" Modified
-set statusline+=%#StatuslineModifiedColor#
-set statusline+=\ %{GetModified()}\ 
-
-set statusline+=%#SeparatorInvisible#\ 
-
 " Error
 set statusline+=%#StatuslineErrorColor#
 set statusline+=\ %{GetError()}\ 
@@ -336,9 +323,7 @@ hi StatuslineGitBranchColor   guibg=#0066FF guifg=white
 hi StatuslineCurrentPathColor guibg=#FFFF33 guifg=black
 hi StatuslineFileColor        guibg=#90EE90 guifg=black
 hi StatuslineModeColor        guibg=none    guifg=none
-hi StatuslineModifiedColor    guibg=none    guifg=white
-hi StatuslineFunctionColor    guibg=#FF0000 guifg=white
-hi StatuslineErrorColor       guibg=none    guifg=white
+hi StatuslineErrorColor       guibg=none    guifg=none
 hi StatuslineWarningColor     guibg=none    guifg=yellow
 hi StatuslineCommitColor      guibg=#800080 guifg=white
 
@@ -346,5 +331,4 @@ hi SeparatorInvisible   guibg=none guifg=none
 hi SeparatorGitBranch   guibg=none guifg=#0066FF
 hi SeparatorCurrentPath guibg=none guifg=#FFFF33
 hi SeparatorFile        guibg=none guifg=#90EE90
-hi SeparatorFunction    guibg=none guifg=#FF0000
 hi SeparatorCommit      guibg=none guifg=#800080
