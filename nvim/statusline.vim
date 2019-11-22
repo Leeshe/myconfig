@@ -193,6 +193,9 @@ function! GitBranch()
         hi StatuslineGitBranchColor guibg=#228B22 guifg=white
 
         let icon = vimIcon
+    " Branch
+    else
+        let icon = branch
     endif
 
   return icon . " " . currentBranch
@@ -217,7 +220,7 @@ function! GetError() abort
 
   if (error != 0)
       hi StatuslineErrorColor guibg=none guifg=#FF7F7F
-      return errorIcon . " " . error
+      return errorIcon . " [" . error . "]"
   else
       hi StatuslineErrorColor guibg=none guifg=none
   endif
@@ -234,7 +237,7 @@ function! GetWarning() abort
     let warningIcon = "\uf071"
 
     if (warning != 0)
-        return warningIcon . " ". warning
+        return warningIcon . "  [". warning . "]"
     endif
 
     return ""
@@ -254,7 +257,7 @@ function! GetCommitMessage() abort
 
     if blame == 'Not Committed Yet'
         let icon = progress
-        return winwidth(0) > 120 ?  progress . " " . "To commit or not to commit" : ''
+        return winwidth(0) > 120 ?  progress . "  " . "To commit or not to commit" : ''
     " Not a git repository
     elseif blame == ''
         return linux . " "
@@ -300,13 +303,13 @@ set statusline+=\ %{GetMode(mode())}\
 
 set statusline+=%#SeparatorInvisible#\ 
 
-" Error
-set statusline+=%#StatuslineErrorColor#
-set statusline+=\ %{GetError()}\ 
-
 " Warning
 set statusline+=%#StatuslineWarningColor#
 set statusline+=\ %{GetWarning()}\ 
+
+" Error
+set statusline+=%#StatuslineErrorColor#
+set statusline+=\ %{GetError()}\ 
 
 " Right side items
 " =======================
