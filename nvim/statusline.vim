@@ -90,7 +90,7 @@ endfunction
 function! GetFileIcon(filetype) abort
     let icon = ''
 
-    let default     = "\uf0f6"
+    let default     = "\uf016"
     let java        = "\ue738"
     let jproperties = "\uf02c"
     let json        = "\ue60b"
@@ -99,6 +99,7 @@ function! GetFileIcon(filetype) abort
     let sql         = "\ue706"
     let vim         = "\ue7c5"
     let xml         = "\uf673"
+    let text        = "\uf0f6"
 
     if a:filetype == 'java'
         let icon = java
@@ -118,6 +119,8 @@ function! GetFileIcon(filetype) abort
         let icon = json
     elseif a:filetype == 'jsp'
         let icon = java
+    elseif a:filetype == 'text'
+        let icon = text
     else
         let icon = default
     endif
