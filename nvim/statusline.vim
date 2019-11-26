@@ -1,5 +1,8 @@
 set laststatus=2
 
+let g:leftCircle  = "\ue0b6"
+let g:rightCircle = "\ue0b4"
+
 ""
 " Change highliht based on given mode.
 "
@@ -91,15 +94,17 @@ function! GetFileIcon(filetype) abort
     let icon = ''
 
     let default     = "\uf016"
+    let commit      = "\ue729"
     let java        = "\ue738"
     let jproperties = "\uf02c"
     let json        = "\ue60b"
     let markdown    = "\ue609"
+    let merge       = "\ue727"
     let shell       = "\ue795"
     let sql         = "\ue706"
+    let text        = "\uf0f6"
     let vim         = "\ue7c5"
     let xml         = "\uf673"
-    let text        = "\uf0f6"
 
     if a:filetype == 'java'
         let icon = java
@@ -121,6 +126,8 @@ function! GetFileIcon(filetype) abort
         let icon = java
     elseif a:filetype == 'text'
         let icon = text
+    elseif a:filetype == 'gitcommit'
+        let icon = commit
     else
         let icon = default
     endif
@@ -277,26 +284,26 @@ set statusline=%{RedrawModeColors(mode())}
 
 
 " Git branch
-set statusline+=%#SeparatorGitBranch#
+set statusline+=%#SeparatorGitBranch#%{leftCircle}
 set statusline+=%#StatuslineGitBranchColor#
 set statusline+=%{StatuslineGit()}\ 
-set statusline+=%#SeparatorGitBranch#
+set statusline+=%#SeparatorGitBranch#%{rightCircle}
 
 set statusline+=%#SeparatorInvisible#\ 
 
 " Path
-set statusline+=%#SeparatorCurrentPath#
+set statusline+=%#SeparatorCurrentPath#%{leftCircle}
 set statusline+=%#StatuslineCurrentPathColor#
 set statusline+=\ %{GetCurrentPath()}\ 
-set statusline+=%#SeparatorCurrentPath#
+set statusline+=%#SeparatorCurrentPath#%{rightCircle}
 
 set statusline+=%#SeparatorInvisible#\ 
 
 " File name
-set statusline+=%#SeparatorFile#
+set statusline+=%#SeparatorFile#%{leftCircle}
 set statusline+=%#StatuslineFileColor#
 set statusline+=\ %{GetFileName()}\ 
-set statusline+=%#SeparatorFile#
+set statusline+=%#SeparatorFile#%{rightCircle}
 
 set statusline+=%#SeparatorInvisible#\ 
 
@@ -318,10 +325,10 @@ set statusline+=\ %{GetError()}\
 " =======================
 set statusline+=%=
 
-set statusline+=%#SeparatorCommit#
+set statusline+=%#SeparatorCommit#%{leftCircle}
 set statusline+=%#StatuslineCommitColor#
 set statusline+=\ %{GetCommitMessage()}
-set statusline+=%#SeparatorCommit#
+set statusline+=%#SeparatorCommit#%{rightCircle}
 
 
 " Colors in normal mode
