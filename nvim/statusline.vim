@@ -18,7 +18,7 @@ function! RedrawModeColors(mode)
     elseif a:mode == 'R'
         hi StatuslineModeColor guibg=none guifg=#FF8000
     elseif a:mode == 'v' || a:mode == 'V' || a:mode == '^V' || a:mode == "\<C-v>"
-        hi StatuslineModeColor guibg=none guifg=#AD6AEA
+        hi StatuslineModeColor guibg=none guifg=#FFD700
     elseif a:mode == 'c'
         hi StatuslineModeColor guibg=none guifg=#32CD32 gui=bold
     endif
@@ -36,7 +36,7 @@ function! GetMode(mode) abort
     let circle   = "\uf1db"
     let pen      = "\uf040"
     let eraser   = "\uf12d"
-    let eye      = "\uf06e"
+    let eye      = "\uf707"
     let octTerminal = "\uf489"
 
     if a:mode == 'n'
