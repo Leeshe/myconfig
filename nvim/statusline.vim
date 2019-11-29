@@ -3,6 +3,8 @@ set laststatus=2
 let g:leftCircle  = "\ue0b6"
 let g:rightCircle = "\ue0b4"
 
+let g:defaultFileIcon = "\uf016"
+
 ""
 " Change highliht based on given mode.
 "
@@ -62,8 +64,9 @@ function! GetCurrentPath() abort
     let filename = expand('%:t')
 
     " Nerd font icons
-    let iconOpenFolder = "\uf115"
-    let iconFAGit      = "\uf1d3"
+    let iconOpenFolder      = "\uf115"
+    let iconFAGit           = "\uf1d3"
+    let iconSourceDirectory = "\uf444"
 
     " In this case, not a git repository, display full path
     if root == '.'
@@ -75,7 +78,7 @@ function! GetCurrentPath() abort
 
         " Source directory
         if display == ''
-            return iconFAGit
+            return iconSourceDirectory
         " Display the path to current file, without filename
         else
             return iconOpenFolder . "  " . display
@@ -93,7 +96,7 @@ endfunction
 function! GetFileIcon(filetype) abort
     let icon = ''
 
-    let default     = "\uf016"
+    let default     = g:defaultFileIcon
     let commit      = "\ue729"
     let edit        = "\uf044"
     let java        = "\ue738"
@@ -148,7 +151,7 @@ function! GetSpecificIcon(filename) abort
     let lowerFilename = tolower(a:filename)
 
     let balanceScale = "\ufad0"
-    let default      = "\uf0f6"
+    let default      = g:defaultFileIcon
     let jenkins      = "\ue767"
     let localCommit  = "\ufc19"
 
@@ -178,7 +181,7 @@ function! GetFileName() abort
     let icon =  GetFileIcon(&filetype)
 
     " Check if file has default icon, e.g. 'LICENSE'
-    if icon == "\uf0f6"
+    if icon == g:defaultFileIcon
         let icon = GetSpecificIcon(filename)
     endif
 
