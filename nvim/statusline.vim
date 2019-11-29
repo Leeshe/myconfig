@@ -146,12 +146,13 @@ endfunction
 " @param filename Name of the file, e.g. LICENSE, JENKINSFILE
 ""
 function! GetSpecificIcon(filename) abort
-    let icon = ''
-
+    let default = g:defaultFileIcon
     let lowerFilename = tolower(a:filename)
 
+    let icon = ''
+
     let balanceScale = "\ufad0"
-    let default      = g:defaultFileIcon
+    let git          = "\uf7a1"
     let jenkins      = "\ue767"
     let localCommit  = "\ufc19"
 
@@ -161,6 +162,8 @@ function! GetSpecificIcon(filename) abort
         let icon = localCommit
     elseif lowerFilename == 'jenkinsfile'
         let icon = jenkins
+    elseif lowerFilename == '.gitignore'
+        let icon = git
     else
         let icon = default
     endif
