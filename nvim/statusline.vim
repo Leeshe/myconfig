@@ -114,7 +114,7 @@ function! GetFileIcon(filetype) abort
         let icon = java
     elseif a:filetype == 'vim'
         let icon = vim
-    elseif a:filetype == 'md'
+    elseif a:filetype == 'markdown'
         let icon = markdown
     elseif a:filetype == 'xml'
         let icon = xml
