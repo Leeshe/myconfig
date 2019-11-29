@@ -119,6 +119,10 @@ nmap <leader>7 <Plug>BuffetSwitch(7)
 nmap <leader>8 <Plug>BuffetSwitch(8)
 nmap <leader>9 <Plug>BuffetSwitch(9)
 nmap <leader>0 <Plug>BuffetSwitch(10)
+
+function! g:BuffetSetCustomColors()
+    hi BuffetTab guibg=#0066FF guifg=#FFFFFF
+endfunction
 " }}}
 
 " indentLine {{{
