@@ -91,7 +91,7 @@ nnoremap <silent> tn :TestNearest<CR>
 let g:buffet_powerline_separators = 1
 
 " the character to be used as an icon for the tab items in the tabline.
-let g:buffet_tab_icon = "\uf00a"
+let g:buffet_tab_icon = "\ufb18"
 
 " the character to be shown by the count of truncated buffers on the left.
 let g:buffet_left_trunc_icon = "\uf0a8"
