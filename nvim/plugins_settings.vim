@@ -164,11 +164,11 @@ nmap ga <Plug>(EasyAlign)
 " }}}
 
 " Semantic-Highlight {{{
-nnoremap  <leader>sh :SemanticHighlightToggle<CR>
+let blacklist = [ '', 'text', 'help', 'markdown']
 
 augroup SemanticHighlight
     autocmd!
-    autocmd BufEnter * :SemanticHighlight
+    autocmd BufEnter * if index(blacklist, &filetype) < 0 | :SemanticHighlight
 augroup END
 " }}}
 
