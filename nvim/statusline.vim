@@ -109,6 +109,7 @@ function! GetFileIcon(filetype) abort
     let text        = "\uf0f6"
     let vim         = "\ue7c5"
     let xml         = "\uf673"
+    let help        = "\ufb24"
 
     if a:filetype == 'java'
         let icon = java
@@ -132,6 +133,8 @@ function! GetFileIcon(filetype) abort
         let icon = text
     elseif a:filetype == 'gitcommit'
         let icon = edit . " " . commit
+    elseif a:filetype == 'help'
+        let icon = help
     else
         let icon = default
     endif
