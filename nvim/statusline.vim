@@ -99,6 +99,7 @@ function! GetFileIcon(filetype) abort
     let default     = g:defaultFileIcon
     let commit      = "\ue729"
     let edit        = "\uf044"
+    let fugitive    = "\uf1d3"
     let java        = "\ue738"
     let jproperties = "\uf02c"
     let json        = "\ue60b"
@@ -135,6 +136,8 @@ function! GetFileIcon(filetype) abort
         let icon = edit . " " . commit
     elseif a:filetype == 'help'
         let icon = help
+    elseif a:filetype == 'fugitive'
+        let icon = fugitive
     else
         let icon = default
     endif
