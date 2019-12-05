@@ -114,32 +114,60 @@ function! GetFileIcon(filetype) abort
 
     if a:filetype == 'java'
         let icon = java
+        hi StatuslineFileColor guibg=#323232 guifg=#FFA500
+        hi SeparatorFile       guibg=none    guifg=#323232
     elseif a:filetype == 'vim'
         let icon = vim
+        hi StatuslineFileColor guibg=green guifg=#FFFFFF
+        hi SeparatorFile       guibg=none  guifg=green
     elseif a:filetype == 'markdown'
         let icon = markdown
+        hi StatuslineFileColor guibg=black guifg=#FFFFFF
+        hi SeparatorFile       guibg=none  guifg=black
     elseif a:filetype == 'xml'
         let icon = xml
+        hi StatuslineFileColor guibg=white guifg=red
+        hi SeparatorFile       guibg=none  guifg=white
     elseif a:filetype == 'sql'
         let icon = sql
+        hi StatuslineFileColor guibg=white guifg=#43464B
+        hi SeparatorFile       guibg=none  guifg=white
     elseif a:filetype == 'jproperties'
         let icon = jproperties
+        hi StatuslineFileColor guibg=white guifg=#3A243B
+        hi SeparatorFile       guibg=none  guifg=white
     elseif a:filetype == 'sh'
         let icon = shell
+        hi StatuslineFileColor guibg=#D3D3D3 guifg=black
+        hi SeparatorFile       guibg=none    guifg=#D3D3D3
     elseif a:filetype == 'json'
         let icon = json
+        hi StatuslineFileColor guibg=#87FF2A guifg=#056608
+        hi SeparatorFile       guibg=none    guifg=#87FF2A
     elseif a:filetype == 'jsp'
         let icon = java
+        hi StatuslineFileColor guibg=#EE82EE guifg=#4B0082
+        hi SeparatorFile       guibg=none    guifg=#EE82EE
     elseif a:filetype == 'text'
         let icon = text
+        hi StatuslineFileColor guibg=white guifg=black
+        hi SeparatorFile       guibg=none  guifg=white
     elseif a:filetype == 'gitcommit'
         let icon = edit . " " . commit
+        hi StatuslineFileColor guibg=#F14E32 guifg=#EEEEEE
+        hi SeparatorFile       guibg=none    guifg=#F14E32
     elseif a:filetype == 'help'
         let icon = help
+        hi StatuslineFileColor guibg=green guifg=#FFFFFF
+        hi SeparatorFile       guibg=none  guifg=green
     elseif a:filetype == 'fugitive'
         let icon = fugitive
+        hi StatuslineFileColor guibg=#E4E4E4 guifg=black
+        hi SeparatorFile       guibg=none    guifg=#E4E4E4
     else
         let icon = default
+        hi StatuslineFileColor guibg=white guifg=black
+        hi SeparatorFile       guibg=none  guifg=white
     endif
 
     return icon
