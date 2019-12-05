@@ -99,7 +99,7 @@ function! GetFileIcon(filetype) abort
     let default     = g:defaultFileIcon
     let commit      = "\ue729"
     let edit        = "\uf044"
-    let fugitive    = "\uf1d3"
+    let fugitive    = "\uf7a1"
     let java        = "\ue738"
     let jproperties = "\uf02c"
     let json        = "\ue60b"
