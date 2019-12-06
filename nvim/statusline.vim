@@ -146,8 +146,8 @@ function! GetFileIcon(filetype) abort
         hi SeparatorFile       guibg=none    guifg=#87FF2A
     elseif a:filetype == 'jsp'
         let icon = java
-        hi StatuslineFileColor guibg=#EE82EE guifg=#4B0082
-        hi SeparatorFile       guibg=none    guifg=#EE82EE
+        hi StatuslineFileColor guibg=white guifg=#4B0082
+        hi SeparatorFile       guibg=none    guifg=white
     elseif a:filetype == 'text'
         let icon = text
         hi StatuslineFileColor guibg=white guifg=black
@@ -197,7 +197,8 @@ function! GetSpecificIcon(filename) abort
     elseif lowerFilename == 'jenkinsfile'
         let icon = jenkins
     elseif lowerFilename == '.gitignore'
-        let icon = git
+        hi StatuslineFileColor guibg=#EEEEEE guifg=#F14E32
+        hi SeparatorFile       guibg=none    guifg=#EEEEEE
     else
         let icon = default
     endif
