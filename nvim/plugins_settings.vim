@@ -151,6 +151,8 @@ let g:vista#renderer#icons = {
 " Position to open the vista sidebar. On the right by default.
 " Change to `vertical topleft` to open on the left.
 let g:vista_sidebar_position = 'vertical topleft'
+
+let g:vista_echo_cursor_strategy = 'scroll'
 " }}}"
 
 " sublime-monokai {{{
@@ -168,7 +170,7 @@ nmap ga <Plug>(EasyAlign)
 " }}}
 
 " Semantic-Highlight {{{
-let blacklist = [ '', 'text', 'help', 'markdown', 'xml', 'qf', 'gitcommit', 'fugitive', 'git', 'sql']
+let blacklist = [ '', 'text', 'help', 'markdown', 'xml', 'qf', 'gitcommit', 'fugitive', 'git', 'sql', 'list']
 
 augroup SemanticHighlight
     autocmd!
@@ -182,7 +184,7 @@ hi ClapDisplay cterm=bold ctermfg=white gui=bold guifg=#FFFFFF guibg=#808080
 hi ClapCurrentSelection cterm=bold gui=bold ctermfg=224 guifg=#FFFFFF guibg=#696969
 hi ClapMatches cterm=bold ctermfg=yellow guifg=#3CB371
 
-nnoremap <C-n> :Clap! gfiles<CR>
+"nnoremap <C-n> :Clap! gfiles<CR>
 " }}}
 
 " Coc-Git {{{
@@ -198,4 +200,11 @@ let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 
 let g:indent_guides_enable_on_vim_startup = 1
+" }}}
+
+" LeaderF {{{
+let g:Lf_PreviewInPopup = 1
+let g:Lf_WindowPosition = 'popup'
+
+nnoremap <C-n> :Leaderf file<CR>
 " }}}
