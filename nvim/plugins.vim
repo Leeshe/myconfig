@@ -20,6 +20,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'liuchengxu/vista.vim'
 Plug 'mhinz/vim-startify'
 Plug 'liuchengxu/vim-clap'
+Plug 'Yggdroot/LeaderF'
 
 " Moving
 Plug 'easymotion/vim-easymotion'
