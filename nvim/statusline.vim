@@ -125,7 +125,7 @@ function! GetFileIcon(filetype) abort
         hi SeparatorFile       guibg=none  guifg=black
     elseif a:filetype == 'xml'
         let icon = xml
-        hi StatuslineFileColor guibg=white guifg=red
+        hi StatuslineFileColor guibg=white guifg=#43464B
         hi SeparatorFile       guibg=none  guifg=white
     elseif a:filetype == 'sql'
         let icon = sql
