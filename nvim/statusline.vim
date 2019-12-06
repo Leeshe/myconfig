@@ -65,7 +65,6 @@ function! GetCurrentPath() abort
 
     " Nerd font icons
     let iconOpenFolder      = "\uf115"
-    let iconFAGit           = "\uf1d3"
     let iconSourceDirectory = "\uf444"
 
     " In this case, not a git repository, display full path
@@ -74,14 +73,14 @@ function! GetCurrentPath() abort
     endif
 
     if path[:len(root) - 1] ==# root
-        let display = path[len(root) + 1 : len(path) - len(filename) - 1]
+        let currentPath = path[len(root) + 1 : len(path) - len(filename) - 1]
 
         " Source directory
-        if display == ''
+        if currentPath == ''
             return iconSourceDirectory
         " Display the path to current file, without filename
         else
-            return iconOpenFolder . "  " . display
+            return iconOpenFolder . "  " . currentPath
         endif
     endif
 
@@ -197,6 +196,7 @@ function! GetSpecificIcon(filename) abort
     elseif lowerFilename == 'jenkinsfile'
         let icon = jenkins
     elseif lowerFilename == '.gitignore'
+        let icon = git
         hi StatuslineFileColor guibg=#EEEEEE guifg=#F14E32
         hi SeparatorFile       guibg=none    guifg=#EEEEEE
     else
