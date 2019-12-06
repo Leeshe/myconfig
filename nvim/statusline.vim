@@ -104,6 +104,7 @@ function! GetFileIcon(filetype) abort
     let json        = "\ue60b"
     let markdown    = "\ue609"
     let merge       = "\ue727"
+    let save        = "\uf692"
     let shell       = "\ue795"
     let sql         = "\ue706"
     let text        = "\uf0f6"
@@ -152,9 +153,18 @@ function! GetFileIcon(filetype) abort
         hi StatuslineFileColor guibg=white guifg=black
         hi SeparatorFile       guibg=none  guifg=white
     elseif a:filetype == 'gitcommit'
-        let icon = edit . " " . commit
-        hi StatuslineFileColor guibg=#F14E32 guifg=#EEEEEE
-        hi SeparatorFile       guibg=none    guifg=#F14E32
+        let isCommitSaved = get(b:, 'isCommitSaved', 0)
+        " Still editing commit
+        if isCommitSaved == 0
+            let icon = edit . " " . commit
+            hi StatuslineFileColor guibg=#F14E32 guifg=#EEEEEE
+            hi SeparatorFile       guibg=none    guifg=#F14E32
+        " Commit is saved
+        else
+            let icon = save . " " . commit
+            hi StatuslineFileColor guibg=#EEEEEE guifg=#F14E32
+            hi SeparatorFile       guibg=none    guifg=#EEEEEE
+        endif
     elseif a:filetype == 'help'
         let icon = help
         hi StatuslineFileColor guibg=green guifg=#FFFFFF
@@ -394,3 +404,14 @@ hi SeparatorGitBranch   guibg=none guifg=#0066FF
 hi SeparatorCurrentPath guibg=none guifg=#FFFF33
 hi SeparatorFile        guibg=none guifg=#90EE90
 hi SeparatorCommit      guibg=none guifg=#800080
+
+augroup GITCOMMIT
+    autocmd!
+    autocmd BufWritePost * call DeclareSaveVariable()
+augroup END
+
+function! DeclareSaveVariable() abort
+    if &filetype == 'gitcommit'
+        let b:isCommitSaved = 1
+    endif
+endfunction
