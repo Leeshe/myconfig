@@ -236,17 +236,24 @@ function! GitBranch()
     let branch  = "\ue725"
     let vimIcon = "\ue62b"
 
+    " Git repository, master
     if (currentBranch == 'master')
         let icon = master
+
+        hi StatuslineGitBranchColor guibg=#0066FF guifg=white
+        hi SeparatorGitBranch       guibg=none    guifg=#0066FF
     " Not git repository
     elseif (currentBranch == '')
-        hi SeparatorGitBranch       guibg=none    guifg=#228B22
-        hi StatuslineGitBranchColor guibg=#228B22 guifg=white
-
         let icon = vimIcon
-    " Branch
+
+        hi StatuslineGitBranchColor guibg=#228B22 guifg=white
+        hi SeparatorGitBranch       guibg=none    guifg=#228B22
+    " Git repository, other branch
     else
         let icon = branch
+
+        hi StatuslineGitBranchColor guibg=#0066FF guifg=white
+        hi SeparatorGitBranch       guibg=none    guifg=#0066FF
     endif
 
   return icon . " " . currentBranch
