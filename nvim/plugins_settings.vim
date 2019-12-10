@@ -170,7 +170,21 @@ nmap ga <Plug>(EasyAlign)
 " }}}
 
 " Semantic-Highlight {{{
-let blacklist = ['', 'text', 'help', 'markdown', 'xml', 'qf', 'gitcommit', 'fugitive', 'git', 'sql', 'list', 'log']
+let blacklist = [
+            \ '',
+            \ 'text',
+            \ 'help',
+            \ 'markdown',
+            \ 'xml',
+            \ 'qf',
+            \ 'gitcommit',
+            \ 'fugitive',
+            \ 'git',
+            \ 'sql',
+            \ 'list',
+            \ 'log',
+            \ 'fugitiveblame',
+            \ ]
 
 augroup SemanticHighlight
     autocmd!
@@ -207,4 +221,6 @@ let g:Lf_PreviewInPopup = 1
 let g:Lf_WindowPosition = 'popup'
 
 nnoremap <C-n> :Leaderf file<CR>
+
+nnoremap <Leader>rg :LeaderfRgInteractive<CR>
 " }}}
