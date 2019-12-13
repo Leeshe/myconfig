@@ -114,8 +114,8 @@ function! GetFileIcon(filetype) abort
 
     if a:filetype == 'java'
         let icon = java
-        hi StatuslineFileColor guibg=white guifg=#FF8C00
-        hi SeparatorFile       guibg=none  guifg=lightsteelblue
+        hi StatuslineFileColor guibg=honeydew guifg=darkorange
+        hi SeparatorFile       guibg=none  guifg=honeydew
     elseif a:filetype == 'vim'
         let icon = vim
         hi StatuslineFileColor guibg=green guifg=#FFFFFF
