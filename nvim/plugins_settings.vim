@@ -124,7 +124,6 @@ function! g:BuffetSetCustomColors()
     hi! BuffetTab           guibg=#0066FF     guifg=#FFFFFF ctermbg=none
     hi! BuffetCurrentBuffer guibg=steelblue   guifg=white   ctermbg=none
     hi! BuffetActiveBuffer  guibg=steelblue   guifg=#00FF0F ctermbg=none
-    hi! BuffetBuffer        guibg=forestgreen guifg=white   ctermbg=none
     hi! BuffetTrunc         guibg=steelblue   guifg=#00000F ctermbg=none
 endfunction
 " }}}
