@@ -6,7 +6,7 @@ Plug 'junegunn/vim-easy-align'
 
 " Buffers
 Plug 'TaDaa/vimade'
-Plug 'bagrat/vim-buffet'
+Plug 'ChrisAmelia/vim-buffet'
 
 " Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
