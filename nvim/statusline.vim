@@ -99,9 +99,11 @@ function! GetFileIcon(filetype) abort
     let commit      = "\ue729"
     let edit        = "\uf044"
     let fugitive    = "\uf7a1"
+    let help        = "\ufb24"
     let java        = "\ue738"
     let jproperties = "\uf02c"
     let json        = "\ue60b"
+    let jsp         = "\uf675"
     let markdown    = "\ue609"
     let merge       = "\ue727"
     let save        = "\uf692"
@@ -110,7 +112,6 @@ function! GetFileIcon(filetype) abort
     let text        = "\uf0f6"
     let vim         = "\ue7c5"
     let xml         = "\uf673"
-    let help        = "\ufb24"
 
     if a:filetype == 'java'
         let icon = java
@@ -145,7 +146,7 @@ function! GetFileIcon(filetype) abort
         hi StatuslineFileColor guibg=#87FF2A guifg=#056608
         hi SeparatorFile       guibg=none    guifg=#87FF2A
     elseif a:filetype == 'jsp'
-        let icon = java
+        let icon = jsp
         hi StatuslineFileColor guibg=white guifg=#4B0082
         hi SeparatorFile       guibg=none    guifg=white
     elseif a:filetype == 'text'
