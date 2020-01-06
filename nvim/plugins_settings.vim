@@ -226,4 +226,5 @@ let g:Lf_WindowPosition = 'popup'
 nnoremap <C-n> :Leaderf file<CR>
 
 nnoremap <Leader>rg :LeaderfRgInteractive<CR>
+nnoremap <Leader>f :LeaderfFunction<CR>
 " }}}
