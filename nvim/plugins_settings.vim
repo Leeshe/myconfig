@@ -32,7 +32,7 @@ let g:coc_snippet_next = '<tab>'
 "nmap <leader>qf <Plug>(coc-fix-current)
 
 " Remap for do codeAction of current line
-nmap <leader>ac <Plug>(coc-codeaction)
+nmap <leader>ac :CocCommand actions.open<CR>
 
 " Fold unchanged lines
 nmap <silent> <space>f :CocCommand git.foldUnchanged<CR>
