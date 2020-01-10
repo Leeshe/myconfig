@@ -31,11 +31,8 @@ sudo chmod +x install.sh
 ./install.sh
 ```
 
-This script will iterate over these directories: [bash_script](bash_script), [coc](coc), [nvim](nvim), [packages](packages), [ranger](ranger) and [oh-my-zsh](oh-my-zsh);  
-and execute installation scripts.
-  
 Note: [ls-icons](https://github.com/sebastiencs/ls-icons) and [Hack Regular Nerd Font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete.ttf)
-are not installed by these scripts.
+are not installed by this script.
 
 ## :art: Screenshots
 
