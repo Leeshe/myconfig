@@ -40,4 +40,4 @@ nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 nnoremap <space> i<space><esc>
 
 " Quick fix
-inoremap <C-r> <esc>1v$:s/${[0-9]://g<CR>1v$:s/}//g<CR>:nohl<CR>f(
+inoremap <silent> <c-c> <esc>1v$:s/${[0-9]://g<CR>1v$:s/}//g<CR>:nohl<CR>f(
