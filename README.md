@@ -64,6 +64,7 @@ are not installed by this script.
 
 | Extension                                                         | Description                                                                                                                           |
 | :-                                                                | :-                                                                                                                                    |
+| [coc-actions](https://github.com/iamcco/coc-actions)              | Actions menu for coc.nvim (neovim only)                                                                                               |
 | [coc-clock](https://github.com/iamcco/coc-clock)                  | coc extensions of clock.nvim                                                                                                          |
 | [coc-git](https://github.com/neoclide/coc-git)                    | Git integration of coc.nvim.                                                                                                          |
 | [coc-highlight](https://github.com/neoclide/coc-highlight)        | Provide default highlight for coc.nvim, including document highlight (highlight of current document symbol) and colors highlight.     |
