@@ -228,3 +228,10 @@ nnoremap <C-n> :Leaderf file<CR>
 nnoremap <Leader>rg :LeaderfRgInteractive<CR>
 nnoremap <Leader>f :LeaderfFunction<CR>
 " }}}
+
+" Coc-Bookmark {{{
+nmap <Leader>ba <Plug>(coc-bookmark-annotate)
+nmap <Leader>bt <Plug>(coc-bookmark-toggle)
+nmap <Leader>bj <Plug>(coc-bookmark-next)
+nmap <Leader>bk <Plug>(coc-bookmark-prev)
+" }}}

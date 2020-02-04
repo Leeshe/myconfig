@@ -1,4 +1,6 @@
 {
+	"bookmark.signFg": "cyan",
+
     "coc.preferences.colorSupport": true,
     "coc.preferences.enableFloatHighlight": true,
     "coc.preferences.hoverTarget": "float",
