@@ -97,8 +97,10 @@ function! GetFileIcon(filetype) abort
 
     let default     = g:defaultFileIcon
     let commit      = "\ue729"
+    let css         = "\ue749"
     let edit        = "\uf044"
     let fugitive    = "\uf7a1"
+    let golang      = "\ue626"
     let help        = "\ufb24"
     let java        = "\ue738"
     let jproperties = "\uf02c"
@@ -174,6 +176,14 @@ function! GetFileIcon(filetype) abort
         let icon = fugitive
         hi StatuslineFileColor guibg=#E4E4E4 guifg=black
         hi SeparatorFile       guibg=none    guifg=#E4E4E4
+    elseif a:filetype == 'go'
+        let icon = golang
+        hi StatuslineFileColor guibg=white guifg=aqua
+        hi SeparatorFile       guibg=none  guifg=white
+    elseif a:filetype == 'css'
+        let icon = css
+        hi StatuslineFileColor guibg=white guifg=#0059B3
+        hi SeparatorFile       guibg=none  guifg=white
     else
         let icon = default
         hi StatuslineFileColor guibg=white guifg=black
