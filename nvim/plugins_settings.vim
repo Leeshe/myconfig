@@ -208,6 +208,9 @@ hi ClapMatches cterm=bold ctermfg=yellow guifg=#3CB371
 hi DiffAdd    guibg = none guifg = lightgreen
 hi DiffDelete guibg = none guifg = red
 hi DiffChange guibg = none guifg = sandybrown
+
+nmap <leader>gu :CocCommand git.chunkUndo<CR>
+nmap <leader>ga :CocCommand git.chunkStage<CR>
 " }}}
 
 " Indent Guides {{{
