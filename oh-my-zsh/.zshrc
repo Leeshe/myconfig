@@ -42,16 +42,15 @@ USER=``
 # }}}
 
 # ALIAS {{{
-alias ls='/opt/coreutils/bin/ls -lX --color=auto'
-alias ll='/opt/coreutils/bin/ls -lArth --color=auto'
-#alias ls='~/GitHub/coreutils/bin/ls -lX --color=auto'
-#alias ll='~/GitHub/coreutils/bin/ls -lArth --color=auto'
+alias ls='colorls -lX --color=auto'
+alias ll='colorls -lArth --color=auto'
 alias pdf='evince'
 alias zshconfig="nvim $ZSHRC_CONFIG"
 alias neoconfig="nvim $NVIM_INIT"
 alias :q=exit
 alias gcf="git clean -f"
 alias gsf="gco . && gcf" # git super clean
+alias moo="fortune | cowsay"
 # }}}
 
 # CUSTOM COMMANDS {{{
@@ -79,3 +78,8 @@ PROMPT='%{$fg[yellow]%}[%D{%L:%M:%S}] '$PROMPT
 bindkey '^ ' autosuggest-accept
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=cyan'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export ELECTRON_USE_UBUNTU_NOTIFIER=1
+
+source $(dirname $(gem which colorls))/tab_complete.sh
