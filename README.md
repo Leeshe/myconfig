@@ -31,7 +31,7 @@ sudo chmod +x install.sh
 ./install.sh
 ```
 
-Note: [ls-icons](https://github.com/sebastiencs/ls-icons) and [Hack Regular Nerd Font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete.ttf)
+Note: [colorls](https://github.com/athityakumar/colorls) and [Hack Regular Nerd Font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete.ttf)
 are not installed by this script.
 
 ## :art: Screenshots
@@ -106,7 +106,7 @@ are not installed by this script.
 
 | Project                                                | Description                                                                                  |
 | :-                                                     | :-                                                                                           |
-| [ls-icons](https://github.com/sebastiencs/ls-icons)    | ls command with files icons.                                                                 |
+| [colorls](https://github.com/athityakumar/colorls)     | A Ruby script that colorizes the `ls` output with color and icons..                          |
 | [Neovim](https://github.com/neovim/neovim)             | Vim-fork focused on extensibility and usability.                                             |
 | [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh) | Oh My Zsh is an open source, community-driven framework for managing your zsh configuration. |
 | [Ranger](https://github.com/ranger/ranger)             | ranger is a console file manager with VI key bindings.                                       |
