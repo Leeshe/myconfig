@@ -29,7 +29,7 @@ nnoremap 1 0
 nnoremap <silent> <tab> :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
 
 " <leader>cc/cu to comment/uncomment
-autocmd FileType c,cpp,java,scala let b:comment_leader = '// '
+autocmd FileType c,cpp,java,scala,jsp let b:comment_leader = '// '
 noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
 noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
 
