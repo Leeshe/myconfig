@@ -102,7 +102,7 @@ function! GetFileIcon(filetype) abort
     let fugitive    = "\uf7a1"
     let golang      = "\ue626"
     let help        = "\ufb24"
-    let java        = "\ue738"
+    let java        = "\ue204"
     let jproperties = "\uf02c"
     let json        = "\ue60b"
     let jsp         = "\uf675"
@@ -116,7 +116,7 @@ function! GetFileIcon(filetype) abort
     let xml         = "\uf673"
 
     if a:filetype == 'java'
-        let icon = java
+        let icon = java . " "
         hi StatuslineFileColor guibg=honeydew guifg=darkorange
         hi SeparatorFile       guibg=none  guifg=honeydew
     elseif a:filetype == 'vim'
