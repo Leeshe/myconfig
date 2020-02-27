@@ -110,3 +110,5 @@ hi Normal guibg=NONE ctermbg=NONE
 
 " Number column color
 hi LineNr guibg=none guifg=none ctermfg=white
+
+set clipboard+=unnamedplus
