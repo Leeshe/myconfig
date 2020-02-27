@@ -136,7 +136,7 @@ function! GetFileIcon(filetype) abort
         hi StatuslineFileColor guibg=white guifg=#43464B
         hi SeparatorFile       guibg=none  guifg=white
     elseif a:filetype == 'jproperties'
-        let icon = jproperties
+        let icon = jproperties . " "
         hi StatuslineFileColor guibg=white guifg=#3A243B
         hi SeparatorFile       guibg=none  guifg=white
     elseif a:filetype == 'sh'
