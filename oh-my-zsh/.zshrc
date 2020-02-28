@@ -30,7 +30,20 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump fancy-ctrl-z extract command-not-found zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(
+
+	autojump
+	command-not-found
+	copydir
+	cp
+	debian
+	extract
+	fancy-ctrl-z
+	git
+	zsh-autosuggestions
+	zsh-syntax-highlighting
+
+)
 
 source $ZSH/oh-my-zsh.sh
 # }}}
