@@ -33,7 +33,7 @@ endfunction
 function! GetMode(mode) abort
     let icon = ""
 
-    let circle   = "\uf1db"
+    let circle   = "\uf91c"
     let pen      = "\uf040"
     let eraser   = "\uf12d"
     let eye      = "\uf707"
