@@ -100,7 +100,7 @@ function! GetFileIcon(filetype) abort
     let css         = "\ue749"
     let edit        = "\uf044"
     let fugitive    = "\uf7a1"
-    let golang      = "\ue626"
+    let golang      = "\ue627"
     let help        = "\ufb24"
     let java        = "\ue204"
     let jproperties = "\uf02c"
@@ -178,7 +178,7 @@ function! GetFileIcon(filetype) abort
         hi SeparatorFile       guibg=none    guifg=#E4E4E4
     elseif a:filetype == 'go'
         let icon = golang
-        hi StatuslineFileColor guibg=white guifg=aqua
+        hi StatuslineFileColor guibg=white guifg=cornflowerblue
         hi SeparatorFile       guibg=none  guifg=white
     elseif a:filetype == 'css'
         let icon = css
