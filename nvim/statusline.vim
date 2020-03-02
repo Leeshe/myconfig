@@ -146,10 +146,10 @@ function! GetFileIcon(filetype) abort
         let icon = jproperties . " "
         hi StatuslineFileColor guibg=white guifg=#3A243B
         hi SeparatorFile       guibg=none  guifg=white
-    elseif a:filetype == 'sh'
+    elseif a:filetype == 'sh' || a:filetype == 'zsh'
         let icon = shell
-        hi StatuslineFileColor guibg=#D3D3D3 guifg=black
-        hi SeparatorFile       guibg=none    guifg=#D3D3D3
+        hi StatuslineFileColor guibg=#43464B guifg=#93ED61
+        hi SeparatorFile       guibg=none    guifg=#43464B
     elseif a:filetype == 'json'
         let icon = json
         hi StatuslineFileColor guibg=#87FF2A guifg=#056608
