@@ -1,12 +1,12 @@
 set laststatus=2
 
-let g:leftCircle  = "\ue0b6"
-let g:rightCircle = "\ue0b4"
+let g:leftCircle  = "\ue0b6" "
+let g:rightCircle = "\ue0b4" "
 
-let g:defaultFileIcon = "\uf016"
+let g:defaultFileIcon = "\uf016" "
 
 ""
-" Change highliht based on given mode.
+" Change mode icons' highlight based on given mode.
 "
 " @param mode current mode
 ""
@@ -33,23 +33,29 @@ endfunction
 function! GetMode(mode) abort
     let icon = ""
 
-    let circle   = "\uf91c"
-    let pen      = "\uf040"
-    let eraser   = "\uf12d"
-    let eye      = "\uf707"
-    let octTerminal = "\uf489"
+    let circle      = "\uf91c" "卵
+    let pen         = "\uf040" "
+    let eraser      = "\uf12d" "
+    let eye         = "\uf707" "
+    let octTerminal = "\uf489" "
 
+	" Normal
     if a:mode == 'n'
         let icon = circle
+	" Insert
     elseif a:mode == 'i'
         let icon = pen
+	" Replace
     elseif a:mode == 'R'
         let icon = eraser
+	" Visual
     elseif (a:mode == 'v') || (a:mode == 'V') || (a:mode == '^V') || (a:mode == "\<C-v>")
         let icon = eye
+	" Command
     elseif a:mode == 'c'
         let icon = octTerminal
     endif
+
     return icon
 endfunction
 
@@ -64,10 +70,10 @@ function! GetCurrentPath() abort
     let filename = expand('%:t')
 
     " Nerd font icons
-    let iconOpenFolder      = "\uf115"
-    let iconSourceDirectory = "\uf444"
+    let iconOpenFolder      = "\uf115" "
+    let iconSourceDirectory = "\uf444" "
 
-    " In this case, not a git repository, display full path
+    " In this case, not a git repository, display full path without filename
     if root == '.'
         return iconOpenFolder . " " . path[:len(path) - len(filename) - 1]
     endif
@@ -88,7 +94,8 @@ function! GetCurrentPath() abort
 endfunction
 
 ""
-" Returns the icon associated to given filetype.
+" Returns the icon associated to given filetype
+" and changes the highlight of the filename.
 "
 " @param filetype Type given by &filetype.
 ""
@@ -96,24 +103,24 @@ function! GetFileIcon(filetype) abort
     let icon = ''
 
     let default     = g:defaultFileIcon
-    let commit      = "\ue729"
-    let css         = "\ue749"
-    let edit        = "\uf044"
-    let fugitive    = "\uf7a1"
-    let golang      = "\ue627"
-    let help        = "\ufb24"
-    let java        = "\ue204"
-    let jproperties = "\uf02c"
-    let json        = "\ue60b"
-    let jsp         = "\uf675"
-    let markdown    = "\ue609"
-    let merge       = "\ue727"
-    let save        = "\uf692"
-    let shell       = "\ue795"
-    let sql         = "\ue706"
-    let text        = "\uf0f6"
-    let vim         = "\ue7c5"
-    let xml         = "\uf673"
+    let commit      = "\ue729" "
+    let css         = "\ue749" "
+    let edit        = "\uf044" "
+    let fugitive    = "\uf7a1" "
+    let golang      = "\ue627" "
+    let help        = "\ufb24" "ﬤ
+    let java        = "\ue204" "
+    let jproperties = "\uf02c" "
+    let json        = "\ue60b" "
+    let jsp         = "\uf675" "
+    let markdown    = "\ue609" "
+    let merge       = "\ue727" "
+    let save        = "\uf692" "
+    let shell       = "\ue795" "
+    let sql         = "\ue706" "
+    let text        = "\uf0f6" "
+    let vim         = "\ue7c5" "
+    let xml         = "\uf673" "
 
     if a:filetype == 'java'
         let icon = java . " "
@@ -205,17 +212,21 @@ function! GetSpecificIcon(filename) abort
 
     let icon = ''
 
-    let balanceScale = "\ufad0"
-    let git          = "\uf7a1"
-    let jenkins      = "\ue767"
-    let localCommit  = "\ufc19"
+    let balanceScale = "\ufad0" "𢡄
+    let git          = "\uf7a1" "
+    let jenkins      = "\ue767" "
+    let localCommit  = "\ufc19" "ﰙ
 
+	" LICENSE
     if lowerFilename == 'license'
         let icon = balanceScale
+	" COMMIT
     elseif lowerFilename == 'commit_editmsg'
         let icon = localCommit
+	" JENKINS
     elseif lowerFilename == 'jenkinsfile'
         let icon = jenkins
+	" GIT IGNORE
     elseif lowerFilename == '.gitignore'
         let icon = git
         hi StatuslineFileColor guibg=#EEEEEE guifg=#F14E32
@@ -228,7 +239,7 @@ function! GetSpecificIcon(filename) abort
 endfunction
 
 ""
-" Returns the current file's name.
+" Returns the file's name and associated icon.
 ""
 function! GetFileName() abort
     let filename = expand('%:t')
@@ -237,6 +248,7 @@ function! GetFileName() abort
         return ''
     endif
 
+	" Get icon for filetype
     let icon =  GetFileIcon(&filetype)
 
     " Check if file has default icon, e.g. 'LICENSE'
@@ -248,15 +260,15 @@ function! GetFileName() abort
 endfunction
 
 ""
-" Returns the current git branch's name.
+" Returns the current git branch's name and associated icon.
 ""
 function! GitBranch()
     let currentBranch = system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
 
     let icon = ""
-    let master  = "\ue0a0"
-    let branch  = "\ue725"
-    let vimIcon = "\ue62b"
+    let master  = "\ue0a0" "
+    let branch  = "\ue725" "
+    let vimIcon = "\ue62b" "
 
     " Git repository, master
     if (currentBranch == 'master')
@@ -296,7 +308,7 @@ endfunction
 function! GetError() abort
   let info  = get(b:, 'coc_diagnostic_info', {})
   let error = get(info, 'error', 0)
-  let errorIcon = "\uf658"
+  let errorIcon = "\uf658" "
 
   if (error != 0)
       hi StatuslineErrorColor guibg=none guifg=#FF7F7F
@@ -314,7 +326,7 @@ endfunction
 function! GetWarning() abort
     let info    = get(b:, 'coc_diagnostic_info', {})
     let warning = get(info, 'warning', 0)
-    let warningIcon = "\uf071"
+    let warningIcon = "\uf071" "
 
     if (warning != 0)
         return warningIcon . "  [". warning . "]"
@@ -330,10 +342,10 @@ function! GetCommitMessage() abort
     let blame = get(b:, 'coc_git_blame', '')
 
     let icon = ""
-    let progress   = "\ue206"
-    let commit     = "\ue729"
-    let linux      = "\ue712"
-    let discussion = "\uf442"
+    let progress   = "\ue206" "
+    let commit     = "\ue729" "
+    let linux      = "\ue712" "
+    let discussion = "\uf442" "
 
     if blame == 'Not Committed Yet'
         let icon = progress
