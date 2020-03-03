@@ -116,3 +116,6 @@ hi LineNr guibg=none guifg=none ctermfg=white
 
 "Transparent sign column
 hi SignColumn guibg=none
+
+"Use xclip to yank/paste
+set clipboard+=unnamedplus
