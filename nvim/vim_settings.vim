@@ -8,6 +8,9 @@ augroup END
 "Show line numbers on the sidebar
 set number
 
+"Show the line number relative to the line with the cursor in front of each line.
+set relativenumber
+
 "Ignore case when searching.
 set ignorecase
 
