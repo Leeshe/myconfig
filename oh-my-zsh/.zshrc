@@ -52,6 +52,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Hide username
 USER=``
+
+# Time
+PROMPT='%{$fg[yellow]%}[%D{%L:%M:%S}] '$PROMPT
 # }}}
 
 # ALIAS {{{
@@ -73,26 +76,34 @@ function cd {
 	builtin cd "$@" && ls
 }
 
+# nvim
 nv() {
 	nvim $1
 }
 
-jira() {
-    URL="https://jira.france.openpricer/browse/"
-    TAG=$(echo $1 | grep -oP "[^(fix|feat)(_)][a-zA-Z0-9\-]*[^(.vim)]")
-    firefox $URL$TAG
-}
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
+# ls on startup
 ls
+# }}}
 
-PROMPT='%{$fg[yellow]%}[%D{%L:%M:%S}] '$PROMPT
+# ZSH-AUTOSUGGESTIONS {{{
 bindkey '^ ' autosuggest-accept
 
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=cyan'
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=gold,bg=cyan'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# }}}
+
+# EXPORT {{{
+
+# Yarn
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# Golang
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
+# Notification for slack, known issue on Ubuntu 16.04
 export ELECTRON_USE_UBUNTU_NOTIFIER=1
+# }}}
 
 source $(dirname $(gem which colorls))/tab_complete.sh
