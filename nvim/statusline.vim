@@ -113,6 +113,7 @@ function! GetFileIcon(filetype) abort
     let jproperties = "\uf02c" "
     let json        = "\ue60b" "
     let jsp         = "\uf675" "
+    let lua         = "\ue620" "
     let markdown    = "\ue609" "
     let merge       = "\ue727" "
     let save        = "\uf692" "
@@ -190,6 +191,10 @@ function! GetFileIcon(filetype) abort
     elseif a:filetype == 'css'
         let icon = css
         hi StatuslineFileColor guibg=white guifg=#0059B3
+        hi SeparatorFile       guibg=none  guifg=white
+    elseif a:filetype == 'lua'
+        let icon = lua
+        hi StatuslineFileColor guibg=white guifg=#2C68CE
         hi SeparatorFile       guibg=none  guifg=white
     else
         let icon = default
