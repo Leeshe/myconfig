@@ -99,6 +99,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=gold,bg=cyan'
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # Golang
+export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
