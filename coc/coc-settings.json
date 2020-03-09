@@ -1,5 +1,6 @@
 {
-	"bookmark.signFg": "cyan",
+	"bookmark.sign": "\uf02e",
+	"bookmark.signHi": "BookmarkColor",
 
     "coc.preferences.colorSupport": true,
     "coc.preferences.enableFloatHighlight": true,

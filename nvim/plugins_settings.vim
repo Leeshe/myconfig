@@ -237,4 +237,7 @@ nmap <Leader>ba <Plug>(coc-bookmark-annotate)
 nmap <Leader>bt <Plug>(coc-bookmark-toggle)
 nmap <Leader>bj <Plug>(coc-bookmark-next)
 nmap <Leader>bk <Plug>(coc-bookmark-prev)
+
+"Color
+hi BookmarkColor guibg=none guifg=#EF1F3E
 " }}}
