@@ -116,6 +116,7 @@ function! GetFileIcon(filetype) abort
     let lua         = "\ue620" "
     let markdown    = "\ue609" "
     let merge       = "\ue727" "
+    let resolv      = "\uf817" "
     let save        = "\uf692" "
     let shell       = "\ue795" "
     let sql         = "\ue706" "
@@ -196,6 +197,10 @@ function! GetFileIcon(filetype) abort
         let icon = lua
         hi StatuslineFileColor guibg=white guifg=#2C68CE
         hi SeparatorFile       guibg=none  guifg=white
+    elseif a:filetype == 'resolv'
+        let icon = resolv
+        hi StatuslineFileColor guibg=#696B6F guifg=white
+        hi SeparatorFile       guibg=none  guifg=#696B6F
     else
         let icon = default
         hi StatuslineFileColor guibg=white guifg=black
