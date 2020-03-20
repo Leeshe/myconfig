@@ -4,7 +4,6 @@
 # @description      Directories for configuration
 #------------------------------------------------------------------
 readonly CURRENT_DIRECTORY="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-readonly BASH="$CURRENT_DIRECTORY/bash_script"
 readonly COC="$CURRENT_DIRECTORY/coc"
 readonly NVIM="$CURRENT_DIRECTORY/nvim"
 readonly PACKAGES="$CURRENT_DIRECTORY/packages"
@@ -170,7 +169,6 @@ createCurrentPathVariable() {
 installAll() {
     INSTALLATION_FOLDERS=(
         $PACKAGES
-        $BASH
         $OH_MY_ZSH
         $NVIM
         $COC
