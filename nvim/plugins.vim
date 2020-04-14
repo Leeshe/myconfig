@@ -31,6 +31,7 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 
 " Syntax
 Plug 'uiiaoo/java-syntax.vim'
+Plug 'sheerun/vim-polyglot'
 
 " Others
 Plug 'tpope/vim-fugitive'
