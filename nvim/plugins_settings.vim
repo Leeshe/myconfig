@@ -163,6 +163,13 @@ let g:vista_echo_cursor_strategy = 'scroll'
 let java_comment_strings=1
 let java_highlight_functions=1
 let java_highlight_java_lang_ids=1
+
+let g:go_highlight_format_strings = 1
+let g:go_highlight_function_arguments = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_types = 1
 " }}}
 
 " Easy-align {{{
