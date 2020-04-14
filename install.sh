@@ -6,7 +6,6 @@
 readonly CURRENT_DIRECTORY="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 readonly COC="$CURRENT_DIRECTORY/coc"
 readonly NVIM="$CURRENT_DIRECTORY/nvim"
-readonly PACKAGES="$CURRENT_DIRECTORY/packages"
 readonly OH_MY_ZSH="$CURRENT_DIRECTORY/oh-my-zsh"
 readonly RANGER="$CURRENT_DIRECTORY/ranger"
 
@@ -168,7 +167,6 @@ createCurrentPathVariable() {
 #------------------------------------------------------------------
 installAll() {
     INSTALLATION_FOLDERS=(
-        $PACKAGES
         $OH_MY_ZSH
         $NVIM
         $COC
