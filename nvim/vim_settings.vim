@@ -119,3 +119,6 @@ hi SignColumn guibg=none
 
 "Use xclip to yank/paste
 set clipboard+=unnamedplus
+
+" Sign for indent
+set list lcs=tab:\│\ 

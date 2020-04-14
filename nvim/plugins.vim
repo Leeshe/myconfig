@@ -26,8 +26,8 @@ Plug 'Yggdroot/LeaderF'
 Plug 'easymotion/vim-easymotion'
 
 " Edition
-"Plug 'Yggdroot/indentLine'
-Plug 'nathanaelkane/vim-indent-guides'
+Plug 'Yggdroot/indentLine'
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 " Syntax
 Plug 'uiiaoo/java-syntax.vim'

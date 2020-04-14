@@ -129,9 +129,10 @@ endfunction
 " }}}
 
 " indentLine {{{
-let g:indentLine_char = "┊"
-
-let g:indentLine_color_gui = '#A4E57E'
+let g:indentLine_enabled = 1
+"let g:indentLine_char = "│"
+"let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+"let g:indentLine_color_gui = '#A4E57E'
 " }}}
 
 " Fugitive {{{
@@ -240,4 +241,8 @@ nmap <Leader>bk <Plug>(coc-bookmark-prev)
 
 "Color
 hi BookmarkColor guibg=none guifg=#EF1F3E
+" }}}
+
+" Indent Blankline {{{
+let g:indent_blankline_char = '│'
 " }}}
