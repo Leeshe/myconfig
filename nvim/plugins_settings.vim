@@ -175,20 +175,21 @@ nmap ga <Plug>(EasyAlign)
 
 " Semantic-Highlight {{{
 let blacklist = [
-            \ '',
-            \ 'fugitive',
-            \ 'fugitiveblame',
-            \ 'git',
-            \ 'gitcommit',
-            \ 'help',
-            \ 'list',
-            \ 'log',
-            \ 'markdown',
-            \ 'qf',
-            \ 'sql',
-            \ 'text',
-            \ 'xml',
-            \ ]
+ \ '',
+ \ 'fugitive',
+ \ 'fugitiveblame',
+ \ 'git',
+ \ 'gitcommit',
+ \ 'help',
+ \ 'list',
+ \ 'log',
+ \ 'markdown',
+ \ 'qf',
+ \ 'sql',
+ \ 'text',
+ \ 'xml',
+ \ 'jsp',
+ \ ]
 
 augroup SemanticHighlight
     autocmd!
