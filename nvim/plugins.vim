@@ -14,6 +14,10 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Colorscheme
 Plug 'ErichDonGubler/vim-sublime-monokai'
 
+" Git
+Plug 'tpope/vim-fugitive'
+Plug 'itchyny/vim-gitbranch'
+
 " Listing
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
@@ -32,9 +36,6 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 " Syntax
 Plug 'uiiaoo/java-syntax.vim'
 Plug 'sheerun/vim-polyglot'
-
-" Others
-Plug 'tpope/vim-fugitive'
 
 " Testing
 Plug 'janko/vim-test'

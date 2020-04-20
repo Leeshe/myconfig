@@ -273,7 +273,8 @@ endfunction
 " Returns the current git branch's name and associated icon.
 ""
 function! GitBranch()
-    let currentBranch = system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+"    let currentBranch = system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+	let currentBranch = gitbranch#name()
 
     let icon = ""
     let master  = "\ue0a0" "
