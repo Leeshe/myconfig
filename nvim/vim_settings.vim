@@ -121,4 +121,4 @@ hi SignColumn guibg=none
 set clipboard+=unnamedplus
 
 " Sign for indent
-set list lcs=tab:\│\ 
+set list lcs=tab:\│\ ,eol:↴
