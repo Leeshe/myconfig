@@ -130,7 +130,7 @@ endfunction
 
 " indentLine {{{
 let g:indentLine_enabled = 1
-"let g:indentLine_char = "│"
+let g:indentLine_char = "│"
 "let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 "let g:indentLine_color_gui = '#A4E57E'
 " }}}
@@ -245,4 +245,5 @@ hi BookmarkColor guibg=none guifg=#EF1F3E
 
 " Indent Blankline {{{
 let g:indent_blankline_char = '│'
+let g:indent_blankline_extra_indent_level = -1
 " }}}
