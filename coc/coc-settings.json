@@ -26,6 +26,7 @@
     "java.autobuild.enabled": false,
     "java.codeGeneration.generateComments": true,
     "java.completion.guessMethodArguments": true,
+	"java.completion.importOrder": [ "java", "javax", "com", "org" ],
     "java.completion.overwrite": true,
     "java.errors.incompleteClasspath.severity": "ignore",
     "java.implementationsCodeLens.enabled": true,
