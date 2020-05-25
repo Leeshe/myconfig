@@ -17,7 +17,7 @@
 
 # :file_folder: Dotfiles
 
-### :computer: Ubuntu 16.04 & 18.04
+### :computer: Ubuntu 18.04
 Development setup using **Oh-My-Zsh** and **Neovim**.  
 I aim to have something in-between a light and not too heavy development setup.
 
