@@ -4,7 +4,6 @@
 # @description      Directories for configuration
 #------------------------------------------------------------------
 readonly CURRENT_DIRECTORY="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-readonly COC="$CURRENT_DIRECTORY/coc"
 readonly NVIM="$CURRENT_DIRECTORY/nvim"
 readonly OH_MY_ZSH="$CURRENT_DIRECTORY/oh-my-zsh"
 readonly RANGER="$CURRENT_DIRECTORY/ranger"
@@ -169,7 +168,6 @@ installAll() {
     INSTALLATION_FOLDERS=(
         $OH_MY_ZSH
         $NVIM
-        $COC
         $RANGER
     )
 
