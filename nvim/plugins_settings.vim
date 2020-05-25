@@ -137,6 +137,8 @@ let g:indentLine_char = "│"
 
 " Fugitive {{{
 nmap <silent> <Leader>gs :Gstatus<CR>
+
+nnoremap <silent> <Leader>gc :Gcommit -v<CR>
 " }}}
 
 " Startify {{{
