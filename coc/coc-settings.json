@@ -2,6 +2,9 @@
 	"bookmark.sign": "\uf02e",
 	"bookmark.signHi": "BookmarkColor",
 
+	"coc-actions.hideCursor": false,
+	"coc-actions.useCursorLine": true,
+
     "coc.preferences.colorSupport": true,
     "coc.preferences.enableFloatHighlight": true,
     "coc.preferences.hoverTarget": "float",
