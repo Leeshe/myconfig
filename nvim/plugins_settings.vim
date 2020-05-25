@@ -247,3 +247,10 @@ hi BookmarkColor guibg=none guifg=#EF1F3E
 let g:indent_blankline_char = '│'
 let g:indent_blankline_extra_indent_level = -1
 " }}}
+
+" Nvim highlight yank {{{
+augroup highlight_yank
+    autocmd!
+    autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank("IncSearch", 1000)
+augroup END
+" }}}
