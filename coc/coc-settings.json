@@ -5,41 +5,41 @@
 	"coc-actions.hideCursor": false,
 	"coc-actions.useCursorLine": true,
 
-    "coc.preferences.colorSupport": true,
-    "coc.preferences.enableFloatHighlight": true,
-    "coc.preferences.hoverTarget": "float",
-    "coc.preferences.previewAutoClose": false,
-    "coc.preferences.currentFunctionSymbolAutoUpdate": false,
+	"coc.preferences.colorSupport": true,
+	"coc.preferences.enableFloatHighlight": true,
+	"coc.preferences.hoverTarget": "float",
+	"coc.preferences.previewAutoClose": false,
+	"coc.preferences.currentFunctionSymbolAutoUpdate": false,
 
-    "codeLens.enable": true,
+	"codeLens.enable": true,
 
-    "clock.enable": true,
-    "clock.top": 2,
-    "clock.right": 2,
-    "clock.winblend": 0,
+	"clock.enable": true,
+	"clock.top": 2,
+	"clock.right": 2,
+	"clock.winblend": 0,
 
-    "diagnostic.virtualText": true,
+	"diagnostic.virtualText": true,
 
-    "git.enableGutters": true,
-    "git.addGBlameToBufferVar": true,
+	"git.enableGutters": true,
+	"git.addGBlameToBufferVar": true,
 
-    "java.autobuild.enabled": false,
-    "java.codeGeneration.generateComments": true,
-    "java.completion.guessMethodArguments": true,
+	"java.autobuild.enabled": false,
+	"java.codeGeneration.generateComments": true,
+	"java.completion.guessMethodArguments": true,
 	"java.completion.importOrder": [ "java", "javax", "com", "org" ],
-    "java.completion.overwrite": true,
-    "java.errors.incompleteClasspath.severity": "ignore",
-    "java.implementationsCodeLens.enabled": true,
-    "java.referencesCodeLens.enabled": true,
-    "java.signatureHelp.enabled": true,
+	"java.completion.overwrite": true,
+	"java.errors.incompleteClasspath.severity": "ignore",
+	"java.implementationsCodeLens.enabled": true,
+	"java.referencesCodeLens.enabled": true,
+	"java.signatureHelp.enabled": true,
 
-    "python.jediEnabled": false,
+	"python.jediEnabled": false,
 
-    "signature.enable": true,
-    "signature.target": "float",
-    "signature.preferShownAbove": true,
+	"signature.enable": true,
+	"signature.target": "float",
+	"signature.preferShownAbove": true,
 
-    "suggest.acceptSuggestionOnCommitCharacter": true,
+	"suggest.acceptSuggestionOnCommitCharacter": true,
 	"suggest.completionItemKindLabels": {
 		"class": "\ue0cd",
 		"constant": "\uf8fe",
@@ -52,12 +52,12 @@
 		"keyword": "\uf805",
 		"method": "\uf794",
 		"snippet": "\ufb0c",
-		"variable": "\uf868"
+		"variable": "\ufab8"
 	},
-    "suggest.echodocSupport": true,
-    "suggest.enablePreview": true,
-    "suggest.noselect": false,
-    "suggest.triggerAfterInsertEnter": true,
+	"suggest.echodocSupport": true,
+	"suggest.enablePreview": true,
+	"suggest.noselect": false,
+	"suggest.triggerAfterInsertEnter": true,
 
-    "xml.java.home": "/usr/lib/jvm/java-8-openjdk-amd64"
+	"xml.java.home": "/usr/lib/jvm/java-8-openjdk-amd64"
 }
