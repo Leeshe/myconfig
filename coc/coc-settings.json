@@ -59,6 +59,7 @@
 	"suggest.echodocSupport": true,
 	"suggest.enablePreview": true,
 	"suggest.noselect": false,
+	"suggest.preferCompleteThanJumpPlaceholder": true,
 	"suggest.triggerAfterInsertEnter": true,
 
 	"xml.java.home": "/usr/lib/jvm/java-8-openjdk-amd64"
