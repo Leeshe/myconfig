@@ -48,10 +48,11 @@
 		"file"       : "\uf15b",
 		"field"      : "\uf9fc",
 		"folder"     : "\uf115",
-		"function"   : "\uf794",
+		"function"   : "\u0192",
 		"interface"  : "\ufc2e",
 		"keyword"    : "\uf805",
-		"method"     : "\uf794",
+		"method"     : "\u0192",
+		"module"     : "\uf8d6",
 		"snippet"    : "\ufb0c",
 		"variable"   : "\ufab8"
 	},
