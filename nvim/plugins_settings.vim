@@ -64,7 +64,13 @@ autocmd CursorHold * call CocActionAsync('highlight')
 hi CursorColumn guibg=#0066FF guifg=White
 
 " Update signature help on jump placeholder
-autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup mygroup
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType java setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder.
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
 
 " Highlight floating view
 hi CocFloating guibg=#323232 gui=none
