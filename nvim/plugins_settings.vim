@@ -276,3 +276,10 @@ augroup highlight_yank
     autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank("IncSearch", 1000)
 augroup END
 " }}}
+
+" CocFzf {{{
+" Use floatign window to display FZF result
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
+
+nnoremap <silent> <leader>cb :<C-u>CocFzfList diagnostics --current-buf<CR>
+" }}}

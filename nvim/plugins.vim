@@ -43,5 +43,6 @@ Plug 'janko/vim-test'
 " Variable Highlighting
 Plug 'jaxbot/semantic-highlight.vim'
 
+Plug 'antoinemadec/coc-fzf'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
