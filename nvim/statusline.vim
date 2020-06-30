@@ -33,27 +33,27 @@ endfunction
 function! GetMode(mode) abort
     let icon = ""
 
-    let circle      = "\uf91c" "卵
-    let pen         = "\uf040" "
-    let eraser      = "\uf12d" "
-    let eye         = "\uf707" "
-    let octTerminal = "\uf489" "
+    let iconNormal  = "\uf91c" "卵
+    let iconInsert  = "\uf040" "
+    let iconReplace = "\uf12d" "
+    let iconVisual  = "\uf707" "
+    let iconCommand = "\ufb32" "גּ
 
 	" Normal
     if a:mode == 'n'
-        let icon = circle
+        let icon = iconNormal
 	" Insert
     elseif a:mode == 'i'
-        let icon = pen
+        let icon = iconInsert
 	" Replace
     elseif a:mode == 'R'
-        let icon = eraser
+        let icon = iconReplace
 	" Visual
     elseif (a:mode == 'v') || (a:mode == 'V') || (a:mode == '^V') || (a:mode == "\<C-v>")
-        let icon = eye
+        let icon = iconVisual
 	" Command
     elseif a:mode == 'c'
-        let icon = octTerminal
+        let icon = iconCommand
     endif
 
     return icon
