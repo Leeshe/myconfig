@@ -20,7 +20,7 @@ function! RedrawModeColors(mode)
 	elseif a:mode == 'v' || a:mode == 'V' || a:mode == '^V' || a:mode == "\<C-v>"
 		hi StatuslineModeColor guibg=none guifg=#FFD700
 	elseif a:mode == 'c'
-		hi StatuslineModeColor guibg=none guifg=#32CD32 gui=bold
+		hi StatuslineModeColor guibg=none guifg=#ED61D1 gui=bold
 	endif
 	return ''
 endfunction
