@@ -126,85 +126,85 @@ function! GetFileIcon(filetype) abort
 
 	if a:filetype == 'java'
 		let icon = java . " "
-		hi StatuslineFileColor guibg=honeydew guifg=darkorange
-		hi SeparatorFile	   guibg=none  guifg=honeydew
+		hi StatuslineFileColor     guibg=honeydew guifg=darkorange
+		hi SeparatorFile           guibg=none     guifg=honeydew
 	elseif a:filetype == 'vim'
 		let icon = vim
-		hi StatuslineFileColor guibg=green guifg=#FFFFFF
-		hi SeparatorFile	   guibg=none  guifg=green
+		hi StatuslineFileColor     guibg=green    guifg=#FFFFFF
+		hi SeparatorFile           guibg=none     guifg=green
 	elseif a:filetype == 'markdown'
 		let icon = markdown
-		hi StatuslineFileColor guibg=black guifg=#FFFFFF
-		hi SeparatorFile	   guibg=none  guifg=black
+		hi StatuslineFileColor     guibg=black    guifg=#FFFFFF
+		hi SeparatorFile           guibg=none     guifg=black
 	elseif a:filetype == 'xml'
 		let icon = xml
-		hi StatuslineFileColor guibg=white guifg=#43464B
-		hi SeparatorFile	   guibg=none  guifg=white
+		hi StatuslineFileColor     guibg=white    guifg=#43464B
+		hi SeparatorFile           guibg=none     guifg=white
 	elseif a:filetype == 'sql'
 		let icon = sql
-		hi StatuslineFileColor guibg=white guifg=#43464B
-		hi SeparatorFile	   guibg=none  guifg=white
+		hi StatuslineFileColor     guibg=white    guifg=#43464B
+		hi SeparatorFile           guibg=none     guifg=white
 	elseif a:filetype == 'jproperties'
 		let icon = jproperties . " "
-		hi StatuslineFileColor guibg=white guifg=#3A243B
-		hi SeparatorFile	   guibg=none  guifg=white
+		hi StatuslineFileColor     guibg=white    guifg=#3A243B
+		hi SeparatorFile           guibg=none     guifg=white
 	elseif a:filetype == 'sh' || a:filetype == 'zsh'
 		let icon = shell
-		hi StatuslineFileColor guibg=#43464B guifg=#93ED61
-		hi SeparatorFile	   guibg=none	 guifg=#43464B
+		hi StatuslineFileColor     guibg=#43464B  guifg=#93ED61
+		hi SeparatorFile           guibg=none     guifg=#43464B
 	elseif a:filetype == 'json'
 		let icon = json
-		hi StatuslineFileColor guibg=#87FF2A guifg=#056608
-		hi SeparatorFile	   guibg=none	 guifg=#87FF2A
+		hi StatuslineFileColor     guibg=#87FF2A  guifg=#056608
+		hi SeparatorFile           guibg=none     guifg=#87FF2A
 	elseif a:filetype == 'jsp'
 		let icon = jsp
-		hi StatuslineFileColor guibg=white guifg=#4B0082
-		hi SeparatorFile	   guibg=none	 guifg=white
+		hi StatuslineFileColor     guibg=white    guifg=#4B0082
+		hi SeparatorFile           guibg=none     guifg=white
 	elseif a:filetype == 'text'
 		let icon = text
-		hi StatuslineFileColor guibg=white guifg=black
-		hi SeparatorFile	   guibg=none  guifg=white
+		hi StatuslineFileColor     guibg=white    guifg=black
+		hi SeparatorFile           guibg=none     guifg=white
 	elseif a:filetype == 'gitcommit'
 		let isCommitSaved = get(b:, 'isCommitSaved', 0)
 		" Still editing commit
 		if isCommitSaved == 0
 			let icon = edit . " " . commit
-			hi StatuslineFileColor guibg=#F14E32 guifg=#EEEEEE
-			hi SeparatorFile	   guibg=none	 guifg=#F14E32
+			hi StatuslineFileColor guibg=#F14E32  guifg=#EEEEEE
+			hi SeparatorFile       guibg=none     guifg=#F14E32
 		" Commit is saved
 		else
 			let icon = save . " " . commit
-			hi StatuslineFileColor guibg=#EEEEEE guifg=#F14E32
-			hi SeparatorFile	   guibg=none	 guifg=#EEEEEE
+			hi StatuslineFileColor guibg=#EEEEEE  guifg=#F14E32
+			hi SeparatorFile       guibg=none     guifg=#EEEEEE
 		endif
 	elseif a:filetype == 'help'
 		let icon = help
-		hi StatuslineFileColor guibg=green guifg=#FFFFFF
-		hi SeparatorFile	   guibg=none  guifg=green
+		hi StatuslineFileColor     guibg=green    guifg=#FFFFFF
+		hi SeparatorFile           guibg=none     guifg=green
 	elseif a:filetype == 'fugitive'
 		let icon = fugitive
-		hi StatuslineFileColor guibg=#E4E4E4 guifg=black
-		hi SeparatorFile	   guibg=none	 guifg=#E4E4E4
+		hi StatuslineFileColor     guibg=#E4E4E4  guifg=black
+		hi SeparatorFile           guibg=none     guifg=#E4E4E4
 	elseif a:filetype == 'go'
 		let icon = golang
-		hi StatuslineFileColor guibg=white guifg=cornflowerblue
-		hi SeparatorFile	   guibg=none  guifg=white
+		hi StatuslineFileColor     guibg=white    guifg=cornflowerblue
+		hi SeparatorFile           guibg=none     guifg=white
 	elseif a:filetype == 'css'
 		let icon = css
-		hi StatuslineFileColor guibg=white guifg=#0059B3
-		hi SeparatorFile	   guibg=none  guifg=white
+		hi StatuslineFileColor     guibg=white    guifg=#0059B3
+		hi SeparatorFile           guibg=none     guifg=white
 	elseif a:filetype == 'lua'
 		let icon = lua
-		hi StatuslineFileColor guibg=white guifg=#2C68CE
-		hi SeparatorFile	   guibg=none  guifg=white
+		hi StatuslineFileColor     guibg=white    guifg=#2C68CE
+		hi SeparatorFile           guibg=none     guifg=white
 	elseif a:filetype == 'resolv'
 		let icon = resolv
-		hi StatuslineFileColor guibg=#696B6F guifg=white
-		hi SeparatorFile	   guibg=none  guifg=#696B6F
+		hi StatuslineFileColor     guibg=#696B6F  guifg=white
+		hi SeparatorFile           guibg=none     guifg=#696B6F
 	else
 		let icon = default
-		hi StatuslineFileColor guibg=white guifg=black
-		hi SeparatorFile	   guibg=none  guifg=white
+		hi StatuslineFileColor     guibg=white    guifg=black
+		hi SeparatorFile           guibg=none     guifg=white
 	endif
 
 	return icon
@@ -286,22 +286,22 @@ function! GitBranch()
 		let icon = master
 
 		hi StatuslineGitBranchColor guibg=#0066FF guifg=white
-		hi SeparatorGitBranch		guibg=none	  guifg=#0066FF
+		hi SeparatorGitBranch       guibg=none    guifg=#0066FF
 	" Not git repository
 	elseif (currentBranch == '')
 		let icon = vimIcon
 
 		hi StatuslineGitBranchColor guibg=#228B22 guifg=white
-		hi SeparatorGitBranch		guibg=none	  guifg=#228B22
+		hi SeparatorGitBranch       guibg=none    guifg=#228B22
 	" Git repository, other branch
 	else
 		let icon = branch
 
 		hi StatuslineGitBranchColor guibg=#0066FF guifg=white
-		hi SeparatorGitBranch		guibg=none	  guifg=#0066FF
+		hi SeparatorGitBranch       guibg=none    guifg=#0066FF
 	endif
 
-  return icon . " " . currentBranch
+	return icon . " " . currentBranch
 endfunction
 
 
@@ -309,38 +309,38 @@ endfunction
 " Returns git branch's name.
 ""
 function! StatuslineGit()
-  let l:branchname = GitBranch()
-  return strlen(l:branchname) > 0 ? '  ' . l:branchname . ' ' : ''
+	let l:branchname = GitBranch()
+	return strlen(l:branchname) > 0 ? '  ' . l:branchname . ' ' : ''
 endfunction
 
 ""
 " Returns the number of errors provided by COC.
 ""
 function! GetError() abort
-  let info	= get(b:, 'coc_diagnostic_info', {})
-  let error = get(info, 'error', 0)
-  let errorIcon = "\uf658" "
+	let info  = get(b:, 'coc_diagnostic_info', {})
+	let error = get(info, 'error', 0)
+	let errorIcon = "\uf658" "
 
-  if (error != 0)
-	  hi StatuslineErrorColor guibg=none guifg=#FF7F7F
-	  return errorIcon . " [" . error . "]"
-  else
-	  hi StatuslineErrorColor guibg=none guifg=none
-  endif
+	if (error != 0)
+		hi StatuslineErrorColor guibg=none guifg=#FF7F7F
+		return errorIcon . " [" . error . "]"
+	else
+		hi StatuslineErrorColor guibg=none guifg=none
+	endif
 
-  return ""
+	return ""
 endfunction
 
 ""
 " Returns the number of warnings provided by COC.
 ""
 function! GetWarning() abort
-	let info	= get(b:, 'coc_diagnostic_info', {})
+	let info    = get(b:, 'coc_diagnostic_info', {})
 	let warning = get(info, 'warning', 0)
 	let warningIcon = "\uf071" "
 
 	if (warning != 0)
-		return warningIcon . "	[". warning . "]"
+		return warningIcon . " [". warning . "]"
 	endif
 
 	return ""
@@ -352,15 +352,15 @@ endfunction
 function! GetCommitMessage() abort
 	let blame = get(b:, 'coc_git_blame', '')
 
-	let icon = ""
+	let icon       = ""
 	let progress   = "\ue206" "
-	let commit	   = "\ue729" "
-	let linux	   = "\ue712" "
+	let commit     = "\ue729" "
+	let linux      = "\ue712" "
 	let discussion = "\uf442" "
 
 	if blame == 'Not Committed Yet'
 		let icon = progress
-		return winwidth(0) > 120 ?	progress . "  " . "To commit or not to commit" : ''
+		return winwidth(0) > 120 ? progress . "  " . "To commit or not to commit" : ''
 	" Not a git repository
 	elseif blame == ''
 		return linux . " "
@@ -427,17 +427,17 @@ set statusline+=%#SeparatorCommit#%{rightCircle}
 " Colors in normal mode
 hi StatuslineGitBranchColor   guibg=#0066FF guifg=white
 hi StatuslineCurrentPathColor guibg=#FFFF33 guifg=black
-hi StatuslineFileColor		  guibg=#90EE90 guifg=black
-hi StatuslineModeColor		  guibg=none	guifg=none
-hi StatuslineErrorColor		  guibg=none	guifg=none
-hi StatuslineWarningColor	  guibg=none	guifg=yellow
-hi StatuslineCommitColor	  guibg=#800080 guifg=white
+hi StatuslineFileColor        guibg=#90EE90 guifg=black
+hi StatuslineModeColor        guibg=none    guifg=none
+hi StatuslineErrorColor       guibg=none    guifg=none
+hi StatuslineWarningColor     guibg=none    guifg=yellow
+hi StatuslineCommitColor      guibg=#800080 guifg=white
 
-hi SeparatorInvisible	guibg=none guifg=none
-hi SeparatorGitBranch	guibg=none guifg=#0066FF
+hi SeparatorInvisible   guibg=none guifg=none
+hi SeparatorGitBranch   guibg=none guifg=#0066FF
 hi SeparatorCurrentPath guibg=none guifg=#FFFF33
-hi SeparatorFile		guibg=none guifg=#90EE90
-hi SeparatorCommit		guibg=none guifg=#800080
+hi SeparatorFile        guibg=none guifg=#90EE90
+hi SeparatorCommit      guibg=none guifg=#800080
 
 augroup GITCOMMIT
 	autocmd!
