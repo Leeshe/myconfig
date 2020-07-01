@@ -102,27 +102,27 @@ endfunction
 function! GetFileIcon(filetype) abort
 	let icon = ''
 
-	let default		= g:defaultFileIcon
-	let commit		= "\ue729" "
-	let css			= "\ue749" "
-	let edit		= "\uf044" "
-	let fugitive	= "\uf7a1" "
-	let golang		= "\ue627" "
-	let help		= "\ufb24" "ﬤ
-	let java		= "\ue204" "
+	let default     = g:defaultFileIcon
+	let commit      = "\ue729" "
+	let css         = "\ue749" "
+	let edit        = "\uf044" "
+	let fugitive    = "\uf7a1" "
+	let golang      = "\ue627" "
+	let help        = "\ufb24" "ﬤ
+	let java        = "\ue204" "
 	let jproperties = "\uf02c" "
-	let json		= "\ue60b" "
-	let jsp			= "\uf675" "
-	let lua			= "\ue620" "
-	let markdown	= "\ue609" "
-	let merge		= "\ue727" "
-	let resolv		= "\uf817" "
-	let save		= "\uf692" "
-	let shell		= "\ue795" "
-	let sql			= "\ue706" "
-	let text		= "\uf0f6" "
-	let vim			= "\ue7c5" "
-	let xml			= "\uf673" "
+	let json        = "\ue60b" "
+	let jsp         = "\uf675" "
+	let lua         = "\ue620" "
+	let markdown    = "\ue609" "
+	let merge       = "\ue727" "
+	let resolv      = "\uf817" "
+	let save        = "\uf692" "
+	let shell       = "\ue795" "
+	let sql         = "\ue706" "
+	let text        = "\uf0f6" "
+	let vim         = "\ue7c5" "
+	let xml         = "\uf673" "
 
 	if a:filetype == 'java'
 		let icon = java . " "
