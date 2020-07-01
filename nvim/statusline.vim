@@ -223,8 +223,8 @@ function! GetSpecificIcon(filename) abort
 	let icon = ''
 
 	let balanceScale = "\ufad0" "𢡄
-	let git			 = "\uf7a1" "
-	let jenkins		 = "\ue767" "
+	let git          = "\uf7a1" "
+	let jenkins      = "\ue767" "
 	let localCommit  = "\ufc19" "ﰙ
 
 	" LICENSE
