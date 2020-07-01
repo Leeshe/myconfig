@@ -259,7 +259,7 @@ function! GetFileName() abort
 	endif
 
 	" Get icon for filetype
-	let icon =	GetFileIcon(&filetype)
+	let icon = GetFileIcon(&filetype)
 
 	" Check if file has default icon, e.g. 'LICENSE'
 	if icon == g:defaultFileIcon
@@ -276,9 +276,9 @@ function! GitBranch()
 "	 let currentBranch = system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
 	let currentBranch = gitbranch#name()
 
-	let icon = ""
-	let master	= "\ue0a0" "
-	let branch	= "\ue725" "
+	let icon    = ""
+	let master  = "\ue0a0" "
+	let branch  = "\ue725" "
 	let vimIcon = "\ue62b" "
 
 	" Git repository, master
