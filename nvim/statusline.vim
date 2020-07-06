@@ -15,12 +15,12 @@ function! RedrawModeColors(mode)
 		hi StatuslineModeColor guibg=none guifg=none
 	elseif a:mode == 'i'
 		hi StatuslineModeColor guibg=none guifg=#FF4C4C
-	elseif a:mode == 'R'
+	elseif a:mode == 'R' || a:mode == 'r'
 		hi StatuslineModeColor guibg=none guifg=#FF8000
 	elseif a:mode == 'v' || a:mode == 'V' || a:mode == '^V' || a:mode == "\<C-v>"
 		hi StatuslineModeColor guibg=none guifg=#FFD700
 	elseif a:mode == 'c'
-		hi StatuslineModeColor guibg=none guifg=#ED61D1 gui=bold
+		hi StatuslineModeColor guibg=none guifg=#41F024
 	endif
 	return ''
 endfunction
@@ -33,11 +33,11 @@ endfunction
 function! GetMode(mode) abort
 	let icon = ""
 
-	let iconNormal	= "\uf91c" "卵
+	let iconNormal	= "\uf812" "
 	let iconInsert	= "\uf040" "
 	let iconReplace = "\uf12d" "
 	let iconVisual	= "\uf707" "
-	let iconCommand = "\ufb32" "גּ
+	let iconCommand = "\uf0d0" "
 
 	" Normal
 	if a:mode == 'n'
