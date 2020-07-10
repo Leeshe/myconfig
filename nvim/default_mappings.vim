@@ -22,8 +22,8 @@ nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
 "Type <Leader>' to put ' between the selected word
 nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
 
-"Type 1 to get the beginning of the line
-nnoremap 1 0
+"Type ² to get the beginning of the line
+nnoremap ² 0
 
 " Ctrl-tab to switch buffer
 nnoremap <silent> <tab> :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
