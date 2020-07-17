@@ -61,6 +61,7 @@ PROMPT='%{$fg[yellow]%}[%D{%L:%M:%S}] '$PROMPT
 alias ls='colorls -lX --color=auto'
 alias ll='colorls -lArth --color=auto'
 alias pdf='evince'
+alias nv='nvim'
 alias zshconfig="nvim $ZSHRC_CONFIG"
 alias neoconfig="nvim $NVIM_INIT"
 alias :q=exit
@@ -74,11 +75,6 @@ alias moo="fortune | cowsay"
 # ls after cd
 function cd {
 	builtin cd "$@" && ls
-}
-
-# nvim
-nv() {
-	nvim $1
 }
 
 # ls on startup
