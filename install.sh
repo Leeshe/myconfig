@@ -133,7 +133,7 @@ executeInstallScript() {
 }
 
 #------------------------------------------------------------------
-# @description Create path variables in .profile
+# @description Create path variables for neovim in .profile
 #------------------------------------------------------------------
 createCurrentPathVariable() {
 	readonly INIT_VIM="init.vim"
