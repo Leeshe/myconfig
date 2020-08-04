@@ -264,7 +264,7 @@ let g:indent_blankline_extra_indent_level = -1
 " Nvim highlight yank {{{
 augroup highlight_yank
     autocmd!
-    autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank("IncSearch", 1000)
+	au TextYankPost * lua vim.highlight.on_yank {higroup="IncSearch", timeout=250, on_visual=false}
 augroup END
 " }}}
 
