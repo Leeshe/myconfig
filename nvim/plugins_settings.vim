@@ -231,6 +231,8 @@ hi DiffAdd    guibg = none guifg = lightgreen
 hi DiffDelete guibg = none guifg = red
 hi DiffChange guibg = none guifg = sandybrown
 
+autocmd CursorHold * CocCommand git.refresh
+
 nmap <leader>gu :CocCommand git.chunkUndo<CR>
 nmap <leader>ga :CocCommand git.chunkStage<CR>
 " }}}
