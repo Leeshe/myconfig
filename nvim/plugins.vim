@@ -27,11 +27,11 @@ Plug 'Yggdroot/LeaderF'
 
 " Moving
 Plug 'easymotion/vim-easymotion'
-Plug 'Xuyuanp/scrollbar.nvim'
 
-" Edition
+" Interface
 Plug 'Yggdroot/indentLine'
 Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'Xuyuanp/scrollbar.nvim'
 
 " Syntax
 Plug 'uiiaoo/java-syntax.vim'
