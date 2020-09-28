@@ -278,3 +278,21 @@ let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 
 nnoremap <silent> <leader>cb :<C-u>CocFzfList diagnostics --current-buf<CR>
 " }}}
+
+" Scrollbar {{{
+let scrollbar_blacklist = [
+ \ '',
+ \ 'fugitive',
+ \ 'fugitiveblame',
+ \ 'help',
+ \ 'leaderf',
+ \ 'list',
+ \ 'qf',
+ \ ]
+
+augroup ScrollbarInit
+  autocmd!
+  autocmd WinEnter,FocusGained,CursorMoved,VimResized * if index(scrollbar_blacklist, &filetype) < 0 | silent! lua require('scrollbar').show()
+  autocmd WinLeave,FocusLost                          * silent! lua require('scrollbar').clear()
+augroup end
+" }}}

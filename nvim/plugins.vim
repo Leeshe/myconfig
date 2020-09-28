@@ -27,6 +27,7 @@ Plug 'Yggdroot/LeaderF'
 
 " Moving
 Plug 'easymotion/vim-easymotion'
+Plug 'Xuyuanp/scrollbar.nvim'
 
 " Edition
 Plug 'Yggdroot/indentLine'
