@@ -295,6 +295,7 @@ let scrollbar_blacklist = [
 augroup ScrollbarInit
   autocmd!
   autocmd WinEnter,FocusGained,CursorMoved,VimResized * if index(scrollbar_blacklist, &filetype) < 0 | silent! lua require('scrollbar').show()
-  autocmd WinLeave,FocusLost                          * silent! lua require('scrollbar').clear()
+  autocmd WinEnter,FocusGained                        * silent! lua require('scrollbar').show()
+  autocmd WinLeave,FocusLost,BufLeave                 * silent! lua require('scrollbar').clear()
 augroup end
 " }}}
