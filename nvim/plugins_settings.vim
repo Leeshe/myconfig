@@ -57,6 +57,8 @@ nmap gs <Plug>(coc-git-chunkinfo)
 " CocErrorSign color
 hi CocErrorSign ctermfg=Red guifg=#FF0000
 
+hi CocWarningSign guifg=#FFD700
+
 " Highlight word under cursor
 autocmd CursorHold * call CocActionAsync('highlight')
 

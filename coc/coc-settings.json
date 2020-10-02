@@ -19,6 +19,8 @@
 	"clock.winblend": 0,
 
 	"diagnostic.virtualText": true,
+	"diagnostic.warningSign": "\uf0a4",
+	"diagnostic.errorSign": "\uf101",
 
 	"git.enableGutters": true,
 	"git.addGBlameToBufferVar": true,
