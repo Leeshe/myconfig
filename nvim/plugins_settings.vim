@@ -40,7 +40,7 @@ nmap <silent> gr <Plug>(coc-references)
 nmap <leader>rn <Plug>(coc-rename)
 
 " Use tab for jump to next placeholder, it's default of coc.nvim
-let g:coc_snippet_next = '<tab>'
+let g:coc_snippet_next = '<c-l>'
 
 " Fix autofix problem of current line
 "nmap <leader>qf <Plug>(coc-fix-current)
