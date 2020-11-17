@@ -1,14 +1,11 @@
 " COC {{{
 let g:coc_global_extensions = [
  \ 'coc-actions',
- \ 'coc-bookmark',
- \ 'coc-clock',
  \ 'coc-git',
  \ 'coc-highlight',
  \ 'coc-java',
  \ 'coc-json',
  \ 'coc-lists',
- \ 'coc-marketplace',
  \ 'coc-pairs',
  \ 'coc-snippets',
  \ 'coc-xml',
