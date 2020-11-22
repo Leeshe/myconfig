@@ -149,10 +149,11 @@ end
 local getFullPath = function()
 	local filename = api.nvim_call_function("expand", { "%:t" })
 	local fullpath = api.nvim_call_function("expand", { "%:p" })
+	local icon = ""
 
 	local currentPath = string.sub(fullpath, 0, string.len(fullpath) - string.len(filename))
 
-	return currentPath
+	return icon .. " :" .. currentPath
 end
 
 --- Returns separators and filename's color for given filetype
