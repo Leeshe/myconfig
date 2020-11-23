@@ -273,19 +273,19 @@ local getWarnings = function()
 		return ""
 	end
 
-	return "" .. icon .. " :" .. warnings .. ""
+	return "" .. icon .. " :" .. warnings .. ""
 end
 
 --- Returns the number of errors
 local getErrors = function()
 	local errors = require'lsp-status'.diagnostics()['errors']
-	local icon = ""
+	local icon = ""
 
 	if errors == 0 then
 		return ""
 	end
 
-	return "" .. icon .. " :" .. errors .. ""
+	return "" .. icon .. " :" .. errors .. ""
 end
 
 --- Returns current function
