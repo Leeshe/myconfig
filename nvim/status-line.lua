@@ -49,6 +49,10 @@ HIGHLIGHT_FILE_NAME = "CURRENT_FILE"
 HIGHLIGHT_WARNING = "LSP_WARNING"
 HIGHLIGHT_ERROR = "LSP_ERROR"
 
+-- Gutters
+HIGHLIGHT_GUTTER = "SEPARATOR_GUTTER"
+HIGHLIGHT_GUTTER_NAME = "STATUS_GUTTER"
+
 -- Function highlight
 HIGHLIGHT_FUNCTION = "LSP_FUNCTION"
 
@@ -125,6 +129,10 @@ local getGitBranchName = function()
 
 	if branchName == "master" then
 		icon = ""
+	elseif string.find(string.lower(branchName), "fix") then
+		icon = ""
+	elseif string.find(string.lower(branchName), "feat") then
+		icon = ""
 	else
 		icon = ""
 	end
@@ -303,6 +311,32 @@ local getCurrentFunction = function()
 	return icon .. ":" ..  currentFunction
 end
 
+-- Returns added, changed, deleted lines
+local getGutter = function()
+	local gutter = api.nvim_call_function("GitGutterGetHunkSummary", {})
+	local added, changed, deleted = gutter[1], gutter[2], gutter[3]
+
+	if (added == 0) and (changed == 0) and (deleted == 0) then
+		return ""
+	end
+
+	local hunks = ":"
+
+	if added ~= 0 then
+		hunks = hunks .. "+" .. added
+	end
+
+	if changed ~= 0 then
+		hunks = hunks .. "~" .. changed
+	end
+
+	if deleted ~= 0 then
+		hunks = hunks .. "-" .. deleted
+	end
+
+	return hunks
+end
+
 --- Statusline active
 function Module.activeLine()
 	local statusline = ""
@@ -404,21 +438,35 @@ function Module.activeLine()
 	-- LSP diagnostics warnings
 	local warnings = getWarnings()
 
-	api.nvim_command("hi " .. HIGHLIGHT_WARNING .. " guifg=" .. RIPE_LEMON .. " guibg=none")
-	statusline = statusline .. "%#" .. HIGHLIGHT_WARNING .. "#"
-	statusline = statusline .. warnings
-	statusline = statusline .. " "
+	if warnings ~= "" then
+		api.nvim_command("hi " .. HIGHLIGHT_WARNING .. " guifg=" .. RIPE_LEMON .. " guibg=none")
+		statusline = statusline .. "%#" .. HIGHLIGHT_WARNING .. "#"
+		statusline = statusline .. warnings
+		-- statusline = statusline .. " "
+	end
 
 	-- LSP diagnostics errors
 	local errors = getErrors()
 
-	api.nvim_command("hi " .. HIGHLIGHT_ERROR .. " guifg=" .. SALMON .. " guibg=none")
-	statusline = statusline .. "%#" .. HIGHLIGHT_ERROR .. "#"
-	statusline = statusline .. errors
-	statusline = statusline .. " "
+	if errors ~= "" then
+		api.nvim_command("hi " .. HIGHLIGHT_ERROR .. " guifg=" .. SALMON .. " guibg=none")
+		statusline = statusline .. "%#" .. HIGHLIGHT_ERROR .. "#"
+		statusline = statusline .. errors
+		statusline = statusline .. " "
+	end
 
 	-- Right side items
 	statusline = statusline .."%="
+
+	-- Gutter
+	local gutters = getGutter()
+
+	if gutters ~= "" then
+		api.nvim_command("hi " .. HIGHLIGHT_GUTTER_NAME .. " guifg=" .. GOLD .. " guibg=none")
+		statusline = statusline .. "%#" .. HIGHLIGHT_GUTTER_NAME .. "#"
+		statusline = statusline .. gutters
+		statusline = statusline .. " "
+	end
 
 	-- Current function
 	local currentFunction = getCurrentFunction()
