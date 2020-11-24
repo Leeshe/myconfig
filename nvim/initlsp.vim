@@ -6,24 +6,41 @@ command! PackerSync    lua require('plugins').sync()
 command! PackerClean   lua require('plugins').clean()
 command! PackerCompile lua require('plugins').compile()
 
-packadd! auto-pairs
-packadd! nvim-treesitter
+" Colors
+packadd! nvim-colorizer.lua
+
+" Colorscheme
+packadd! vim-sublime-monokai
+
+" Completion
 packadd! completion-nvim
 packadd! completion-buffers
 packadd! vim-vsnip
 packadd! vim-vsnip-integ
-packadd! vim-sublime-monokai
+packadd! auto-pairs
+
+" Tree-sitter
+packadd! nvim-treesitter
+
+" Finder
 packadd! LeaderF
-packadd! vim-fugitive
-packadd! vim-gitgutter
 packadd! popup.nvim
 packadd! plenary.nvim
 packadd! telescope.nvim
-packadd! barbar.nvim
-packadd! nvim-colorizer.lua
+
+" Formatting
 packadd! vim-easy-align
-packadd! lsp-status.nvim
+
+" Git
+packadd! vim-fugitive
+packadd! vim-gitgutter
+
+" LSP
 packadd! nvim-lspconfig
+packadd! lsp-status.nvim
+
+" Tabs
+packadd! barbar.nvim
 
 source $HOME/.config/nvim/vim_settings.vim
 source $HOME/.config/nvim/default_mappings.vim
