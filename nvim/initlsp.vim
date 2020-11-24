@@ -1,25 +1,29 @@
-set runtimepath^=~/.local/share/nvim/plugged/nvim-lspconfig
-set runtimepath^=~/.local/share/nvim/plugged/nvim-treesitter
-set runtimepath^=~/.local/share/nvim/plugged/completion-nvim
-set runtimepath^=~/.local/share/nvim/plugged/completion-buffers
-set runtimepath^=~/.local/share/nvim/plugged/vim-sublime-monokai
-set runtimepath^=~/.local/share/nvim/plugged/vim-gitbranch
-set runtimepath^=~/.local/share/nvim/plugged/vim-vsnip
-set runtimepath^=~/.local/share/nvim/plugged/vim-vsnip-integ
-set runtimepath^=~/.local/share/nvim/plugged/fzf.vim
-set runtimepath^=~/.local/share/nvim/plugged/LeaderF
-set runtimepath^=~/.local/share/nvim/plugged/popfix
-set runtimepath^=~/.local/share/nvim/plugged/nvim-lsputils
-set runtimepath^=~/.local/share/nvim/plugged/vim-fugitive
-set runtimepath^=~/.local/share/nvim/plugged/lsp-status.nvim
-set runtimepath^=~/.local/share/nvim/plugged/vim-gitgutter
-set runtimepath^=~/.local/share/nvim/plugged/popup.nvim
-set runtimepath^=~/.local/share/nvim/plugged/plenary.nvim
-set runtimepath^=~/.local/share/nvim/plugged/telescope.nvim
-set runtimepath^=~/.local/share/nvim/plugged/vim-easy-align
-set runtimepath^=~/.local/share/nvim/plugged/barbar.nvim
-set runtimepath^=~/.local/share/nvim/plugged/git-blame.nvim
-set runtimepath^=~/.local/share/nvim/plugged/nvim-colorizer.lua
+execute 'luafile ' . stdpath('config') . '/lua/plugins.lua'
+
+command! PackerInstall lua require('plugins').install()
+command! PackerUpdate  lua require('plugins').update()
+command! PackerSync    lua require('plugins').sync()
+command! PackerClean   lua require('plugins').clean()
+command! PackerCompile lua require('plugins').compile()
+
+packadd! auto-pairs
+packadd! nvim-treesitter
+packadd! completion-nvim
+packadd! completion-buffers
+packadd! vim-vsnip
+packadd! vim-vsnip-integ
+packadd! vim-sublime-monokai
+packadd! LeaderF
+packadd! vim-fugitive
+packadd! vim-gitgutter
+packadd! popup.nvim
+packadd! plenary.nvim
+packadd! telescope.nvim
+packadd! barbar.nvim
+packadd! nvim-colorizer.lua
+packadd! vim-easy-align
+packadd! lsp-status.nvim
+packadd! nvim-lspconfig
 
 source $HOME/.config/nvim/vim_settings.vim
 source $HOME/.config/nvim/default_mappings.vim
@@ -159,16 +163,6 @@ augroup highlight_yank
 	au TextYankPost * lua vim.highlight.on_yank {higroup="IncSearch", timeout=250, on_visual=false}
 augroup END
 " }}}
-" nvim-lsputils {{{
-lua <<EOF
-vim.lsp.callbacks['textDocument/codeAction'] = require'lsputil.codeAction'.code_action_handler
-vim.lsp.callbacks['textDocument/definition'] = require'lsputil.locations'.definition_handler
-vim.lsp.callbacks['textDocument/declaration'] = require'lsputil.locations'.declaration_handler
-vim.lsp.callbacks['textDocument/typeDefinition'] = require'lsputil.locations'.typeDefinition_handler
-vim.lsp.callbacks['textDocument/implementation'] = require'lsputil.locations'.implementation_handler
-vim.lsp.callbacks['workspace/symbol'] = require'lsputil.symbols'.workspace_handler
-EOF
-" }}}
 " Telescope {{{
 nnoremap <silent> gr <cmd>lua require'telescope.builtin'.lsp_references{}<CR>
 nnoremap <silent> <leader>dc <cmd>lua require'telescope.builtin'.loclist{}<CR>
@@ -235,4 +229,11 @@ require 'colorizer'.setup {
   }
 }
 EOF
+" }}}
+" Easy-align {{{
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 " }}}
