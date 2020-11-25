@@ -51,7 +51,6 @@ packadd! barbar.nvim
 
 set list lcs=tab:\│\ ,eol:↴
 
-source $HOME/.config/nvim/zsh.vim
 source $HOME/.config/nvim/status-line.vim
 
 luafile $HOME/.config/nvim/lua/settings.lua
