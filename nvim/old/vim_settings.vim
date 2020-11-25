@@ -6,31 +6,31 @@ augroup END
 " }}}
 
 "Show line numbers on the sidebar
-set number
+"set number
 
 "Show the line number relative to the line with the cursor in front of each line.
-set relativenumber
+"set relativenumber
 
 "Ignore case when searching.
-set ignorecase
+"set ignorecase
 
 "Turn on filetype plugins (:help filetype-plugin)
-filetype plugin indent on
-syntax on
+"filetype plugin indent on
+"syntax on
 
 "Enable syntax highlighting
 if has('syntax')
-	syntax enable
+"	syntax enable
 endif
 
 "Set background
 set background=dark
 
 "Highlight line under cursor. It helps with navigation.
-set cursorline
+"set cursorline
 
 "Show mode in statusbar, not separately.
-set noshowmode
+"set noshowmode
 
 "Set mapleader key
 let mapleader = ","
@@ -39,51 +39,51 @@ let mapleader = ","
 set omnifunc=syntaxcomplete#Complete
 
 "Force utf-8 encoding
-set encoding=utf-8
+"set encoding=utf-8
 
 "Allow for mappings including Esc, while preserving zero timeout after
 "pressing it manually
-set ttimeoutlen=50
+"set ttimeoutlen=50
 
 "Show the size of block one selected in visual mode
-set showcmd
+"set showcmd
 
 "Autocomplete commands using nice menu in place of window status. Enable
 "CTRL-N and CTRL-P to scroll through matches.
-set wildmenu
+"set wildmenu
 
 "For autocompletion, complete as much as you can.
 set wildmode=longest:full,full
 
 "The cursor will briefly jump to the matching brace when you insert one.
-set showmatch
+"set showmatch
 
 "Enable search highlighting.
-set hlsearch
+"set hlsearch
 
 "Enable highlighted case-insensitive incremential search.
-set incsearch
+"set incsearch
 
 "Autoindent when starting new line, or using o or O
-set autoindent
+"set autoindent
 
 "Show hte line and column number of the cursor position.
 set ruler
 
 "Don't parse modelines (google vim modeline vulnerability).
-set nomodeline
+"set nomodeline
 
 "Disable swap to prevent annoying messages.
-set noswapfile
+"set noswapfile
 
 "Make buffer modifiable
-set modifiable
+"set modifiable
 
 " show existing tab with 4 spaces width
-set tabstop=4
+"set tabstop=4
 
 " when indenting with '>', use 4 spaces width
-set shiftwidth=4
+"set shiftwidth=4
 
 " On pressing tab, insert 4 spaces
 "set expandtab
@@ -92,7 +92,7 @@ set shiftwidth=4
 set termguicolors
 
 " Update time in ms
-set updatetime=100
+"set updatetime=100
 
 " It will change to the directory containing the file which was opened or selected.
 "set autochdir
@@ -112,13 +112,13 @@ hi Visual guifg=Black guibg=#00FA9A gui=none
 hi Normal guibg=NONE ctermbg=NONE
 
 " Number column color
-hi LineNr guibg=none guifg=none ctermfg=white
+"hi LineNr guibg=none guifg=none ctermfg=white
 
 "Transparent sign column
 hi SignColumn guibg=none
 
 "Use xclip to yank/paste
-set clipboard+=unnamedplus
+"set clipboard+=unnamedplus
 
 " Sign for indent
 set list lcs=tab:\│\ ,eol:↴

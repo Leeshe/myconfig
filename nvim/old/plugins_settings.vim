@@ -22,7 +22,7 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Use <C-l> for trigger snippet expand.
-imap <C-l> <Plug>(coc-snippets-expand)
+"imap <C-l> <Plug>(coc-snippets-expand)
 
 " Use ù for select text for visual placeholder of snippet.
 vmap ù <Plug>(coc-snippets-select)
@@ -293,8 +293,8 @@ let scrollbar_blacklist = [
 
 augroup ScrollbarInit
   autocmd!
-  autocmd WinEnter,FocusGained,CursorMoved,VimResized * if index(scrollbar_blacklist, &filetype) < 0 | silent! lua require('scrollbar').show()
-  autocmd WinEnter,FocusGained                        * silent! lua require('scrollbar').show()
-  autocmd WinLeave,FocusLost,BufLeave                 * silent! lua require('scrollbar').clear()
+  autocmd WinEnter,FocusGained,CursorMoved,VimResized   * if index(scrollbar_blacklist, &filetype) < 0 | silent! lua require('scrollbar').show()
+  autocmd WinEnter,FocusGained                          * silent! lua require('scrollbar').show()
+  autocmd WinLeave,FocusLost,BufLeave                   * silent! lua require('scrollbar').clear()
 augroup end
 " }}}

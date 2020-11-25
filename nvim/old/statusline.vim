@@ -318,7 +318,8 @@ endfunction
 ""
 function! GetError() abort
 	let info  = get(b:, 'coc_diagnostic_info', {})
-	let error = get(info, 'error', 0)
+	"let error = get(info, 'error', 0)
+	let error = luaeval("require'lsp-status'.diagnostics()['errors']")
 	let errorIcon = "\uf658" "
 
 	if (error != 0)
@@ -336,11 +337,24 @@ endfunction
 ""
 function! GetWarning() abort
 	let info    = get(b:, 'coc_diagnostic_info', {})
-	let warning = get(info, 'warning', 0)
+	"let warning = get(info, 'warning', 0)
+	let warning = luaeval("require'lsp-status'.diagnostics()['warnings']")
 	let warningIcon = "\uf071" "
 
 	if (warning != 0)
 		return warningIcon . " [". warning . "]"
+	endif
+
+	return ""
+endfunction
+
+function! GetCurrentFunction() abort
+	let currentFunction = luaeval("vim.b.lsp_current_function")
+	let symbol = "\u0192"
+
+	if (currentFunction != v:null)
+		hi StatuslineCurrentFunction guibg=none guifg=#A7EC21 gui=bold
+		return symbol . ": " . currentFunction
 	endif
 
 	return ""
@@ -351,6 +365,11 @@ endfunction
 ""
 function! GetCommitMessage() abort
 	let blame = get(b:, 'coc_git_blame', '')
+	let customBlame = luaeval("vim.b.currentBlame")
+
+	if (customBlame != v:null)
+		let blame = customBlame
+	endif
 
 	let icon       = ""
 	let progress   = "\ue206" "
@@ -418,6 +437,12 @@ set statusline+=\ %{GetError()}\
 " =======================
 set statusline+=%=
 
+"Current function
+set statusline+=%#StatuslineCurrentFunction#
+set statusline+=\ %{GetCurrentFunction()}\ 
+
+set statusline+=%#SeparatorInvisible#\ 
+
 set statusline+=%#SeparatorCommit#%{leftCircle}
 set statusline+=%#StatuslineCommitColor#
 set statusline+=\ %{GetCommitMessage()}
@@ -431,6 +456,7 @@ hi StatuslineFileColor        guibg=#90EE90 guifg=black
 hi StatuslineModeColor        guibg=none    guifg=none
 hi StatuslineErrorColor       guibg=none    guifg=none
 hi StatuslineWarningColor     guibg=none    guifg=yellow
+hi StatuslineCurrentFunction  guibg=none    guifg=none
 hi StatuslineCommitColor      guibg=#800080 guifg=white
 
 hi SeparatorInvisible   guibg=none guifg=none
@@ -442,6 +468,11 @@ hi SeparatorCommit      guibg=none guifg=#800080
 augroup GITCOMMIT
 	autocmd!
 	autocmd BufWritePost * call DeclareSaveVariable()
+augroup END
+
+augroup UPDATE_FUNCTION
+	autocmd!
+	autocmd CursorMoved * silent! lua require'lsp-status'.update_current_function()
 augroup END
 
 function! DeclareSaveVariable() abort

@@ -42,6 +42,14 @@ Plug 'janko/vim-test'
 
 " Variable Highlighting
 Plug 'jaxbot/semantic-highlight.vim'
+"Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'antoinemadec/coc-fzf', { 'branch': 'release'}
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
+
+Plug 'RishabhRD/popfix'
+Plug 'RishabhRD/nvim-lsputils'
+
+Plug 'nvim-lua/lsp-status.nvim'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
