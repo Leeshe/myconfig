@@ -1,3 +1,10 @@
+" Vimscript file settings {{{
+augroup filetype_vim
+	autocmd!
+	autocmd FileType vim setlocal foldmethod=marker
+augroup END
+" }}}
+
 execute 'luafile ' . stdpath('config') . '/lua/plugins.lua'
 
 command! PackerInstall lua require('plugins').install()
@@ -42,13 +49,13 @@ packadd! lsp-status.nvim
 " Tabs
 packadd! barbar.nvim
 
-source $HOME/.config/nvim/vim_settings.vim
-source $HOME/.config/nvim/default_mappings.vim
-source $HOME/.config/nvim/custom_commands.vim
+set list lcs=tab:\│\ ,eol:↴
+
 source $HOME/.config/nvim/zsh.vim
 source $HOME/.config/nvim/status-line.vim
 
-set completeopt=menuone,noinsert,noselect
+luafile $HOME/.config/nvim/lua/settings.lua
+
 " nvim-completion {{{
 let g:completion_matching_strategy_list = ['fuzzy', 'substring', 'exact', 'all']
 let g:completion_enable_auto_paren = 1
