@@ -147,6 +147,10 @@ local getGitRelativePath = function()
 	local currentDirectory = api.nvim_call_function("expand", { "%:p:h" })
 	local gitRoot = api.nvim_call_function("finddir", { ".git/..", currentDirectory .. ";"})
 
+	if fullPath == "" then
+		return ""
+	end
+
 	local currentPath = string.sub(fullPath, string.len(gitRoot) + 2, string.len(fullPath) - string.len(filename) - 1)
 	local icon = ""
 
@@ -158,6 +162,10 @@ local getFullPath = function()
 	local filename = api.nvim_call_function("expand", { "%:t" })
 	local fullpath = api.nvim_call_function("expand", { "%:p" })
 	local icon = ""
+
+	if fullPath == nil then
+		return ""
+	end
 
 	local currentPath = string.sub(fullpath, 0, string.len(fullpath) - string.len(filename))
 
@@ -362,19 +370,21 @@ function Module.activeLine()
 		-- Current directory
 		local currentPath = getGitRelativePath()
 
-		api.nvim_command("hi " .. HIGHLIGHT_PATH .. " guifg=" .. GOLD  .. " guibg=none")
-		statusline = statusline .. "%#" .. HIGHLIGHT_PATH .. "#"
-		statusline = statusline .. SEPARATOR_LEFT
+		if currentPath ~= "" then
+			api.nvim_command("hi " .. HIGHLIGHT_PATH .. " guifg=" .. GOLD  .. " guibg=none")
+			statusline = statusline .. "%#" .. HIGHLIGHT_PATH .. "#"
+			statusline = statusline .. SEPARATOR_LEFT
 
-		api.nvim_command("hi " .. HIGHLIGHT_CURRENT_PATH .. " guifg=" .. BLACK .. " guibg=" .. GOLD)
-		statusline = statusline .. "%#" .. HIGHLIGHT_CURRENT_PATH .. "#"
-		statusline = statusline .. currentPath
+			api.nvim_command("hi " .. HIGHLIGHT_CURRENT_PATH .. " guifg=" .. BLACK .. " guibg=" .. GOLD)
+			statusline = statusline .. "%#" .. HIGHLIGHT_CURRENT_PATH .. "#"
+			statusline = statusline .. currentPath
 
-		api.nvim_command("hi " .. HIGHLIGHT_PATH .. " guifg=" .. GOLD .. " guibg=none")
-		statusline = statusline .. "%#" .. HIGHLIGHT_PATH .. "#"
-		statusline = statusline .. SEPARATOR_RIGHT
+			api.nvim_command("hi " .. HIGHLIGHT_PATH .. " guifg=" .. GOLD .. " guibg=none")
+			statusline = statusline .. "%#" .. HIGHLIGHT_PATH .. "#"
+			statusline = statusline .. SEPARATOR_RIGHT
 
-		statusline = statusline .. " "
+			statusline = statusline .. " "
+		end
 	else
 		-- GitHub icon
 		api.nvim_command("hi " .. HIGHLIGHT_GIT .. " guifg=" .. BLUE_RIBBON  .. " guibg=none")
@@ -394,19 +404,21 @@ function Module.activeLine()
 		-- Directory
 		local currentPath = getFullPath()
 
-		api.nvim_command("hi " .. HIGHLIGHT_PATH .. " guifg=" .. GOLD  .. " guibg=none")
-		statusline = statusline .. "%#" .. HIGHLIGHT_PATH .. "#"
-		statusline = statusline .. SEPARATOR_LEFT
+		if currentPath ~= "" then
+			api.nvim_command("hi " .. HIGHLIGHT_PATH .. " guifg=" .. GOLD  .. " guibg=none")
+			statusline = statusline .. "%#" .. HIGHLIGHT_PATH .. "#"
+			statusline = statusline .. SEPARATOR_LEFT
 
-		api.nvim_command("hi " .. HIGHLIGHT_CURRENT_PATH .. " guifg=" .. BLACK .. " guibg=" .. GOLD)
-		statusline = statusline .. "%#" .. HIGHLIGHT_CURRENT_PATH .. "#"
-		statusline = statusline .. currentPath
+			api.nvim_command("hi " .. HIGHLIGHT_CURRENT_PATH .. " guifg=" .. BLACK .. " guibg=" .. GOLD)
+			statusline = statusline .. "%#" .. HIGHLIGHT_CURRENT_PATH .. "#"
+			statusline = statusline .. currentPath
 
-		api.nvim_command("hi " .. HIGHLIGHT_PATH .. " guifg=" .. GOLD .. " guibg=none")
-		statusline = statusline .. "%#" .. HIGHLIGHT_PATH .. "#"
-		statusline = statusline .. SEPARATOR_RIGHT
+			api.nvim_command("hi " .. HIGHLIGHT_PATH .. " guifg=" .. GOLD .. " guibg=none")
+			statusline = statusline .. "%#" .. HIGHLIGHT_PATH .. "#"
+			statusline = statusline .. SEPARATOR_RIGHT
 
-		statusline = statusline .. " "
+			statusline = statusline .. " "
+		end
 	end
 
 	-- Current file
