@@ -40,7 +40,7 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
--- require'lspconfig'.jdtls['document_config']['default_config']['init_options']['workspace'] = "/home/cbouaravong/GitLab/"
+-- require'lspconfig'.jdtls['document_config']['default_config']['init_options']['workspace'] = "newWorkspace"
 
 require'lspconfig'.jdtls.setup{
 	root_dir = root_pattern(".git"),
