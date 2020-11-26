@@ -16,8 +16,9 @@ FOREST_GREEN     = "#228B22"
 GOLD             = "#FFD700"
 GREEN_YELLOW     = "#87FF2A"
 INCH_WORM        = "#A7EC21"
-MARINER          = "#2C68CE"
 MAKO             = "#43464B"
+MALIBU           = "#52E3F6"
+MARINER          = "#2C68CE"
 PIGMENT_INDIGO   = "#4B0082"
 RIPE_LEMON       = "#F1D322"
 SALMON           = "#FF8C69"
@@ -81,7 +82,7 @@ local icons = setmetatable({
 }, {
 	-- fix weird issues
 	__index = function(_, _)
-		return "V·Block"
+		return "ﴳ" -- V-Block
 	end
 }
 )
@@ -259,24 +260,18 @@ end
 
 --- Set highlight for given mode
 local redrawColors = function(mode)
-	if mode == 'n' then
-		api.nvim_command("hi Mode guibg=none guifg=none")
-	end
+	local colors = {
+		n = "hi Mode guibg=none guifg=none",
+		i = "hi Mode guibg=none guifg=#FF4C4C",
+		R = "hi Mode guibg=none guifg=#FF8000",
+		v = "hi Mode guibg=none guifg=#FFD700",
+		c = "hi Mode guibg=none guifg=#41F024",
+	}
 
-	if mode == "i" then
-		api.nvim_command("hi Mode guibg=none guifg=#FF4C4C")
-	end
-
-	if mode == "R" then
-		api.nvim_command("hi Mode guibg=none guifg=#FF8000")
-	end
-
-	if mode == "v" then
-		api.nvim_command("hi Mode guibg=none guifg=#FFD700")
-	end
-
-	if mode == "c" then
-		api.nvim_command("hi Mode guibg=none guifg=#41F024")
+	if colors[mode] == nil then
+		api.nvim_command("hi Mode guibg=none guifg=" .. MALIBU .. " gui=bold")
+	else
+		api.nvim_command(colors[mode])
 	end
 end
 
