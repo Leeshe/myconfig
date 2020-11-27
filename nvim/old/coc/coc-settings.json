@@ -1,7 +1,4 @@
 {
-	"bookmark.sign": "\uf02e",
-	"bookmark.signHl": "BookmarkColor",
-
 	"coc-actions.hideCursor": false,
 	"coc-actions.useCursorLine": true,
 
@@ -13,11 +10,6 @@
 
 	"codeLens.enable": true,
 
-	"clock.enable": true,
-	"clock.top": 2,
-	"clock.right": 2,
-	"clock.winblend": 0,
-
 	"diagnostic.virtualText": true,
 	"diagnostic.warningSign": "\uf0a4",
 	"diagnostic.errorSign": "\uf101",
@@ -25,7 +17,7 @@
 	"git.enableGutters": true,
 	"git.addGBlameToBufferVar": true,
 
-	"java.autobuild.enabled": false,
+	"java.autobuild.enabled": true,
 	"java.codeGeneration.generateComments": true,
 	"java.completion.guessMethodArguments": true,
 	"java.completion.importOrder": [ "java", "javax", "com", "org" ],
@@ -35,8 +27,6 @@
 	"java.referencesCodeLens.enabled": true,
 	"java.signatureHelp.enabled": true,
 
-	"python.jediEnabled": false,
-
 	"signature.enable": true,
 	"signature.target": "float",
 	"signature.preferShownAbove": true,
@@ -44,15 +34,15 @@
 	"suggest.acceptSuggestionOnCommitCharacter": true,
 	"suggest.completionItemKindLabels": {
 		"class"      : "\ue0cd",
-		"constant"   : "\uf8fe",
+		"constant"   : "\ue22c",
 		"enum"       : "\uf9ba",
 		"enumMember" : "\uf15d",
 		"file"       : "\uf15b",
 		"field"      : "\uf9fc",
 		"folder"     : "\uf115",
-		"function"   : "\u0192",
+		"function"   : "ƒ",
 		"interface"  : "\ufc2e",
-		"keyword"    : "\uf805",
+		"keyword"    : "\uf80a",
 		"method"     : "\u0192",
 		"module"     : "\uf8d6",
 		"snippet"    : "\ufb0c",
