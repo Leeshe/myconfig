@@ -34,13 +34,21 @@ createNvimDirectory() {
 createConfigsSymlinks() {
 	readonly SYMLINKS=(
 		init.vim
-		vim_settings.vim
-		default_mappings.vim
-		plugins.vim
-		plugins_settings.vim
-		custom_commands.vim
+		status-line.vim
+	)
+
+	readonly SYMLINKS_FTDETECT=(
+		lua.vim
+		vim.vim
 		zsh.vim
-		statusline.vim
+	)
+
+	readonly SYMLINKS_LUA=(
+		config.lua
+		lsp.lua
+		plugins.lua
+		settings.lua
+		status-line.lua
 	)
 
 	for symlink in "${SYMLINKS[@]}"; do
@@ -50,6 +58,30 @@ createConfigsSymlinks() {
 
 		messageCreateSymlinkConfig="Creating symlink for '$symlink'"
 		commandCreateSymlinkConfig="ln -s $CURRENT_DIR/$symlink $NVIM_DIRECTORY"
+		evaluateCreateSymlink "$messageCreateSymlinkConfig" "$commandCreateSymlinkConfig"
+
+		echo "========================================="
+	done
+
+	for symlink in "${SYMLINKS_FTDETECT[@]}"; do
+		messageRemoveSymlinkConfig="Removing '$symlink'"
+		commandRemoveSymlinkConfig="rm -f $NVIM_DIRECTORY/ftdetect/$symlink"
+		evaluateCommand "$messageRemoveSymlinkConfig" "$commandRemoveSymlinkConfig"
+
+		messageCreateSymlinkConfig="Creating symlink for '$symlink'"
+		commandCreateSymlinkConfig="ln -s $CURRENT_DIR/$symlink $NVIM_DIRECTORY/ftdetect"
+		evaluateCreateSymlink "$messageCreateSymlinkConfig" "$commandCreateSymlinkConfig"
+
+		echo "========================================="
+	done
+
+	for symlink in "${SYMLINKS_LUA[@]}"; do
+		messageRemoveSymlinkConfig="Removing '$symlink'"
+		commandRemoveSymlinkConfig="rm -f $NVIM_DIRECTORY/lua/$symlink"
+		evaluateCommand "$messageRemoveSymlinkConfig" "$commandRemoveSymlinkConfig"
+
+		messageCreateSymlinkConfig="Creating symlink for '$symlink'"
+		commandCreateSymlinkConfig="ln -s $CURRENT_DIR/$symlink $NVIM_DIRECTORY/lua"
 		evaluateCreateSymlink "$messageCreateSymlinkConfig" "$commandCreateSymlinkConfig"
 
 		echo "========================================="
@@ -93,17 +125,6 @@ createNvimSylink() {
 	evaluateCommand "$MESSAGE_CREATE_SYMLINK_NVIM" "$COMMAND_CREATE_SYMLINK_NVIM"
 }
 
-#------------------------------------------------------------------
-# @description Install vim-plug
-#------------------------------------------------------------------
-installVimPlug() {
-	readonly MESSAGE_INSTALL_VIM_PLUG="Installng Vim-Plug"
-	readonly COMMAND_INSTALL_VIM_PLUG="curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-				https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
-
-	evaluateCommand "$MESSAGE_INSTALL_VIM_PLUG" "$COMMAND_INSTALL_VIM_PLUG"
-}
-
 
 if [ "${PWD##*/}" == "nvim" ]
 then
@@ -117,8 +138,6 @@ then
 	echo
 	createNvimSylink
 	echo
-	installVimPlug
-	echo -e "${LIGHT_GREEN}Run nvim then update plugins :PlugUpdate${NC}"
 	echo ""
 	printf "${BACKGROUND_GREEN}END OF 'nvim'${NC}"
 fi
