@@ -6,13 +6,11 @@
 - [Screenshots](#art-screenshots)
 	- [Neovim](#neovim)
 - [(Neo)Vim Plugins](#bookmark_tabs-neovim-plugins)
-- [COC extensions](#bookmark_tabs-coc-extensions)
+- [Other plugins](#bookmark_tabs-other-interesting-plugins)
 - [ZSH Plugins](#bookmark_tabs-zsh-plugins)
-- [Ranger Plugins](#bookmark_tabs-ranger-plugins)
 - [Firefox Plugins](#link-firefox-plugins)
 - [GitHub](#link-github)
 - [Reddit](#link-reddit)
-- [Eclipse](#link-eclipse)
 - [Fonts](#ab-fonts)
 
 # :file_folder: Dotfiles
@@ -30,7 +28,7 @@ sudo chmod +x install.sh
 ./install.sh
 ```
 
-Note: [colorls](https://github.com/athityakumar/colorls) and [Hack Regular Nerd Font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete.ttf)
+Note: [colorls](https://github.com/athityakumar/colorls) and [FiraCode](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode)
 are not installed by this script.
 
 ## :art: Screenshots
@@ -40,43 +38,36 @@ are not installed by this script.
 
 ## :bookmark_tabs: (Neo)Vim Plugins
 
-| Category              | Plugin                                                                          | Description                                                                                                     |
-| :-                    | :-                                                                              | :-                                                                                                              |
-| Alignment             | [vim-easy-align](https://github.com/junegunn/vim-easy-align)                    | A simple, easy-to-use Vim alignment plugin.                                                                     |
-| Buffers               | [vim-buffet](https://github.com/bagrat/vim-buffet)                              | Bring the IDE-like tabs                                                                                         |
-| Colorscheme           | [vim-sublime-monokai](https://github.com/ErichDonGubler/vim-sublime-monokai)    | vim-sublime-monokai is a refined Monokai color scheme for vim tries to look like Sublime's default color scheme |
-| Completion            | [coc.nvim](https://github.com/neoclide/coc.nvim)                                | Coc is an intellisense engine                                                                                   |
-| Fading Buffers        | [vimade](https://github.com/TaDaa/vimade)                                       | Fade your inactive buffers                                                                                      |
-| Fuzzy finder          | [fzf.vim](https://github.com/junegunn/fzf.vim)                                  | fzf is a general-purpose command-line fuzzy finder                                                              |
-| Git                   | [fugitive.vim](https://github.com/tpope/vim-fugitive)                           | Git wrapper                                                                                                     |
-| Git                   | [vim-gitbranch](https://github.com/itchyny/vim-gitbranch)                       | Provides the branch name of the current git repository                                                          |
-| Integration           | [vim-test](https://github.com/janko/vim-test)                                   | Run your tests at the speed of thought                                                                          |
-| Interface             | [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim) | Indent guides on blank lines for Neovim                                                                         |
-| Interface             | [indentLine](https://github.com/Yggdroot/indentLine)                            | Display thin vertical lines at each indentation level                                                           |
-| Interface             | [scrollbar.nvim](https://github.com/Xuyuanp/scrollbar.nvim)                     | scrollbar for neovim(nightly)                                                                                   |
-| Moving                | [vim-easymotion](https://github.com/easymotion/vim-easymotion)                  | Provide a much simpler way to use some motions                                                                  |
-| Starting              | [vim-startify](https://github.com/mhinz/vim-startify)                           | Provide a start screen                                                                                          |
-| Statusline            | [statusline.vim](nvim/statusline.vim)                                           | Custom statusline, see screenshot                                                                               |
-| Syntax                | [java-syntax](https://github.com/uiiaoo/java-syntax.vim)                        | Provides syntax highlighting for Java                                                                           |
-| Syntax                | [vim-polyglot](https://github.com/sheerun/vim-polyglot)                         | solid language pack for Vim.                                                                                    |
-| Variable Highlighting | [Semantic-Highlighting](https://github.com/jaxbot/semantic-highlight.vim)       | Where every variable is a different color, an idea popularized by Evan Brooks' blog post.                       |
-| Viewer                | [vista.vim](https://github.com/liuchengxu/vista.vim)                            | View and search LSP symbols, tags                                                                               |
+| Category    | Plugin                                                                       | Description                                                                                                     |
+| :-          | :-                                                                           | :-                                                                                                              |
+| Colorscheme | [vim-sublime-monokai](https://github.com/ErichDonGubler/vim-sublime-monokai) | vim-sublime-monokai is a refined Monokai color scheme for vim tries to look like Sublime's default color scheme |
+| Completion  | [completion-nvim](https://github.com/nvim-lua/completion-nvim)               | Completion-nvim is an auto completion framework.                                                                |
+| Completion  | [completion-buffers](https://github.com/steelsojka/completion-buffers)       | A buffer completion source for completion-nvim                                                                  |
+| Completion  | [vim-vsnip](https://github.com/hrsh7th/vim-vsnip)                            | VSCode(LSP)'s snippet feature in vim.                                                                           |
+| Completion  | [vim-vsnip-integ](https://github.com/hrsh7th/vim-vsnip-integ)                | Snippet completion/expansion.                                                                                   |
+| Completion  | [auto-pairs](https://github.com/jiangmiao/auto-pairs)                        | Insert or delete brackets, parens, quotes in pair.                                                              |
+| Finder      | [LeaderF](https://github.com/Yggdroot/LeaderF)                               | An efficient fuzzy finder that helps to locate files, buffers, mrus, gtags, etc. on the fly.                    |
+| Finder      | [popup.nvim](https://github.com/nvim-lua/popup.nvim)                         | An implementation of the Popup API from vim in Neovim..                                                         |
+| Finder      | [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)                     | Lua functions.                                                                                                  |
+| Finder      | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)           | Telescope.nvim is a next generation library for creating floating pickers with advanced features..              |
+| Formatting  | [vim-easy-align](https://github.com/junegunn/vim-easy-align)                 | A simple, easy-to-use Vim alignment plugin.                                                                     |
+| Git         | [fugitive.vim](https://github.com/tpope/vim-fugitive)                        | Git wrapper                                                                                                     |
+| Git         | [vim-gitgutter](https://github.com/airblade/vim-gitgutter)                   | A Vim plugin which shows a git diff in the sign column.                                                         |
+| LSP         | [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)                   | Collection of common configurations for the Nvim LSP client.                                                    |
+| LSP         | [lsp-status.nvim](https://github.com/nvim-lua/lsp-status.nvim)               | Neovim plugin/library for generating statusline components from the built-in LSP client.                        |
+| Parser      | [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)        | Treesitter configurations and abstraction layer for Neovim.                                                     |
+| Statusline  | [statusline.vim](nvim/status-line.vim)                                       | Custom statusline, see screenshot                                                                               |
+| Tabs        | [barbar.nvim](https://github.com/romgrk/barbar.nvim)                         | Tabs, as understood by any other editor.                                                                        |
 
-## :bookmark_tabs: COC extensions
+## :bookmark_tabs: Other interesting plugins
 
-| Extension                                                         | Description                                                                                                                           |
-| :-                                                                | :-                                                                                                                                    |
-| [coc-actions](https://github.com/iamcco/coc-actions)              | Actions menu for coc.nvim (neovim only)                                                                                               |
-| [coc-clock](https://github.com/iamcco/coc-clock)                  | coc extensions of clock.nvim                                                                                                          |
-| [coc-git](https://github.com/neoclide/coc-git)                    | Git integration of coc.nvim.                                                                                                          |
-| [coc-highlight](https://github.com/neoclide/coc-highlight)        | Provide default highlight for coc.nvim, including document highlight (highlight of current document symbol) and colors highlight.     |
-| [coc-java](https://github.com/neoclide/coc-java)                  | Fork of vscode-java to works with coc.nvim.                                                                                           |
-| [coc-json](https://github.com/neoclide/coc-json)                  | Json language server extension for coc.nvim.                                                                                          |
-| [coc-lists](https://github.com/neoclide/coc-lists)                | Some basic list sources for coc.nvim                                                                                                  |
-| [coc-marketplace](https://github.com/fannheyward/coc-marketplace) | coc.nvim extensions marketplace.                                                                                                      |
-| [coc-pairs](https://github.com/neoclide/coc-pairs)                | Auto pair extension for coc.nvim.                                                                                                     |
-| [coc-snippets](https://github.com/neoclide/coc-snippets)          | Snippets solution for coc.nvim                                                                                                        |
-| [coc-xml](https://github.com/fannheyward/coc-xml)                 | fork of vscode-xml, provides support for creating and editing XML documents, based on the LSP4XML Language Server, running with Java. |
+| Category       | Plugin                                                                          | Description                                           |
+| :-             | :-                                                                              |                                                       |
+| Fading Buffers | [vimade](https://github.com/TaDaa/vimade)                                       | Fade your inactive buffers                            |
+| Interface      | [indentLine](https://github.com/Yggdroot/indentLine)                            | Display thin vertical lines at each indentation level |
+| Integration    | [vim-test](https://github.com/janko/vim-test)                                   | Run your tests at the speed of thought                |
+| Interface      | [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim) | Indent guides on blank lines for Neovim               |
+| Interface      | [scrollbar.nvim](https://github.com/Xuyuanp/scrollbar.nvim)                     | scrollbar for neovim(nightly)                         |
 
 ## :bookmark_tabs: ZSH Plugins
 
@@ -84,13 +75,6 @@ are not installed by this script.
 | :-                                                                              | :-                                                             |
 | [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)         | Suggest commands as you type based on history and completions. |
 | [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) | Provide syntax highlighting for the shell zsh.                 |
-
-## :bookmark_tabs: Ranger Plugins
-
-| Plugin                                                                   | Description                                                         |
-| :-                                                                       | :-                                                                  |
-| [ranger-autojump](https://github.com/fdw/ranger-autojump)                | Add complete support for autojump to ranger.                        |
-| [ranger_devicons](https://github.com/alexanderjeurissen/ranger_devicons) | Introduce a new linemode that prefixes file names with a file icon. |
 
 ## :link: Firefox Plugins
 
@@ -111,7 +95,6 @@ are not installed by this script.
 | [colorls](https://github.com/athityakumar/colorls)     | A Ruby script that colorizes the `ls` output with color and icons..                          |
 | [Neovim](https://github.com/neovim/neovim)             | Vim-fork focused on extensibility and usability.                                             |
 | [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh) | Oh My Zsh is an open source, community-driven framework for managing your zsh configuration. |
-| [Ranger](https://github.com/ranger/ranger)             | ranger is a console file manager with VI key bindings.                                       |
 
 ## :link: Reddit
 
@@ -120,9 +103,6 @@ are not installed by this script.
 | [Vim](https://www.reddit.com/r/vim/)      | For Vim enthusiasts and anyone interested in Vim. |
 | [Neovim](https://www.reddit.com/r/neovim) | vim out of the box — http://neovim.org/           |
 
-## :link: Eclipse
-[Rainbow Theme](http://www.eclipsecolorthemes.org/?view=theme&id=24587)
-
 ## :ab: Fonts
 
-[Hack Regular Nerd Font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete.ttf)
+[FiraCode](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode)
