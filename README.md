@@ -62,7 +62,7 @@ are not installed by this script.
 ## :bookmark_tabs: Other interesting plugins
 
 | Category       | Plugin                                                                          | Description                                           |
-| :-             | :-                                                                              |                                                       |
+| :-             | :-                                                                              | :-                                                    |
 | Fading Buffers | [vimade](https://github.com/TaDaa/vimade)                                       | Fade your inactive buffers                            |
 | Interface      | [indentLine](https://github.com/Yggdroot/indentLine)                            | Display thin vertical lines at each indentation level |
 | Interface      | [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim) | Indent guides on blank lines for Neovim               |
