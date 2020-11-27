@@ -34,7 +34,7 @@ are not installed by this script.
 ## :art: Screenshots
 
 ### Neovim
-![image](https://user-images.githubusercontent.com/16366403/76237779-14319480-622f-11ea-90b3-937707fdd033.png)
+![image](https://user-images.githubusercontent.com/16366403/100484720-d72f6a00-30fd-11eb-8b32-61e9a66e9ff3.png)
 
 ## :bookmark_tabs: (Neo)Vim Plugins
 
