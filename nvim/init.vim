@@ -102,6 +102,7 @@ let g:diagnostic_enable_virtual_text = 1
 
 call sign_define("LspDiagnosticsSignError", {"text" : "\uf101", "texthl" : "LspDiagnosticsDefaultError"})
 call sign_define("LspDiagnosticsSignWarning", {"text" : "\uf0a4", "texthl" : "LspDiagnosticsDefaultWarning"})
+call sign_define("LspDiagnosticsSignInformation", {"text" : "\uf05a", "texthl" : "LspDiagnosticsDefaultInformation"})
 
 hi LspDiagnosticsDefaultError guifg=#00FF00
 hi LspDiagnosticsDefaultWarning guifg=#FFD700
