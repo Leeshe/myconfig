@@ -65,6 +65,7 @@ are not installed by this script.
 | :-             | :-                                                                              | :-                                                    |
 | Fading Buffers | [vimade](https://github.com/TaDaa/vimade)                                       | Fade your inactive buffers                            |
 | Interface      | [indentLine](https://github.com/Yggdroot/indentLine)                            | Display thin vertical lines at each indentation level |
+| Interface      | [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim) | This plugin adds indentation guides to empty lines.   |
 | Integration    | [vim-test](https://github.com/janko/vim-test)                                   | Run your tests at the speed of thought                |
 | Interface      | [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim) | Indent guides on blank lines for Neovim               |
 | Interface      | [scrollbar.nvim](https://github.com/Xuyuanp/scrollbar.nvim)                     | scrollbar for neovim(nightly)                         |
