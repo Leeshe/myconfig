@@ -103,7 +103,7 @@ vim.api.nvim_set_keymap("n", "<Leader>8", ":BufferGoto 8<CR>", { noremap = true,
 vim.api.nvim_set_keymap("n", "<Leader>9", ":BufferGoto 9<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>bd", ":BufferClose<CR>", { noremap = true, silent = true })
 -- }}}
--- nvim -completion {{{
+-- nvim-completion {{{
 local completion_chain_complete_list = {
 	default = {
 		{ complete_items = {'path'}, triggered_only = {'/'} },
