@@ -82,6 +82,9 @@ vim.api.nvim_command("hi Comment guifg=#7CFC00 guibg=none")
 -- Number column color
 vim.api.nvim_command("hi LineNr guibg=none guifg=none ctermfg=white")
 
+-- Floatin window color
+vim.api.nvim_command("hi NormalFloat guibg=#2F4F4F")
+
 -- Quick mappings
 vim.api.nvim_set_keymap("n", "<leader>w", ":w<CR>",        { noremap = true } )
 vim.api.nvim_set_keymap("n", "<leader>q", ":q<CR>",        { noremap = true } )

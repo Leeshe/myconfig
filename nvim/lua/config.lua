@@ -103,3 +103,34 @@ vim.api.nvim_set_keymap("n", "<Leader>8", ":BufferGoto 8<CR>", { noremap = true,
 vim.api.nvim_set_keymap("n", "<Leader>9", ":BufferGoto 9<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>bd", ":BufferClose<CR>", { noremap = true, silent = true })
 -- }}}
+-- nvim -completion {{{
+local completion_chain_complete_list = {
+	default = {
+		{ complete_items = {'path'}, triggered_only = {'/'} },
+		{ complete_items = {'lsp', 'snippet'} },
+		{ mode = {'<c-p>'} },
+		{ mode = {'<c-n>'} },
+	},
+}
+
+-- completion-nvim has chain completion support inspired by vim-mucomplete.
+--vim.g.completion_chain_complete_list = completion_chain_complete_list
+
+-- You can let completion-nvim changes source whenever current source has no complete items by setting this option to 1.
+vim.g.completion_auto_change_source = 1
+
+-- There are three different kind of matching technique implement in completion-nvim: 'substring', 'fuzzy', 'exact' or 'all'.
+vim.g.completion_matching_strategy_list = { 'fuzzy', 'substring', 'exact', 'all' }
+
+-- Enable the auto insert parenthesis feature.
+vim.g.completion_enable_auto_paren = 1
+
+-- This variable enable automatically popup window for completion.
+vim.g.completion_enable_auto_popup = 1
+
+-- By default, completion-nvim will automatically open a hover window when you navigate through the complete items.
+vim.g.completion_enable_auto_hover = 1
+
+-- By default signature help opens automatically whenever it is availabe.
+vim.g.completion_enable_auto_signature = 1
+-- }}}

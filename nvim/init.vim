@@ -1,10 +1,3 @@
-" Vimscript file settings {{{
-augroup filetype_vim
-	autocmd!
-	autocmd FileType vim setlocal foldmethod=marker
-augroup END
-" }}}
-
 execute 'luafile ' . stdpath('config') . '/lua/plugins.lua'
 
 command! PackerInstall lua require('plugins').install()
@@ -57,9 +50,6 @@ luafile $HOME/.config/nvim/lua/settings.lua
 luafile $HOME/.config/nvim/lua/config.lua
 
 " nvim-completion {{{
-let g:completion_matching_strategy_list = ['fuzzy', 'substring', 'exact', 'all']
-let g:completion_enable_auto_paren = 1
-
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
@@ -71,39 +61,24 @@ endfunction
 imap <silent> <c-space> <Plug>(completion_trigger)
 
 " Expand or jump
-imap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
-smap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
+imap <expr> <C-l> vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
+smap <expr> <C-l> vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
 
 autocmd BufEnter * lua require'completion'.on_attach()
 
-hi NormalFloat guibg=#2F4F4F
-
-let g:completion_enable_auto_popup = 1
-let g:completion_enable_auto_hover = 1
-let g:completion_enable_auto_signature = 1
 nmap <tab> <Plug>(completion_smart_tab)
 nmap <s-tab> <Plug>(completion_smart_s_tab)
 
 luafile ~/.config/nvim/lua/lsp.lua
 
 let g:completion_items_priority = {
-		\ '識': 7,
-		\ 'χ': 6,
-		\ '﬌': 5,
-		\ 'ƒ': 4,
-		\ 'ﰮ' : 3,
-		\ '': 2,
+		\ '識' : 7,
+		\ 'χ'  : 6,
+		\ '﬌'  : 5,
+		\ 'ƒ'  : 4,
+		\ 'ﰮ'  : 3,
+		\ ''  : 2,
 		\}
-
-let g:completion_auto_change_source = 1
-
-let g:completion_chain_complete_list = {
-	\'default' : [
-	\    {'complete_items': ['lsp', 'snippet', 'path']},
-	\    {'mode': '<c-p>'},
-	\    {'mode': '<c-n>'}
-	\]
-	\}
 " }}}
 " LSP Diagnostics {{{
 let g:diagnostic_enable_virtual_text = 1
