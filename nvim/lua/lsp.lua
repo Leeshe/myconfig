@@ -76,3 +76,18 @@ require'lspconfig'.sumneko_lua.setup {
     },
 }
 -- }}}
+
+-- GOPLS {{{
+require'lspconfig'.gopls.setup{
+	on_attach = on_attach_vim,
+	cmd = {"gopls", "serve"},
+	settings = {
+		gopls = {
+			analyses = {
+				unusedparams = true,
+			},
+			staticcheck = true,
+		},
+	},
+}
+-- }}}
