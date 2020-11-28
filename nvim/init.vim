@@ -89,7 +89,7 @@ hi LspDiagnosticsDefaultHint guifg=#ED61AE
 
 augroup UPDATE_DIAGNOSTICS_LOCLIST
 	autocmd!
-	autocmd InsertLeave * lua vim.lsp.diagnostic.set_loclist({['open_loclist'] = false})
+	autocmd InsertLeave * lua vim.lsp.diagnostic.set_loclist({open_loclist = false})
 augroup END
 " }}}
 " Nvim highlight yank {{{
