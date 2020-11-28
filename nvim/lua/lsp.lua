@@ -42,8 +42,37 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- require'lspconfig'.jdtls['document_config']['default_config']['init_options']['workspace'] = "newWorkspace"
 
+-- JDTLS {{{
 require'lspconfig'.jdtls.setup{
 	root_dir = root_pattern(".git"),
 	on_attach = on_attach_vim,
 	capabilities = capabilities,
 }
+-- }}}
+
+-- SUMNEKO_LUA {{{
+require'lspconfig'.sumneko_lua.setup {
+	on_attach = on_attach_vim,
+    settings = {
+        Lua = {
+            runtime = {
+                -- Get the language server to recognize LuaJIT globals like `jit` and `bit`
+                version = 'LuaJIT',
+                -- Setup your lua path
+                path = vim.split(package.path, ';'),
+            },
+            diagnostics = {
+                -- Get the language server to recognize the `vim` global
+                globals = {'vim'},
+            },
+            workspace = {
+                -- Make the server aware of Neovim runtime files
+                library = {
+                    [vim.fn.expand('$VIMRUNTIME/lua')] = true,
+                    [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
+                },
+            },
+        },
+    },
+}
+-- }}}
