@@ -53,11 +53,6 @@ luafile $HOME/.config/nvim/lua/config.lua
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-
 imap <silent> <c-space> <Plug>(completion_trigger)
 
 " Expand or jump
