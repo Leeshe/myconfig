@@ -1,8 +1,6 @@
 local protocol = require'vim.lsp.protocol'
 
 local lspconfig = require 'lspconfig'
-local util = require'lspconfig/util'
-local path = util.path
 local root_pattern = lspconfig.util.root_pattern
 
 local on_attach_vim = function(client)
@@ -51,35 +49,37 @@ require'lspconfig'.jdtls.setup{
 -- }}}
 
 -- SUMNEKO_LUA {{{
-require'lspconfig'.sumneko_lua.setup {
-	on_attach = on_attach_vim,
-    settings = {
-        Lua = {
-            runtime = {
-                -- Get the language server to recognize LuaJIT globals like `jit` and `bit`
-                version = 'LuaJIT',
-                -- Setup your lua path
-                path = vim.split(package.path, ';'),
-            },
-            diagnostics = {
-                -- Get the language server to recognize the `vim` global
-                globals = {'vim'},
-            },
-            workspace = {
-                -- Make the server aware of Neovim runtime files
-                library = {
-                    [vim.fn.expand('$VIMRUNTIME/lua')] = true,
-                    [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
-                },
-            },
-        },
-    },
-}
+	require'lspconfig'.sumneko_lua.setup {
+		on_attach = on_attach_vim,
+		capabilities = capabilities,
+		settings = {
+			Lua = {
+				runtime = {
+					-- Get the language server to recognize LuaJIT globals like `jit` and `bit`
+					version = 'LuaJIT',
+					-- Setup your lua path
+					path = vim.split(package.path, ';'),
+				},
+				diagnostics = {
+					-- Get the language server to recognize the `vim` global
+					globals = {'vim'},
+				},
+				workspace = {
+					-- Make the server aware of Neovim runtime files
+					library = {
+						[vim.fn.expand('$VIMRUNTIME/lua')] = true,
+						[vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
+					},
+				},
+			},
+		},
+	}
 -- }}}
 
 -- GOPLS {{{
 require'lspconfig'.gopls.setup{
 	on_attach = on_attach_vim,
+	capabilities = capabilities,
 	cmd = {"gopls", "serve"},
 	settings = {
 		gopls = {
