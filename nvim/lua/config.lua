@@ -20,7 +20,6 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
-vim.api.nvim_command("hi TSProperty             guifg=#52E3F6")
 vim.api.nvim_command("hi TSAnnotation           guifg=#FFFFFF")
 vim.api.nvim_command("hi TSAttribute            guifg=#FFDF00")
 vim.api.nvim_command("hi TSBoolean              guifg=#FF007F")
@@ -30,15 +29,16 @@ vim.api.nvim_command("hi TSField                guifg=#CFBFAD")
 vim.api.nvim_command("hi TSKeyword              guifg=#FF007F")
 vim.api.nvim_command("hi TSKeywordOperator      guifg=#FF007F")
 vim.api.nvim_command("hi TSMethod               guifg=#A7EC21")
+vim.api.nvim_command("hi TSNumber               guifg=#C48CFF")
 vim.api.nvim_command("hi TSOperator             guifg=#FFDF00")
 vim.api.nvim_command("hi TSParameter            guifg=#79ABFF")
 vim.api.nvim_command("hi TSParameterReference   guifg=red    ")
+vim.api.nvim_command("hi TSProperty             guifg=#52E3F6")
 vim.api.nvim_command("hi TSPunctBracket         guifg=#FFFFFF")
 vim.api.nvim_command("hi TSRepeat               guifg=#FF007F")
 vim.api.nvim_command("hi TSString               guifg=#ECE47E")
 vim.api.nvim_command("hi TSType                 guifg=#52E3F6")
 vim.api.nvim_command("hi TSVariable             guifg=#CFBFAD")
-vim.api.nvim_command("hi TSNumber               guifg=#C48CFF")
 -- }}}
 -- LeaderF {{{
 vim.g.Lf_PreviewInPopup = 1
