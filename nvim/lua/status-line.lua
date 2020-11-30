@@ -164,7 +164,7 @@ local getFullPath = function()
 	local fullpath = api.nvim_call_function("expand", { "%:p" })
 	local icon = ""
 
-	if fullPath == nil then
+	if fullpath == nil then
 		return ""
 	end
 
