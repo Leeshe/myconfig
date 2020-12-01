@@ -49,6 +49,9 @@ source $HOME/.config/nvim/status-line.vim
 luafile $HOME/.config/nvim/lua/settings.lua
 luafile $HOME/.config/nvim/lua/config.lua
 
+hi LspReferenceRead  guibg=#121111 guifg=yellow
+hi LspReferenceWrite  guibg=#121111 guifg=yellow
+
 " nvim-completion {{{
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -73,6 +76,7 @@ let g:completion_items_priority = {
 		\ 'ƒ'  : 4,
 		\ 'ﰮ'  : 3,
 		\ ''  : 2,
+		\ ''  : 1,
 		\}
 " }}}
 " LSP Diagnostics {{{

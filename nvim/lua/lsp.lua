@@ -3,8 +3,16 @@ local protocol = require'vim.lsp.protocol'
 local lspconfig = require 'lspconfig'
 local root_pattern = lspconfig.util.root_pattern
 
+local function document_highlight()
+ 	vim.api.nvim_command [[autocmd CursorHold  <buffer> lua vim.lsp.buf.document_highlight()]]
+	vim.api.nvim_command [[autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()]]
+	vim.api.nvim_command [[autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()]]
+end
+
 local on_attach_vim = function(client)
 	require'completion'.on_attach(client)
+
+	document_highlight()
 
 	protocol.CompletionItemKind = {
 		'';             -- Text          = 1;
