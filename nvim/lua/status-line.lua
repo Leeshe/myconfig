@@ -8,6 +8,7 @@ BLACK_BEAN       = "#081910"
 BLEACHED_CEDAR   = "#3A243B"
 BLUE_RIBBON      = "#0066FF"
 CAMARONE         = "#056608"
+COD_GRAY         = "#121111";
 CORAL_RED        = "#FF4040"
 CORNFLOWER_BLUE  = "#6495ED"
 ENDEAVOUR        = "#0059B3"
@@ -66,9 +67,9 @@ local icons = setmetatable({
 	["s"]  = "Select",
 	["S"]  = "S·Line",
 	["^S"] = "S·Block",
-	["i"]  = "",
-	["ic"] = "",
-	["ix"] = "",
+	["i"]  = "",
+	["ic"] = "",
+	["ix"] = "",
 	["R"]  = "",
 	["Rv"] = "",
 	["c"]  = "",
@@ -216,7 +217,7 @@ local getColorsPerFiletype = function(filetype)
 	end
 
 	if filetype == 'sh' or filetype == 'zsh' then
-		separatorColor, fileNameColor = WOODSMOKE, SULU
+		separatorColor, fileNameColor = COD_GRAY, SULU
 	end
 
 	if filetype == 'sql' then
