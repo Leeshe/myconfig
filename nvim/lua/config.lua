@@ -95,6 +95,7 @@ vim.api.nvim_command("hi BufferCurrentTarget guibg=#79ABFF")
 vim.api.nvim_command("hi BufferInactive      guibg=none guifg=white")
 vim.api.nvim_command("hi BufferInactiveSign  guibg=none guifg=white")
 vim.api.nvim_command("hi BufferInactiveMod   guibg=none guifg=white")
+vim.api.nvim_command("hi BufferTabpageFill   guibg=none guifg=white")
 
 vim.api.nvim_set_keymap("n", "<Leader>1", ":BufferGoto 1<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>2", ":BufferGoto 2<CR>", { noremap = true, silent = true })
