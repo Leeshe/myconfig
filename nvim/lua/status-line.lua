@@ -364,7 +364,7 @@ function Module.activeLine()
 
 		api.nvim_command("hi " .. HIGHLIGHT_GIT_NAME .. " guifg=" .. WHITE .. " guibg=" .. BLUE_RIBBON)
 		statusline = statusline .. "%#" .. HIGHLIGHT_GIT_NAME .. "#"
-		statusline = statusline .. ""
+		statusline = statusline .. " "
 
 		api.nvim_command("hi " .. HIGHLIGHT_GIT .. " guifg=" .. BLUE_RIBBON .. " guibg=none")
 		statusline = statusline .. "%#" .. HIGHLIGHT_GIT .. "#"
