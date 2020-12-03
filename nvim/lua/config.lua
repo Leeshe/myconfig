@@ -90,9 +90,11 @@ vim.g.bufferline = bufferline
 
 vim.api.nvim_command("hi BufferCurrent       guibg=#79ABFF gui=bold")
 vim.api.nvim_command("hi BufferCurrentMod    guibg=#79ABFF")
+vim.api.nvim_command("hi BufferCurrentIndex  guibg=#79ABFF")
 vim.api.nvim_command("hi BufferCurrentSign   guibg=#79ABFF")
 vim.api.nvim_command("hi BufferCurrentTarget guibg=#79ABFF")
 vim.api.nvim_command("hi BufferInactive      guibg=none guifg=white")
+vim.api.nvim_command("hi BufferInactiveIndex guibg=none guifg=white")
 vim.api.nvim_command("hi BufferInactiveSign  guibg=none guifg=white")
 vim.api.nvim_command("hi BufferInactiveMod   guibg=none guifg=white")
 vim.api.nvim_command("hi BufferTabpageFill   guibg=none guifg=white")
