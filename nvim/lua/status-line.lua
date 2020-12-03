@@ -1,31 +1,6 @@
 local api = vim.api
 
--- Colors
-ALIZARIN_CRIMSON = "#E31F16"
-BIG_STONE        = "#162A40"
-BLACK            = "#050505"
-BLACK_BEAN       = "#081910"
-BLEACHED_CEDAR   = "#3A243B"
-BLUE_RIBBON      = "#0066FF"
-CAMARONE         = "#056608"
-COD_GRAY         = "#121111";
-CORAL_RED        = "#FF4040"
-CORNFLOWER_BLUE  = "#6495ED"
-ENDEAVOUR        = "#0059B3"
-FERN_GREEN       = "#487A38"
-FOREST_GREEN     = "#228B22"
-GOLD             = "#FFD700"
-GREEN_YELLOW     = "#87FF2A"
-INCH_WORM        = "#A7EC21"
-MAKO             = "#43464B"
-MALIBU           = "#52E3F6"
-MARINER          = "#2C68CE"
-PIGMENT_INDIGO   = "#4B0082"
-RIPE_LEMON       = "#F1D322"
-SALMON           = "#FF8C69"
-SULU             = "#93ED61"
-WHITE            = "#FFFFFF"
-WOODSMOKE        = "#0F1215"
+require('colors')
 
 -- Colors to set per filetype
 COLOR_FILE = ""

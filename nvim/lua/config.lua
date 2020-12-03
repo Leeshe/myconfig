@@ -1,3 +1,5 @@
+require('colors')
+
 -- nvim-colorizer {{{
 require 'colorizer'.setup {
 	'css';
@@ -20,29 +22,33 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
-vim.api.nvim_command("hi TSAnnotation           guifg=#FFFFFF")
-vim.api.nvim_command("hi TSAttribute            guifg=#FFDF00")
-vim.api.nvim_command("hi TSBoolean              guifg=#FF007F")
-vim.api.nvim_command("hi TSConditional          guifg=#FF007F")
-vim.api.nvim_command("hi TSConstructor          guifg=pink   ")
-vim.api.nvim_command("hi TSField                guifg=#CFBFAD")
-vim.api.nvim_command("hi TSFunction             guifg=#A7EC21")
-vim.api.nvim_command("hi TSInclude              guifg=#FF007F")
-vim.api.nvim_command("hi TSKeyword              guifg=#FF007F")
-vim.api.nvim_command("hi TSKeywordFunction      guifg=#FF007F")
-vim.api.nvim_command("hi TSKeywordOperator      guifg=#FF007F")
-vim.api.nvim_command("hi TSMethod               guifg=#A7EC21")
-vim.api.nvim_command("hi TSNumber               guifg=#C48CFF")
-vim.api.nvim_command("hi TSOperator             guifg=#FFDF00")
-vim.api.nvim_command("hi TSParameter            guifg=#79ABFF")
-vim.api.nvim_command("hi TSParameterReference   guifg=red    ")
-vim.api.nvim_command("hi TSProperty             guifg=#52E3F6")
-vim.api.nvim_command("hi TSPunctBracket         guifg=#FFFFFF")
-vim.api.nvim_command("hi TSRepeat               guifg=#FF007F")
-vim.api.nvim_command("hi TSString               guifg=#ECE47E")
-vim.api.nvim_command("hi TSType                 guifg=#52E3F6")
-vim.api.nvim_command("hi TSTypeBuiltin          guifg=#FF007F")
-vim.api.nvim_command("hi TSVariable             guifg=#CFBFAD")
+vim.api.nvim_command("hi TSFunctBuiltin guifg=red")
+vim.api.nvim_command("hi TSCharacter guifg=red")
+vim.api.nvim_command("hi TSLabel guifg=red")
+
+vim.api.nvim_command("hi TSAnnotation           guifg=" .. WHITE)
+vim.api.nvim_command("hi TSAttribute            guifg=" .. SCHOOL_BUS_YELLOW)
+vim.api.nvim_command("hi TSBoolean              guifg=" .. ROSE)
+vim.api.nvim_command("hi TSConditional          guifg=" .. ROSE)
+vim.api.nvim_command("hi TSConstructor          guifg=" .. ROSE)
+vim.api.nvim_command("hi TSField                guifg=" .. SOFT_AMBER)
+vim.api.nvim_command("hi TSFunction             guifg=" .. INCH_WORM)
+vim.api.nvim_command("hi TSInclude              guifg=" .. ROSE)
+vim.api.nvim_command("hi TSKeyword              guifg=" .. ROSE)
+vim.api.nvim_command("hi TSKeywordFunction      guifg=" .. ROSE)
+vim.api.nvim_command("hi TSKeywordOperator      guifg=" .. ROSE)
+vim.api.nvim_command("hi TSMethod               guifg=" .. INCH_WORM)
+vim.api.nvim_command("hi TSNumber               guifg=" .. HELIOTROPE)
+vim.api.nvim_command("hi TSOperator             guifg=" .. SCHOOL_BUS_YELLOW)
+vim.api.nvim_command("hi TSParameter            guifg=" .. MAYA_BLUE)
+vim.api.nvim_command("hi TSParameterReference   guifg=" .. SCARLET)
+vim.api.nvim_command("hi TSProperty             guifg=" .. MALIBU)
+vim.api.nvim_command("hi TSPunctBracket         guifg=" .. WHITE)
+vim.api.nvim_command("hi TSRepeat               guifg=" .. ROSE)
+vim.api.nvim_command("hi TSString               guifg=" .. FLAX)
+vim.api.nvim_command("hi TSType                 guifg=" .. MALIBU)
+vim.api.nvim_command("hi TSTypeBuiltin          guifg=" .. ROSE)
+vim.api.nvim_command("hi TSVariable             guifg=" .. SOFT_AMBER)
 -- }}}
 -- LeaderF {{{
 vim.g.Lf_PreviewInPopup = 1
@@ -88,16 +94,16 @@ local bufferline = {
 
 vim.g.bufferline = bufferline
 
-vim.api.nvim_command("hi BufferCurrent       guibg=#79ABFF gui=bold")
-vim.api.nvim_command("hi BufferCurrentMod    guibg=#79ABFF")
-vim.api.nvim_command("hi BufferCurrentIndex  guibg=#79ABFF")
-vim.api.nvim_command("hi BufferCurrentSign   guibg=#79ABFF")
-vim.api.nvim_command("hi BufferCurrentTarget guibg=#79ABFF")
-vim.api.nvim_command("hi BufferInactive      guibg=none guifg=white")
-vim.api.nvim_command("hi BufferInactiveIndex guibg=none guifg=white")
-vim.api.nvim_command("hi BufferInactiveSign  guibg=none guifg=white")
-vim.api.nvim_command("hi BufferInactiveMod   guibg=none guifg=white")
-vim.api.nvim_command("hi BufferTabpageFill   guibg=none guifg=white")
+vim.api.nvim_command("hi BufferCurrent       guibg=" .. MAYA_BLUE)
+vim.api.nvim_command("hi BufferCurrentMod    guibg=" .. MAYA_BLUE)
+vim.api.nvim_command("hi BufferCurrentIndex  guibg=" .. MAYA_BLUE)
+vim.api.nvim_command("hi BufferCurrentSign   guibg=" .. MAYA_BLUE)
+vim.api.nvim_command("hi BufferCurrentTarget guibg=" .. MAYA_BLUE)
+vim.api.nvim_command("hi BufferInactive      guibg=none guifg=" .. WHITE)
+vim.api.nvim_command("hi BufferInactiveIndex guibg=none guifg=" .. WHITE)
+vim.api.nvim_command("hi BufferInactiveSign  guibg=none guifg=" .. WHITE)
+vim.api.nvim_command("hi BufferInactiveMod   guibg=none guifg=" .. WHITE)
+vim.api.nvim_command("hi BufferTabpageFill   guibg=none guifg=" .. WHITE)
 
 vim.api.nvim_set_keymap("n", "<Leader>1", ":BufferGoto 1<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>2", ":BufferGoto 2<CR>", { noremap = true, silent = true })
