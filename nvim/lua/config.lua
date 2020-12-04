@@ -10,9 +10,9 @@ fn.sign_define("LspDiagnosticsSignError",       { text = "",  texthl = "LspDi
 fn.sign_define("LspDiagnosticsSignWarning",     { text = " ", texthl = "LspDiagnosticsDefaultWarning"     })
 fn.sign_define("LspDiagnosticsSignInformation", { text = " ", texthl = "LspDiagnosticsDefaultInformation" })
 
-api.nvim_command("hi LspDiagnosticsDefaultError   guifg=#00FF00")
-api.nvim_command("hi LspDiagnosticsDefaultWarning guifg=#FFD700")
-api.nvim_command("hi LspDiagnosticsDefaultHint    guifg=#ED61AE")
+api.nvim_command("hi LspDiagnosticsDefaultError   guifg=" .. CONIFER)
+api.nvim_command("hi LspDiagnosticsDefaultWarning guifg=" .. GOLD)
+api.nvim_command("hi LspDiagnosticsDefaultHint    guifg=" .. BRILLIANT_ROSE)
 
 -- }}}
 
