@@ -66,7 +66,7 @@ luafile ~/.config/nvim/lua/lsp.lua
 
 let g:completion_items_priority = {
 		\ '識' : 7,
-		\ 'χ'  : 6,
+		\ '𝝬'  : 6,
 		\ '﬌'  : 5,
 		\ 'ƒ'  : 4,
 		\ 'ﰮ'  : 3,
