@@ -105,6 +105,7 @@ api.nvim_set_keymap("n" , "<Leader>ga" , ":GitGutterStageHunk<CR>"   , { noremap
 -- }}}
 
 -- LSP Config {{{
+
 api.nvim_command("hi LspReferenceRead  guibg=" .. COD_GRAY .. " guifg=" .. YELLOW)
 api.nvim_command("hi LspReferenceWrite guibg=" .. COD_GRAY .. " guifg=" .. YELLOW)
 
@@ -157,6 +158,7 @@ api.nvim_set_keymap("n", "<Leader>bd", ":BufferClose<CR>", { noremap = true, sil
 -- }}}
 
 -- nvim-completion {{{
+require('lsp')
 
 local completion_chain_complete_list = {
 	default = {
@@ -187,5 +189,11 @@ vim.g.completion_enable_auto_hover = 1
 
 -- By default signature help opens automatically whenever it is availabe.
 vim.g.completion_enable_auto_signature = 1
+
+api.nvim_set_keymap("i", "<Tab>", "pumvisible() ? '<C-n>' : '<Tab>'", { noremap = true, expr = true })
+api.nvim_set_keymap("i", "<S-Tab>", "pumvisible() ? '<C-p>' : '<S-Tab>'", { noremap = true, expr = true })
+api.nvim_set_keymap("i", "<C-space>", "pumvisible() ? '<C-p>' : '<S-Tab>'", { noremap = false, silent = true })
+api.nvim_set_keymap("i", "<C-l>", "vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'", { noremap = false, expr = true })
+api.nvim_set_keymap("s", "<C-l>", "vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'", { noremap = false, expr = true })
 
 -- }}}

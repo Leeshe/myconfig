@@ -48,21 +48,7 @@ luafile $HOME/.config/nvim/lua/settings.lua
 luafile $HOME/.config/nvim/lua/config.lua
 
 " nvim-completion {{{
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-imap <silent> <c-space> <Plug>(completion_trigger)
-
-" Expand or jump
-imap <expr> <C-l> vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
-smap <expr> <C-l> vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
-
 autocmd BufEnter * lua require'completion'.on_attach()
-
-nmap <tab> <Plug>(completion_smart_tab)
-nmap <s-tab> <Plug>(completion_smart_s_tab)
-
-luafile ~/.config/nvim/lua/lsp.lua
 
 let g:completion_items_priority = {
 		\ '識' : 7,
