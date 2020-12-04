@@ -1,5 +1,15 @@
 require('colors')
 
+local fn = vim.fn
+
+-- Diagnostics {{{
+
+fn.sign_define("LspDiagnosticsSignHint",        { text = "",  texthl = "LspDiagnosticsDefaultHint"        } )
+fn.sign_define("LspDiagnosticsSignError",       { text = "",  texthl = "LspDiagnosticsDefaultError"       } )
+fn.sign_define("LspDiagnosticsSignWarning",     { text = " ", texthl = "LspDiagnosticsDefaultWarning"     } )
+fn.sign_define("LspDiagnosticsSignInformation", { text = " ", texthl = "LspDiagnosticsDefaultInformation" } )
+
+-- }}}
 -- nvim-colorizer {{{
 require 'colorizer'.setup {
 	'css';
