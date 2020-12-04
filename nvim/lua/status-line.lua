@@ -72,6 +72,7 @@ extensions["fugitive"]    = ""
 extensions["go"]          = ""
 extensions["help"]        = ""
 extensions["java"]        = ""
+extensions["javascript"]  = " "
 extensions["jproperties"] = ""
 extensions["json"]        = ""
 extensions["jsp"]         = ""
@@ -169,6 +170,10 @@ local getColorsPerFiletype = function(filetype)
 
 	if filetype == 'java' then
 		separatorColor, fileNameColor = ALIZARIN_CRIMSON, WHITE
+	end
+
+	if filetype == 'javascript' then
+		separatorColor, fileNameColor = COD_GRAY, GOLD
 	end
 
 	if filetype == 'json' then
