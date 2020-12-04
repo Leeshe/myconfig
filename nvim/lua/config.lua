@@ -169,26 +169,14 @@ local completion_chain_complete_list = {
 	},
 }
 
--- completion-nvim has chain completion support inspired by vim-mucomplete.
---vim.g.completion_chain_complete_list = completion_chain_complete_list
+-- completion-nvim has chain completion support inspired by vim-mucomplete. -- vim.g.completion_chain_complete_list = completion_chain_complete_list
 
--- You can let completion-nvim changes source whenever current source has no complete items by setting this option to 1.
-vim.g.completion_auto_change_source = 1
-
--- There are three different kind of matching technique implement in completion-nvim: 'substring', 'fuzzy', 'exact' or 'all'.
-vim.g.completion_matching_strategy_list = { 'fuzzy', 'substring', 'exact', 'all' }
-
--- Enable the auto insert parenthesis feature.
-vim.g.completion_enable_auto_paren = 1
-
--- This variable enable automatically popup window for completion.
-vim.g.completion_enable_auto_popup = 1
-
--- By default, completion-nvim will automatically open a hover window when you navigate through the complete items.
-vim.g.completion_enable_auto_hover = 1
-
--- By default signature help opens automatically whenever it is availabe.
-vim.g.completion_enable_auto_signature = 1
+vim.g.completion_matching_strategy_list = { 'fuzzy', 'substring', 'exact', 'all' } -- There are three different kind of matching technique implement in completion-nvim: 'substring', 'fuzzy', 'exact' or 'all'.
+vim.g.completion_auto_change_source = 1 -- You can let completion-nvim changes source whenever current source has no complete items by setting this option to 1.
+vim.g.completion_enable_auto_signature = 1 -- By default signature help opens automatically whenever it is availabe.
+vim.g.completion_enable_auto_paren = 1 -- Enable the auto insert parenthesis feature.
+vim.g.completion_enable_auto_popup = 1 -- This variable enable automatically popup window for completion.
+vim.g.completion_enable_auto_hover = 1 -- By default, completion-nvim will automatically open a hover window when you navigate through the complete items.
 
 api.nvim_set_keymap("i" , "<C-space>" , "<Plug>(completion_trigger)"                                     , { noremap = false, silent = true }) -- Use Ctrl-Space to trigger completion
 api.nvim_set_keymap("i" , "<Tab>"     , "pumvisible() ? '<C-n>' : '<Tab>'"                               , { noremap = true  , expr = true })  -- Use Tab to cycle forward through suggestions
