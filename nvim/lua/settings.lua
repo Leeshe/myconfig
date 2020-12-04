@@ -33,6 +33,7 @@ window_option.relativenumber = true -- Show the line number relative to the line
 cmd("colorscheme sublimemonokai") -- Set colorscheme
 cmd("set noswapfile")             -- Disable swap to prevent annoying messages.
 cmd("syntax on")                  -- See :h :syntax-on
+cmd("set list lcs=tab:\\│\\ ,eol:↴")
 
 
 vim.g.mapleader = "," -- Leader map
