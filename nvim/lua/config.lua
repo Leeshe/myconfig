@@ -37,10 +37,10 @@ api.nvim_set_keymap("n", "ga", "<Plug>(EasyAlign)", { noremap = false } )
 -- Tree-sitter {{{
 
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "java", "lua",     -- one of "all", "language", or a list of languages
-  highlight = {
-    enable = true,              -- false will disable the whole extension
-  },
+	ensure_installed = "java", "lua", -- one of "all", "language", or a list of languages
+	highlight = {
+		enable = true,                -- false will disable the whole extension
+	},
 }
 
 api.nvim_command("hi TSFunctBuiltin guifg=red")
