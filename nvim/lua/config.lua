@@ -105,6 +105,8 @@ api.nvim_set_keymap("n" , "<Leader>ga" , ":GitGutterStageHunk<CR>"   , { noremap
 -- }}}
 
 -- LSP Config {{{
+api.nvim_command("hi LspReferenceRead  guibg=" .. COD_GRAY .. " guifg=" .. YELLOW)
+api.nvim_command("hi LspReferenceWrite guibg=" .. COD_GRAY .. " guifg=" .. YELLOW)
 
 api.nvim_set_keymap("n" , "K"          , "<cmd>lua vim.lsp.buf.hover()<CR>"            , { noremap = true })
 api.nvim_set_keymap("n" , "gi"         , "<cmd>lua vim.lsp.buf.implementation()<CR>"   , { noremap = true })
