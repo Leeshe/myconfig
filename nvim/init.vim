@@ -78,10 +78,6 @@ let g:completion_items_priority = {
 		\}
 " }}}
 " LSP Diagnostics {{{
-hi LspDiagnosticsDefaultError guifg=#00FF00
-hi LspDiagnosticsDefaultWarning guifg=#FFD700
-hi LspDiagnosticsDefaultHint guifg=#ED61AE
-
 augroup UPDATE_DIAGNOSTICS_LOCLIST
 	autocmd!
 	autocmd InsertLeave * lua vim.lsp.diagnostic.set_loclist({open_loclist = false})

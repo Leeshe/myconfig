@@ -5,10 +5,14 @@ local api = vim.api
 
 -- Diagnostics {{{
 
-fn.sign_define("LspDiagnosticsSignHint",        { text = "",  texthl = "LspDiagnosticsDefaultHint"        } )
-fn.sign_define("LspDiagnosticsSignError",       { text = "",  texthl = "LspDiagnosticsDefaultError"       } )
-fn.sign_define("LspDiagnosticsSignWarning",     { text = " ", texthl = "LspDiagnosticsDefaultWarning"     } )
-fn.sign_define("LspDiagnosticsSignInformation", { text = " ", texthl = "LspDiagnosticsDefaultInformation" } )
+fn.sign_define("LspDiagnosticsSignHint",        { text = "",  texthl = "LspDiagnosticsDefaultHint"        })
+fn.sign_define("LspDiagnosticsSignError",       { text = "",  texthl = "LspDiagnosticsDefaultError"       })
+fn.sign_define("LspDiagnosticsSignWarning",     { text = " ", texthl = "LspDiagnosticsDefaultWarning"     })
+fn.sign_define("LspDiagnosticsSignInformation", { text = " ", texthl = "LspDiagnosticsDefaultInformation" })
+
+api.nvim_command("hi LspDiagnosticsDefaultError   guifg=#00FF00")
+api.nvim_command("hi LspDiagnosticsDefaultWarning guifg=#FFD700")
+api.nvim_command("hi LspDiagnosticsDefaultHint    guifg=#ED61AE")
 
 -- }}}
 
