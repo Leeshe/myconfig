@@ -11,7 +11,9 @@ fn.sign_define("LspDiagnosticsSignWarning",     { text = " ", texthl = "LspDi
 fn.sign_define("LspDiagnosticsSignInformation", { text = " ", texthl = "LspDiagnosticsDefaultInformation" } )
 
 -- }}}
+
 -- nvim-colorizer {{{
+
 require 'colorizer'.setup {
 	'css';
 	'javascript';
@@ -20,12 +22,16 @@ require 'colorizer'.setup {
 		mode = 'background';
 	}
 }
+
 -- }}}
+
 -- EasyAlign {{{
 api.nvim_set_keymap("x", "ga", "<Plug>(EasyAlign)", { noremap = false } )
 api.nvim_set_keymap("n", "ga", "<Plug>(EasyAlign)", { noremap = false } )
 -- }}}
+
 -- Tree-sitter {{{
+
 require'nvim-treesitter.configs'.setup {
   ensure_installed = "java", "lua",     -- one of "all", "language", or a list of languages
   highlight = {
@@ -60,8 +66,11 @@ api.nvim_command("hi TSString               guifg=" .. FLAX)
 api.nvim_command("hi TSType                 guifg=" .. MALIBU)
 api.nvim_command("hi TSTypeBuiltin          guifg=" .. ROSE)
 api.nvim_command("hi TSVariable             guifg=" .. SOFT_AMBER)
+
 -- }}}
+
 -- LeaderF {{{
+
 vim.g.Lf_PreviewInPopup = 1
 vim.g.Lf_WindowPosition = 'popup'
 
@@ -69,12 +78,18 @@ api.nvim_set_keymap("n" , "<C-n>"      , ":Leaderf file<CR>"         , { noremap
 api.nvim_set_keymap("n" , "<Leader>rg" , ":LeaderfRgInteractive<CR>" , { noremap = true })
 api.nvim_set_keymap("n" , "<Leader>rc" , ":LeaderfRgRecall<CR>"      , { noremap = true })
 api.nvim_set_keymap("n" , "<Leader>f"  , ":LeaderfFunction<CR>"      , { noremap = true })
+
 -- }}}
+
 -- Telescope {{{
+
 api.nvim_set_keymap("n", "gr", "<cmd>lua require'telescope.builtin'.lsp_references{}<CR>", { noremap = true, silent = true })
 api.nvim_set_keymap("n", "<Leader>dc", "<cmd>lua require'telescope.builtin'.loclist{}<CR>", { noremap = true, silent = true })
+
 -- }}}
+
 -- GitGutter {{{
+
 api.nvim_command("hi DiffAdd    guibg = none guifg = lightgreen")
 api.nvim_command("hi DiffDelete guibg = none guifg = red       ")
 api.nvim_command("hi DiffChange guibg = none guifg = sandybrown")
@@ -82,8 +97,11 @@ api.nvim_command("hi DiffChange guibg = none guifg = sandybrown")
 api.nvim_set_keymap("n" , "gs"         , ":GitGutterPreviewHunk<CR>" , { noremap = false })
 api.nvim_set_keymap("n" , "<Leader>gu" , ":GitGutterUndoHunk<CR>"    , { noremap = false })
 api.nvim_set_keymap("n" , "<Leader>ga" , ":GitGutterStageHunk<CR>"   , { noremap = false })
+
 -- }}}
+
 -- LSP Config {{{
+
 api.nvim_set_keymap("n" , "K"          , "<cmd>lua vim.lsp.buf.hover()<CR>"            , { noremap = true })
 api.nvim_set_keymap("n" , "gi"         , "<cmd>lua vim.lsp.buf.implementation()<CR>"   , { noremap = true })
 api.nvim_set_keymap("n" , "<C-k>"      , "<cmd>lua vim.lsp.buf.signature_help()<CR>"   , { noremap = true })
@@ -92,8 +110,11 @@ api.nvim_set_keymap("n" , "gW"         , "<cmd>lua vim.lsp.buf.workspace_symbol(
 api.nvim_set_keymap("n" , "gd"         , "<cmd>lua vim.lsp.buf.definition()<CR>"       , { noremap = true })
 api.nvim_set_keymap("n" , "<Leader>ac" , "<cmd>lua vim.lsp.buf.code_action()<CR>"      , { noremap = true })
 api.nvim_set_keymap("n" , "<Leader>rn" , "<cmd>lua vim.lsp.buf.rename()<CR>"           , { noremap = true })
+
 -- }}}
+
 -- barbar.nvim {{{
+
 local bufferline = {
 	icons = 'numbers',
 	animation = true,
@@ -126,8 +147,11 @@ api.nvim_set_keymap("n", "<Leader>7", ":BufferGoto 7<CR>", { noremap = true, sil
 api.nvim_set_keymap("n", "<Leader>8", ":BufferGoto 8<CR>", { noremap = true, silent = true })
 api.nvim_set_keymap("n", "<Leader>9", ":BufferGoto 9<CR>", { noremap = true, silent = true })
 api.nvim_set_keymap("n", "<Leader>bd", ":BufferClose<CR>", { noremap = true, silent = true })
+
 -- }}}
+
 -- nvim-completion {{{
+
 local completion_chain_complete_list = {
 	default = {
 		{ complete_items = {'path'}, triggered_only = {'/'} },
@@ -157,4 +181,5 @@ vim.g.completion_enable_auto_hover = 1
 
 -- By default signature help opens automatically whenever it is availabe.
 vim.g.completion_enable_auto_signature = 1
+
 -- }}}
