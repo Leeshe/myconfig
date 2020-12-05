@@ -1,17 +1,23 @@
+local api = vim.api
 local protocol = require'vim.lsp.protocol'
 
 local lspconfig = require 'lspconfig'
 local root_pattern = lspconfig.util.root_pattern
 
 local function document_highlight()
- 	vim.api.nvim_command [[autocmd CursorHold  <buffer> lua vim.lsp.buf.document_highlight()]]
-	vim.api.nvim_command [[autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()]]
-	vim.api.nvim_command [[autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()]]
+ 	api.nvim_command [[autocmd CursorHold  <buffer> lua vim.lsp.buf.document_highlight()]]
+	api.nvim_command [[autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()]]
+	api.nvim_command [[autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()]]
+end
+
+local function attach_completion()
+    api.nvim_command [[autocmd BufEnter * lua require'completion'.on_attach()]]
 end
 
 local on_attach_vim = function(client)
 	require'completion'.on_attach(client)
 
+	attach_completion()
 	document_highlight()
 
 	protocol.CompletionItemKind = {

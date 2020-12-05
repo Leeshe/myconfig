@@ -47,9 +47,6 @@ source $HOME/.config/nvim/status-line.vim
 luafile $HOME/.config/nvim/lua/settings.lua
 luafile $HOME/.config/nvim/lua/config.lua
 
-" nvim-completion {{{
-autocmd BufEnter * lua require'completion'.on_attach()
-" }}}
 " LSP Diagnostics {{{
 augroup UPDATE_DIAGNOSTICS_LOCLIST
 	autocmd!
