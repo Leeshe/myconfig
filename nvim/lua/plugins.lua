@@ -1,4 +1,42 @@
-vim.cmd [[packadd packer.nvim]]
+local cmd = vim.cmd
+
+cmd [[packadd! packer.nvim]]
+
+-- Colors
+cmd [[packadd! nvim-colorizer.lua]]
+
+-- Colorscheme
+cmd [[packadd! vim-sublime-monokai]]
+
+-- Completion
+cmd [[packadd! completion-nvim]]
+cmd [[packadd! completion-buffers]]
+cmd [[packadd! vim-vsnip]]
+cmd [[packadd! vim-vsnip-integ]]
+cmd [[packadd! auto-pairs]]
+
+-- Tree-sitter
+cmd [[packadd! nvim-treesitter]]
+
+-- Finder
+cmd [[packadd! LeaderF]]
+cmd [[packadd! popup.nvim]]
+cmd [[packadd! plenary.nvim]]
+cmd [[packadd! telescope.nvim]]
+
+-- Formatting
+cmd [[packadd! vim-easy-align]]
+
+-- Git
+cmd [[packadd! vim-fugitive]]
+cmd [[packadd! vim-gitgutter]]
+
+-- LSP
+cmd [[packadd! nvim-lspconfig]]
+cmd [[packadd! lsp-status.nvim]]
+
+-- Tabs
+cmd [[packadd! barbar.nvim]]
 
 return require('packer').startup(function()
 	use 'wbthomason/packer.nvim'
