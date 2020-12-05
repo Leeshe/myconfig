@@ -21,7 +21,7 @@ local on_attach_vim = function(client)
 	document_highlight()
 
 	protocol.CompletionItemKind = {
-		'';             -- Text          = 1;
+		'';             -- Text          = 1;
 		'ƒ';             -- Method        = 2;
 		'ƒ';             -- Function      = 3;
 		'';             -- Constructor   = 4;
