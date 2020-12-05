@@ -1,6 +1,11 @@
 local cmd = vim.cmd
 
 cmd [[packadd! packer.nvim]]
+cmd [[command! PackerInstall lua require('plugins').install()]]
+cmd [[command! PackerUpdate  lua require('plugins').update()]]
+cmd [[command! PackerSync    lua require('plugins').sync()]]
+cmd [[command! PackerClean   lua require('plugins').clean()]]
+cmd [[command! PackerCompile lua require('plugins').compile()]]
 
 -- Colors
 cmd [[packadd! nvim-colorizer.lua]]

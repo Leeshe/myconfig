@@ -1,11 +1,5 @@
 execute 'luafile ' . stdpath('config') . '/lua/plugins.lua'
 
-command! PackerInstall lua require('plugins').install()
-command! PackerUpdate  lua require('plugins').update()
-command! PackerSync    lua require('plugins').sync()
-command! PackerClean   lua require('plugins').clean()
-command! PackerCompile lua require('plugins').compile()
-
 source $HOME/.config/nvim/status-line.vim
 luafile $HOME/.config/nvim/lua/settings.lua
 luafile $HOME/.config/nvim/lua/config.lua
