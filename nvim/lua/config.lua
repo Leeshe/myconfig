@@ -169,8 +169,19 @@ local completion_chain_complete_list = {
 	},
 }
 
+local completion_item_priority = {
+	["識"] = 7,
+	["𝝬"] = 6,
+	["﬌"] = 5,
+	["ƒ"] = 4,
+	["ﰮ"] = 3,
+	[""] = 2,
+	[""] = 1,
+}
+
 -- completion-nvim has chain completion support inspired by vim-mucomplete. -- vim.g.completion_chain_complete_list = completion_chain_complete_list
 
+vim.g.completion_items_priority = completion_item_priority -- Priority order of suggestions
 vim.g.completion_matching_strategy_list = { 'fuzzy', 'substring', 'exact', 'all' } -- There are three different kind of matching technique implement in completion-nvim: 'substring', 'fuzzy', 'exact' or 'all'.
 vim.g.completion_auto_change_source = 1 -- You can let completion-nvim changes source whenever current source has no complete items by setting this option to 1.
 vim.g.completion_enable_auto_signature = 1 -- By default signature help opens automatically whenever it is availabe.

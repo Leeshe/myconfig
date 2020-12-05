@@ -49,16 +49,6 @@ luafile $HOME/.config/nvim/lua/config.lua
 
 " nvim-completion {{{
 autocmd BufEnter * lua require'completion'.on_attach()
-
-let g:completion_items_priority = {
-		\ '識' : 7,
-		\ '𝝬'  : 6,
-		\ '﬌'  : 5,
-		\ 'ƒ'  : 4,
-		\ 'ﰮ'  : 3,
-		\ ''  : 2,
-		\ ''  : 1,
-		\}
 " }}}
 " LSP Diagnostics {{{
 augroup UPDATE_DIAGNOSTICS_LOCLIST
