@@ -44,6 +44,7 @@ createConfigsSymlinks() {
 	)
 
 	readonly SYMLINKS_LUA=(
+		colors.lua
 		config.lua
 		lsp.lua
 		plugins.lua
@@ -81,7 +82,7 @@ createConfigsSymlinks() {
 		evaluateCommand "$messageRemoveSymlinkConfig" "$commandRemoveSymlinkConfig"
 
 		messageCreateSymlinkConfig="Creating symlink for '$symlink'"
-		commandCreateSymlinkConfig="ln -s $CURRENT_DIR/$symlink $NVIM_DIRECTORY/lua"
+		commandCreateSymlinkConfig="ln -s $CURRENT_DIR/lua/$symlink $NVIM_DIRECTORY/lua"
 		evaluateCreateSymlink "$messageCreateSymlinkConfig" "$commandCreateSymlinkConfig"
 
 		echo "========================================="
