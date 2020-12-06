@@ -148,7 +148,7 @@ local getFullPath = function()
 		return ""
 	end
 
-	local currentPath = string.sub(fullpath, 0, string.len(fullpath) - string.len(filename))
+	local currentPath = string.sub(fullpath, 0, string.len(fullpath) - string.len(filename) - 1)
 
 	return icon .. " :" .. currentPath
 end
