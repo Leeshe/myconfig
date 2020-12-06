@@ -64,27 +64,30 @@ local icons = setmetatable({
 )
 
 -- Extensions icon
-local extensions = {}
-extensions["commit"]      = ""
-extensions["css"]         = ""
-extensions["edit"]        = ""
-extensions["fugitive"]    = ""
-extensions["go"]          = ""
-extensions["help"]        = ""
-extensions["java"]        = ""
-extensions["javascript"]  = " "
-extensions["jproperties"] = ""
-extensions["json"]        = ""
-extensions["jsp"]         = ""
-extensions["lua"]         = ""
-extensions["markdown"]    = ""
-extensions["merge"]       = ""
-extensions["sh"]          = ""
-extensions["sql"]         = ""
-extensions["text"]        = ""
-extensions["vim"]         = ""
-extensions["xml"]         = ""
-extensions["zsh"]         = ""
+local extensions = {
+
+	commit      = "",
+	css         = "",
+	edit        = "",
+	fugitive    = "",
+	go          = "",
+	help        = "",
+	java        = "",
+	javascript  = "",
+	jproperties = "",
+	json        = "",
+	jsp         = "",
+	lua         = "",
+	markdown    = "",
+	merge       = "",
+	sh          = "",
+	sql         = "",
+	text        = "",
+	vim         = "",
+	xml         = "",
+	zsh         = "",
+
+}
 
 local Module = {}
 
