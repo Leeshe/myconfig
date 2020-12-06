@@ -1,4 +1,5 @@
 local api = vim.api
+local fn  = vim.fn
 
 require('colors')
 
@@ -93,8 +94,8 @@ local Module = {}
 
 --- Returns true if current directory is git repository, else false
 local isGitRepository = function()
-	local currentDirectory = api.nvim_call_function("expand", { "%:p:h" })
-	local gitRoot = api.nvim_call_function("finddir", { ".git/", currentDirectory .. ";"})
+	local currentDirectory = fn.expand("%:p:h")
+	local gitRoot = fn.finddir(".git/", currentDirectory .. ";")
 
 	return string.find(gitRoot, ".git")
 end
@@ -123,10 +124,10 @@ end
 
 --- Returns git relative path of current file
 local getGitRelativePath = function()
-	local filename = api.nvim_call_function("expand", { "%:t" })
-	local fullPath = api.nvim_call_function("expand", { "%:p" })
-	local currentDirectory = api.nvim_call_function("expand", { "%:p:h" })
-	local gitRoot = api.nvim_call_function("finddir", { ".git/..", currentDirectory .. ";"})
+	local filename = fn.expand("%:t")
+	local fullPath = fn.expand("%:p")
+	local currentDirectory = fn.expand("%:p:h")
+	local gitRoot = fn.finddir(".git/..", currentDirectory .. ";")
 
 	if fullPath == "" then
 		return ""
@@ -140,8 +141,8 @@ end
 
 --- Returns full path to current file
 local getFullPath = function()
-	local filename = api.nvim_call_function("expand", { "%:t" })
-	local fullpath = api.nvim_call_function("expand", { "%:p" })
+	local filename = fn.expand("%:t")
+	local fullpath = fn.expand("%:p")
 	local icon = ""
 
 	if fullpath == "" then
@@ -224,7 +225,7 @@ end
 
 --- Returns file name
 local getFileName = function()
-	local file = api.nvim_call_function("expand", {"%:t"})
+	local file = fn.expand("%:t")
 	local icon = extensions[vim.bo.filetype]
 
 	if file == "" then
@@ -290,7 +291,7 @@ end
 --- Returns current function
 local getCurrentFunction = function()
 	local currentFunction = ""
-	local filename = api.nvim_call_function("expand", { "%:t:r" })
+	local filename = fn.expand("%:t:r")
 	local icon = "ƒ"
 
 	if vim.b.lsp_current_function == nil or vim.b.lsp_current_function == "" or vim.b.lsp_current_function == filename  then
@@ -477,7 +478,7 @@ end
 
 --- Statusline inactive
 function Module.inactiveLine()
-	local filename = api.nvim_call_function("expand", { "%F" })
+	local filename = fn.expand("%F")
 
 	return filename
 end
