@@ -245,11 +245,15 @@ end
 --- Set highlight for given mode
 local redrawColors = function(mode)
 	local colors = {
-		n = "hi Mode guibg=none guifg=none",
-		i = "hi Mode guibg=none guifg=#FF4C4C",
-		R = "hi Mode guibg=none guifg=#FF8000",
-		v = "hi Mode guibg=none guifg=#FFD700",
-		c = "hi Mode guibg=none guifg=#41F024",
+
+		n  = "hi Mode guibg=none guifg=none",
+		i  = "hi Mode guibg=none guifg=#FF4C4C",
+		ic = "hi Mode guibg=none guifg=#BE140E",
+		R  = "hi Mode guibg=none guifg=#FF8000",
+		v  = "hi Mode guibg=none guifg=#FFD700",
+		V  = "hi Mode guibg=none guifg=#FFD700",
+		c  = "hi Mode guibg=none guifg=#41F024",
+
 	}
 
 	if colors[mode] == nil then
