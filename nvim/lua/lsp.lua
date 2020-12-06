@@ -1,19 +1,20 @@
 local api = vim.api
 local protocol = require'vim.lsp.protocol'
-
 local lspconfig = require 'lspconfig'
-local root_pattern = lspconfig.util.root_pattern
 
+--- Document highlights
 local function document_highlight()
  	api.nvim_command [[autocmd CursorHold  <buffer> lua vim.lsp.buf.document_highlight()]]
 	api.nvim_command [[autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()]]
 	api.nvim_command [[autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()]]
 end
 
+--- Enable completions on new buffers
 local function attach_completion()
     api.nvim_command [[autocmd BufEnter * lua require'completion'.on_attach()]]
 end
 
+--- Custom attach
 local on_attach_vim = function(client)
 	require'completion'.on_attach(client)
 
@@ -49,13 +50,15 @@ local on_attach_vim = function(client)
 	}
 end
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
+local capabilities = protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- require'lspconfig'.jdtls['document_config']['default_config']['init_options']['workspace'] = "newWorkspace"
 
 -- JDTLS {{{
-require'lspconfig'.jdtls.setup{
+local root_pattern = lspconfig.util.root_pattern
+
+lspconfig.jdtls.setup{
 	root_dir = root_pattern(".git"),
 	on_attach = on_attach_vim,
 	capabilities = capabilities,
@@ -63,35 +66,35 @@ require'lspconfig'.jdtls.setup{
 -- }}}
 
 -- SUMNEKO_LUA {{{
-	require'lspconfig'.sumneko_lua.setup {
-		on_attach = on_attach_vim,
-		capabilities = capabilities,
-		settings = {
-			Lua = {
-				runtime = {
-					-- Get the language server to recognize LuaJIT globals like `jit` and `bit`
-					version = 'LuaJIT',
-					-- Setup your lua path
-					path = vim.split(package.path, ';'),
-				},
-				diagnostics = {
-					-- Get the language server to recognize the `vim` global
-					globals = {'vim', 'use'},
-				},
-				workspace = {
-					-- Make the server aware of Neovim runtime files
-					library = {
-						[vim.fn.expand('$VIMRUNTIME/lua')] = true,
-						[vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
-					},
+lspconfig.sumneko_lua.setup {
+	on_attach = on_attach_vim,
+	capabilities = capabilities,
+	settings = {
+		Lua = {
+			runtime = {
+				-- Get the language server to recognize LuaJIT globals like `jit` and `bit`
+				version = 'LuaJIT',
+				-- Setup your lua path
+				path = vim.split(package.path, ';'),
+			},
+			diagnostics = {
+				-- Get the language server to recognize the `vim` global
+				globals = {'vim', 'use'},
+			},
+			workspace = {
+				-- Make the server aware of Neovim runtime files
+				library = {
+					[vim.fn.expand('$VIMRUNTIME/lua')] = true,
+					[vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
 				},
 			},
 		},
-	}
+	},
+}
 -- }}}
 
 -- GOPLS {{{
-require'lspconfig'.gopls.setup{
+lspconfig.gopls.setup{
 	on_attach = on_attach_vim,
 	capabilities = capabilities,
 	cmd = {"gopls", "serve"},
