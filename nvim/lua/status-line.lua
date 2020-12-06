@@ -303,7 +303,7 @@ local getCurrentFunction = function()
 	return icon .. ":" ..  currentFunction
 end
 
--- Returns added, changed, deleted lines
+--- Returns added, changed, deleted lines
 local getGutter = function()
 	local gutter = fn.GitGutterGetHunkSummary()
 	local added, changed, deleted = gutter[1], gutter[2], gutter[3]
