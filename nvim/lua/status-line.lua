@@ -305,7 +305,7 @@ end
 
 -- Returns added, changed, deleted lines
 local getGutter = function()
-	local gutter = api.nvim_call_function("GitGutterGetHunkSummary", {})
+	local gutter = fn.GitGutterGetHunkSummary()
 	local added, changed, deleted = gutter[1], gutter[2], gutter[3]
 
 	if (added == 0) and (changed == 0) and (deleted == 0) then
