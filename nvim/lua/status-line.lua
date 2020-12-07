@@ -2,6 +2,7 @@ local api = vim.api
 local fn  = vim.fn
 
 require('colors')
+require('stringutil')
 
 -- Colors to set per filetype
 COLOR_FILE = ""
@@ -149,9 +150,37 @@ local getFullPath = function()
 		return ""
 	end
 
+	local splitFullpath = split(fullpath, "/")
+	local shortenPath = nil
+
+	-- Replace "/home/user/" with "~"
+	if splitFullpath[1] == "home" then
+		-- number of item to be removed: "home" and "user" thus 2
+		local itemRemoved = 2
+
+		local length = table.getn(splitFullpath)
+		shortenPath = "~/"
+
+		-- From {"home", "user", "path", "to", "file"}
+		-- to {"path", "to", "file"}
+		local slice = { unpack(splitFullpath, itemRemoved + 1, length) }
+
+		-- Concatenate slice
+		for i, value in pairs(slice) do
+			-- The condition prevents from adding the last item that is the file's name
+			-- so result is "~/path/to/"
+			if i ~= (length - itemRemoved) then
+				shortenPath = shortenPath .. value .. "/"
+			end
+		end
+
+		-- Removing last '/'
+		shortenPath = shortenPath.sub(shortenPath, 0, string.len(shortenPath) - string.len(shortenPath) - 1)
+	end
+
 	local currentPath = string.sub(fullpath, 0, string.len(fullpath) - string.len(filename) - 1)
 
-	return icon .. " :" .. currentPath
+	return icon .. " :" .. (shortenPath or currentPath)
 end
 
 --- Returns separators and filename's color for given filetype
