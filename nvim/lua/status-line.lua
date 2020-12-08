@@ -125,19 +125,22 @@ end
 
 --- Returns git relative path of current file
 local getGitRelativePath = function()
-	local filename = fn.expand("%:t")
-	local fullPath = fn.expand("%:p")
+	local filename = fn.expand("%:t") -- file's name with extension: "file.txt"
+	local fullPath = fn.expand("%:p") -- path to file: "/home/user/git_repo/path/to/file.txt"
 	local currentDirectory = fn.expand("%:p:h")
-	local gitRoot = fn.finddir(".git/..", currentDirectory .. ";")
+	local gitDirectory = fn.finddir(".git/..", currentDirectory .. ";") -- "/home/user/git_repo/"
 
+	-- When opening an empty buffer
 	if fullPath == "" then
 		return ""
 	end
 
-	local currentPath = string.sub(fullPath, string.len(gitRoot) + 2, string.len(fullPath) - string.len(filename) - 1)
+	-- Strip "/home/user/git_repo/" and file's name from "/home/user/git_repo/path/to/file.txt"
+	-- Thus result is "path/to"
+	local path = string.sub(fullPath, string.len(gitDirectory) + 2, string.len(fullPath) - string.len(filename) - 1)
 	local icon = ""
 
-	return icon .. " :" .. currentPath
+	return icon .. " :" .. path
 end
 
 --- Returns full path to current file
