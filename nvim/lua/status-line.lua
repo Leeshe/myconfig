@@ -2,7 +2,7 @@ local api = vim.api
 local fn  = vim.fn
 
 require('colors')
-require('stringutil')
+local stringutil = require('stringutil')
 
 -- Colors to set per filetype
 COLOR_FILE = ""
@@ -142,45 +142,44 @@ end
 
 --- Returns full path to current file
 local getFullPath = function()
-	local filename = fn.expand("%:t")
-	local fullpath = fn.expand("%:p")
+	local filename = fn.expand("%:t") -- file's name with extension: "file.txt"
+	local fullPath = fn.expand("%:p") -- path to file: "/home/user/path/to/file.txt"
 	local icon = ""
 
-	if fullpath == "" then
+	-- When opening an empty buffer
+	if fullPath == "" then
 		return ""
 	end
 
-	local splitFullpath = split(fullpath, "/")
+	local splitFullpath = stringutil.split(fullPath, "/") -- {"home", "user", "path", "to", "file.txt"}
 	local shortenPath = nil
 
 	-- Replace "/home/user/" with "~"
 	if splitFullpath[1] == "home" then
-		-- number of item to be removed: "home" and "user" thus 2
-		local itemRemoved = 2
-
-		local length = table.getn(splitFullpath)
 		shortenPath = "~/"
 
-		-- From {"home", "user", "path", "to", "file"}
-		-- to {"path", "to", "file"}
-		local slice = { unpack(splitFullpath, itemRemoved + 1, length) }
+		-- Number of item to be removed: "home" and "user" thus 2
+		local itemRemoved = 2
 
-		-- Concatenate slice
-		for i, value in pairs(slice) do
-			-- The condition prevents from adding the last item that is the file's name
-			-- so result is "~/path/to/"
-			if i ~= (length - itemRemoved) then
-				shortenPath = shortenPath .. value .. "/"
-			end
+		-- From {"home", "user", "path", "to", "file.txt"}
+		-- to {"path", "to", "file.txt"}
+		local slice = { unpack(splitFullpath, itemRemoved + 1, table.getn(splitFullpath)) }
+
+		-- Concatenate slice: "~/path/to/file.txt"
+		for _, value in pairs(slice) do
+			shortenPath = shortenPath .. value .. "/"
 		end
-
-		-- Removing last '/'
-		shortenPath = shortenPath.sub(shortenPath, 0, string.len(shortenPath) - string.len(shortenPath) - 1)
 	end
 
-	local currentPath = string.sub(fullpath, 0, string.len(fullpath) - string.len(filename) - 1)
+	-- shortenPath: current directory is at $HOME
+	-- fullPath: current directory is at root "/"
+	local path = shortenPath or fullPath
 
-	return icon .. " :" .. (shortenPath or currentPath)
+	-- Strip the last '/' and the file's name
+	-- path is "~/home/user/path/to"
+	path = string.sub(path, 0, string.len(path) - string.len(filename) - 2)
+
+	return icon .. " :" .. path
 end
 
 --- Returns separators and filename's color for given filetype
