@@ -196,3 +196,34 @@ api.nvim_set_keymap("i" , "<C-l>"     , "vsnip#available(1)  ? '<Plug>(vsnip-exp
 api.nvim_set_keymap("s" , "<C-l>"     , "vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'" , { noremap = false , expr = true })
 
 -- }}}
+
+-- gitsigns {{{
+require('gitsigns').setup {
+	signs = {
+		add          = {hl = 'DiffAdd'   , text = '│'},
+		change       = {hl = 'DiffChange', text = '│'},
+		delete       = {hl = 'DiffDelete', text = '_'},
+		topdelete    = {hl = 'DiffDelete', text = '‾'},
+		changedelete = {hl = 'DiffChange', text = '~'},
+	},
+	keymaps = {
+		-- Default keymap options
+		noremap = true,
+		buffer = true,
+
+		['n gn'] = { expr = true, "&diff ? ']c' : '<cmd>lua require\"gitsigns\".next_hunk()<CR>'"},
+		['n gp'] = { expr = true, "&diff ? '[c' : '<cmd>lua require\"gitsigns\".prev_hunk()<CR>'"},
+
+		['n <leader>ga'] = '<cmd>lua require"gitsigns".stage_hunk()<CR>',
+		['n <leader>gu'] = '<cmd>lua require"gitsigns".reset_hunk()<CR>',
+		['n gs']         = '<cmd>lua require"gitsigns".preview_hunk()<CR>',
+		['n <leader>gb'] = '<cmd>lua require"gitsigns".blame_line()<CR>',
+
+	},
+	watch_index = {
+		interval = 1000
+	},
+	sign_priority = 6,
+	status_formatter = nil, -- Use default
+}
+-- }}}
