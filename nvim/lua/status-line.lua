@@ -161,12 +161,11 @@ local getFullPath = function()
 	if splitFullpath[1] == "home" then
 		shortenPath = "~/"
 
-		-- Number of item to be removed: "home" and "user" thus 2
-		local itemRemoved = 2
-
 		-- From {"home", "user", "path", "to", "file.txt"}
-		-- to {"path", "to", "file.txt"}
-		local slice = { unpack(splitFullpath, itemRemoved + 1, table.getn(splitFullpath)) }
+		-- to {"path", "to", "file.txt"} thus begin index at 3
+		local beginIndex = 3
+		local endIndex = table.getn(splitFullpath)
+		local slice = { unpack(splitFullpath, beginIndex, endIndex) }
 
 		-- Concatenate slice: "~/path/to/file.txt"
 		for _, value in pairs(slice) do
