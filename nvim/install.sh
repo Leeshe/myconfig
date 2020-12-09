@@ -70,7 +70,7 @@ createConfigsSymlinks() {
 		evaluateCommand "$messageRemoveSymlinkConfig" "$commandRemoveSymlinkConfig"
 
 		messageCreateSymlinkConfig="Creating symlink for '$symlink'"
-		commandCreateSymlinkConfig="ln -s $CURRENT_DIR/$symlink $NVIM_DIRECTORY/ftdetect"
+		commandCreateSymlinkConfig="ln -s $CURRENT_DIR/ftdetect/$symlink $NVIM_DIRECTORY/ftdetect"
 		evaluateCreateSymlink "$messageCreateSymlinkConfig" "$commandCreateSymlinkConfig"
 
 		echo "========================================="
