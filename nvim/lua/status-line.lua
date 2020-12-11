@@ -160,10 +160,12 @@ local getFullPath = function()
 
 	local splitFullpath = stringutil.split(fullPath, "/") -- {"home", "user", "path", "to", "file.txt"}
 	local shortenPath = nil
+	local shift; -- remove the last '/' from "~/project/" (HOME) or "/usr/lib/" (ROOT)
 
 	-- Replace "/home/user/" with "~"
 	if splitFullpath[1] == "home" then
 		shortenPath = "~/"
+		shift = 2; -- introducing the tilde '~' shifts the last '/' from 1 to the right thus removing the two last chars
 
 		-- From {"home", "user", "path", "to", "file.txt"}
 		-- to {"path", "to", "file.txt"} thus begin index at 3
@@ -175,6 +177,8 @@ local getFullPath = function()
 		for _, value in pairs(slice) do
 			shortenPath = shortenPath .. value .. "/"
 		end
+	else
+		shift = 1;
 	end
 
 	-- shortenPath: current directory is at $HOME
@@ -183,7 +187,7 @@ local getFullPath = function()
 
 	-- Strip the last '/' and the file's name
 	-- path is "~/home/user/path/to"
-	path = string.sub(path, 0, string.len(path) - string.len(filename) - 2)
+	path = string.sub(path, 0, string.len(path) - string.len(filename) - shift)
 
 	return icon .. " :" .. path
 end
