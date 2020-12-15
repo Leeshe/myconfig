@@ -21,8 +21,8 @@ option.updatetime  = 100     -- Update time in ms
 option.wildoptions = 'pum'   -- List of words that change how |cmdline-completion| is done.
 option.clipboard   = "unnamedplus"               -- Register clipboard
 option.completeopt = "menuone,noinsert,noselect" -- A comma separated list of options for Insert mode completion |ins-completion|
--- option.wildmenu = true -- Autocomplete commands using nice menu in place of window status. Enable CTRL-N and CTRL-P to scroll through matches.
--- option.wildmode = 'longest:full,full'-- For autocompletion, complete as much as you can.
+option.wildmenu = true -- Autocomplete commands using nice menu in place of window status. Enable CTRL-N and CTRL-P to scroll through matches.
+option.wildmode = 'longest:full,full'-- For autocompletion, complete as much as you can.
 
 
 window_option.cursorline     = true -- Highlight line under cursor. It helps with navigation.
