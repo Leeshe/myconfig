@@ -409,18 +409,9 @@ function Module.activeLine()
 		end
 	else
 		-- GitHub icon
-		api.nvim_command("hi " .. HIGHLIGHT_GIT .. " guifg=" .. BLUE_RIBBON  .. " guibg=none")
-		statusline = statusline .. "%#" .. HIGHLIGHT_GIT .. "#"
-		statusline = statusline .. SEPARATOR_LEFT
-
-		api.nvim_command("hi " .. HIGHLIGHT_GIT_NAME .. " guifg=" .. WHITE .. " guibg=" .. BLUE_RIBBON)
+		api.nvim_command("hi " .. HIGHLIGHT_GIT_NAME .. " guifg=" .. WHITE  .. " guibg=none")
 		statusline = statusline .. "%#" .. HIGHLIGHT_GIT_NAME .. "#"
-		statusline = statusline .. " "
-
-		api.nvim_command("hi " .. HIGHLIGHT_GIT .. " guifg=" .. BLUE_RIBBON .. " guibg=none")
-		statusline = statusline .. "%#" .. HIGHLIGHT_GIT .. "#"
-		statusline = statusline .. SEPARATOR_RIGHT
-
+		statusline = statusline .. "  "
 		statusline = statusline .. " "
 
 		-- Directory
