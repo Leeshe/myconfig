@@ -171,7 +171,7 @@ local completion_chain_complete_list = {
 
 local completion_item_priority = {
 	["識"] = 7,
-	["𝝬"] = 6,
+	["𝑋"] = 6,
 	["﬌"] = 5,
 	["ƒ"] = 4,
 	[""] = 3,
