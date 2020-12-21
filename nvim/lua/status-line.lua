@@ -73,6 +73,7 @@ local extensions = {
 	edit        = "",
 	fugitive    = "",
 	go          = "",
+	html        = "",
 	help        = "",
 	java        = "",
 	javascript  = "",
@@ -208,6 +209,10 @@ local getColorsPerFiletype = function(filetype)
 
 	if filetype == 'help' then
 		separatorColor, fileNameColor = FERN_GREEN, WHITE
+	end
+
+	if filetype == 'html' then
+		separatorColor, fileNameColor = WHITE, TANGO
 	end
 
 	if filetype == 'java' then
