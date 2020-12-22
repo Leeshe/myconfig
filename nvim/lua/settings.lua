@@ -1,6 +1,7 @@
 local api           = vim.api
 local cmd           = vim.cmd
 local option        = vim.o
+local buffer_option = vim.bo
 local window_option = vim.wo
 
 option.autoindent  = true    -- Autoindent when starting new line, or using o or O
@@ -23,6 +24,10 @@ option.clipboard   = "unnamedplus"               -- Register clipboard
 option.completeopt = "menuone,noinsert,noselect" -- A comma separated list of options for Insert mode completion |ins-completion|
 option.wildmenu = true -- Autocomplete commands using nice menu in place of window status. Enable CTRL-N and CTRL-P to scroll through matches.
 option.wildmode = 'longest:full,full'-- For autocompletion, complete as much as you can.
+
+
+buffer_option.shiftwidth = 0 -- When indenting with '>', use spaces width
+buffer_option.tabstop    = 4 -- Show existing tab with spaces width
 
 
 window_option.cursorline     = true -- Highlight line under cursor. It helps with navigation.
