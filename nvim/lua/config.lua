@@ -179,6 +179,8 @@ local completion_item_priority = {
 	[""] = 1,
 }
 
+vim.g.completion_expand_characters = {' ', '\t', '>', ';', ')'} -- Solve https://github.com/nvim-lua/completion-nvim/issues/308
+
 -- completion-nvim has chain completion support inspired by vim-mucomplete. -- vim.g.completion_chain_complete_list = completion_chain_complete_list
 
 vim.g.completion_items_priority = completion_item_priority -- Priority order of suggestions
