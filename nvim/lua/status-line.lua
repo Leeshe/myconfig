@@ -351,6 +351,10 @@ local getGitSigns = function()
 	local signs = vim.b.gitsigns_status_dict or {added = 0, changed = 0, removed = 0}
 	local added, changed, removed = signs['added'], signs['changed'], signs['removed']
 
+	if (added == nil) and (changed == nil) and (removed == nil) then
+		return ""
+	end
+
 	if (added == 0) and (changed == 0) and (removed == 0) then
 		return ""
 	end
