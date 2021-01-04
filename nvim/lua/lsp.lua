@@ -66,7 +66,12 @@ lspconfig.jdtls.setup{
 -- }}}
 
 -- SUMNEKO_LUA {{{
+local system_name = "Linux"
+local sumneko_root_path = vim.fn.stdpath('cache') .. "/lspconfig/sumneko_lua/lua-language-server"
+local sumneko_binary = sumneko_root_path .. "/bin/" .. system_name .. "/lua-language-server"
+
 lspconfig.sumneko_lua.setup {
+	cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
 	on_attach = on_attach_vim,
 	capabilities = capabilities,
 	settings = {
