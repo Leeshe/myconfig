@@ -101,6 +101,13 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 # Notification for slack, known issue on Ubuntu 16.04
 export ELECTRON_USE_UBUNTU_NOTIFIER=1
+
+# Configs for nvim's lspconfig
+export JAR=~/GitHub/eclipse.jdt.ls/org.eclipse.jdt.ls.product/target/repository/plugins/org.eclipse.equinox.launcher_1.6.0.v20200915-1508.jar
+export GRADLE_HOME=$HOME/gradle
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/
+export JDTLS_CONFIG=~/GitHub/eclipse.jdt.ls/org.eclipse.jdt.ls.product/target/repository/config_linux
+export WORKSPACE=$HOME/workspace
 # }}}
 
 source $(dirname $(gem which colorls))/tab_complete.sh
