@@ -143,10 +143,14 @@ api.nvim_command("hi DiffAdd    guibg = none guifg = lightgreen")
 api.nvim_command("hi DiffDelete guibg = none guifg = red       ")
 api.nvim_command("hi DiffChange guibg = none guifg = sandybrown")
 
-api.nvim_set_keymap("n" , "gs"         , ":GitGutterPreviewHunk<CR>" , { noremap = false })
-api.nvim_set_keymap("n" , "<Leader>gu" , ":GitGutterUndoHunk<CR>"    , { noremap = false })
-api.nvim_set_keymap("n" , "<Leader>ga" , ":GitGutterStageHunk<CR>"   , { noremap = false })
+api.nvim_set_keymap("n" , "gs"         , ":GitGutterPreviewHunk<CR>"  , { noremap = false })
+api.nvim_set_keymap("n" , "<Leader>gu" , ":GitGutterUndoHunk<CR>"     , { noremap = false })
+api.nvim_set_keymap("n" , "<Leader>ga" , ":GitGutterStageHunk<CR>"    , { noremap = false })
+api.nvim_set_keymap("n" , "gp"         , ":GitGutterPreviousHunk<CR>" , { noremap = false })
+api.nvim_set_keymap("n" , "gn"         , ":GitGutterNextHunk<CR>"     , { noremap = false })
 
+vim.g.gitgutter_sign_added = '│'
+vim.g.gitgutter_sign_modified = '│'
 -- }}}
 
 -- LSP Config {{{
