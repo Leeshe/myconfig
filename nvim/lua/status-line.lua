@@ -347,15 +347,11 @@ local getCurrentFunction = function()
 end
 
 --- Returns added, changed, deleted lines
-local getGitSigns = function()
-	local signs = vim.b.gitsigns_status_dict or {added = 0, changed = 0, removed = 0}
-	local added, changed, removed = signs['added'], signs['changed'], signs['removed']
+local getGutter = function()
+	local gutter = fn.GitGutterGetHunkSummary()
+	local added, changed, deleted = gutter[1], gutter[2], gutter[3]
 
-	if (added == nil) and (changed == nil) and (removed == nil) then
-		return ""
-	end
-
-	if (added == 0) and (changed == 0) and (removed == 0) then
+	if (added == 0) and (changed == 0) and (deleted == 0) then
 		return ""
 	end
 
@@ -369,8 +365,8 @@ local getGitSigns = function()
 		hunks = hunks .. "~" .. changed
 	end
 
-	if removed ~= 0 then
-		hunks = hunks .. "-" .. removed
+	if deleted ~= 0 then
+		hunks = hunks .. "-" .. deleted
 	end
 
 	return hunks
@@ -492,13 +488,13 @@ function Module.activeLine()
 	-- Right side items
 	statusline = statusline .."%="
 
-	-- Git signs
-	local signs = getGitSigns()
+	-- Gutter
+	local gutters = getGutter()
 
-	if signs ~= "" then
+	if gutters ~= "" then
 		api.nvim_command("hi " .. HIGHLIGHT_GUTTER_NAME .. " guifg=" .. GOLD .. " guibg=none")
 		statusline = statusline .. "%#" .. HIGHLIGHT_GUTTER_NAME .. "#"
-		statusline = statusline .. signs
+		statusline = statusline .. gutters
 		statusline = statusline .. " "
 	end
 

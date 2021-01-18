@@ -34,7 +34,7 @@ cmd [[packadd! vim-easy-align]]
 
 -- Git
 cmd [[packadd! vim-fugitive]]
-cmd [[packadd! gitsigns.nvim]]
+cmd [[packadd! vim-gitgutter]]
 
 -- LSP
 cmd [[packadd! nvim-lspconfig]]
@@ -59,7 +59,7 @@ return require('packer').startup(function()
 
 	-- Git
 	use { 'tpope/vim-fugitive', opt = true }
-	use { 'lewis6991/gitsigns.nvim', opt = true, requires = {'nvim-lua/plenary.nvim', opt = true}  }
+	use { 'airblade/vim-gitgutter', opt = true }
 
 	-- Finder
 	use { 'Yggdroot/LeaderF', opt = true}
