@@ -67,7 +67,12 @@ end
 local capabilities = protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
--- require'lspconfig'.jdtls['document_config']['default_config']['init_options']['workspace'] = "newWorkspace"
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+ vim.lsp.diagnostic.on_publish_diagnostics, {
+   underline = false, -- Enable underline, use default values
+   virtual_text = false -- Enable virtual text only on Warning or above, override spacing to 2
+ }
+)
 
 -- JDTLS {{{
 local root_pattern = lspconfig.util.root_pattern

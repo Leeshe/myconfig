@@ -14,6 +14,15 @@ api.nvim_command("hi LspDiagnosticsDefaultError   guifg=" .. CONIFER)
 api.nvim_command("hi LspDiagnosticsDefaultWarning guifg=" .. GOLD)
 api.nvim_command("hi LspDiagnosticsDefaultHint    guifg=" .. BRILLIANT_ROSE)
 
+api.nvim_command("hi LspDiagnosticsVirtualTextError guifg=Red ctermfg=Red")
+api.nvim_command("hi LspDiagnosticsVirtualTextWarning guifg=Yellow ctermfg=Yellow")
+api.nvim_command("hi LspDiagnosticsVirtualTextInformation guifg=White ctermfg=White")
+api.nvim_command("hi LspDiagnosticsVirtualTextHint guifg=White ctermfg=White")
+
+api.nvim_command("hi LspDiagnosticsUnderlineError       guifg=NONE gui=underline")
+api.nvim_command("hi LspDiagnosticsUnderlineWarning     guifg=NONE gui=underline")
+api.nvim_command("hi LspDiagnosticsUnderlineInformation guifg=NONE gui=underline")
+api.nvim_command("hi LspDiagnosticsUnderlineHint        guifg=NONE gui=underline")
 -- }}}
 
 -- nvim-colorizer {{{
@@ -162,6 +171,7 @@ api.nvim_set_keymap("n" , "gW"         , "<cmd>lua vim.lsp.buf.workspace_symbol(
 api.nvim_set_keymap("n" , "gd"         , "<cmd>lua vim.lsp.buf.definition()<CR>"       , { noremap = true })
 api.nvim_set_keymap("n" , "<Leader>ac" , "<cmd>lua vim.lsp.buf.code_action()<CR>"      , { noremap = true })
 api.nvim_set_keymap("n" , "<Leader>rn" , "<cmd>lua vim.lsp.buf.rename()<CR>"           , { noremap = true })
+api.nvim_set_keymap("n" , "<Leader>e" , "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>" , { noremap = true })
 -- }}}
 
 -- barbar.nvim {{{
