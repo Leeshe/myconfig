@@ -4,14 +4,28 @@ local lspconfig = require 'lspconfig'
 
 --- Document highlights
 local function document_highlight()
- 	api.nvim_command [[autocmd CursorHold  <buffer> lua vim.lsp.buf.document_highlight()]]
-	api.nvim_command [[autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()]]
-	api.nvim_command [[autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()]]
+	vim.api.nvim_exec([[
+		hi LspReferenceRead  guibg=#121111 guifg=#FFFF00
+		hi LspReferenceText  guibg=#121111 guifg=#FFFF00
+		hi LspReferenceWrite guibg=#121111 guifg=#FFFF00
+
+		augroup lsp_document_highlight
+			autocmd!
+			autocmd CursorHold  <buffer> lua vim.lsp.buf.document_highlight()
+			autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()
+			autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+		augroup END
+	]], false)
 end
 
 --- Enable completions on new buffers
 local function attach_completion()
-    api.nvim_command [[autocmd BufEnter * lua require'completion'.on_attach()]]
+	vim.api.nvim_exec([[
+		augroup lsp_completion
+			autocmd!
+			autocmd BufEnter * lua require'completion'.on_attach()
+		augroup END
+	]], false)
 end
 
 --- Custom attach
