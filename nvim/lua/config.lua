@@ -212,44 +212,31 @@ api.nvim_set_keymap("n", "<Leader>bd", ":BufferClose<CR>", { noremap = true, sil
 
 -- }}}
 
--- nvim-completion {{{
+-- nvim-compe {{{
 require('lsp')
 
-local completion_chain_complete_list = {
-	default = {
-		{ complete_items = {'path'}, triggered_only = {'/'} },
-		{ complete_items = {'lsp', 'snippet'} },
-		{ mode = {'<c-p>'} },
-		{ mode = {'<c-n>'} },
-	},
-}
+api.nvim_set_keymap("i" , "<C-space>" , "compe#complete()"      , { noremap = true , expr = true , silent = true })
+api.nvim_set_keymap("i" , "<CR>"      , "compe#confirm('<CR>')" , { noremap = true , expr = true , silent = true })
+api.nvim_set_keymap("i" , "<C-e>"     , "compe#complete()"      , { noremap = true , expr = true , silent = true })
 
-local completion_item_priority = {
-	["識"] = 7,
-	["𝑋"] = 6,
-	["﬌"] = 5,
-	["ƒ"] = 4,
-	[""] = 3,
-	[""] = 2,
-	[""] = 1,
-}
+api.nvim_set_keymap("i" , "<Tab>"   , "pumvisible() ? '<C-n>' : '<Tab>'"   , { noremap = true , expr = true })  -- Use Tab to cycle forward through suggestions
+api.nvim_set_keymap("i" , "<S-Tab>" , "pumvisible() ? '<C-p>' : '<S-Tab>'" , { noremap = true , expr = true })  -- Use Shift-Tab to cycle backward through suggestions
 
-vim.g.completion_expand_characters = {' ', '\t', '>', ';', ')'} -- Solve https://github.com/nvim-lua/completion-nvim/issues/308
-
--- completion-nvim has chain completion support inspired by vim-mucomplete. -- vim.g.completion_chain_complete_list = completion_chain_complete_list
-
-vim.g.completion_items_priority = completion_item_priority -- Priority order of suggestions
-vim.g.completion_matching_strategy_list = { 'fuzzy', 'substring', 'exact', 'all' } -- There are three different kind of matching technique implement in completion-nvim: 'substring', 'fuzzy', 'exact' or 'all'.
-vim.g.completion_auto_change_source = 1 -- You can let completion-nvim changes source whenever current source has no complete items by setting this option to 1.
-vim.g.completion_enable_auto_signature = 1 -- By default signature help opens automatically whenever it is availabe.
-vim.g.completion_enable_auto_paren = 1 -- Enable the auto insert parenthesis feature.
-vim.g.completion_enable_auto_popup = 1 -- This variable enable automatically popup window for completion.
-vim.g.completion_enable_auto_hover = 1 -- By default, completion-nvim will automatically open a hover window when you navigate through the complete items.
-
-api.nvim_set_keymap("i" , "<C-space>" , "<Plug>(completion_trigger)"                                     , { noremap = false, silent = true }) -- Use Ctrl-Space to trigger completion
-api.nvim_set_keymap("i" , "<Tab>"     , "pumvisible() ? '<C-n>' : '<Tab>'"                               , { noremap = true  , expr = true })  -- Use Tab to cycle forward through suggestions
-api.nvim_set_keymap("i" , "<S-Tab>"   , "pumvisible() ? '<C-p>' : '<S-Tab>'"                             , { noremap = true  , expr = true })  -- Use Shift-Tab to cycle backward through suggestions
 api.nvim_set_keymap("i" , "<C-l>"     , "vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'" , { noremap = false , expr = true })  -- Ctrl-L to jump on placeholders.
 api.nvim_set_keymap("s" , "<C-l>"     , "vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'" , { noremap = false , expr = true })
 
+require'compe'.setup {
+	enabled = true;
+	debug = false;
+	min_length = 1;
+	source = {
+		buffer   = true;
+		calc     = true;
+		nvim_lsp = true;
+		nvim_lua = true;
+		path     = true;
+		spell    = true;
+		vsnip    = true;
+	};
+}
 -- }}}

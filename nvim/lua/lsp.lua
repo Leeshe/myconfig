@@ -18,21 +18,8 @@ local function document_highlight()
 	]], false)
 end
 
---- Enable completions on new buffers
-local function attach_completion()
-	vim.api.nvim_exec([[
-		augroup lsp_completion
-			autocmd!
-			autocmd BufEnter * lua require'completion'.on_attach()
-		augroup END
-	]], false)
-end
-
 --- Custom attach
-local on_attach_vim = function(client)
-	require'completion'.on_attach(client)
-
-	attach_completion()
+local on_attach_vim = function()
 	document_highlight()
 
 	protocol.CompletionItemKind = {

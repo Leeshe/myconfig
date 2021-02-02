@@ -14,8 +14,7 @@ cmd [[packadd! nvim-colorizer.lua]]
 cmd [[packadd! vim-sublime-monokai]]
 
 -- Completion
-cmd [[packadd! completion-nvim]]
-cmd [[packadd! completion-buffers]]
+cmd [[packadd! nvim-compe]]
 cmd [[packadd! vim-vsnip]]
 cmd [[packadd! vim-vsnip-integ]]
 cmd [[packadd! auto-pairs]]
@@ -53,8 +52,7 @@ return require('packer').startup(function()
 	use { 'ErichDonGubler/vim-sublime-monokai', opt = true }
 
 	-- Completion
-	use { 'nvim-lua/completion-nvim', opt = true, requires = {{'hrsh7th/vim-vsnip', opt = true}, {'hrsh7th/vim-vsnip-integ', opt = true}} }
-	use { 'steelsojka/completion-buffers', opt = true }
+	use { 'hrsh7th/nvim-compe', opt = true, requires = {{'hrsh7th/vim-vsnip', opt = true}, {'hrsh7th/vim-vsnip-integ', opt = true}} }
 	use { 'jiangmiao/auto-pairs', opt = true }
 
 	-- Git

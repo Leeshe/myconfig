@@ -42,8 +42,7 @@ are not installed by this script.
 | :-          | :-                                                                           | :-                                                                                                              |
 | Colors      | [nvim-colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)         | A high-performance color highlighter for Neovim which has no external dependencies!                             |
 | Colorscheme | [vim-sublime-monokai](https://github.com/ErichDonGubler/vim-sublime-monokai) | vim-sublime-monokai is a refined Monokai color scheme for vim tries to look like Sublime's default color scheme |
-| Completion  | [completion-nvim](https://github.com/nvim-lua/completion-nvim)               | Completion-nvim is an auto completion framework.                                                                |
-| Completion  | [completion-buffers](https://github.com/steelsojka/completion-buffers)       | A buffer completion source for completion-nvim                                                                  |
+| Completion  | [nvim-compe](https://github.com/hrsh7th/nvim-compe)                          | Auto completion plugin for nvim.
 | Completion  | [vim-vsnip](https://github.com/hrsh7th/vim-vsnip)                            | VSCode(LSP)'s snippet feature in vim.                                                                           |
 | Completion  | [vim-vsnip-integ](https://github.com/hrsh7th/vim-vsnip-integ)                | Snippet completion/expansion.                                                                                   |
 | Completion  | [auto-pairs](https://github.com/jiangmiao/auto-pairs)                        | Insert or delete brackets, parens, quotes in pair.                                                              |
