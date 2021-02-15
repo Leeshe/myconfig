@@ -213,10 +213,11 @@ api.nvim_set_keymap("n", "<Leader>bd", ":BufferClose<CR>", { noremap = true, sil
 -- }}}
 
 -- nvim-compe {{{
+
 require('lsp')
 
 api.nvim_set_keymap("i" , "<C-space>" , "compe#complete()"      , { noremap = true , expr = true , silent = true })
-api.nvim_set_keymap("i" , "<CR>"      , "compe#confirm('<CR>')" , { noremap = true , expr = true , silent = true })
+api.nvim_set_keymap("i" , "<CR>"      , "compe#confirm({ 'keys': '<Plug>delimitMateCR', 'mode': '' })" , { noremap = true , expr = true , silent = true })
 api.nvim_set_keymap("i" , "<C-e>"     , "compe#complete()"      , { noremap = true , expr = true , silent = true })
 
 api.nvim_set_keymap("i" , "<Tab>"   , "pumvisible() ? '<C-n>' : '<Tab>'"   , { noremap = true , expr = true })  -- Use Tab to cycle forward through suggestions
@@ -229,6 +230,8 @@ require'compe'.setup {
 	enabled = true;
 	debug = false;
 	min_length = 1;
+	documentation = true;
+	autocomplete = true;
 	source = {
 		buffer   = true;
 		calc     = true;
@@ -239,4 +242,5 @@ require'compe'.setup {
 		vsnip    = true;
 	};
 }
+
 -- }}}

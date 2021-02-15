@@ -17,7 +17,7 @@ cmd [[packadd! vim-sublime-monokai]]
 cmd [[packadd! nvim-compe]]
 cmd [[packadd! vim-vsnip]]
 cmd [[packadd! vim-vsnip-integ]]
-cmd [[packadd! auto-pairs]]
+cmd [[packadd! delimitMate]]
 
 -- Tree-sitter
 cmd [[packadd! nvim-treesitter]]
@@ -53,7 +53,8 @@ return require('packer').startup(function()
 
 	-- Completion
 	use { 'hrsh7th/nvim-compe', opt = true, requires = {{'hrsh7th/vim-vsnip', opt = true}, {'hrsh7th/vim-vsnip-integ', opt = true}} }
-	use { 'jiangmiao/auto-pairs', opt = true }
+	-- use { 'jiangmiao/auto-pairs', opt = true }
+	use { 'Raimondi/delimitMate', opt = true }
 
 	-- Git
 	use { 'tpope/vim-fugitive', opt = true }
