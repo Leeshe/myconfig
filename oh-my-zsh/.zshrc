@@ -54,7 +54,7 @@ source $ZSH/oh-my-zsh.sh
 USER=``
 
 # Time
-PROMPT='%{$fg[yellow]%}[%D{%L:%M:%S}] '$PROMPT
+#PROMPT='%{$fg[yellow]%}[%D{%L:%M:%S}] '$PROMPT
 # }}}
 
 # ALIAS {{{
@@ -84,7 +84,7 @@ ls
 # ZSH-AUTOSUGGESTIONS {{{
 bindkey '^ ' autosuggest-accept
 
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=gold,bg=cyan'
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=gold,bg=magenta'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # }}}
