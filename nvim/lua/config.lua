@@ -244,3 +244,9 @@ require'compe'.setup {
 }
 
 -- }}}
+
+-- vim-closetag {{{
+
+vim.g.closetag_filetypes = 'html,xhtml,phtml,xml,jsp,jspf'
+
+-- }}}
