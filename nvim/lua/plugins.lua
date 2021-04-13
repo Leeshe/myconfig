@@ -36,6 +36,9 @@ cmd [[packadd! vim-easy-align]]
 cmd [[packadd! vim-fugitive]]
 cmd [[packadd! vim-gitgutter]]
 
+-- Interface
+cmd [[packadd! indent-blankline.nvim]]
+
 -- LSP
 cmd [[packadd! nvim-lspconfig]]
 cmd [[packadd! lsp-status.nvim]]
@@ -54,13 +57,15 @@ return require('packer').startup(function()
 
 	-- Completion
 	use { 'hrsh7th/nvim-compe', opt = true, requires = {{'hrsh7th/vim-vsnip', opt = true}, {'hrsh7th/vim-vsnip-integ', opt = true}} }
-	-- use { 'jiangmiao/auto-pairs', opt = true }
 	use { 'Raimondi/delimitMate', opt = true }
 	use { 'alvan/vim-closetag', opt = true}
 
 	-- Git
 	use { 'tpope/vim-fugitive', opt = true }
 	use { 'airblade/vim-gitgutter', opt = true }
+
+	-- Interface
+	use { 'lukas-reineke/indent-blankline.nvim', branch = 'lua', opt = true }
 
 	-- Finder
 	use { 'Yggdroot/LeaderF', opt = true}

@@ -97,7 +97,7 @@ api.nvim_set_keymap("n" , "<Leader>f"  , ":LeaderfFunction<CR>"      , { noremap
 -- Telescope {{{
 
 api.nvim_set_keymap("n", "gr", "<cmd>lua require'telescope.builtin'.lsp_references{}<CR>", { noremap = true, silent = true })
-api.nvim_set_keymap("n", "<Leader>dc", "<cmd>lua require'telescope.builtin'.loclist{}<CR>", { noremap = true, silent = true })
+api.nvim_set_keymap("n", "<Leader>dc", "<cmd>lua require'telescope.builtin'.lsp_document_diagnostics({previewer = false})<CR>", { noremap = true, silent = true })
 
 api.nvim_command("hi TelescopeSelection guifg=#FFFF00 gui=bold")
 api.nvim_command("hi TelescopeNormal guibg=#00000F")
@@ -122,7 +122,7 @@ require('telescope').setup{
 		layout_defaults = {
 			-- TODO add builtin options.
 		},
-		file_sorter =  require'telescope.sorters'.get_fuzzy_file,
+		file_sorter =  require'telescope.sorters'.get_fzy_sorter,
 		file_ignore_patterns = {},
 		generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
 		shorten_path = true,
@@ -248,5 +248,14 @@ require'compe'.setup {
 -- vim-closetag {{{
 
 vim.g.closetag_filetypes = 'html,xhtml,phtml,xml,jsp,jspf'
+
+-- }}}
+
+-- indent_blankline {{{
+
+vim.g.indent_blankline_show_trailing_blankline_indent = false
+vim.g.indent_blankline_show_current_context = true
+vim.g.indent_blankline_context_patterns = {'class', 'function', 'method', '^if', '^while', '^for', '^object', '^table', 'block'}
+vim.g.indent_blankline_char_highlight_list = { 'Function', 'Type', 'String', 'Comment', 'Number' }
 
 -- }}}
