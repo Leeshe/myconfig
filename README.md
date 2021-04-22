@@ -38,32 +38,31 @@ are not installed by this script.
 
 ## :bookmark_tabs: (Neo)Vim Plugins
 
-| Category    | Plugin                                                                       | Description                                                                                                     |
-| :-          | :-                                                                           | :-                                                                                                              |
-| Colors      | [nvim-colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)         | A high-performance color highlighter for Neovim which has no external dependencies!                             |
-| Colorscheme | [vim-sublime-monokai](https://github.com/ErichDonGubler/vim-sublime-monokai) | vim-sublime-monokai is a refined Monokai color scheme for vim tries to look like Sublime's default color scheme |
-| Completion  | [nvim-compe](https://github.com/hrsh7th/nvim-compe)                          | Auto completion plugin for nvim.
-| Completion  | [vim-vsnip](https://github.com/hrsh7th/vim-vsnip)                            | VSCode(LSP)'s snippet feature in vim.                                                                           |
-| Completion  | [vim-vsnip-integ](https://github.com/hrsh7th/vim-vsnip-integ)                | Snippet completion/expansion.                                                                                   |
-| Completion  | [auto-pairs](https://github.com/jiangmiao/auto-pairs)                        | Insert or delete brackets, parens, quotes in pair.                                                              |
-| Finder      | [LeaderF](https://github.com/Yggdroot/LeaderF)                               | An efficient fuzzy finder that helps to locate files, buffers, mrus, gtags, etc. on the fly.                    |
-| Finder      | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)           | Telescope.nvim is a next generation library for creating floating pickers with advanced features..              |
-| Formatting  | [vim-easy-align](https://github.com/junegunn/vim-easy-align)                 | A simple, easy-to-use Vim alignment plugin.                                                                     |
-| Git         | [fugitive.vim](https://github.com/tpope/vim-fugitive)                        | Git wrapper                                                                                                     |
-| Git         | [vim-gitgutter](https://github.com/airblade/vim-gitgutter)                   | A Vim plugin which shows a git diff in the sign column.                                                         |
-| LSP         | [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)                   | Collection of common configurations for the Nvim LSP client.                                                    |
-| LSP         | [lsp-status.nvim](https://github.com/nvim-lua/lsp-status.nvim)               | Neovim plugin/library for generating statusline components from the built-in LSP client.                        |
-| Parser      | [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)        | Treesitter configurations and abstraction layer for Neovim.                                                     |
-| Statusline  | [status-line.lua](nvim/lua/status-line.lua)                                  | Custom statusline, see screenshot                                                                               |
-| Tabs        | [barbar.nvim](https://github.com/romgrk/barbar.nvim)                         | Tabs, as understood by any other editor.                                                                        |
+| Category    | Plugin                                                                          | Description                                                                                                     |
+| :-          | :-                                                                              | :-                                                                                                              |
+| Colors      | [nvim-colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)            | A high-performance color highlighter for Neovim which has no external dependencies!                             |
+| Colorscheme | [vim-sublime-monokai](https://github.com/ErichDonGubler/vim-sublime-monokai)    | vim-sublime-monokai is a refined Monokai color scheme for vim tries to look like Sublime's default color scheme |
+| Completion  | [nvim-compe](https://github.com/hrsh7th/nvim-compe)                             | Auto completion plugin for nvim.                                                                                |
+| Completion  | [vim-vsnip](https://github.com/hrsh7th/vim-vsnip)                               | VSCode(LSP)'s snippet feature in vim.                                                                           |
+| Completion  | [vim-vsnip-integ](https://github.com/hrsh7th/vim-vsnip-integ)                   | Snippet completion/expansion.                                                                                   |
+| Completion  | [delimitMate](https://github.com/Raimondi/delimitMate)                          | This plug-in provides automatic closing of quotes, parenthesis, brackets, etc..                                 |
+| Finder      | [LeaderF](https://github.com/Yggdroot/LeaderF)                                  | An efficient fuzzy finder that helps to locate files, buffers, mrus, gtags, etc. on the fly.                    |
+| Finder      | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)              | Telescope.nvim is a next generation library for creating floating pickers with advanced features..              |
+| Formatting  | [vim-easy-align](https://github.com/junegunn/vim-easy-align)                    | A simple, easy-to-use Vim alignment plugin.                                                                     |
+| Git         | [fugitive.vim](https://github.com/tpope/vim-fugitive)                           | Git wrapper                                                                                                     |
+| Git         | [vim-gitgutter](https://github.com/airblade/vim-gitgutter)                      | A Vim plugin which shows a git diff in the sign column.                                                         |
+| Interface   | [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim) | Indent guides on blank lines for Neovim                                                                         |
+| LSP         | [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)                      | Collection of common configurations for the Nvim LSP client.                                                    |
+| LSP         | [lsp-status.nvim](https://github.com/nvim-lua/lsp-status.nvim)                  | Neovim plugin/library for generating statusline components from the built-in LSP client.                        |
+| Parser      | [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)           | Treesitter configurations and abstraction layer for Neovim.                                                     |
+| Statusline  | [status-line.lua](nvim/lua/status-line.lua)                                     | Custom statusline, see screenshot                                                                               |
+| Tabs        | [barbar.nvim](https://github.com/romgrk/barbar.nvim)                            | Tabs, as understood by any other editor.                                                                        |
 
 ## :bookmark_tabs: Other interesting plugins
 
 | Category       | Plugin                                                                          | Description                                           |
 | :-             | :-                                                                              | :-                                                    |
 | Fading Buffers | [vimade](https://github.com/TaDaa/vimade)                                       | Fade your inactive buffers                            |
-| Interface      | [indentLine](https://github.com/Yggdroot/indentLine)                            | Display thin vertical lines at each indentation level |
-| Interface      | [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim) | Indent guides on blank lines for Neovim               |
 | Integration    | [vim-test](https://github.com/janko/vim-test)                                   | Run your tests at the speed of thought                |
 | Interface      | [scrollbar.nvim](https://github.com/Xuyuanp/scrollbar.nvim)                     | scrollbar for neovim(nightly)                         |
 
