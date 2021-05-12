@@ -1,3 +1,15 @@
+<p align="center">
+	<a href="https://github.com/ChrisAmelia/dotfiles">
+		<img src="https://img.shields.io/github/repo-size/ChrisAmelia/dotfiles" alt="Repository Size" />
+	</a>
+	<a href="https://github.com/ChrisAmelia/dotfiles/blob/master/LICENSE">
+		<img src="https://img.shields.io/github/license/ChrisAmelia/dotfiles" alt="Last commit" />
+	</a>
+	<a href="https://github.com/ChrisAmelia/dotfiles/commits/master">
+		<img src="https://img.shields.io/github/last-commit/ChrisAmelia/dotfiles" alt="License" />
+	</a>
+</p>
+
 # :book: Table of contents
 
 - [Dotfiles](#open_file_folder-dotfiles)
