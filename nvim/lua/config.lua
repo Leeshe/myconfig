@@ -184,6 +184,8 @@ local bufferline = {
 	clickable = false,
 	letters = 'asdfjkl;ghnmxcbziowerutyqpASDFJKLGHNMXCBZIOWERUTYQP',
 	maximum_padding = 4,
+	maximum_length = 50,
+	auto_hide = true,
 }
 
 vim.g.bufferline = bufferline
