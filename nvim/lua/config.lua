@@ -222,11 +222,44 @@ api.nvim_set_keymap("i" , "<C-space>" , "compe#complete()"      , { noremap = tr
 api.nvim_set_keymap("i" , "<CR>"      , "compe#confirm({ 'keys': '<Plug>delimitMateCR', 'mode': '' })" , { noremap = true , expr = true , silent = true })
 api.nvim_set_keymap("i" , "<C-e>"     , "compe#complete()"      , { noremap = true , expr = true , silent = true })
 
-api.nvim_set_keymap("i" , "<Tab>"   , "pumvisible() ? '<C-n>' : '<Tab>'"   , { noremap = true , expr = true })  -- Use Tab to cycle forward through suggestions
-api.nvim_set_keymap("i" , "<S-Tab>" , "pumvisible() ? '<C-p>' : '<S-Tab>'" , { noremap = true , expr = true })  -- Use Shift-Tab to cycle backward through suggestions
+local t = function(str)
+  return vim.api.nvim_replace_termcodes(str, true, true, true)
+end
 
-api.nvim_set_keymap("i" , "<C-l>"     , "vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'" , { noremap = false , expr = true })  -- Ctrl-L to jump on placeholders.
-api.nvim_set_keymap("s" , "<C-l>"     , "vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'" , { noremap = false , expr = true })
+local check_back_space = function()
+    local col = vim.fn.col('.') - 1
+    if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
+        return true
+    else
+        return false
+    end
+end
+
+_G.tab_complete = function()
+  if vim.fn.pumvisible() == 1 then
+    return t "<C-n>"
+  elseif vim.fn.call("vsnip#available", {1}) == 1 then
+    return t "<Plug>(vsnip-expand-or-jump)"
+  elseif check_back_space() then
+    return t "<Tab>"
+  else
+    return vim.fn['compe#complete']()
+  end
+end
+_G.s_tab_complete = function()
+  if vim.fn.pumvisible() == 1 then
+    return t "<C-p>"
+  elseif vim.fn.call("vsnip#jumpable", {-1}) == 1 then
+    return t "<Plug>(vsnip-jump-prev)"
+  else
+    return t "<S-Tab>"
+  end
+end
+
+vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 
 require'compe'.setup {
 	enabled = true;
@@ -236,11 +269,11 @@ require'compe'.setup {
 	autocomplete = true;
 	source = {
 		buffer   = true;
-		calc     = true;
+		calc     = false;
 		nvim_lsp = true;
 		nvim_lua = true;
 		path     = true;
-		spell    = true;
+		spell    = false;
 		vsnip    = true;
 	};
 }
