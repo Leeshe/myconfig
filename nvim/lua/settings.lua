@@ -1,38 +1,36 @@
-local api           = vim.api
-local cmd           = vim.cmd
-local option        = vim.o
-local buffer_option = vim.bo
-local window_option = vim.wo
+local api = vim.api
+local cmd = vim.cmd
+local opt = vim.opt
 
-option.autoindent  = true    -- Autoindent when starting new line, or using o or O
-option.background  = 'dark'  -- When set to "dark" or "light", adjusts the default color groups for that background type.
-option.encoding    = 'utf-8' -- Force utf-8 encoding
-option.hlsearch    = true    -- Enable search highlighting.
-option.ignorecase  = true    -- Ignore case when searching
-option.incsearch   = true    -- Enable highlighted case-insensitive incremential search.
-option.modeline    = false   -- Don't parse modelines (google vim modeline vulnerability).
-option.modifiable  = true    -- Make buffer modifiable
-option.shiftwidth  = 4       -- When indenting with '>', use spaces width
-option.showcmd     = true    -- Show the size of block one selected in visual mode
-option.showmatch   = true    -- The cursor will briefly jump to the matching brace when you insert one.
-option.splitright  = true    -- When on, splitting a window will put the new window right of the current one.
-option.tabstop     = 4       -- Show existing tab with spaces width
-option.ttimeoutlen = 50      -- Allow for mappings including Esc, while preserving zero timeout after pressing it manually
-option.updatetime  = 100     -- Update time in ms
-option.wildoptions = 'pum'   -- List of words that change how |cmdline-completion| is done.
-option.clipboard   = "unnamedplus"               -- Register clipboard
-option.completeopt = "menu,menuone,noselect" -- A comma separated list of options for Insert mode completion |ins-completion|
-option.wildmenu = true -- Autocomplete commands using nice menu in place of window status. Enable CTRL-N and CTRL-P to scroll through matches.
-option.wildmode = 'longest:full,full'-- For autocompletion, complete as much as you can.
+opt.autoindent  = true    -- Autoindent when starting new line, or using o or O
+opt.background  = 'dark'  -- When set to "dark" or "light", adjusts the default color groups for that background type.
+opt.encoding    = 'utf-8' -- Force utf-8 encoding
+opt.hlsearch    = true    -- Enable search highlighting.
+opt.ignorecase  = true    -- Ignore case when searching
+opt.incsearch   = true    -- Enable highlighted case-insensitive incremential search.
+opt.modeline    = false   -- Don't parse modelines (google vim modeline vulnerability).
+opt.modifiable  = true    -- Make buffer modifiable
+opt.shiftwidth  = 4       -- When indenting with '>', use spaces width
+opt.showcmd     = true    -- Show the size of block one selected in visual mode
+opt.showmatch   = true    -- The cursor will briefly jump to the matching brace when you insert one.
+opt.splitright  = true    -- When on, splitting a window will put the new window right of the current one.
+opt.tabstop     = 4       -- Show existing tab with spaces width
+opt.ttimeoutlen = 50      -- Allow for mappings including Esc, while preserving zero timeout after pressing it manually
+opt.updatetime  = 100     -- Update time in ms
+opt.wildoptions = 'pum'   -- List of words that change how |cmdline-completion| is done.
+opt.clipboard   = "unnamedplus"               -- Register clipboard
+opt.completeopt = "menu,menuone,noselect" -- A comma separated list of options for Insert mode completion |ins-completion|
+opt.wildmenu = true -- Autocomplete commands using nice menu in place of window status. Enable CTRL-N and CTRL-P to scroll through matches.
+opt.wildmode = 'longest:full,full'-- For autocompletion, complete as much as you can.
 
 
-buffer_option.shiftwidth = 0 -- When indenting with '>', use spaces width
-buffer_option.tabstop    = 4 -- Show existing tab with spaces width
+opt.shiftwidth = 0 -- When indenting with '>', use spaces width
+opt.tabstop    = 4 -- Show existing tab with spaces width
 
 
-window_option.cursorline     = true -- Highlight line under cursor. It helps with navigation.
-window_option.number         = true -- Show line numbers on the sidebar
-window_option.relativenumber = true -- Show the line number relative to the line with the cursor in front of each line
+opt.cursorline     = true -- Highlight line under cursor. It helps with navigation.
+opt.number         = true -- Show line numbers on the sidebar
+opt.relativenumber = true -- Show the line number relative to the line with the cursor in front of each line
 
 
 cmd("colorscheme sublimemonokai")    -- Set colorscheme
