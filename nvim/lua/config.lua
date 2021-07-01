@@ -88,7 +88,7 @@ vim.g.Lf_PreviewInPopup = 1
 vim.g.Lf_WindowPosition = 'popup'
 
 api.nvim_set_keymap("n" , "<C-n>"      , ":Leaderf file<CR>"         , { noremap = true })
-api.nvim_set_keymap("n" , "<Leader>rg" , ":LeaderfRgInteractive<CR>" , { noremap = true })
+api.nvim_set_keymap("n" , "<Leader>rg" , ":Leaderf rg -i -g '!git' " , { noremap = true })
 api.nvim_set_keymap("n" , "<Leader>rc" , ":LeaderfRgRecall<CR>"      , { noremap = true })
 api.nvim_set_keymap("n" , "<Leader>f"  , ":LeaderfFunction<CR>"      , { noremap = true })
 
