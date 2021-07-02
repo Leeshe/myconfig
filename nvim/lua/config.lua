@@ -114,23 +114,22 @@ require('telescope').setup{
 			'--column',
 			'--smart-case'
 		},
-		prompt_position = "top",
 		prompt_prefix = ">",
 		selection_strategy = "reset",
 		sorting_strategy = "ascending",
 		layout_strategy = "horizontal",
-		layout_defaults = {
-			-- TODO add builtin options.
-		},
 		file_sorter =  require'telescope.sorters'.get_fzy_sorter,
 		file_ignore_patterns = {},
 		generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
 		shorten_path = true,
 		winblend = 0,
-		width = 0.75,
-		preview_cutoff = 120,
-		results_height = 1,
-		results_width = 0.8,
+		layout_config = {
+			width = 0.75,
+			preview_cutoff = 120,
+			results_height = 1,
+			results_width = 0.8,
+			prompt_position = "top",
+		},
 		border = {},
 		borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰'},
 		color_devicons = true,
@@ -143,7 +142,7 @@ require('telescope').setup{
 
 		-- Developer configurations: Not meant for general override
 		buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker
-}
+	}
 }
 -- }}}
 
